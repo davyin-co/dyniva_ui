@@ -1,0 +1,316 @@
+{# note: header.html.twig must be include in header block, the sub theme be able to override header #}
+{% block header %}
+{% include '@dyniva_ui/ui/pages/header.html.twig' %}
+{% endblock %}
+
+<div id="wall" class="page-title promo">
+  <div class="inner">
+    <h1 class="page-title">图片轮播</h1>
+    <h5 class="title"><a href="https://github.com/kenwheeler/slick/" target="_blank">Slick</a>
+      支持移动端手势滑动，响应式，兼容大于IE8浏览器，高度个性化配置。</h5>
+  </div>
+</div>
+
+<div class="panel panel-ui">
+  <section class="dy-components" id="carousel">
+    <h2 class="section-header inner">图片轮播</h2>
+
+    <div class="section-item title-box" id="dy-carousel-1-0">
+      <h4 class="title inner">图片轮播 1.0</h4>
+      <p class="rules inner">图片按比例缩放我们不是要背景图片的方式，而是在每个 slick 的 item 的组件使用 padding 来实现，不对 slick 进行限制，以免影响扩展。</p>
+      <div class="dy-components-demo inner">
+        {% include "@dyniva_ui/ui/modules/carousel/dy-carousel-1-0.html.twig" with{
+          class: 'arrow-inside dots-inside left-mode',
+          options: '{"dots": true}'
+        } %}
+      </div>
+      <div class="dy-components-markup inner">
+        <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse"
+           aria-expanded="false" aria-controls="collapseCode">
+          <i class="icon">&#xe818;</i> 开发说明
+        </a>
+        <div class="collapse">
+          <pre class="prettyprint lang-html">
+            {%- filter escape -%}
+              {% include "@dyniva_ui/ui/modules/carousel/dy-carousel-1-0.html.twig" with{
+                class: 'arrow-inside dots-inside left-mode',
+                options: '{"dots": true}'
+              } %}
+            {%- endfilter -%}
+          </pre>
+          <div class="dy-components-desc">
+            <table class="table table-full">
+              <thead>
+                <tr>
+                  <th>属性</th>
+                  <th>说明</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>.dy-carousel</code></td>
+                  <td>图片轮播初始化的类</td>
+                </tr>
+                <tr>
+                  <td><code>.arrow-inside</code></td>
+                  <td>使左右控制键在内侧（默认在外侧）</td>
+                </tr>
+                <tr>
+                  <td><code>.dots-inside</code></td>
+                  <td>小圆点显示在内侧（默认在外侧）</td>
+                </tr>
+                <tr>
+                  <td><code>data-slick='{"dots": true}'</code></td>
+                  <td>显示小圆点</td>
+                </tr>
+                <tr>
+                  <td><code>.left-mode</code></td>
+                  <td>在移动端下一个轮播对象将显示20%的宽度，你可以根据具体组件的实际情况进行覆写扩展</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-item title-box" id="dy-carousel-1-1">
+      <h4 class="title inner">图片轮播 1.1</h4>
+      <p class="rules inner">轮播中显示标题和副标题</p>
+      <div class="dy-components-demo inner">
+        {% include "@dyniva_ui/ui/modules/carousel/dy-carousel-1-0.html.twig" with{
+          class: 'arrow-inside dots-inside',
+          options: '{"dots": true, "dotsClass": "slick-dots dots-animate-width dots-highlight"}'
+        } %}
+      </div>
+      <div class="dy-components-markup inner">
+        <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse"
+           aria-expanded="false" aria-controls="collapseCode">
+          <i class="icon">&#xe818;</i> 开发说明
+        </a>
+        <div class="collapse">
+          <pre class="prettyprint lang-html">
+            {%- filter escape -%}
+              {% include "@dyniva_ui/ui/modules/carousel/dy-carousel-1-0.html.twig" with{
+                class: 'arrow-inside dots-inside',
+                options: '{"dots": true, "dotsClass": "slick-dots dots-animate-width dots-highlight"}'
+              } %}
+            {%- endfilter -%}
+          </pre>
+          <div class="dy-components-desc">
+            <table class="table table-full">
+              <thead>
+                <tr>
+                  <th>属性</th>
+                  <th>说明</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>基本类名</code></td>
+                  <td>基本类名同上</td>
+                </tr>
+                <tr>
+                  <td><code>.dy-carousel-wrapper</code></td>
+                  <td>轮播容器，主要用于定义样式</td>
+                </tr>
+                <tr>
+                  <td><code>.dy-carousel-1-1</code></td>
+                  <td>轮播 1.1</td>
+                </tr>
+                <tr>
+                  <td><code>.dy-carousel-container</code></td>
+                  <td>轮播的内容区域</td>
+                </tr>
+                <tr>
+                  <td><code>"dotsClass": "slick-dots dots-animate-width dots-highlight "</code></td>
+                  <td>添加 dots 圆点宽度动画效果，并且黄色高亮</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-item title-box" id="dy-carousel-2-0">
+      <h4 class="title inner">图片轮播 2.0</h4>
+      <p class="rules inner">图片轮播说明</p>
+      <div class="dy-components-demo">
+        {% include "@dyniva_ui/ui/modules/carousel/dy-carousel-2-0.html.twig" with{
+          class: 'left-mode has-link',
+          options: '{"dots": true,
+            "slidesToShow": 3,
+            "slidesToScroll": 3,
+            "responsive": [
+              {
+                "breakpoint": 1140,
+                "settings": {
+                  "slidesToShow": 2,
+                  "slidesToScroll": 2
+                }
+              },
+              {
+                "breakpoint": 768,
+                "settings": {
+                  "slidesToShow": 1,
+                  "slidesToScroll":1
+                }
+              }
+            ]
+          }'
+        } %}
+      </div>
+      <div class="dy-components-markup inner">
+        <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse" aria-expanded="false"
+          aria-controls="collapseCode">
+          <i class="icon">&#xe818;</i> 开发说明
+        </a>
+        <div class="collapse">
+          <pre class="prettyprint lang-html">
+            {%- filter escape -%}
+              {% include "@dyniva_ui/ui/modules/carousel/dy-carousel-2-0.html.twig" with{
+                class: 'left-mode has-link',
+                options: '{"dots": true,
+                  "slidesToShow": 3,
+                  "slidesToScroll": 3,
+                  "responsive": [
+                    {
+                      "breakpoint": 1140,
+                      "settings": {
+                        "slidesToShow": 2,
+                        "slidesToScroll": 2
+                      }
+                    },
+                    {
+                      "breakpoint": 768,
+                      "settings": {
+                        "slidesToShow": 1,
+                        "slidesToScroll":1
+                      }
+                    }
+                  ]
+                }'
+              } %}
+            {% endfilter %}
+          </pre>
+          <td class="dy-components-desc">
+            <table class="table table-full">
+              <thead>
+                <tr>
+                  <th>属性</th>
+                  <th>说明</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>基本类名</code></td>
+                  <td>基本类名同上</td>
+                </tr>
+                <tr>
+                  <td><code>.dy-carousel-wrapper</code></td>
+                  <td>轮播容器，主要用于定义样式</td>
+                </tr>
+                <tr>
+                  <td><code>.dy-carousel-2-0</code></td>
+                  <td>轮播 2.0</td>
+                </tr>
+                <tr>
+                  <td><code>.dy-carousel-container</code></td>
+                  <td>轮播的内容区域</td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-item title-box" id="dy-carousel-2-0">
+      <h4 class="title inner">图片轮播3.0--仅移动端</h4>
+      <p class="rules inner">仅在移动端使用图片轮播显示（演示：切到移动端后刷新）</p>
+      <div class="dy-components-demo inner">
+        {% include "@dyniva_ui/ui/modules/carousel/dy-carousel-1-0.html.twig" with{
+          class: 'only-mobile left-mode outside-b',
+          options: '{"slidesToShow": 1,"arrows": false, "dots": true, "mobileFirst": true, "responsive": [{"breakpoint": 768, "settings": "unslick"}]}',
+          items: [{
+            media: 'holder.js/150x112',
+            class: 'carousel-item d_ib inside-min-lr'
+          },{
+            media: 'holder.js/150x112',
+            class: 'carousel-item d_ib inside-min-lr'
+          },{
+            media: 'holder.js/150x112',
+            class: 'carousel-item d_ib inside-min-lr'
+          },{
+            media: 'holder.js/150x112',
+            class: 'carousel-item d_ib inside-min-lr'
+          },{
+            media: 'holder.js/150x112',
+            class: 'carousel-item d_ib inside-min-lr'
+          }]
+        } %}
+      </div>
+      <div class="dy-components-markup inner">
+        <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse" aria-expanded="false"
+           aria-controls="collapseCode">
+          <i class="icon">&#xe818;</i> 开发说明
+        </a>
+        <div class="collapse">
+          <pre class="prettyprint lang-html">
+            {%- filter escape -%}
+              {% include "@dyniva_ui/ui/modules/carousel/dy-carousel-1-0.html.twig" with{
+                class: 'only-mobile left-mode outside-b',
+                options: '{"slidesToShow": 1,"arrows": false, "dots": true, "mobileFirst": true, "responsive": [{"breakpoint": 768, "settings": "unslick"}]}',
+                items: [{
+                  media: 'holder.js/150x112',
+                  class: 'carousel-item d_ib inside-min-lr'
+                },{
+                  media: 'holder.js/150x112',
+                  class: 'carousel-item d_ib inside-min-lr'
+                },{
+                  media: 'holder.js/150x112',
+                  class: 'carousel-item d_ib inside-min-lr'
+                },{
+                  media: 'holder.js/150x112',
+                  class: 'carousel-item d_ib inside-min-lr'
+                },{
+                  media: 'holder.js/150x112',
+                  class: 'carousel-item d_ib inside-min-lr'
+                }]
+              } %}
+            {%- endfilter -%}
+          </pre>
+          <div class="dy-components-desc">
+            <table class="table table-full">
+              <thead>
+                <tr>
+                  <th>参数</th>
+                  <th>说明</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code> "mobileFirst": true</code></td>
+                  <td>参数配置</td>
+                </tr>
+                <tr>
+                  <td><code> .only-mobile</code></td>
+                  <td>该图片轮播组件仅在移动端显示</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>{# end section #}
+
+    {% block carousel %}{% endblock %}
+  </section>
+
+  {% block section %}{% endblock %}
+</div>
+
+{# note: ui-footer.html.twig must be include in footer block, the sub theme be able to override footer #}
+{% block footer %}
+  {% include directory ~ '@dyniva_ui/ui/pages/ui-footer.html.twig' %}
+{% endblock %}

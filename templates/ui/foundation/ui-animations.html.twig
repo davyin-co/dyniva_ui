@@ -1,0 +1,227 @@
+{# note: header.html.twig must be include in header block, the sub theme be able to override header #}
+{% block header %}
+{% include '@dyniva_ui/ui/pages/header.html.twig' %}
+{% endblock %}
+
+<div id="wall" class="page-title promo">
+  <div class="inner">
+    <h1 class="page-title">动画</h1>
+    <h5 class="title">组件可以通过 <code>data</code> 属性自定义动画，包括自定义触发距离、动画效果、时长和延时，也可以自定义是否在手机端使用。</h5>
+  </div>
+</div>
+
+<div class="panel panel-ui">
+  <section class="dy-components" id="animate">
+    <h2 class="section-header inner">常见动画</h2>
+
+    <div class="section-item title-box">
+      <h2 class="title inner">参数说明</h2>
+      <div class="dy-components-demo inner">
+        <div class="row">
+          {% for item in [
+            {
+              name: "fade",
+              animate: "fade",
+              media: theme~'/templates/ui/images/light/light-03.jpg'
+            },
+            {
+              name: "fade up",
+              animate: "fade-up",
+              media: theme~'/templates/ui/images/light/light-03.jpg'
+            },
+            {
+              name: "fade down",
+              animate: "fade-down",
+              media: theme~'/templates/ui/images/light/light-03.jpg'
+            },
+            {
+              name: "fade left",
+              animate: "fade-left",
+              media: theme~'/templates/ui/images/light/light-03.jpg'
+            },
+            {
+              name: "fade right",
+              animate: "fade-right",
+              media: theme~'/templates/ui/images/light/light-03.jpg'
+            },
+            {
+              name: "fade up right",
+              animate: "fade-up-right",
+              media: theme~'/templates/ui/images/light/light-03.jpg'
+            },
+            {
+              name: "fade up left",
+              animate: "fade-up-left",
+              media: theme~'/templates/ui/images/light/light-03.jpg'
+            },
+            {
+              name: "fade down right",
+              animate: "fade-down-right",
+              media: theme~'/templates/ui/images/light/light-03.jpg'
+            },
+            {
+              name: "fade down left",
+              animate: "fade-down-left",
+              media: theme~'/templates/ui/images/light/light-03.jpg'
+            },
+            {
+              name: "flip up",
+              animate: "flip-up",
+              media: theme~'/templates/ui/images/light/light-03.jpg'
+            },
+            {
+              name: "flip down",
+              animate: "flip-down",
+              media: theme~'/templates/ui/images/light/light-03.jpg'
+            },
+            {
+              name: "flip left",
+              animate: "flip-left",
+              media: theme~'/templates/ui/images/light/light-03.jpg'
+            },
+            {
+              name: "flip right",
+              animate: "flip-right",
+              media: theme~'/templates/ui/images/light/light-03.jpg'
+            },
+            {
+              name: "slide up",
+              animate: "slide-up",
+              media: theme~'/templates/ui/images/light/light-03.jpg'
+            },
+            {
+              name: "slide down",
+              animate: "slide-down",
+              media: theme~'/templates/ui/images/light/light-03.jpg'
+            },
+            {
+              name: "slide left",
+              animate: "slide-left",
+              media: theme~'/templates/ui/images/light/light-03.jpg'
+            },
+            {
+              name: "slide right",
+              animate: "slide-right",
+              media: theme~'/templates/ui/images/light/light-03.jpg'
+            },
+            {
+              name: "zoom in",
+              animate: "zoom-in",
+              media: theme~'/templates/ui/images/light/light-03.jpg'
+            },
+            {
+              name: "zoom in up",
+              animate: "zoom-in-up",
+              media: theme~'/templates/ui/images/light/light-03.jpg'
+            },
+            {
+              name: "zoom in down",
+              animate: "zoom-in-down",
+              media: theme~'/templates/ui/images/light/light-03.jpg'
+            },
+            {
+              name: "zoom in left",
+              animate: "zoom-in-left",
+              media: theme~'/templates/ui/images/light/light-03.jpg'
+            },
+            {
+              name: "zoom in right",
+              animate: "zoom-in-right",
+              media: theme~'/templates/ui/images/light/light-03.jpg'
+            },
+            {
+              name: "zoom out",
+              animate: "zoom-out",
+              media: theme~'/templates/ui/images/light/light-03.jpg'
+            },
+            {
+              name: "zoom out up",
+              animate: "zoom-out-up",
+              media: theme~'/templates/ui/images/light/light-03.jpg'
+            },
+            {
+              name: "zoom out down",
+              animate: "zoom-out-down",
+              media: theme~'/templates/ui/images/light/light-03.jpg'
+            },
+            {
+              name: "zoom out left",
+              animate: "zoom-out-left",
+              media: theme~'/templates/ui/images/light/light-03.jpg'
+            },
+            {
+              name: "zoom out right",
+              animate: "zoom-out-right",
+              media: theme~'/templates/ui/images/light/light-03.jpg'
+            }
+          ] %}
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 40px; z-index: -{{ loop.index }}">
+              <h4 class="bold outside-min-b">{{ item.name }}</h4>
+              <div data-aos="{{ item.animate }}" data-aos-duration="1000"
+                   data-aos-delay="{{ (loop.index - 1) % 4 * 1000 }}">
+                <img src="{{ item.media }}" alt="{{ item.animateName }}">
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="dy-components-markup inner">
+        <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse"
+           aria-expanded="false" aria-controls="collapseCode">
+          <i class="icon">&#xe818;</i> 展开
+        </a>
+        <div class="collapse">
+          <div class="dy-components-desc">
+            <table class="table table-full">
+              <thead>
+              <tr>
+                <th>属性</th>
+                <th>说明</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td><code>data-aos="fade-up"</code></td>
+                <td>使用 fade-up 动画效果</td>
+              </tr>
+              <tr>
+                <td><code>data-aos-offset="200"</code></td>
+                <td>向上偏移200px时触发</td>
+              </tr>
+              <tr>
+                <td><code>data-aos-delay="50"</code></td>
+                <td>动画延迟 50 毫秒出现</td>
+              </tr>
+              <tr>
+                <td><code>data-aos-duration="1000"</code></td>
+                <td>动画持续时间 1000 毫秒</td>
+              </tr>
+              <tr>
+                <td><code>data-aos-easing="ease-in-out"</code></td>
+                <td>动画曲线，<a href="https://github.com/michalsnik/aos#easing-functions" target="_blank">更多</a></td>
+              </tr>
+              <tr>
+                <td><code>data-aos-once="false"</code></td>
+                <td>动画是否只出现一次</td>
+              </tr>
+              <tr>
+                <td><code>data-aos-anchor=".other-element"</code></td>
+                <td>当滚动到.other-element时触发</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% block animate %}{% endblock %}
+  </section>
+
+  {% block section %}{% endblock %}
+</div>
+
+{# note: ui-footer.html.twig must be include in footer block, the sub theme be able to override footer #}
+{% block footer %}
+  {% include directory ~ '@dyniva_ui/ui/pages/ui-footer.html.twig' %}
+{% endblock %}

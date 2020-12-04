@@ -1,0 +1,30 @@
+{
+  "name": "davyinui",
+  "authors": [
+    "魏巍 <hello@wenroo.com>"
+  ],
+  "description": "Davyin UI Scripts Plugins",
+  "main": "",
+  "keywords": [
+    "davyin",
+    "ui"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "code-prettify": "https://github.com/google/code-prettify.git",
+    "normalize.css": "normalize-css#^8.0.0",
+    "bootstrap": "^3.3.7",
+    "waypoints": "^4.0.1",
+    "lazysizes": "^4.1.4",
+    "holderjs": "^2.9.4",
+    "prognroll": "https://github.com/mburakerman/prognroll.git",
+    "respond": "https://github.com/scottjehl/Respond.git#^1.4.2",
+    "slick-carousel": "^1.8.1",
+    "css-hamburgers": "^1.1.3",
+    "jQuery.mmenu": "^7.2.2",
+    "laydate": "https://github.com/sentsin/laydate.git#^5.0.85",
+    "masonry-layout": "masonry#^4.2.2"
+  }
+}

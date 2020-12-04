@@ -1,0 +1,626 @@
+/* 初始化 */
+/* 主体结构 */
+@-webkit-keyframes laydate-upbit {
+
+  /* 微微往上滑入 */
+  from {
+    -webkit-transform: translate3d(0, 20px, 0);
+    opacity: 0.3;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes laydate-upbit {
+  from {
+    transform: translate3d(0, 20px, 0);
+    opacity: 0.3;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+html {
+  #layuicss-laydate {
+    display: none;
+    position: absolute;
+    width: 1989px;
+  }
+}
+
+.layui-laydate {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+  }
+
+  box-sizing: border-box;
+  position: absolute;
+  z-index: 66666666;
+  margin: 5px 0;
+  border-radius: 2px;
+  font-size: 14px;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: laydate-upbit;
+  animation-name: laydate-upbit;
+  border: 1px solid @border-color;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .12);
+  background-color: #fff;
+  color: #666;
+
+  .layui-this {
+    background-color: @site-base  !important;
+    color: #fff !important;
+    border-radius: 20px;
+  }
+
+  .laydate-disabled {
+    background: none !important;
+    color: #d2d2d2 !important;
+    cursor: not-allowed !important;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+
+    &:hover {
+      background: none !important;
+      color: #d2d2d2 !important;
+      cursor: not-allowed !important;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+    }
+  }
+}
+
+.layui-laydate-main {
+  width: 272px;
+}
+
+.layui-laydate-header {
+  * {
+    transition-duration: .3s;
+    -webkit-transition-duration: .3s;
+    display: inline-block;
+    vertical-align: bottom;
+  }
+
+  position: relative;
+  line-height: 30px;
+  padding: 10px 70px 5px;
+  border-bottom: 1px solid #e2e2e2;
+
+  i {
+    position: absolute;
+    top: 10px;
+    padding: 0 5px;
+    color: #999;
+    font-size: 18px;
+    cursor: pointer;
+
+    &:hover {
+      color: @site-base;
+    }
+  }
+
+  i.laydate-prev-y {
+    left: 15px;
+  }
+
+  i.laydate-prev-m {
+    left: 45px;
+  }
+
+  i.laydate-next-y {
+    right: 15px;
+  }
+
+  i.laydate-next-m {
+    right: 45px;
+  }
+
+  span {
+    &:hover {
+      color: @site-base;
+    }
+  }
+}
+
+.layui-laydate-content {
+  td {
+    transition-duration: .3s;
+    -webkit-transition-duration: .3s;
+    width: 36px;
+    height: 36px;
+    padding: 5px;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    color: #444;
+    border-radius: 50%;
+
+    &:hover {
+      background-color: #eaeaea;
+      color: #333;
+    }
+  }
+
+  position: relative;
+  padding: 10px;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  border-top: none 0;
+  border-bottom: none 0;
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  th {
+    width: 36px;
+    height: 30px;
+    padding: 5px;
+    text-align: center;
+    font-weight: 400;
+    color: #333;
+  }
+
+  td.laydate-selected {
+    background-color: #B3E3F8;
+    border-radius: 0;
+  }
+
+  .laydate-day-prev {
+    color: #d2d2d2;
+  }
+
+  .laydate-day-next {
+    color: #d2d2d2;
+  }
+
+  td.layui-this {
+    .laydate-day-mark {
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+.layui-laydate-list {
+  li {
+    transition-duration: .3s;
+    -webkit-transition-duration: .3s;
+
+    &:hover {
+      background-color: #eaeaea;
+      color: #333;
+    }
+  }
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: #fff;
+
+  >li {
+    position: relative;
+    display: inline-block;
+    width: 33.3%;
+    height: 36px;
+    line-height: 36px;
+    margin: 3px 0;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+  }
+}
+
+.layui-laydate-static {
+  position: relative;
+  z-index: 0;
+  display: inline-block;
+  margin: 0;
+  -webkit-animation: none;
+  animation: none;
+}
+
+.laydate-ym-show {
+  .laydate-prev-m {
+    display: none !important;
+  }
+
+  .laydate-next-m {
+    display: none !important;
+  }
+
+  .laydate-prev-y {
+    display: inline-block !important;
+  }
+
+  .laydate-next-y {
+    display: inline-block !important;
+  }
+
+  .laydate-set-ym {
+    span[lay-type="month"] {
+      display: none !important;
+    }
+  }
+}
+
+.laydate-time-show {
+  .layui-laydate-header {
+    .layui-icon {
+      display: none !important;
+    }
+  }
+
+  .laydate-set-ym {
+    span[lay-type="year"] {
+      display: none !important;
+    }
+
+    span[lay-type="month"] {
+      display: none !important;
+    }
+  }
+}
+
+.laydate-set-ym {
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+
+  span {
+    padding: 0 5px;
+    cursor: pointer;
+  }
+}
+
+.laydate-time-text {
+  cursor: default !important;
+}
+
+.laydate-day-mark {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  line-height: 30px;
+  font-size: 12px;
+  overflow: hidden;
+
+  &::after {
+    position: absolute;
+    content: '';
+    right: 2px;
+    top: 2px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #5FB878;
+  }
+}
+
+.layui-laydate-footer {
+  position: relative;
+  height: 46px;
+  line-height: 26px;
+  padding: 10px 20px;
+  border-top: 1px solid #e2e2e2;
+
+  span {
+    margin-right: 15px;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 12px;
+
+    &:hover {
+      color: @site-base;
+    }
+  }
+
+  span[lay-type="date"] {
+    color: @site-base;
+  }
+}
+
+.laydate-footer-btns {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+
+  span {
+    height: 26px;
+    line-height: 26px;
+    margin: 0 0 0 -1px;
+    padding: 0 10px;
+    border: 1px solid #C9C9C9;
+    background-color: #fff;
+    white-space: nowrap;
+    vertical-align: top;
+    border-radius: 2px;
+  }
+}
+
+.laydate-month-list {
+  >li {
+    width: 25%;
+    margin: 17px 0;
+
+    &.layui-this {
+      border-radius: @space;
+    }
+  }
+}
+
+.laydate-time-list {
+  >li {
+    height: 100%;
+    margin: 0;
+    line-height: normal;
+    cursor: default;
+
+    &:hover {
+      ol {
+        overflow-y: auto;
+      }
+
+      background: none;
+    }
+  }
+
+  p {
+    position: relative;
+    top: -4px;
+    line-height: 29px;
+  }
+
+  ol {
+    height: 181px;
+    overflow: hidden;
+
+    li {
+      width: 130%;
+      padding-left: 33px;
+      line-height: 30px;
+      text-align: left;
+      cursor: pointer;
+
+      &.layui-this {
+        border-radius: 0;
+      }
+    }
+  }
+
+  li {
+    ol {
+      margin: 0;
+      padding: 0;
+      border: 1px solid #e2e2e2;
+      border-left-width: 0;
+    }
+
+    &:first-child {
+      ol {
+        border-left-width: 1px;
+      }
+    }
+  }
+}
+
+.layui-laydate-hint {
+  position: absolute;
+  top: 115px;
+  left: 50%;
+  width: 250px;
+  margin-left: -125px;
+  line-height: 20px;
+  padding: 15px;
+  text-align: center;
+  font-size: 12px;
+  color: #FF5722;
+  border: 1px solid #d2d2d2;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .12);
+  background-color: #fff;
+  color: #666;
+  color: #FF5722;
+}
+
+.layui-laydate-range {
+  width: 546px;
+
+  .layui-laydate-main {
+    display: inline-block;
+    vertical-align: middle;
+
+    .layui-this+.laydate-selected {
+      &:after {
+        content: "";
+        display: block;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        background: #B3E3F8;
+        top: 0;
+        z-index: -1;
+        left: -50%;
+      }
+    }
+
+    .laydate-selected+.layui-this {
+      &:after {
+        content: "";
+        display: block;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        background: #B3E3F8;
+        top: 0;
+        z-index: -1;
+        left: -50%;
+      }
+    }
+  }
+
+  .laydate-main-list-0 {
+    .laydate-next-m {
+      display: none;
+    }
+
+    .laydate-next-y {
+      display: none;
+    }
+  }
+
+  .laydate-main-list-1 {
+    .laydate-prev-y {
+      display: none;
+    }
+
+    .laydate-prev-m {
+      display: none;
+    }
+
+    .layui-laydate-content {
+      border-left: 1px solid #e2e2e2;
+    }
+  }
+}
+
+.laydate-selected {
+  &:hover {
+    background-color: #83D1F4 !important;
+  }
+}
+
+.laydate-selected.laydate-day-prev {
+  background-color: #f8f8f8 !important;
+}
+
+.laydate-selected.laydate-day-next {
+  background-color: #f8f8f8 !important;
+}
+
+.laydate-theme-molv {
+  border: none;
+
+  .layui-laydate-main {
+    width: 274px;
+  }
+
+  .layui-laydate-header {
+    border: none;
+    background-color: #009688;
+
+    i {
+      color: #f6f6f6;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+
+    span {
+      color: #f6f6f6;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+
+  .layui-laydate-content {
+    border: 1px solid #e2e2e2;
+    border-top: none;
+    border-bottom: none;
+  }
+
+  .laydate-main-list-1 {
+    .layui-laydate-content {
+      border-left: none;
+    }
+  }
+
+  .layui-laydate-footer {
+    border: 1px solid #e2e2e2;
+  }
+}
+
+.laydate-theme-molv.layui-laydate-range {
+  width: 548px;
+}
+
+.laydate-theme-grid {
+  .layui-laydate-content {
+    td {
+      border: 1px solid #e2e2e2;
+    }
+
+    thead {
+      border: 1px solid #e2e2e2;
+    }
+  }
+
+  .laydate-year-list {
+    >li {
+      border: 1px solid #e2e2e2;
+      margin: 0 -1px -1px 0;
+      height: 43px;
+      line-height: 43px;
+    }
+
+    margin: 1px 0 0 1px;
+  }
+
+  .laydate-month-list {
+    >li {
+      border: 1px solid #e2e2e2;
+      margin: 0 -1px -1px 0;
+      height: 71px;
+      line-height: 71px;
+    }
+
+    margin: 1px 0 0 1px;
+  }
+
+  .laydate-selected {
+    background-color: #f2f2f2 !important;
+    color: #009688 !important;
+
+    &:hover {
+      background-color: #f2f2f2 !important;
+      color: #009688 !important;
+    }
+  }
+
+  .laydate-selected.laydate-day-prev {
+    color: #d2d2d2 !important;
+  }
+
+  .laydate-selected.laydate-day-next {
+    color: #d2d2d2 !important;
+  }
+}

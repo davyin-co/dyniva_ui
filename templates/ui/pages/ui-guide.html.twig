@@ -1,0 +1,195 @@
+{# note: header.html.twig must be include in header block, the sub theme be able to override header #}
+{% block header %}
+  {% include '@dyniva_ui/ui/pages/header.html.twig' %}
+{% endblock %}
+
+<div id="wall" class="page-title promo">
+  <div class="dy-components-demo inner">
+    <h1 class="page-title">戴文UI组件开发规范 V1.0</h1>
+    <h5 class="title">组件开发能够满足 HTML 和 CSS 规范的同时也要能够切合到 Drupal，比如 Views 配置，Editor 富文本。</h5>
+  </div>
+</div>
+
+<div class="panel panel-ui">
+  <section class="dy-components" id="specification">
+    <h2 class="section-header inner">组件开发规范</h2>
+
+    <div class="section-item title-box">
+      <h4 class="title inner">规范</h4>
+      <p class="rules inner">目标：良好的CSS组件架构，应该是：可复用、可维护、可扩展，关注分离，将 HTML、CSS 解耦。</p>
+      <div class="dy-components-demo inner">
+        <ul>
+          <li>Dyniva UI 组件以<code>.dy-</code>为命名空间，如<code>.dy-hero-1</code>，添加命名空间防止和具体项目冲突，具体项目无需以<code>.dy-</code>前缀
+          </li>
+          <li>切勿在 CSS 中使用 id 选择器</li>
+          <li>使用 <code>.js-*</code> 来标识行为，这些类不应该用来写 CSS</li>
+          <li>组件不应该对站点内的定位和布局负责，永远不要对组件应用宽度或高度，将结构规则和风格规则分开</li>
+          <li>Drupal 富文本默认是 <code>p</code>，class 避免写在 <code>p</code>上</li>
+          <li>组件涉及到图片，须备注最佳图片尺寸建议</li>
+          <li>尽量减少标签的数量</li>
+          <li>移动端按钮建议至少 <strong>48x48</strong> 像素，以提高点击效率，每个元素间距建议至少 <strong>32px</strong>，防止重叠</li>
+          <li>所有组件放在 <code>assets/less/theme</code> 中，所有变量定义在 <code>let.less</code> 文件，不可随意添加修改</li>
+          <li>组件 less 中的颜色、内外间距、数值等使用 <code>let.less</code> 中的变量去赋值，统一 UI 逻辑</li>
+        </ul>
+      </div>
+      <div class="dy-components-markup inner">
+        <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse"
+           aria-expanded="false"
+           aria-controls="collapseCode">
+          <i class="icon">&#xe818;</i>开发说明
+        </a>
+        <div class="collapse">
+          <pre class="prettyprint lang-html">
+            {%- filter escape -%}
+              {% include "@dyniva_ui/ui/pages/ui-guide/ui-specification.html.twig" %}
+            {%- endfilter -%}
+          </pre>
+          <p>组件从类名上已经清晰的分辨元素的从属关系，一般情况下不会造成类名冲突，没有特殊情况可以不进行选择器嵌套，保持 css 结构清晰，提高渲染效率，特殊情况可以嵌套（提高权重），应避免过多层级</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-item title-box">
+      <h4 class="title inner">命名注意事项</h4>
+      <div class="dy-components-demo inner">
+        <ul>
+          <li>
+            组件状态：<code>{组件名}-{状态}</code>
+            <p>常用状态：<code>hover, current, selected, disabled, focus, blur, checked, success, error</code> 等</p>
+          </li>
+        </ul>
+      </div>
+    </div>{# end section #}
+
+    <div class="section-item title-box">
+      <h4 class="title inner">语法规范</h4>
+      <div class="dy-components-demo inner">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6">
+            <h4>CSS</h4>
+            <ul>
+              <li>不要使用 <code>important</code></li>
+              <li>所有的声明语句以分号结尾</li>
+              <li>对于属性值或者颜色值参数，省略小于1小数前面的0</li>
+              <li>避免为0值指定单位</li>
+              <li>媒体查询尽可能放在规则附近，不要打包放在单一的文件</li>
+              <li>字体资源定义引用部分放入 css 中，不走编译流程</li>
+            </ul>
+          </div>
+          <div class="col-xs-12 col-sm-6">
+            <h4>HTML</h4>
+            <ul>
+              <li>属性的定义使用双引号，不使用单引号</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-item title-box">
+      <h4 class="title inner">静态图片</h4>
+      <p class="rules inner">
+        在使用大图的时候为了节省版本库的空间，应该使用 <strong>tinypng</strong> 压缩图片网站进行处理，有条件的可以使用本地软件
+        <strong>ImageOpitm</strong> 进行批量无损压缩处理。
+      </p>
+    </div>
+
+    <div class="section-item title-box">
+      <h4 class="title inner">组件继承模式</h4>
+      <p class="rules inner">以菜单组件为例：主菜单和边栏菜单都是相同的 Drupal 原生的菜单结构，根据现有的静态效果抽象出最基础的样式，后面的具体组件都继承这个基础样式。</p>
+      <div class="dy-components-markup inner">
+        <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse"
+           aria-expanded="false"
+           aria-controls="collapseCode">
+          <i class="icon">&#xe818;</i>开发说明
+        </a>
+        <div class="collapse">
+          <pre class="prettyprint lang-css">
+          {%- filter escape -%}
+            {% include "@dyniva_ui/ui/pages/ui-guide/ui-extend.html.twig" %}
+          {%- endfilter -%}
+          </pre>
+        </div>
+      </div>
+    </div>
+
+    {% block specification %}{% endblock %}
+  </section>
+
+  <section class="dy-components" id="repository">
+    <h2 class="section-header inner">构建及版本库</h2>
+
+    <div class="section-item title-box">
+      <h4 class="title inner">流程</h4>
+      <div class="dy-components-demo inner">
+        <ul>
+          <li>在主题目录下，安装依赖： <code>npm install</code></li>
+          <li>本地开发监听编译：<code>npm run watch</code></li>
+          <li>需要提交代码的时候，停止 <code>watch</code>，然后 <code>npm run build</code></li>
+          <li><code>git add assets</code>修改，<code>git commit</code></li>
+          <li><code>git pull</code>，如果需要 <code>merge</code>合并，先<code>merge</code>，再重新 <code>npm run build</code>
+          </li>
+          <li>然后添加压缩编译的css,js文件 <code>git add</code></li>
+          <li>最后，推送到远程仓库 <code>git push</code></li>
+        </ul>
+      </div>
+    </div>
+
+    {% block repository %}{% endblock %}
+  </section>
+
+  <section class="dy-components" id="structure">
+    <h2 class="section-header inner">预览组件结构</h2>
+
+    <div class="section-item title-box">
+      <h4 class="title inner">dyniva ui 静态预览页面组件结构</h4>
+      <p class="rules inner">
+        所有的组件包含在<code>panel-ui</code>中，每个组件包含在<code>section.dy-components</code>中，并设置具体相应的
+        ID，说明使用<code>p.rules</code>，或者使用ul列表排列每条具体的规则。每个组件有细分的类别使用
+        <code>.section-item</code> 组合，代码部分包含在 <code>.dy-components-markup</code>
+        中，每个 <code>item</code>之间插入 <code>div.outside-tb-lg</code> ,
+        <code>div.dy-components-demo</code>为示例 UI
+      </p>
+      <div class="dy-components-markup inner">
+        <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse"
+           aria-expanded="false"
+           aria-controls="collapseCode">
+          <i class="icon">&#xe818;</i>开发说明
+        </a>
+        <div class="collapse">
+          {% set block = '{% block components %}{% endblock %}' %}
+          <pre class="prettyprint lang-html">
+            {%- filter escape -%}
+              {% include "@dyniva_ui/ui/pages/ui-guide/ui-structure.html.twig" %}
+            {%- endfilter -%}
+          </pre>
+          <div class="dy-components-desc">
+            <table class="table table-full">
+              <thead>
+              <tr>
+                <th>Class</th>
+                <th>说明</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td><code>.dy-components-demo.inner</code></td>
+                <td>非全屏组件预览添加.inner</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% block structure %}{% endblock %}
+  </section>
+
+  {% block section %}{% endblock %}
+</div>
+
+{# note: ui-footer.html.twig must be include in footer block, the sub theme be able to override footer #}
+{% block footer %}
+  {% include directory ~ '@dyniva_ui/ui/pages/ui-footer.html.twig' %}
+{% endblock %}

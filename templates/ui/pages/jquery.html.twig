@@ -1,0 +1,306 @@
+{# note: header.html.twig must be include in header block, the sub theme be able to override header #}
+{% block header %}
+{% include '@dyniva_ui/ui/pages/header.html.twig' %}
+{% endblock %}
+
+<div id="wall" class="page-title promo">
+  <div class="inner">
+    <h1 class="page-title">jQuery 编码规范及最佳实践</h1>
+    <h5 class="title">团队编码规范，关注性能，关注前端用户体验</h5>
+  </div>
+</div>
+
+<div class="panel panel-ui">
+
+  {#T1#}
+  <div class="inner">
+    <div class="title-box">
+      <h2 class="title">闭包</h2>
+    </div>
+  </div>
+  <div class="inner">
+    <div class="row">
+      <div class="col-sm-12">
+        <div>
+          {% set blocks = '
+/*
+ * 闭包的好处可以防止外部的变量影响到内部的变量，避免导致意外发生。
+ */
+(function($, window, document) {
+
+  $(function() {
+    // The DOM is ready!
+  });
+
+}(window.jQuery, window, document));
+'%}
+          <pre class="prettyprint lang-js">
+                  {{blocks}}
+                </pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {#T2#}
+  <div class="inner">
+    <div class="title-box">
+      <h2 class="title">事件</h2>
+    </div>
+  </div>
+  <div class="inner">
+    <div class="row">
+      <div class="col-sm-12">
+        <div>
+          {% set blocks = '
+/*
+ * 1. 一个页面应该只有一个`$(document).ready()`,更容易去调式和跟踪
+ * 2. 事件监听的回调函数不要使用匿名函数，匿名函数很难去调式测试
+ */
+
+$("#myLink").on("click",function(){...}); //bad
+
+function myLinkClickHandler(){...}; // good
+$("#myLink").on("click", myLinkClickHandler);
+
+/*
+ * 不要在html中添加内联js
+ */
+<a id="myLink" href="#" onclick="myEventHandler();">my link</a> // bad
+
+//good
+$("#myLink").on("click", myEventHandler);
+
+/*
+ * 如果允许，使用自定义事件命名空间
+ */
+$("#myLink").on("click.mySpecialClick", myEventHandler); //good
+$("#myLink").unbind("click.mySpecialClick");
+
+$( "p" ).on( "test.something", function( event ) {
+  alert( event.namespace );
+});
+$( "button" ).click(function( event ) {
+  $( "p" ).trigger( "test.something" );
+});
+
+/*
+ * 当添加一些事件给多个元素时，使用事件委托
+ */
+$("#list a").on("click", myClickHandler); // bad
+
+$("#list").on("click", "a", myClickHandler); //good,only one event handler is attached to the parent'%}
+          <pre class="prettyprint lang-js" style="max-height: none;">
+                  {{blocks}}
+                </pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {#T3#}
+  <div class="inner">
+    <div class="title-box">
+      <h2 class="title">Ajax</h2>
+    </div>
+  </div>
+  <div class="inner">
+    <div class="row">
+      <div class="col-sm-12">
+        <div>
+          {% set blocks = '
+/*
+ * 使用事件委托处理ajax请求
+ */
+ $("#parent-container").on("click", "a", delegatedClickHandlerAjax);
+
+/*
+ * 使用promise
+ */
+ $.ajax({...}).then(successHandler, faiureHandler);
+
+//or
+var jqxhr = $.ajax({...});
+jqxhr.done(successHandler);
+jqxhr.fail(failureHandler);
+
+/*
+ * 示例
+ */
+var jqxhr = $.ajax({
+  url: url,
+  type: "GET", // 默认GET类型，你可以更改
+  cache: true, // 默认true, false类型给 "script"和"jsonp"
+  data: {}, // 请求参数
+  dataType: "json", // 指定数据类型
+  jsonp: "callback", // JSONP回调参数
+  statusCode: { // 如果需要，可以指定错误代码
+    404: handler404,
+    500: handler500
+  }
+});
+jqxhr.done(successHandler);
+jqxhr.fail(failureHandler);'%}
+          <pre class="prettyprint lang-js" style="max-height: none;">
+                  {{blocks}}
+                </pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {#T4#}
+  <div class="inner">
+    <div class="title-box">
+      <h2 class="title">变量</h2>
+    </div>
+  </div>
+  <div class="inner">
+    <div class="row">
+      <div class="col-sm-12">
+        <div>
+          {% set blocks = '
+/*
+ * jQuery对象变量应该使用$作为前缀
+ * 缓存jQuery对象
+ */
+var $myDiv = $(\'#myDiv\');
+$myDiv.click(function(){...})
+'%}
+          <pre class="prettyprint lang-js" style="max-height: none;">
+                  {{blocks}}
+                </pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {#T5#}
+  <div class="inner">
+    <div class="title-box">
+      <h2 class="title">选择器</h2>
+    </div>
+  </div>
+  <div class="inner">
+    <div class="row">
+      <div class="col-sm-12">
+        <div>
+          {% set blocks = '
+/*
+ * 尽可能使用id选择器，它更快，因为使用原生的
+ */
+document.getElementById();
+
+/*
+ * 使用class选择器时，不要使用元素的类型
+ */
+var $products = $(\'div.products\'); // slow
+var $products = $(\'.products\'); // fast
+
+/*
+ * 查找子元素`find()`更快
+ */
+var $products = $(\'#products div.id\'); // bad
+var $products = $(\'#products\').find(\'div.id\') // good #products通过document.getElementById()查找
+
+/*
+ * 给选择器添加上下文
+ */
+$(\'.class\'); // slower 它会遍历所有的dom节点
+$(\'.class\', \'#class-container\'); // faster 它只会寻找来自于class-container
+
+/*
+ * 避免过长
+ */
+ $(\'.data table.attendees td.gonzalez\');
+ $(\'.data td.gonzalez\'); // Better: 尽可能省略中间节点
+
+/*
+ * 避免使用通用选择器
+ */
+$(\'div.someclass > *\'); // bad
+$(\'div.someclass\').children(); // better
+$(\'div.someclass :radio\'); // bad
+$(\'div.someclass input:radio\'); // good
+
+/*
+ * 不应该存在多个ID选择器
+ */
+$(\'#outer #inner\'); // bad
+$(\'div#inner\'); // bad
+$(\'.outer-container #inner\'); // bad
+$(\'#inner\'); // good
+'%}
+          <pre class="prettyprint lang-js" style="max-height: none;">
+                  {{blocks}}
+                </pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {#T7#}
+  <div class="inner">
+    <div class="title-box">
+      <h2 class="title">DOM操作</h2>
+    </div>
+  </div>
+  <div class="inner">
+    <div class="row">
+      <div class="col-sm-12">
+        <div>
+          {% set blocks = '
+/*
+ * 移除已存在的元素使用`detach()`,会保留对象中匹配的元素，可以在将来使用这些元素，
+ * 也会保留所有绑定的事件、附加的数据，与`remove()`不同
+ */
+var $myList = $(\'#list-container > ul\').detach();
+$mylist.appendTo(\'#list-container\');
+
+/*
+ * 使用字符串链接或者array.join()好过.append()，性能更好
+ */
+//bad
+var $myList = $(\'#list\');
+for(var i=0; i < 1000; i++){
+  $myList.append(\'<li>\' + i + \'</li>\')
+}
+
+//good
+var $myList = $(\'#list\');
+var list;
+for (var i=0; i < 1000; i++){
+  list += \'<li>\' + i + \'</li>\';
+}
+$myList.html(list)
+
+//best
+var arrar = [];
+for(var i=0;i < 1000; i++){
+  arrar[i] = \'<li>\' + i + \'</li>\';
+}
+$myList.html(arrar.join(\'\'));
+
+/*
+ * 不要对不存在的元素添加方法
+ */
+
+$("#nosuchthing").slideUp(); // bad
+
+var $mySelection = $("#nosuchthing"); // good
+if($mySelection.length){
+  $mySelection.slideUp();
+}'%}
+          <pre class="prettyprint lang-js" style="max-height: none;">
+                  {{blocks}}
+                </pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{# note: ui-footer.html.twig must be include in footer block, the sub theme be able to override footer #}
+{% block footer %}
+{% include directory ~ '@dyniva_ui/ui/pages/ui-footer.html.twig' %}
+{% endblock %}

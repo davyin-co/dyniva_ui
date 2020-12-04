@@ -1,0 +1,45 @@
+<div class="dy-list-wrapper dy-list-1-0">
+  <div class="inner">
+    {%- for item in items | default([
+      {
+        title: 'Drupal开发专家，让您的应用快速落地',
+        time: '2019-08-18',
+        media: base_path~'themes/custom/dyniva_ui/templates/ui/images/media/book.jpg',
+        desc: '移动平台网页，手机App，微信应用或者小程序，我们都可以帮您实现。协助您驾驭Drupal的优势，管理数以百计的校园网站，促成学术创新。无纸化的培训管理，连接线上和线下，节约管理成本，提升培训效率。'
+      },
+      {
+        title: 'Drupal开发专家，让您的应用快速落地',
+        time: '2020-01-18',
+        media: base_path~'themes/custom/dyniva_ui/templates/ui/images/media/book.jpg',
+        desc: '移动平台网页，手机App，微信应用或者小程序，我们都可以帮您实现。协助您驾驭Drupal的优势，管理数以百计的校园网站，促成学术创新。无纸化的培训管理，连接线上和线下，节约管理成本，提升培训效率。'
+      },
+      {
+        title: 'Drupal开发专家，让您的应用快速落地',
+        time: '2020-02-18',
+        media: base_path~'themes/custom/dyniva_ui/templates/ui/images/media/book.jpg',
+        desc: '移动平台网页，手机App，微信应用或者小程序，我们都可以帮您实现。协助您驾驭Drupal的优势，管理数以百计的校园网站，促成学术创新。无纸化的培训管理，连接线上和线下，节约管理成本，提升培训效率。'
+      },
+      {
+        title: 'Drupal开发专家，让您的应用快速落地',
+        time: '2020-03-18',
+        media: base_path~'themes/custom/dyniva_ui/templates/ui/images/media/book.jpg',
+        desc: '移动平台网页，手机App，微信应用或者小程序，我们都可以帮您实现。协助您驾驭Drupal的优势，管理数以百计的校园网站，促成学术创新。无纸化的培训管理，连接线上和线下，节约管理成本，提升培训效率。'
+      },
+    ]) ~%}
+    <div class="list-item">
+      <div class="list-body has-media">
+        <h2 class="title">
+          <a href="javascript:void(0);">{{ item.title }}</a>
+        </h2>
+        <div class="list-text ellipsis" data-ellipsis='{}'>
+          <p>{{ item.desc }}</p>
+        </div>
+        <span class="time">{{ item.time }}</span>
+      </div>
+      <div class="list-media">
+        <div class="img bg-center" style="background: url({{ item.media }})"></div>
+      </div>
+    </div>
+    {%- endfor ~%}
+  </div>
+</div>

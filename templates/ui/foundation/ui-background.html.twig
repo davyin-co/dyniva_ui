@@ -1,0 +1,183 @@
+{# note: header.html.twig must be include in header block, the sub theme be able to override header #}
+{% block header %}
+{% include '@dyniva_ui/ui/pages/header.html.twig' %}
+{% endblock %}
+
+<div id="wall" class="page-title promo">
+  <div class="inner">
+    <h1 class="page-title">背景</h1>
+    <h5 class="title">背景色、背景填充、视频背景、视差等</h5>
+  </div>
+</div>
+
+<div class="panel panel-ui panel-ui-color">
+  <section class="dy-components" id="bgColor">
+    <h2 class="section-header inner">背景色</h2>
+
+    <div class="section-item title-box">
+      <h4 class="title inner">应用</h4>
+      <p class="rules inner">背景色可以应用在大块的组件背景，强调区块。</p>
+      <div class="dy-components-demo inner">
+        <div class="row">
+          <div class="col-sm-5 clearfix">
+            <div class="panel-ui-block">
+              <div class="bg-primary inside">
+                <p class="text-white">主色背景</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-5 clearfix">
+            <div class="panel-ui-block">
+              <div class="bg-dark inside">
+                <p class="text-white">黑色背景</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-5 clearfix">
+            <div class="panel-ui-block">
+              <div class="bg-shadow inside">
+                <p>灰色背景</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-5 clearfix">
+            <div class="panel-ui-block">
+              <div class="bg-white inside border-shadow">
+                <p>白色背景</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% block bgColor %}{% endblock %}
+  </section>
+
+  <section class="dy-components" id="bg-animation">
+    <h2 class="section-header inner">背景动效</h2>
+    <div class="section-item title-box">
+      <h4 class="title inner">背景渐变</h4>
+      <p class="rules inner">在页面滚动的过程中，对元素的属性进行过渡变化。</p>
+      <div class="dy-components-demo inner">
+        {{ attach_library('dyniva_ui/parallax') }}
+        <div class="bg-center position-relative"
+             style="height:400px; background-image:url({{ base_path }}themes/custom/dyniva_ui/templates/ui/images/light/light-03.jpg)">
+          <div class="fill-full-width" data-top="background-color:rgba(0,0,0,0.2);"
+               data-top-bottom="background-color:rgba(0,0,0,0);"></div>
+          <h2 class="inside text-white position-relative">Dyniva UI</h2>
+        </div>
+        <div class="dy-components-markup inner">
+          <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse"
+             aria-expanded="false" aria-controls="collapseCode">
+            <i class="icon">&#xe818;</i> 开发说明
+          </a>
+          <div class="collapse">
+            <table class="table table-full">
+              <thead>
+              <tr>
+                <th>属性</th>
+                <th>说明</th>
+              </tr>
+              </thead>
+              <tbody>
+
+              <tr>
+                <td><code>dyniva_ui/parallax</code></td>
+                <td>需要单独引入该资源库</td>
+              </tr>
+              <tr>
+                <td><code>data-top</code></td>
+                <td>元素刚好滚动到页面顶部</td>
+              </tr>
+              <tr>
+                <td><code>data-top-bottom</code></td>
+                <td>元素滚动并超出页面顶部</td>
+              </tr>
+              </tbody>
+            </table>
+            <p><a href="https://github.com/Prinzhorn/skrollr" target="_blank">查看更多配置</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-item title-box">
+      <h4 class="title inner">背景固定</h4>
+      <p class="rules inner">在页面滚动的过程中，背景图片固定不跟随。</p>
+      <div class="dy-components-demo inner">
+        <div class="bg-center position-relative bg-fixed"
+             style="height:400px; background-image:url({{ base_path }}themes/custom/dyniva_ui/templates/ui/images/light/light-03.jpg)">
+        </div>
+        <div class="dy-components-markup inner">
+          <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse"
+             aria-expanded="false" aria-controls="collapseCode">
+            <i class="icon">&#xe818;</i> 开发说明
+          </a>
+          <div class="collapse">
+            <table class="table table-full">
+              <thead>
+              <tr>
+                <th>属性</th>
+                <th>说明</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td><code>.bg-fixed</code></td>
+                <td>只要给有背景图片的元素设置即可</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% block bgAnimation %}{% endblock %}
+  </section>
+
+  <section class="dy-components" id="bg-image">
+
+    <h2 class="section-header inner">背景图片</h2>
+    <div class="section-item title-box">
+      <h4 class="title inner">应用</h4>
+      <p class="rules inner">可对背景图片进行定位</p>
+      <div class="dy-components-demo inner">
+        <div class="bg-lighter inside-tb">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+              <img src="{{ base_path }}themes/custom/dyniva_ui/templates/ui/images/light/light-18.jpg">
+            </div>
+          </div>
+        </div>
+        <p>center</p>
+        <div class="bg-center position-relative"
+             style="height:400px; background-image:url({{ base_path }}themes/custom/dyniva_ui/templates/ui/images/light/light-18.jpg)">
+        </div>
+        <p>top</p>
+        <div class="bg-top position-relative"
+             style="height:400px; background-image:url({{ base_path }}themes/custom/dyniva_ui/templates/ui/images/light/light-18.jpg)">
+        </div>
+        <p>right</p>
+        <div class="bg-right position-relative"
+             style="height:400px; background-image:url({{ base_path }}themes/custom/dyniva_ui/templates/ui/images/light/light-18.jpg)">
+        </div>
+        <p>left</p>
+        <div class="bg-left position-relative"
+             style="height:400px; background-image:url({{ base_path }}themes/custom/dyniva_ui/templates/ui/images/light/light-18.jpg)">
+        </div>
+      </div>
+
+    </div>
+
+    {% block bgImage %}{% endblock %}
+  </section>
+
+  {% block section %}{% endblock %}
+</div>
+
+{# note: ui-footer.html.twig must be include in footer block, the sub theme be able to override footer #}
+{% block footer %}
+  {% include directory ~ '@dyniva_ui/ui/pages/ui-footer.html.twig' %}
+{% endblock %}

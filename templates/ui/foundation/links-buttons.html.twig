@@ -1,0 +1,498 @@
+{# note: header.html.twig must be include in header block, the sub theme be able to override header #}
+{% block header %}
+  {% include '@dyniva_ui/ui/pages/header.html.twig' %}
+{% endblock %}
+
+<div id="wall" class="page-title promo">
+  <div class="inner">
+    <h1 class="page-title">链接和按钮</h1>
+    <h5 class="title">链接和按钮是最基本的设计元素，在不同的场景应用不用的字体大小、颜色、边框、背景色，传达重要或者次要信息，给用户做出相应的选择。</h5>
+  </div>
+</div>
+<div class="panel panel-ui">
+  <section class="dy-components" id="links">
+    <h2 class="section-header inner">链接</h2>
+
+    <div class="section-item title-box">
+      <h4 class="title inner">链接</h4>
+      <p class="rules inner">默认颜色为主色调, <code>.underline</code>可为其添加下划线。</p>
+      <div class="dy-components-demo inner">
+        <p>盼望着，盼望着，东风来了，<a href="#">春天的脚步近了</a>。一切都像刚睡醒的样子，<a href="#" class="underline">欣欣然张开了眼。</a>山朗润起来了，水涨起来了，太阳的脸红起来了。
+        </p>
+      </div>
+      <div class="dy-components-markup inner">
+        <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse" aria-expanded="false"
+           aria-controls="collapseCode">
+          <i class="icon">&#xe818;</i> 开发说明
+        </a>
+        <div class="collapse">
+          <div>
+            {% set blocks = '
+<a href="#">春天的脚步近了</a>，<a href="#" class="underline">欣欣然张开了眼。</a>' %}
+            <pre class="prettyprint lang-html">
+                      {{ blocks }}
+                    </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-item title-box">
+      <h4 class="title inner">状态</h4>
+      <p class="rules inner">不同的链接状态应用在不同的应用场景中。</p>
+      <div class="dy-components-demo inner">
+        <div class="outside-tb">
+          <a href="#" class="text-color-success">成功 Success</a>
+          <a href="#" class="text-color-info">信息 Info</a>
+          <a href="#" class="text-color-warning">警告 Warning</a>
+          <a href="#" class="text-color-error">错误 Error</a>
+          <a href="#" class="active">激活 Active</a>
+        </div>
+      </div>
+      <div class="dy-components-markup inner">
+        <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse" aria-expanded="false"
+           aria-controls="collapseCode">
+          <i class="icon">&#xe818;</i> 开发说明
+        </a>
+        <div class="collapse">
+          <div>
+            {% set blocks = '
+<a href="#" class="text-color-success">成功 Success</a>
+<a href="#" class="text-color-info">信息 Info</a>
+<a href="#" class="text-color-warning">警告 Warning</a>
+<a href="#" class="text-color-error">错误 Error</a>
+<a href="#" class="active">激活 Active</a>' %}
+            <pre class="prettyprint lang-html">
+                        {{ blocks }}
+                      </pre>
+          </div>
+          <div class="dy-components-desc">
+            <table class="table table-full">
+              <thead>
+              <tr>
+                <th>Class</th>
+                <th>说明</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td><code>.text-color-success</code></td>
+                <td>成功</td>
+              </tr>
+              <tr>
+                <td><code>.text-color-info</code></td>
+                <td>信息</td>
+              </tr>
+              <tr>
+                <td><code>.text-color-warning</code></td>
+                <td>警告</td>
+              </tr>
+              <tr>
+                <td><code>.text-color-error</code></td>
+                <td>错误</td>
+              </tr>
+              <tr>
+                <td><code>.active</code></td>
+                <td>激活</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-item title-box">
+      <h4 class="title inner">链接颜色</h4>
+      <p class="rules inner">使用规则</p>
+      <div class="dy-components-demo inner">
+        <div class="outside-tb">
+          <a href="#" class="text-base">这里是默认文字颜色</a>
+          <a href="#" class="text-light">这里是浅色文字颜色</a>
+          <span class="bg-color-primary"><a href="#" class="text-lighter">这里是更浅色颜色</a></span>
+          <span class="bg-color-primary"><a href="#" class="text-white">链接文本是白色</a></span>
+          <a href="#" class="text-black">链接文本是黑色</a>
+        </div>
+      </div>
+      <div class="dy-components-markup inner">
+        <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse" aria-expanded="false"
+           aria-controls="collapseCode">
+          <i class="icon">&#xe818;</i> 开发说明
+        </a>
+        <div class="collapse">
+          <div>
+            {% set blocks = '
+<a href="#" class="text-base">这里是默认文字颜色</a>
+
+<a href="#" class="text-light">这里是浅色文字颜色</a>
+
+<a href="#" class="text-lighter">这里是更浅色颜色</a>
+
+<a href="#" class="text-white">链接文本是白色</a>
+
+<a href="#" class="text-black">链接文本是黑色</a>' %}
+            <pre class="prettyprint lang-html">
+                        {{ blocks }}
+                      </pre>
+                    </div>
+                    <div class="dy-components-desc">
+                      <table class="table table-full">
+                        <thead>
+                        <tr>
+                          <th>Class</th>
+                          <th>说明</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                          <td><code>.text-base</code></td>
+                          <td>默认颜色</td>
+                        </tr>
+                        <tr>
+                          <td><code>.text-light</code></td>
+                          <td>浅色</td>
+                        </tr>
+                        <tr>
+                          <td><code>.text-lighter</code></td>
+                          <td>更浅色</td>
+                        </tr>
+                        <tr>
+                          <td><code>.text-white</code></td>
+                          <td>白色</td>
+                        </tr>
+                        <tr>
+                          <td><code>.text-black</code></td>
+                          <td>黑色</td>
+                        </tr>
+                        </tbody>
+                      </table>
+                    </div>
+        </div>
+      </div>
+    </div>
+
+    {% block links %}{% endblock %}
+  </section>
+
+  <section class="dy-components" id="button">
+    <h2 class="section-header inner">按钮</h2>
+
+    <div class="section-item title-box">
+      <h4 class="title inner">基础样式</h4>
+      <p class="rules inner"><code>.btn</code>是最基础的按钮样式，鼠标经过产生 <code>0.85</code> 不透明度效果。</p>
+      <div class="dy-components-demo inner">
+        <div class="outside-tb">
+          <a href="#" class="btn btn-base">默认样式</a>
+          <a href="#" class="btn btn-info">次要按钮</a>
+          <a href="#" class="btn btn-warning">橙色按钮</a>
+          <a href="#" class="btn btn-error">红色按钮</a>
+          <a href="#" class="btn btn-gray">灰色按钮</a>
+        </div>
+      </div>
+      <div class="dy-components-markup inner">
+        <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse" aria-expanded="false"
+           aria-controls="collapseCode">
+          <i class="icon">&#xe818;</i> 开发说明
+        </a>
+        <div class="collapse">
+          <div>
+            {% set blocks = '
+<a href="#" class="btn btn-base">默认样式</a>
+<a href="#" class="btn btn-info">次要按钮</a>
+<a href="#" class="btn btn-warning">橙色按钮</a>
+<a href="#" class="btn btn-error">红色按钮</a>
+<a href="#" class="btn btn-gray">灰色按钮</a>' %}
+            <pre class="prettyprint lang-html">
+                      {{ blocks }}
+                    </pre>
+          </div>
+          <div class="dy-components-desc">
+            <table class="table table-full">
+              <thead>
+              <tr>
+                <th>Class</th>
+                <th>说明</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td><code>.btn-base</code></td>
+                <td>默认按钮样式，背景色为主色</td>
+              </tr>
+              <tr>
+                <td><code>.btn-info</code></td>
+                <td>背景色为信息类蓝色背景</td>
+              </tr>
+              <tr>
+                <td><code>.btn-warning</code></td>
+                <td>背景色为警告色黄色背景</td>
+              </tr>
+              <tr>
+                <td><code>.btn-error</code></td>
+                <td>背景色为错误类红色背景</td>
+              </tr>
+              <tr>
+                <td><code>.btn-gray</code></td>
+                <td>背景色为灰色背景</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-item title-box">
+      <h4 class="title inner">圆角按钮</h4>
+      <p class="rules inner">添加类 <code>.btn-radius</code> 即可。</p>
+      <div class="dy-components-demo inner">
+        <div class="outside-tb">
+          <a href="#" class="btn btn-base btn-radius">默认样式</a>
+          <a href="#" class="btn btn-info btn-radius">次要按钮</a>
+          <a href="#" class="btn btn-warning btn-radius">橙色按钮</a>
+          <a href="#" class="btn btn-error btn-radius">红色按钮</a>
+          <a href="#" class="btn btn-gray btn-radius">灰色按钮</a>
+        </div>
+      </div>
+      <div class="dy-components-markup inner">
+        <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse" aria-expanded="false"
+           aria-controls="collapseCode">
+          <i class="icon">&#xe818;</i> 开发说明
+        </a>
+        <div class="collapse">
+          <div>
+            {% set blocks = '
+<a href="#" class="btn btn-base btn-radius">默认样式</a>
+<a href="#" class="btn btn-info btn-radius">次要按钮</a>
+<a href="#" class="btn btn-warning btn-radius">橙色按钮</a>
+<a href="#" class="btn btn-error btn-radius">红色按钮</a>
+<a href="#" class="btn btn-gray btn-radius">灰色按钮</a>' %}
+            <pre class="prettyprint lang-html">
+                        {{ blocks }}
+                      </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-item title-box">
+      <h4 class="title inner">半圆角按钮</h4>
+      <p class="rules inner">添加类 <code>.btn-ele-circle</code> 即可</p>
+      <div class="dy-components-demo inner">
+        <div class="outside-tb">
+          <a href="#" class="btn btn-base btn-ele-circle">默认样式</a>
+          <a href="#" class="btn btn-info btn-ele-circle">次要按钮</a>
+          <a href="#" class="btn btn-warning btn-ele-circle">橙色按钮</a>
+          <a href="#" class="btn btn-error btn-ele-circle">红色按钮</a>
+          <a href="#" class="btn btn-gray btn-ele-circle">灰色按钮</a>
+        </div>
+      </div>
+      <div class="dy-components-markup inner">
+        <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse" aria-expanded="false"
+           aria-controls="collapseCode">
+          <i class="icon">&#xe818;</i> 开发说明
+        </a>
+        <div class="collapse">
+          <div>
+            {% set blocks = '
+<a href="#" class="btn btn-base btn-ele-circle">默认样式</a>
+
+<a href="#" class="btn btn-info btn-ele-circle">次要按钮</a>
+
+<a href="#" class="btn btn-warning btn-ele-circle">橙色按钮</a>
+
+<a href="#" class="btn btn-error btn-ele-circle">红色按钮</a>
+
+<a href="#" class="btn btn-gray btn-ele-circle">灰色按钮</a>' %}
+            <pre class="prettyprint lang-html">
+                        {{ blocks }}
+                      </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-item title-box">
+      <h4 class="title inner">激活状态按钮</h4>
+      <p class="rules inner">添加类 <code>.active</code> 即可。</p>
+      <div class="dy-components-demo inner">
+        <div class="outside-tb">
+          <a href="#" class="btn btn-base active">激活状态</a>
+          <a href="#" class="btn btn-info active">次要按钮</a>
+        </div>
+      </div>
+      <div class="dy-components-markup inner">
+        <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse" aria-expanded="false"
+           aria-controls="collapseCode">
+          <i class="icon">&#xe818;</i> 开发说明
+        </a>
+        <div class="collapse">
+          <div>
+            {% set blocks = '
+<a href="#" class="btn btn-base active">激活状态</a>
+
+<a href="#" class="btn btn-info active">次要按钮</a>' %}
+            <pre class="prettyprint lang-html">
+                        {{ blocks }}
+                      </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-item title-box">
+      <h4 class="title inner">禁用状态</h4>
+      <p class="rules inner">添加 <code>.disabled</code> 即可，降低 <code>0.55</code>不透明度，<code>cursor: not-allowed </code></p>
+      <div class="dy-components-demo inner">
+        <a href="#" class="btn btn-base disabled">默认样式</a>
+        <a href="#" class="btn btn-info disabled">次要按钮</a>
+        <a href="#" class="btn btn-warning disabled">橙色按钮</a>
+        <a href="#" class="btn btn-error disabled">红色按钮</a>
+        <a href="#" class="btn btn-gray disabled">灰色按钮</a>
+      </div>
+      <div class="dy-components-markup inner">
+        <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse" aria-expanded="false"
+           aria-controls="collapseCode">
+          <i class="icon">&#xe818;</i> 开发说明
+        </a>
+        <div class="collapse">
+          <div>
+            {% set blocks = 'show you code' %}
+            <pre class="prettyprint lang-html">
+                        {{ blocks }}
+                      </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-item title-box">
+      <h4 class="title inner">大小</h4>
+      <p class="rules inner">四中尺寸大小，默认内边距 <code>padding:7px 14px;</code></p>
+      <div class="dy-components-demo inner">
+        <div class="outside-tb">
+          <a href="#" class="btn btn-base btn-radius btn-mini">按钮 mini</a>
+          <a href="#" class="btn btn-base btn-radius btn-sm">按钮 sm</a>
+          <a href="#" class="btn btn-base btn-radius">按钮 normal</a>
+          <a href="#" class="btn btn-base btn-radius btn-lg">按钮 lg</a>
+        </div>
+      </div>
+      <div class="dy-components-markup inner">
+        <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse" aria-expanded="false"
+           aria-controls="collapseCode">
+          <i class="icon">&#xe818;</i> 开发说明
+        </a>
+        <div class="collapse">
+          <div>
+            {% set blocks = '
+<a href="#" class="btn btn-base btn-radius btn-mini">按钮 mini</a>
+<a href="#" class="btn btn-base btn-radius btn-sm">按钮 sm</a>
+<a href="#" class="btn btn-base btn-radius">按钮 normal</a>
+<a href="#" class="btn btn-base btn-radius btn-lg">按钮 lg</a>' %}
+            <pre class="prettyprint lang-html">
+                        {{ blocks }}
+                      </pre>
+          </div>
+          <div class="dy-components-desc">
+            <table class="table table-full">
+              <thead>
+              <tr>
+                <th>Class</th>
+                <th>说明</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td><code>.btn-min</code></td>
+                <td><code>padding: 2px 7px; font-size: 12px;</code></td>
+              </tr>
+              <tr>
+                <td><code>.btn-sm</code></td>
+                <td><code>font-size: 13px; padding: 3.5px 14px;</code></td>
+              </tr>
+              <tr>
+                <td><code>.btn-lg</code></td>
+                <td><code>font-size: 16px; padding: 14px 28px;</code></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-item title-box">
+      <h4 class="title inner">附带图标</h4>
+      <p class="rules inner"><code>.btn-icon</code>是必不可少的类。</p>
+      <div class="dy-components-demo inner">
+        <div class="outside-tb">
+          <a class="btn btn-base btn-ele btn-radius btn-icon" href="#">
+            <i class="icon">&#xe604;</i> Dyniva UI
+          </a>
+          <a class="btn btn-info btn-ele btn-radius btn-icon" href="#">
+            <i class="icon">&#xe625;</i> Dyniva UI
+          </a>
+          <a class="btn btn-warning btn-ele btn-radius btn-icon" href="#">
+            <i class="icon">&#xe612;</i> Dyniva UI
+          </a>
+          <a class="btn btn-gray btn-ele btn-radius btn-icon" href="#">
+            <i class="icon">&#xe613;</i> Dyniva UI
+          </a>
+          <a href="#" class="btn btn-base-outline btn-ele-circle">
+            <i class="icon">&#xe613;</i>QQ
+          </a>
+          <a href="#" class="btn btn-error-outline btn-ele-circle">
+            <i class="icon">&#xe62f;</i>优酷
+          </a>
+          <a href="#" class="btn btn-info-outline btn-ele-circle">
+            <i class="icon">&#xe625;</i>微信
+          </a>
+        </div>
+      </div>
+      <div class="dy-components-markup inner">
+        <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse" aria-expanded="false"
+           aria-controls="collapseCode">
+          <i class="icon">&#xe818;</i> 开发说明
+        </a>
+        <div class="collapse">
+          <div>
+            {% set blocks = '
+<a class="btn btn-base btn-ele btn-radius btn-icon" href="#">
+  <i class="icon">&#xe604;</i> Dyniva UI
+</a>
+<a class="btn btn-info btn-ele btn-radius btn-icon" href="#">
+  <i class="icon">&#xe625;</i> Dyniva UI
+</a>
+<a class="btn btn-warning btn-ele btn-radius btn-icon" href="#">
+  <i class="icon">&#xe612;</i> Dyniva UI
+</a>
+<a class="btn btn-gray btn-ele btn-radius btn-icon" href="#">
+  <i class="icon">&#xe613;</i> Dyniva UI
+</a>
+<a href="#" class="btn btn-base-outline btn-ele-circle">
+<i class="icon">&#xe613;</i>QQ
+</a>
+<a href="#" class="btn btn-error-outline btn-ele-circle">
+  <i class="icon">&#xe62f;</i>优酷
+</a>
+<a href="#" class="btn btn-info-outline btn-ele-circle">
+  <i class="icon">&#xe625;</i>微信
+</a>' %}
+            <pre class="prettyprint lang-html">
+                        {{ blocks }}
+                      </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% block button %}{% endblock %}
+  </section>
+
+  {% block section %}{% endblock %}
+</div>
+
+{# note: ui-footer.html.twig must be include in footer block, the sub theme be able to override footer #}
+{% block footer %}
+  {% include directory ~ '@dyniva_ui/ui/pages/ui-footer.html.twig' %}
+{% endblock %}

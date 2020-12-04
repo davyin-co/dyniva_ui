@@ -1,0 +1,10 @@
+{{ attach_library('dyniva_ui/preview') }}
+<div class="page" id="page">
+  {{ page.content }}
+
+  <div id="outside">
+    {% block menu %}
+      {% include '@dyniva_ui/ui/pages/ui-menu.html.twig' %}
+    {% endblock %}
+  </div>
+</div>

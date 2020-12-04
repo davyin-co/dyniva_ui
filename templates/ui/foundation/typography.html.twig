@@ -1,0 +1,469 @@
+{# note: header.html.twig must be include in header block, the sub theme be able to override header #}
+{% block header %}
+  {% include '@dyniva_ui/ui/pages/header.html.twig' %}
+{% endblock %}
+
+<div id="wall" class="page-title promo">
+  <div class="inner">
+    <h1 class="page-title">文字排版</h1>
+    <h5 class="title">文字作为内容的主要承载，担任务重要的角色，所有的元素都应该具有语义化，主次分明，颜色搭配协调，间距合理等等，才能够保持良好的阅读体验。</h5>
+    <h5 class="title">深色文字应用一下不透明级别：</h5>
+    <ul>
+      <li>高强调文字的不透明度为 87％</li>
+      <li>中强调文字和提示文字的不透明度为 60％</li>
+      <li>停用文字的不透明度为 38％</li>
+    </ul>
+  </div>
+</div>
+<div class="panel panel-ui">
+  <section class="dy-components" id="heading">
+    <h2 class="section-header inner">标题</h2>
+
+    <div class="section-item title-box">
+      <h4 class="title inner">H1~H6</h4>
+      <div class="inner">
+        <p class="rules">加粗使用 <code>strong</code> 标签包围文本即可。</p>
+        <p class="rules">默认的字体：<code>"Segoe UI", "Lucida Grande", Helvetica, "Microsoft YaHei", "微软雅黑", FreeSans,
+            "Hiragino Sans GB", "Hiragino Sans GB W3", Arial, sans-serif;</code></p>
+        <div class="rules">
+          <ul>
+            <li>Segoe UI - Windows UI 字体（从 Windows Vista 开始使用）；</li>
+            <li>有些 Windows 用户安装了丽黑字体，丽黑字体在 Windows 上渲染出来很模糊，所以把微软雅黑放在苹果丽黑之前；</li>
+            <li>FreeSans - 包括 Ubuntu 之类的 Linux 分发版包含的字体。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="dy-components-demo inner">
+        <table style="width: 100%; margin: 0">
+          <thead>
+          <tr>
+            <th>引用方式</th>
+            <th>字体大小</th>
+            <th>正常效果</th>
+            <th>加粗效果</th>
+          </tr>
+          </thead>
+          <tbody>
+          {% for item in [
+            { title: '@h1/h1/.h1', size: '36px', tagName:'h1', text:'H1 标题 Heading'},
+            { title: '@h2/h2/.h2', size: '30px', tagName:'h2', text:'H2 标题 Heading'},
+            { title: '@h3/h3/.h3', size: '24px', tagName:'h3', text:'H3 标题 Heading'},
+            { title: '@h4/h4/.h4', size: '18px', tagName:'h4', text:'H4 标题 Heading'},
+            { title: '@h5/h5/.h5', size: '14px', tagName:'h5', text:'H5 标题 Heading'},
+            { title: '@h6/h6/.h6', size: '12px', tagName:'h6', text:'H6 标题 Heading'},
+          ] %}
+            <tr>
+              <td><span>{{ item.title }}</span></td>
+              <td>{{ item.size }}</td>
+              <td><{{ item.tagName }}>{{ item.text }}</{{ item.tagName }}></td>
+              <td><{{ item.tagName }} class="bold">{{ item.text }}</{{ item.tagName }}></td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <div class="dy-components-markup inner">
+        <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse" aria-expanded="false"
+           aria-controls="collapseCode">
+          <i class="icon">&#xe818;</i> 开发说明
+        </a>
+        <div class="collapse">
+          <div>
+            {% set blocks = '
+  .h1引用
+  <span class="h1">H1 标题 Heading</span>
+
+  h1引用
+  <h1>H1 标题 Heading</h1>
+
+  @h1
+  //.html(.html.twig)
+  <span class="heading"></span>
+  //.less
+  .heading { font-size: @h1 }
+            ' %}
+            <pre class="prettyprint lang-html">
+              {{ blocks }}
+            </pre>
+          </div>
+          <div class="dy-components-desc">
+            <table class="table table-full">
+              <thead>
+              <tr>
+                <th>Class</th>
+                <th>说明</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td><code>.size-lr</code></td>
+                <td>26px</td>
+              </tr>
+              <tr>
+                <td><code>.size-l</code></td>
+                <td>16px</td>
+              </tr>
+              <tr>
+                <td><code>.size-b</code></td>
+                <td>14px</td>
+              </tr>
+              <tr>
+                <td><code>.size-s</code></td>
+                <td>13px</td>
+              </tr>
+              <tr>
+                <td><code>.size-m</code></td>
+                <td>12px</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% block heading %}{% endblock %}
+  </section>
+
+  <section class="dy-components" id="paragraph">
+    <h2 class="section-header inner">段落</h2>
+
+    <div class="section-item title-box">
+      <h4 class="title inner">基本元素</h4>
+      <p class="rules inner">文本默认字体：<code>Helvetica, Tahoma, Arial, STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑",
+          sans-serif;</code></p>
+      <div class="dy-components-demo inner">
+        <div class="row outside-tb">
+          <div class="col-sm-2 text-light">
+            <strong>p</strong>
+          </div>
+          <div class="col-sm-10">
+            <p>盼望着，盼望着，东风来了，春天的脚步近了。一切都像刚睡醒的样子，欣欣然张开了眼。山朗润起来了，水涨起来了，太阳的脸红起来了。</p>
+          </div>
+        </div>
+        <div class="row outside-tb">
+          <div class="col-sm-2 text-light">
+            <strong>i</strong>
+          </div>
+          <div class="col-sm-10">
+            <p>
+              <i>小草偷偷地从土里钻出来，嫩嫩的，绿绿的。园子里，田野里，瞧去，一大片一大片满是的。坐着，躺着，打两个滚，踢几脚球，赛几趟跑，捉几回迷藏。风轻悄悄的，草软绵绵的。</i>
+            </p>
+          </div>
+        </div>
+        <div class="row outside-tb">
+          <div class="col-sm-2 text-light">
+            <strong>u</strong>
+          </div>
+          <div class="col-sm-10">
+            <p>
+              <u>桃树、杏树、梨树，你不让我，我不让你，都开满了花赶趟儿。红的像火，粉的像霞，白的像雪。花里带着甜味儿；闭了眼，树上仿佛已经满是桃儿、杏儿、梨儿。花下成千成百的蜜蜂嗡嗡地闹着，大小的蝴蝶飞来飞去。野花遍地是：杂样儿，有名字的，没名字的，散在草丛里，像眼睛，像星星，还眨呀眨的。</u>
+            </p>
+          </div>
+        </div>
+        <div class="row outside-tb">
+          <div class="col-sm-2 text-light">
+            <strong>strong</strong>
+          </div>
+          <div class="col-sm-10">
+            <p>
+              <strong>“吹面不寒杨柳风”，不错的，像母亲的手抚摸着你。风里带来些新翻的泥土的气息，混着青草味儿，还有各种花的香，都在微微润湿的空气里酝酿。鸟儿将巢安在繁花嫩叶当中，高兴起来了，呼朋引伴地卖弄清脆的喉咙，唱出宛转的曲子，与轻风流水应和着。牛背上牧童的短笛，这时候也成天嘹亮地响着。</strong>
+            </p>
+          </div>
+        </div>
+        <div class="row outside-tb">
+          <div class="col-sm-2 text-light">
+            <strong>small / .small</strong>
+          </div>
+          <div class="col-sm-10">
+            <p>
+              <small>
+                雨是最寻常的，一下就是三两天。可别恼。看，像牛毛，像花针，像细丝，密密地斜织着，人家屋顶上全笼着一层薄烟。树叶儿却绿得发亮，小草儿也青得逼你的眼。傍晚时候，上灯了，一点点黄晕的光，烘托出一片安静而和平的夜。在乡下，小路上，石桥边，有撑起伞慢慢走着的人，地里还有工作的农民，披着蓑戴着笠。他们的房屋，稀稀疏疏的在雨里静默着。
+              </small>
+            </p>
+          </div>
+        </div>
+        <div class="row outside-tb">
+          <div class="col-sm-2 text-light">
+            <strong>标记</strong>
+          </div>
+          <div class="col-sm-10">
+            <p>天上风筝渐渐多了，地上孩子也多了。城里乡下，家家户户，老老小小，也赶趟儿似的，一个个都出来了。舒活舒活筋骨，抖擞抖擞精神，各做各的一份事去。“一年之计在于春”，刚起头儿，有的是工夫，有的是希望。</p>
+          </div>
+        </div>
+        <div class="row outside-tb">
+          <div class="col-sm-2 text-light">
+            <strong>删除线</strong>
+          </div>
+          <div class="col-sm-10">
+            <p>春天像
+              <del>简装</del>
+              健壮的青年，有铁一般的胳膊和腰脚，领着我们上前去。
+            </p>
+          </div>
+        </div>
+        <div class="row outside-tb">
+          <div class="col-sm-2 text-light">
+            <strong>s</strong>
+          </div>
+          <div class="col-sm-10">
+            <p>春天像<s>简装</s>健壮的青年，有铁一般的胳膊和腰脚，领着我们上前去。</p>
+          </div>
+        </div>
+        <div class="row outside-tb">
+          <div class="col-sm-2 text-light">
+            <strong>ins</strong>
+          </div>
+          <div class="col-sm-10">
+            <p>春天像健壮的青年，
+              <ins>有铁一般的胳膊和腰脚，</ins>
+              领着我们上前去。
+            </p>
+          </div>
+        </div>
+        <div class="row outside-tb">
+          <div class="col-sm-2 text-light">
+            <strong>引用</strong>
+          </div>
+          <div class="col-sm-10">
+            <blockquote>该文创作时间大约在1933年间。此时作者朱自清刚刚结束欧洲漫游回国，与陈竹隐女士缔结美满姻缘，而后喜得贵子，同时出任清华大学中国文学系主任，人生可谓好事连连，春风得意。
+            </blockquote>
+          </div>
+        </div>
+        <div class="row outside-tb">
+          <div class="col-sm-2 text-light">
+            <strong>hr 分割线</strong>
+          </div>
+          <div class="col-sm-10">
+            <hr>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% block paragraph %}{% endblock %}
+  </section>
+
+  <section class="dy-components" id="text-color">
+    <h2 class="section-header inner">文本外观</h2>
+
+    <div class="section-item title-box">
+      <h4 class="title inner">文本颜色</h4>
+      <div class="dy-components-demo inner">
+        <div class="row outside-tb">
+          <div class="col-sm-2">
+            默认文本:
+            <br><code>.text-base</code>
+          </div>
+          <div class="col-sm-10">
+            <p class="text-base">盼望着，盼望着，东风来了，春天的脚步近了。一切都像刚睡醒的样子，欣欣然张开了眼。山朗润起来了，水涨起来了，太阳的脸红起来了。</p>
+          </div>
+        </div>
+        <div class="row outside-tb">
+          <div class="col-sm-2">主色:
+            <br><code>.text-color-primary</code>
+          </div>
+          <div class="col-sm-10">
+            <p class="text-color-primary">盼望着，盼望着，东风来了，春天的脚步近了。一切都像刚睡醒的样子，欣欣然张开了眼。山朗润起来了，水涨起来了，太阳的脸红起来了。</p>
+          </div>
+        </div>
+        <div class="row outside-tb">
+          <div class="col-sm-2">成功类:
+            <br><code>.text-color-success</code>
+          </div>
+          <div class="col-sm-10">
+            <p class="text-color-success">盼望着，盼望着，东风来了，春天的脚步近了。一切都像刚睡醒的样子，欣欣然张开了眼。山朗润起来了，水涨起来了，太阳的脸红起来了。</p>
+          </div>
+        </div>
+        <div class="row outside-tb">
+          <div class="col-sm-2">信息类:
+            <br><code>.text-color-info</code>
+          </div>
+          <div class="col-sm-10">
+            <p class="text-color-info">盼望着，盼望着，东风来了，春天的脚步近了。一切都像刚睡醒的样子，欣欣然张开了眼。山朗润起来了，水涨起来了，太阳的脸红起来了。</p>
+          </div>
+        </div>
+        <div class="row outside-tb">
+          <div class="col-sm-2">警告类:
+            <br><code>.text-color-warning</code>
+          </div>
+          <div class="col-sm-10">
+            <p class="text-color-warning">盼望着，盼望着，东风来了，春天的脚步近了。一切都像刚睡醒的样子，欣欣然张开了眼。山朗润起来了，水涨起来了，太阳的脸红起来了。</p>
+          </div>
+        </div>
+        <div class="row outside-tb">
+          <div class="col-sm-2">错误类:
+            <br><code>.text-color-error</code>
+          </div>
+          <div class="col-sm-10">
+            <p class="text-color-error">盼望着，盼望着，东风来了，春天的脚步近了。一切都像刚睡醒的样子，欣欣然张开了眼。山朗润起来了，水涨起来了，太阳的脸红起来了。</p>
+          </div>
+        </div>
+        <div class="row outside-tb">
+          <div class="col-sm-2">浅色:
+            <br>
+            <br><code>.text-light</code>
+          </div>
+          <div class="col-sm-10">
+            <p class="text-light">盼望着，盼望着，东风来了，春天的脚步近了。一切都像刚睡醒的样子，欣欣然张开了眼。山朗润起来了，水涨起来了，太阳的脸红起来了。</p>
+          </div>
+        </div>
+        <div class="row outside-tb">
+          <div class="col-sm-2">更浅色:
+            <br>
+            <br><code>.text-lighter</code>
+          </div>
+          <div class="col-sm-10">
+            <p class="text-lighter bg-color-primary inside-min">
+              盼望着，盼望着，东风来了，春天的脚步近了。一切都像刚睡醒的样子，欣欣然张开了眼。山朗润起来了，水涨起来了，太阳的脸红起来了。</p>
+          </div>
+        </div>
+        <div class="row outside-tb">
+          <div class="col-sm-2">白色:
+            <br>
+            <code>#ffffff</code>
+          </div>
+          <div class="col-sm-10">
+            <p class="text-white bg-color-primary inside-min">
+              盼望着，盼望着，东风来了，春天的脚步近了。一切都像刚睡醒的样子，欣欣然张开了眼。山朗润起来了，水涨起来了，太阳的脸红起来了。</p>
+          </div>
+        </div>
+        <div class="row outside-tb">
+          <div class="col-sm-2">黑色:
+            <br>
+            <code>#000000</code>
+          </div>
+          <div class="col-sm-10">
+            <p class="text-black">盼望着，盼望着，东风来了，春天的脚步近了。一切都像刚睡醒的样子，欣欣然张开了眼。山朗润起来了，水涨起来了，太阳的脸红起来了。</p>
+          </div>
+        </div>
+        <div class="row outside-tb">
+          <div class="col-sm-2">文本省略
+            <br>
+            <code>.text-ellipsis</code>
+          </div>
+          <div class="col-sm-10">
+            <div class="row">
+              <div class="col-sm-4">
+                <p class="one-line">盼望着，盼望着，东风来了，春天的脚步近了。一切都像刚睡醒的样子，欣欣然张开了眼。山朗润起来了，水涨起来了，太阳的脸红起来了。</p>
+              </div>
+              <div class="col-sm-4">
+                <p class="two-line">盼望着，盼望着，东风来了，春天的脚步近了。一切都像刚睡醒的样子，欣欣然张开了眼。山朗润起来了，水涨起来了，太阳的脸红起来了。</p>
+              </div>
+              <div class="col-sm-4">
+                <p class="three-line">盼望着，盼望着，东风来了，春天的脚步近了。一切都像刚睡醒的样子，欣欣然张开了眼。山朗润起来了，水涨起来了，太阳的脸红起来了。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-item title-box">
+      <h4 class="title inner">字体大小</h4>
+      <p class="rules inner">使用规则</p>
+      <div class="dy-components-demo inner">
+        <div class="row outside-b">
+          <div class="col-sm-4">
+            .size-lr / @font-size-larger
+          </div>
+          <div class="col-sm-8">
+            <p class="size-lr">欢迎访问戴文发行版UI设计说明</p>
+          </div>
+        </div>
+        <div class="row outside-b">
+          <div class="col-sm-4">
+            .size-l / @font-size-larg
+          </div>
+          <div class="col-sm-8">
+            <p class="size-l">欢迎访问戴文发行版UI设计说明</p>
+          </div>
+        </div>
+        <div class="row outside-b">
+          <div class="col-sm-4">
+            .size-b / @font-size
+          </div>
+          <div class="col-sm-8">
+            <p class="size-b">欢迎访问戴文发行版UI设计说明</p>
+          </div>
+        </div>
+        <div class="row outside-b">
+          <div class="col-sm-4">
+            .size-s / @font-size-small
+          </div>
+          <div class="col-sm-8">
+            <p class="size-s">欢迎访问戴文发行版UI设计说明</p>
+          </div>
+        </div>
+        <div class="row outside-b">
+          <div class="col-sm-4">
+            .size-m / @font-size-mini
+          </div>
+          <div class="col-sm-8">
+            <p class="size-m">欢迎访问戴文发行版UI设计说明</p>
+          </div>
+        </div>
+      </div>
+      <div class="dy-components-markup inner">
+        <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse" aria-expanded="false"
+           aria-controls="collapseCode">
+          <i class="icon">&#xe818;</i> 开发说明
+        </a>
+        <div class="collapse">
+          <div>
+            {% set blocks = '
+<p class="size-lr">欢迎访问戴文发行版UI设计说明</p>
+<p class="size-l">欢迎访问戴文发行版UI设计说明</p>
+<p class="size-b">欢迎访问戴文发行版UI设计说明</p>
+<p class="size-s">欢迎访问戴文发行版UI设计说明</p>
+<p class="size-m">欢迎访问戴文发行版UI设计说明</p>' %}
+            <pre class="prettyprint lang-html">
+                        {{ blocks }}
+                      </pre>
+          </div>
+          <div class="dy-components-desc">
+            <table class="table table-full">
+              <thead>
+              <tr>
+                <th>Class</th>
+                <th>说明</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td><code>.size-lr</code></td>
+                <td>26px</td>
+              </tr>
+              <tr>
+                <td><code>.size-l</code></td>
+                <td>16px</td>
+              </tr>
+              <tr>
+                <td><code>.size-b</code></td>
+                <td>14px</td>
+              </tr>
+              <tr>
+                <td><code>.size-s</code></td>
+                <td>13px</td>
+              </tr>
+              <tr>
+                <td><code>.size-m</code></td>
+                <td>12px</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% block textColor %}{% endblock %}
+  </section>
+
+  {% block section %}{% endblock %}
+</div>
+
+{# note: ui-footer.html.twig must be include in footer block, the sub theme be able to override footer #}
+{% block footer %}
+  {% include directory ~ '@dyniva_ui/ui/pages/ui-footer.html.twig' %}
+{% endblock %}

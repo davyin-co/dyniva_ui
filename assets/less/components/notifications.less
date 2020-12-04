@@ -1,0 +1,61 @@
+/* =============================================================================
+   Labels
+   ========================================================================== */
+.notices{
+  background-color: #ffffff;
+  border: 1px solid transparent;
+  .inside-tb;
+  vertical-align: baseline;
+  .clearfix;
+  p{
+    .outside-min-tb;
+  }
+  .btn{
+    padding-right: @space*2;
+    padding-left: @space*2;
+  }
+  &.notices-base{
+    background-color: @label-bg-color;
+    border-color: @label-border-color;
+    color:@label-color;
+    >i{
+      color:@label-icon-color;
+    }
+    p{
+      color: inherit;
+    }
+  }
+  &.notices-success{
+    background-color: @label-success-bg;
+    color:#ffffff;
+    p{
+      color: inherit;
+    }
+  }
+  &.notices-info{
+    background-color: @label-info-bg;
+    color:#ffffff;
+    p{
+      color: inherit;
+    }
+  }
+  &.notices-fail{
+    background-color: @label-fail-bg;
+    color:#ffffff;
+    p{
+      color: inherit;
+    }
+  }
+  &.notices-warning{
+    background-color: @label-warning-bg;
+    color:#ffffff;
+    p{
+      color: inherit;
+    }
+  }
+  >i{
+    .icon;
+    font-size: 102%;
+    margin-top: 3px;
+  }
+}
