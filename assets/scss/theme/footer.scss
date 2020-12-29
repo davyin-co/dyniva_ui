@@ -1,0 +1,60 @@
+/* - Math Default Height Fun ---------*/
+.js-dy-footer {
+  visibility: hidden;
+}
+
+// dy footer style
+.dy-footer {
+  background-color: $site-base;
+  color: #fff;
+
+  .inner {
+    padding: 0;
+  }
+
+  a,
+  p {
+    color: #fff;
+  }
+
+  ul {
+    @extend .outside-c;
+    @extend .inside-c;
+
+    li {
+      list-style: none;
+    }
+  }
+
+  i {
+    color: $site-base;
+    font-size: $font-size-larg;
+    line-height: 2em;
+    margin-right: $space-min;
+  }
+
+  .footer-logo {
+    img {
+      height: 38px;
+      padding: $space 0;
+    }
+  }
+
+  .footer-links {
+    li {
+      list-style: none;
+      float: left;
+      margin-right: 12px;
+      padding: 11px 0;
+
+      a {
+        font-size: 13px;
+      }
+    }
+  }
+
+  hr {
+    border: 0; // override theme hr
+    border-top: 1px solid #eee;
+  }
+}

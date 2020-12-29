@@ -1,0 +1,93 @@
+.bg-primary {
+  background-color: $site-base;
+  color: #fff;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  a,
+  p {
+    color: #fff;
+  }
+}
+
+.bg-base {
+  background-color: $bg-base;
+}
+
+.bg-lighter {
+  background-color: $bg-lighter;
+}
+
+.bg-shadow {
+  background-color: $global-color-lighter;
+}
+
+.bg-dark {
+  background-color: #212121;
+}
+
+.bg-black {
+  background-color: #000000;
+}
+
+.bg-white,
+.bg-light {
+  background-color: #ffffff;
+  color: $text-color;
+}
+
+.bg-gray {
+  background-color: #bbbbbb;
+}
+
+.bg-color-primary {
+  background-color: $color-primary;
+}
+
+.bg-color-success {
+  background-color: $color-success;
+}
+
+.bg-color-info {
+  background-color: $color-info;
+}
+
+.bg-color-warning {
+  background-color: $color-warning;
+}
+
+.bg-color-error {
+  background-color: $color-error;
+}
+
+.bg-center {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.bg-top {
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.bg-right {
+  background-position: right center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.bg-left {
+  background-position: left center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.bg-fixed {
+  background-attachment: fixed !important;
+}

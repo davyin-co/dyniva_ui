@@ -1,0 +1,9 @@
+.breadcrumb {
+  margin-top: $space;
+margin-bottom: $space;
+
+  .list-breadcrumb {
+    @extend .clearfix;
+    @extend .inside-min-tb;
+  }
+}

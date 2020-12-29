@@ -1,0 +1,163 @@
+.d_l {
+  display: inline;
+}
+
+.d_b {
+  display: block;
+}
+
+.d_ib {
+  display: inline-block;
+}
+
+/* Box Sizing */
+.g-out {
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  -ms-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+.g-in {
+  overflow: visible;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+
+.row .g-out {
+  box-sizing: content-box;
+}
+
+.row .g-in {
+  box-sizing: border-box;
+}
+
+/* flex */
+.flex {
+  @include flex-wapper();
+}
+
+.flex-col {
+  @include flex-item();
+}
+
+.flex-middle {
+  @include flex-item-align();
+}
+
+.flex-center {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.flex-align-center {
+  @include flex-self-align(center);
+}
+
+.flex-align-top {
+  @include flex-self-align(flex-start);
+}
+
+.flex-align-bottom {
+  @include flex-self-align(flex-end);
+}
+
+/* justified */
+.justified {
+  display: table;
+  width: 100%;
+  border-collapse: separate;
+  position: relative;
+  vertical-align: middle;
+}
+
+.justified-item {
+  width: 100%;
+  vertical-align: top;
+  display: table-cell;
+  float: none;
+  border-collapse: separate;
+}
+
+.justified-item-auto {
+  width: 1%;
+}
+
+.justified-middle {
+  vertical-align: middle;
+  float: none;
+  width: unset;
+
+  .justified-item,
+  &.justified-item {
+    vertical-align: middle;
+    float: none;
+  }
+}
+
+/* positon */
+
+.y-m {
+  position: absolute;
+  top: 50%;
+  @include transform(translateY(-50%));
+}
+
+.x-m {
+  position: absolute;
+  left: 50%;
+  @include transform(translateX(-50%));
+}
+
+.x-y-m {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  @include transform(translate(-50%, -50%));
+}
+
+.z-wrapper {
+  position: relative;
+  z-index: 1;
+
+  .z-target {
+    position: absolute;
+    z-index: 2;
+
+    &.top {
+      top: 0;
+    }
+
+    &.right {
+      right: 0;
+    }
+
+    &.bottom {
+      bottom: 0;
+    }
+
+    &.left {
+      left: 0;
+    }
+  }
+}
+
+/* fixed */
+@mixin fixed-bar() {
+  position: fixed;
+  left: 0;
+  right: 0;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.position-absolute {
+  position: absolute;
+}

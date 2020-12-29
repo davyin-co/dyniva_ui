@@ -1,0 +1,37 @@
+/* search */
+#search-block-form,
+.search-block-form {
+  @extend .clearfix;
+
+  .form-item-keys {
+    float: left;
+    @extend .outside-min-r;
+  }
+
+  .form-actions {
+    float: left;
+    margin-top: $space;
+    margin-bottom: $space;
+
+    .form-submit {
+      margin-right: 0;
+      height: $element-height;
+    }
+  }
+}
+
+#search-form {
+  #edit-basic {
+    @extend .clearfix;
+
+    .form-item-keys {
+      float: left;
+    }
+
+    .form-actions {
+      float: left;
+      padding-top: 21px;
+      margin-left: $space;
+    }
+  }
+}

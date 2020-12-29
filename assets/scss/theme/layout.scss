@@ -1,0 +1,33 @@
+/* ===========================================================
+-- Layout Style
+-------------------------------------------------------------- */
+
+.inner {
+  box-sizing: border-box;
+  @extend .inside-min-lr;
+  @extend .inside-min-tb;
+  @extend .clearfix;
+  max-width: $screen-lg;
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+
+  @media (min-width: $screen-sm) {
+    width: 750px;
+  }
+  @media (min-width: $screen-md) {
+    width: 970px;
+  }
+  @media (min-width: $screen-lg) {
+    width: 1170px;
+  }
+}
+
+// when has sidebar set content inner width auto
+.has-sidebar {
+  .inner {
+    width: auto;
+    @extend .inside-c;
+    @extend .outside-c;
+  }
+}

@@ -1,0 +1,242 @@
+/* basic */
+.g-c {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.t-c {
+  text-align: center;
+}
+
+.t-r {
+  text-align: right;
+}
+
+.t-l {
+  text-align: left;
+}
+
+.f-l {
+  float: left;
+}
+
+.f-r {
+  float: right;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+/**
+ * $form docroot/core/themes/stable/css/system/components/align.module.css
+ * Alignment classes for text and block level elements.
+ */
+
+.text-align-left {
+  text-align: left;
+}
+
+.text-align-right {
+  text-align: right;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.text-align-justify {
+  text-align: justify;
+}
+
+.align-left {
+  float: left;
+}
+
+.align-right {
+  float: right;
+}
+
+.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-primary {
+  color: $site-base;
+}
+
+.text-base {
+  color: $text-color;
+}
+
+.text-light {
+  color: $text-color-light;
+}
+
+.text-lighter {
+  color: $text-color-lighter;
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+.text-black {
+  color: #000000;
+}
+
+.text-color-primary {
+  color: $color-primary;
+}
+
+.text-color-success {
+  color: $color-success;
+}
+
+.text-color-info {
+  color: $color-info;
+}
+
+.text-color-warning {
+  color: $color-warning;
+}
+
+.text-color-error {
+  color: $color-error;
+}
+
+// 格式化输出文本
+.lowercase {
+  text-transform: lowercase;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.underline-hover {
+  position: relative;
+
+  @media only screen and (min-width: $screen-sm) {
+    &:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      display: block;
+      bottom: -2px;
+      left: 0;
+      border-bottom: 1px solid;
+      visibility: visible;
+      -ms-transform: scaleX(0);
+      transform: scaleX(0);
+      -ms-transform-origin: left;
+      transform-origin: left;
+      transition: all 0.3s ease-in-out 0s;
+    }
+
+    &:hover {
+      &:before {
+        transform: scaleX(1);
+      }
+    }
+  }
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.size-lr {
+  font-size: $font-size-larger;
+}
+
+%size-l {
+  font-size: $font-size-larg;
+}
+
+.size-l {
+  @extend %size-l;
+}
+
+.size-b {
+  font-size: $font-size;
+}
+
+.size-s {
+  font-size: $font-size-small;
+}
+
+.size-m {
+  font-size: $font-size-mini;
+}
+
+.one-line {
+  @extend .text-ellipsis;
+}
+
+.two-line {
+  @include multi-line(2);
+
+  &.size-lr {
+    @include multi-line(2, $font-size-larger);
+  }
+
+  &.size-l {
+    @include multi-line(2, $font-size-larg);
+  }
+
+  &.size-s {
+    @include multi-line(2, $font-size-small);
+  }
+
+  &.size-m {
+    @include multi-line(2, $font-size-mini);
+  }
+}
+
+.three-line {
+  @include multi-line(3);
+
+  &.size-lr {
+    @include multi-line(3, $font-size-larger);
+  }
+
+  &.size-l {
+    @include multi-line(3, $font-size-larg);
+  }
+
+  &.size-s {
+    @include multi-line(3, $font-size-small);
+  }
+
+  &.size-m {
+    @include multi-line(3, $font-size-mini);
+  }
+}
+
+.four-line {
+  @include multi-line(4);
+
+  &.size-lr {
+    @include multi-line(4, $font-size-larger);
+  }
+
+  &.size-l {
+    @include multi-line(4, $font-size-larg);
+  }
+
+  &.size-s {
+    @include multi-line(4, $font-size-small);
+  }
+
+  &.size-m {
+    @include multi-line(4, $font-size-mini);
+  }
+}

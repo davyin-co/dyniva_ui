@@ -1,0 +1,49 @@
+/* =============================================================================
+  List
+========================================================================== */
+ul,
+ol {
+  @extend .outside-min-t;
+  margin-bottom: 0;
+  padding-left: 1.35em;
+
+  &.menu,
+  &.link {
+    list-style: none;
+    list-style-image: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      list-style: none;
+      list-style-image: none;
+    }
+  }
+
+  li {
+    @extend .outside-min-b;
+  }
+
+  &.inline {
+    li {
+      display: inline-block;
+      @extend .inside-min-r;
+      margin-bottom: 0;
+    }
+
+    &.t-r {
+      li {
+        padding-right: 0;
+        @extend .inside-min-l;
+      }
+    }
+  }
+}
+
+/* menu */
+.menu {
+  li {
+    line-height: 150%;
+    margin-bottom: 0;
+  }
+}

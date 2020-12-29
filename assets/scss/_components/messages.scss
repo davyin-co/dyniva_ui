@@ -1,0 +1,125 @@
+/* =============================================================================
+   Message
+   ========================================================================== */
+.messages {
+  padding-top: $space;
+padding-bottom: $space;
+  padding-left: $space;
+  @extend .status;
+  @include opacity(0.85);
+  background-color: #fcf8e3;
+  border-radius: 4px 4px 4px 4px;
+  padding-right: 28px;
+  position: relative;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  border-style: solid;
+  border-width: 1px 1px 1px 5px;
+
+  pre,
+  p {
+    margin-bottom: 0;
+  }
+
+  a {
+    font-weight: bold;
+    &:hover {
+      color: $text-color;
+    }
+  }
+
+  .btn-close {
+    @include opacity(0.95);
+    -webkit-appearance: none;
+    cursor: pointer;
+    padding: 0;
+    position: relative;
+    top: -5px;
+    right: -14px;
+    font-size: 21px;
+    color: inherit;
+    float: right;
+  }
+}
+
+.message {
+  border: none;
+}
+
+.status {
+  border-color: $state-success-border;
+  color: $state-success;
+
+  a,
+  .btn-close {
+    color: $state-success;
+  }
+  &.me ssages,
+  &.message {
+    background-color: $state-success-bg;
+  }
+}
+
+.info {
+  border-color: $state-info-border;
+  color: $state-info;
+
+  a,
+  .btn-close {
+    color: $state-info;
+  }
+  &.messa ges,
+  &.message {
+    background-color: $state-info-bg;
+  }
+}
+
+.warning {
+  border-color: $state-warning-border;
+  color: $state-warning;
+
+  a,
+  .btn-close {
+    color: $state-warning;
+  }
+
+  &.messages,
+  &.message {
+    background-color: $state-warning-bg;
+  }
+}
+
+.error {
+  background-color: $state-danger-bg;
+  border-color: $state-danger-border;
+  color: $state-danger;
+
+  a,
+  .btn-close {
+    color: $state-danger;
+  }
+
+  &.messages,
+  &.message {
+    background-color: $state-danger-bg;
+  }
+}
+
+.message-state {
+  padding: $space;
+  clear: both;
+  font-size: $font-size-larg;
+  color: $text-color-light;
+  text-align: center;
+
+  .icon {
+    margin-bottom: $space;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 300%;
+  }
+}
+
+.message-state-error {
+  color: $state-success;
+}

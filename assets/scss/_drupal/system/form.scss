@@ -1,0 +1,505 @@
+/* Element */
+.description {
+  font-size: $font-size-mini;
+  @extend .text-light;
+  padding: $description-inside;
+}
+
+.form-element {
+  box-sizing: border-box;
+  background-color: $element-bg-color;
+  border-style: solid;
+  border-width: 1px;
+  border-color: $border-color;
+  display: block;
+  padding: $element-inside;
+  line-height: $element-height;
+  @include transition(border-color ease-in-out 0.15s);
+
+  &:hover {
+    border-color: $element-border-hover;
+  }
+
+  &:focus {
+    outline: 0;
+    border-color: $element-border-focus;
+  }
+
+  &[disabled],
+  &.disabled {
+    background-color: $disable-color;
+    color: $disable-color;
+    cursor: not-allowed !important;
+
+    &::placeholder {
+      color: $disable-color;
+    }
+  }
+
+  &.info {
+    color: $color-info;
+
+    &:hover {
+      border-color: $color-info-bg;
+    }
+
+    &:focus {
+      border-color: $color-info;
+      color: $color-info;
+    }
+  }
+
+  &.success {
+    color: $color-success;
+
+    &:hover {
+      border-color: $color-success-bg;
+    }
+
+    &:focus {
+      border-color: $color-success;
+      color: $color-success;
+    }
+  }
+
+  &.error {
+    color: $color-error;
+
+    &:hover {
+      border-color: $color-error-bg;
+    }
+
+    &:focus {
+      border-color: $color-error;
+      color: $color-error;
+    }
+  }
+
+  &.warning {
+    color: $color-warning;
+
+    &:hover {
+      border-color: $color-warning;
+    }
+
+    &:focus {
+      border-color: $color-warning;
+      color: $color-warning;
+    }
+  }
+
+  &.form-element-circle {
+    @extend .form-element-circle;
+  }
+
+  &.form-element-transparent {
+    @extend .form-element-transparent;
+  }
+}
+
+.form-element-shadow {
+  @include box-shadow($element-shadow);
+
+  &:hover {
+    @include box-shadow($element-shadow-hover);
+  }
+
+  &:focus {
+    @include box-shadow($element-shadow-focus);
+  }
+}
+
+.form-element-radius {
+  @include radius-base($element-radius);
+}
+
+.form-element-full {
+  width: 100%;
+}
+
+.form-element-circle {
+  padding-left: $element-height/2;
+  padding-right: $element-height/2;
+  @include radius-base($element-height/2);
+}
+
+.form-element-transparent {
+  background-color: transparent;
+  border-color: #ffffff;
+  color: #ffffff;
+
+  &:hover {
+    border-color: #fafbfc;
+    color: #fafbfc;
+  }
+
+  &:focus {
+    border-color: #fbfbfb;
+    color: #fbfbfb;
+  }
+}
+
+/* input */
+input {
+  &.form-file {
+    text-align: left;
+    position: relative;
+    @extend .form-element;
+    height: $element-height;
+    @extend .outside-min-r;
+    padding-top: 3px;
+
+    &::-webkit-file-upload-button {
+      @extend %btn;
+      background-color: $link-color-light;
+      color: #ffffff;
+      font-size: $font-size-small;
+      padding: 5px 7px;
+      position: absolute;
+      right: 3px;
+      top: 3px;
+    }
+
+    &:hover {
+      &::-webkit-file-upload-button {
+        background-color: $link-color;
+      }
+    }
+  }
+
+  &.form-number {
+    @extend .form-element;
+    height: $element-height;
+  }
+
+  &.form-email {
+    @extend .form-element;
+    height: $element-height;
+  }
+
+  &.form-text {
+    @extend .form-element;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: $element-height;
+  }
+
+  &.form-submit {
+    @extend %btn;
+    @extend .btn-base;
+  }
+
+  &.form-search {
+    height: $element-height;
+  }
+
+  &.image-button {
+    background-color: transparent;
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+}
+
+.form-checkboxes {
+  @extend .clearfix;
+
+  .form-type-checkbox {
+    float: left;
+    margin-right: $space;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.form-radios {
+  @extend .clearfix;
+
+  .form-type-radio {
+    margin-top: 0;
+    margin-bottom: 0;
+    float: left;
+    margin-right: $space;
+  }
+}
+
+/* select */
+select {
+  &.form-select {
+    background-color: $element-bg-color;
+    // overwrite here...
+    -webkit-appearance: none;
+    @extend .form-element;
+    height: $element-height;
+    @include radius-base(0);
+    padding-top: 0;
+    padding-bottom: 0;
+    background-image: url(../images/icon-select.svg);
+    background-repeat: no-repeat;
+    background-position: 98% center;
+    background-size: 14px 10px;
+
+    &.form-element-radius {
+      @extend .form-element-radius;
+    }
+
+    &.form-element-transparent {
+      background-image: url(../images/icon-select-w.svg);
+      @extend .form-element-transparent;
+    }
+
+    &[disabled],
+    &.disabled {
+      background-image: url(../images/icon-select-d.svg);
+    }
+
+    &.form-element-circle {
+      background-position: 96% center;
+    }
+  }
+}
+
+/* textarea */
+textarea {
+  &:hover {
+    border-color: $element-border-hover;
+  }
+
+  &:focus {
+    outline: 0;
+    border-color: $element-border-focus;
+  }
+
+  &.form-textarea {
+    @extend .form-element;
+    line-height: 150%;
+  }
+}
+
+/* fieldset */
+fieldset {
+  &.form-wrapper {
+    legend {
+      display: block;
+      width: 100%;
+      margin-bottom: 5px;
+
+      .fieldset-legend {
+        font-weight: bold;
+        font-size: $font-size-larg;
+      }
+    }
+
+    .fieldset-wrapper {
+      @extend .clearfix;
+    }
+  }
+}
+
+/* Form Container */
+form {
+  .form-wrapper {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      @extend .outside-min-tb;
+    }
+  }
+
+  .form-item {
+    margin-bottom: $space;
+    margin-top: $space;
+  }
+
+  .form-item-text-format-value {
+    @extend .outside-c;
+  }
+
+  .form-actions {
+    margin-bottom: $space;
+    margin-top: $space;
+
+    .form-submit {
+      padding: $submit-inside;
+      @extend .outside-min-r;
+      @extend .btn-base;
+    }
+
+    #edit-cancel {
+      @extend .btn-gray;
+    }
+
+    p {
+      &.f-r {
+        margin-bottom: 0;
+        line-height: $element-height;
+      }
+    }
+
+    &.t-r {
+      .form-submit {
+        @extend .outside-min-l;
+      }
+    }
+  }
+}
+
+.form-checkboxes {
+  .form-type-checkbox {
+    float: left;
+    margin-right: $space;
+  }
+}
+
+.form-checkbox {
+  position: relative;
+  top: -1px;
+}
+
+.form-radios {
+  .form-type-radio {
+    float: left;
+    margin-right: $space;
+  }
+}
+
+.form-radio {
+  position: relative;
+  top: -1px;
+}
+
+/* file */
+.file--image {
+  @extend .form-element;
+  height: $element-height;
+  @extend .disabled;
+  min-width: 200px;
+  max-width: 260px;
+  display: inline-block;
+  line-height: 1;
+}
+
+.image-widget {
+  line-height: 30px;
+
+  img {
+    display: block;
+    float: left;
+    max-width: 50%;
+    margin-right: 14px;
+  }
+
+  .form-file {
+    float: left;
+    @extend .outside-min-r;
+  }
+
+  .file--image {
+    @extend .outside-min-b;
+  }
+
+  .form-submit {
+    @extend %btn;
+    @extend .btn-base;
+    @extend .outside-min-r;
+    float: none;
+    display: block;
+  }
+}
+
+/* container */
+.container-inline {
+  form {
+    .form-item {
+      float: left;
+
+      label {
+        float: left;
+      }
+
+      .form-submit {
+        float: left;
+      }
+
+      .form-element {
+        float: left;
+      }
+
+      @extend .outside-min-r;
+    }
+
+    .form-wrapper {
+      float: left;
+      margin-top: $space;
+margin-bottom: $space;
+    }
+  }
+}
+
+/* textfield machine */
+.form-item-textfield-machine {
+  .field-suffix {
+    small {
+      background-color: $border-color;
+      position: relative;
+      margin-top: -3px;
+      line-height: 150%;
+      padding-bottom: 5px;
+      padding-top: 8px;
+      padding-left: $space;
+padding-right: $space;
+      @include radius-base(0 0 3px 3px);
+      display: inline-block;
+
+      .machine-name-label {
+        font-weight: bold;
+      }
+
+      .machine-name-value {
+        @extend .inside-min-lr;
+      }
+
+      .admin-link {
+        .link {
+          @extend %btn;
+          font-size: inherit;
+          @extend .btn-base;
+          @extend .btn-mini;
+        }
+      }
+    }
+  }
+}
+
+/* managed file */
+.form-managed-file {
+  @extend .clearfix;
+
+  .form-file {
+    float: left;
+    @extend .outside-min-r;
+  }
+}
+
+/* datetime group */
+.form-datetime {
+  background-color: $bg-lighter;
+  display: inline-block;
+  @include radius-base;
+  @extend .inside-min-lr;
+  padding-top: $space;
+padding-bottom: $space;
+  @extend .outside-min-b;
+  @extend .clearfix;
+
+  .form-item {
+    float: left;
+    margin-top: 0;
+    margin-bottom: 0;
+    @extend .outside-min-lr;
+  }
+}

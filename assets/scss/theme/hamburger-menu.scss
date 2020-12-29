@@ -1,0 +1,23 @@
+.hamburger.hamburger--collapse{
+  display: block;
+
+  @media (min-width: $screen-xs){
+    display: none;
+  }
+  .hamburger-inner{
+    &,
+    &:after,
+    &:before{
+      background-color: #fff;
+    }
+  }
+  &.is-active{
+    .hamburger-inner{
+      &,
+      &:after,
+      &:before{
+        background-color: #fff;
+      }
+    }
+  }
+}

@@ -6,31 +6,29 @@ const colors = require('ansi-colors');
 const vinylify = require('vinyl-source-stream');
 const buffer = require('vinyl-buffer');
 
-const { configScript } = require('./config');
-
 const compileScript = (bundle) => {
   return bundle.transform("babelify", { presets: ["babel-preset-es2015"] })
     .bundle()
     .on('error', (err) => { console.log(colors.red('Watch Script Error:') + err) })
-    .pipe(vinylify(configScript.targetName))
+    .pipe(vinylify('init.js'))
     .pipe(buffer())
     .pipe(sourcemaps.init({ loadMaps: true }))
     .pipe(sourcemaps.write('./'))
-    .pipe(dest(configScript.target))
+    .pipe(dest('build/'))
 }
 
 const watchScript = (bundle) => {
-  return watch([...configScript.watch], compileScript(bundle));
+  return watch(['assets/scripts/**/*.js'], compileScript(bundle));
 }
 
 const buildScript = (bundle) => {
   return bundle.transform("babelify", { presets: ["babel-preset-es2015"] })
     .bundle()
     .on('error', (err) => { console.log(colors.red('Watch Script Error:') + err) })
-    .pipe(vinylify(configScript.targetName))
+    .pipe(vinylify('init.js'))
     .pipe(buffer())
     .pipe(cleanJs())
-    .pipe(dest(configScript.target).on('end', () => {
+    .pipe(dest('build/').on('end', () => {
       bundle.close();
     }))
 }

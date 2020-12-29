@@ -1,0 +1,39 @@
+.banner-v1 {
+  padding: 30% 40%; // 3:4
+  position: relative;
+  background-size: cover;
+  color: #fff;
+  @media only screen and (min-width: 768px) {
+    padding: 10% 50%; // 1:5
+  }
+  .banner-inner {
+    display: block;
+    width: 75%;
+    left: 0;
+    right: 0;
+    height: 100%;
+    top: 0;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 0;
+    &:after {
+      content: "\200B";
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+    }
+    .banner-title {
+      font-size: $h1;
+      margin-bottom: $space;
+    }
+    .banner-desc {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+  }
+  .banner-content {
+    display: inline-block;
+    vertical-align: middle;
+    width: 85%;
+  }
+}

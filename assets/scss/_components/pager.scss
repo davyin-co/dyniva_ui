@@ -1,0 +1,96 @@
+/* =============================================================================
+   Pager
+   ========================================================================== */
+.pager {
+  .pager-items {
+    display: inline-block;
+    @extend .clearfix;
+
+    .pager-item {
+      display: inline;
+
+      a {
+        box-sizing: border-box;
+        @extend .btn-base;
+        @extend .inside-min-tb;
+        padding-left: $space;
+padding-right: $space;
+        border: 1px solid $link-color-light;
+        display: block;
+        float: left;
+        font-size: 12px;
+        margin-left: -1px;
+        line-height: 1;
+
+        &:hover {
+          background-color: $link-color-light;
+        }
+
+        &.active {
+          background-color: transparent;
+          color: $link-color;
+        }
+      }
+
+      &.is-active {
+        a {
+          background-color: transparent;
+          color: $link-color;
+        }
+      }
+
+      &:first-child {
+        a {
+          @include radius-base(3px 0 0 3px);
+        }
+      }
+
+      &:last-child {
+        a {
+          @include radius-base(0 3px 3px 0);
+        }
+      }
+    }
+
+    .pager-item-ellipsis {
+      @extend .inside-min-tb;
+      padding-left: $space;
+padding-right: $space;
+      float: left;
+      border: 1px solid $link-color;
+      margin-left: -1px;
+    }
+
+    @media (max-width: $screen-sm-min) {
+      display: block;
+
+      .pager-item {
+        width: 25%;
+        float: left;
+        margin-right: -1px;
+
+        a {
+          width: 100%;
+          padding: 7px;
+          float: none;
+        }
+      }
+
+      .pager-item-number {
+        display: none;
+      }
+
+      &:first-child {
+        a {
+          @include radius-base(3px 3px 0 0);
+        }
+      }
+
+      &:last-child {
+        a {
+          @include radius-base(0 0 3px 3px);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,67 @@
+/*====================================
+  variables
+=====================================*/
+// extend dyniva_ui variables
+@import "../../../dyniva_ui/assets/scss/variables/_variables.scss";
+// sub theme variables here
+@import "./variables/variables.scss";
+
+/*====================================
+  mixins
+=====================================*/
+// extend dyniva_ui mixins
+@import "../../../dyniva_ui/assets/scss/_mixins/mixins.scss";
+// sub theme mixins here
+@import "./_mixins/_mixins.scss";
+
+/*====================================
+  classes
+=====================================*/
+// extend dyniva_ui classes
+@import "../../../dyniva_ui/assets/scss/_classes/_classes.scss";
+// sub theme classes here
+@import "./_classes/_classes.scss";
+
+/*====================================
+  drupal
+=====================================*/
+// extend dyniva_ui drupal
+@import "../../../dyniva_ui/assets/scss/_drupal/_drupal.scss";
+// sub theme drupal here
+
+/*====================================
+  plugins
+=====================================*/
+// extend dyniva_ui plugins
+@import "../../../dyniva_ui/assets/scss/_plugins/_plugins.scss";
+// sub theme plugins here
+
+/*====================================
+  components
+=====================================*/
+// extend dyniva_ui components
+@import "../../../dyniva_ui/assets/scss/_components/_components.scss";
+// sub theme components here
+
+/*====================================
+  commons
+=====================================*/
+// extend dyniva_ui commons
+@import "../../../dyniva_ui/assets/scss/commons/_commons.scss";
+// sub theme commons here
+
+/*====================================
+  themes
+=====================================*/
+// extend dyniva_ui themes
+@import "../../../dyniva_ui/assets/scss/theme/_theme.scss";
+// sub theme themes here
+@import "./theme/_theme.scss";
+
+/*====================================
+  modules
+=====================================*/
+// extend dyniva_ui modules
+@import "../../../dyniva_ui/assets/scss/modules/_modules.scss";
+// sub theme modules here
+@import "./modules/_modules.scss";

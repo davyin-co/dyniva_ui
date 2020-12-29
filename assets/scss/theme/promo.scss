@@ -1,0 +1,81 @@
+/* -----------------
+---- Promo Core ----
+----------------- */
+.promo {
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #ffffff;
+  position: relative;
+
+  .inner {
+    padding-left: $space;
+padding-right: $space;
+    padding-bottom: 70px;
+    padding-top: 70px;
+  }
+
+  .promo-row {
+    @extend .clearfix;
+    margin-top: 21px;
+    margin-bottom: 21px;
+  }
+
+  .promo-inside {
+    padding-bottom: 100px;
+    padding-top: 100px;
+  }
+
+  .promo-inside-lg {
+    padding-bottom: 140px;
+    padding-top: 140px;
+  }
+
+  .promo-inside-min {
+    padding-bottom: 35px;
+    padding-top: 35px;
+  }
+
+  .promo-inside-c-b {
+    padding-bottom: 0px;
+  }
+
+  .promo-inside-c-t {
+    padding-top: 0px;
+  }
+
+  .video-conrainer {
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+
+    .video-media {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .title {
+    margin-top: $space;
+margin-bottom: $space;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: 1.5;
+  }
+
+  p {
+    color: inherit;
+    font-size: $font-size;
+  }
+
+  .btn {
+    @include radius-base($element-height / 2);
+    margin-right: $space;
+  }
+}

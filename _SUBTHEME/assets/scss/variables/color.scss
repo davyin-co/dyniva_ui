@@ -1,0 +1,19 @@
+$global-color: #000;
+$global-color-darker: lighten($global-color, 13.5%); // #222
+$global-color-dark: lighten($global-color, 20%); // #333
+$global-color-base: lighten($global-color, 33.5%); // #555
+$global-color-light: lighten($global-color, 46.7%); // #777
+$global-color-lighter: lighten($global-color, 93.5%); // #eee
+
+// theme color
+$site-base: #1b72b1;
+$site-second: #1b72b1;
+$site-third: #06668f;
+
+/* Background color */
+$bg-base: #ffffff;
+$bg-light: #e2e2e2;
+$bg-lighter: #f5f5f5;
+
+/* Border */
+$border-color: rgba(25, 25, 25, 0.32);

@@ -1,0 +1,103 @@
+/* =============================================================================
+   Switch
+   ========================================================================== */
+.form-switch {
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  position: relative;
+  width: $element-height * 1.5;
+  height: $element-height/1.5 + 4;
+  line-height: $element-height/1.5 + 4;
+  margin-bottom: 0;
+}
+
+.form-item {
+  &.form-item-switch {
+    @extend .clearfix;
+    @extend .inside-min-tb;
+    line-height: $element-height/1.5 + 4;
+  }
+}
+
+.form-switch-input {
+  @extend .full-screen;
+  padding: 0;
+  margin: 0;
+  opacity: 0.001;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+
+  &:checked + .form-switch-toggle {
+    background-color: $switch-color;
+  }
+
+  &:checked + .form-switch-toggle:before {
+    -webkit-transform: translateX($element-height * 0.85 - 4);
+    -moz-transform: translateX($element-height * 0.85 - 4);
+    -ms-transform: translateX($element-height * 0.85 - 4);
+    -o-transform: translateX($element-height * 0.85 - 4);
+    transform: translateX($element-height * 0.85 - 4);
+  }
+
+  &:not(:checked) + .form-switch-toggle:before {
+    -webkit-transform: translateX(0px);
+    -moz-transform: translateX(0px);
+    -ms-transform: translateX(0px);
+    -o-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+
+  &:disabled + .form-switch-toggle {
+    opacity: 0.55;
+    cursor: default;
+    pointer-events: none;
+
+    &:before {
+      background-color: $bg-lighter;
+    }
+  }
+}
+
+.form-switch-toggle {
+  @extend .full-screen;
+  @include box-shadow(inset 0 3px 5px rgba(0, 0, 0, 0.125));
+  background-color: $bg-light;
+  @include radius-base($element-height / 2);
+  -webkit-transition-timing-function: ease-out;
+  -moz-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+
+  &,
+  &:before {
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: 0.35s;
+    -moz-transition-duration: 0.35s;
+    -o-transition-duration: 0.35s;
+    transition-duration: 0.35s;
+  }
+
+  &:before {
+    content: "";
+    background-color: #fff;
+    @include bg-gradient();
+    @include box-shadow(0 1px 1px #ffffff inset);
+    @include box-shadow(0 1px 1px rgba(0, 0, 0, 0.25));
+    @include radius-base($element-height / 1.5);
+    height: $element-height/1.5;
+    width: $element-height/1.5;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    -webkit-transition-timing-function: cubic-bezier(0.5, 1.6, 0.5, 1);
+    -moz-transition-timing-function: cubic-bezier(0.5, 1.6, 0.5, 1);
+    -o-transition-timing-function: cubic-bezier(0.5, 1.6, 0.5, 1);
+    transition-timing-function: cubic-bezier(0.5, 1.6, 0.5, 1);
+  }
+}

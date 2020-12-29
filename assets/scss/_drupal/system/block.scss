@@ -1,0 +1,57 @@
+/* Blocks */
+.block {
+  @extend .clearfix;
+  /**
+   * remove block default margin bottom, the component already have spacer
+   */
+  position: relative;
+
+  .block-title {
+    border-bottom: 1px solid $border-color;
+    display: block;
+    @extend .inside-min-b;
+    @extend .outside-min-b;
+
+    hr {
+      border: none;
+      border-left: 2px solid $site-base;
+      margin-right: 14px;
+      margin-left: 0;
+      transition: all 0.6s;
+    }
+  }
+
+  .block-title-nb {
+    border: none;
+  }
+
+  &.block-row-mz {
+    margin: 0;
+  }
+
+  &.block-row-pz {
+    padding: 0;
+  }
+
+  &.block-row-pb {
+    padding-bottom: $space * 2;
+  }
+
+  &.block-row-pt {
+    padding-top: $space * 2;
+  }
+
+  &.block-row-mb {
+    margin-bottom: $space * 4;
+  }
+
+  &.block-row-mt {
+    margin-top: $space * 4;
+  }
+
+  .inner {
+    &.inner-pz {
+      padding: 0;
+    }
+  }
+}

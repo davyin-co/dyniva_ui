@@ -1,0 +1,55 @@
+//icon box class
+.icon-box {
+  .icon {
+    color: $site-base;
+  }
+
+  .title {
+    font-weight: 500;
+    margin-top: $space;
+margin-bottom: $space;
+  }
+}
+
+.icon-box-1 {
+  @extend .icon-box;
+
+  .icon-box-inner {
+    display: table;
+
+    .icon,
+    .title {
+      display: table-cell;
+      vertical-align: middle;
+    }
+    .icon {
+      padding-right: $space;
+    }
+  }
+}
+
+.icon-box-2 {
+  @extend .icon-box;
+}
+
+.icon-box-3 {
+  @extend .icon-box;
+
+  .icon-box-inner {
+    display: table;
+
+    .icon-box-media,
+    .icon-box-content {
+      display: table-cell;
+      vertical-align: top;
+
+      .title {
+        @extend .outside-c-t;
+      }
+    }
+
+    .icon-box-media {
+      padding-right: $space;
+    }
+  }
+}

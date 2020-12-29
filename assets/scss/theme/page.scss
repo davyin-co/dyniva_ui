@@ -1,0 +1,39 @@
+/* -----------------------
+	 Theme Default Style
+----------------------- */
+.logo {
+  display: table;
+
+  .site-logo {
+    img {
+      max-height: 60px;
+    }
+  }
+
+  .site-name {
+    font-size: $h1;
+  }
+
+  .site-logo,
+  .site-name {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+/* -----------------------
+	 Modules Set
+----------------------- */
+.ipe-layout {
+  margin-bottom: $space;
+}
+
+/* -----------------------
+	  panel-ipe
+----------------------- */
+#panels-ipe-tray {
+  .ipe-form {
+    /*fix ie center*/
+    margin: 0;
+  }
+}

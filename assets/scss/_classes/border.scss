@@ -1,0 +1,41 @@
+/*
+ * 快速添加border类名
+ */
+.border-top {
+  border-top: 1px solid $border-color;
+}
+
+.border-bottom {
+  border-bottom: 1px solid $border-color;
+}
+
+.border-left {
+  border-left: 1px solid $border-color;
+}
+
+.border-right {
+  border-right: 1px solid $border-color;
+}
+
+.border-x {
+  border-left: 1px solid $border-color;
+  border-right: 1px solid $border-color;
+}
+
+.border-y {
+  border-top: 1px solid $border-color;
+  border-bottom: 1px solid $border-color;
+}
+
+.border-xy {
+  border: 1px solid $border-color;
+}
+
+// boder color
+.border-colored {
+  border: 1px solid $site-base;
+}
+
+.border-shadow {
+  border: 1px solid $border-color;
+}

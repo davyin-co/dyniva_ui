@@ -1,0 +1,24 @@
+/* Field */
+.field {
+  .field-inside {
+    padding-left: 3px;
+    padding-right: 3px;
+    &:after {
+      display: none;
+    }
+  }
+}
+
+.field-label-inline {
+  .field-label {
+    display: inline-block;
+  }
+
+  .field-items {
+    display: inline-block;
+  }
+
+  .field-item {
+    display: inline-block;
+  }
+}

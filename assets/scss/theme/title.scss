@@ -1,0 +1,60 @@
+.heading {
+  .heading-title {
+    font-weight: 500;
+    margin-top: $space;
+margin-bottom: $space;
+
+    strong {
+      color: $site-base;
+    }
+  }
+
+  .title-desc {
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 2em;
+  }
+}
+
+.title-box {
+  > .title {
+    position: relative;
+    padding-bottom: 10px;
+    font-size: 16px;
+
+    &:after {
+      position: absolute;
+      content: "";
+      display: block;
+      left: 0;
+      bottom: 0;
+      background: #333;
+      height: 1px;
+      width: 40px;
+      margin: 0 0 -1px;
+    }
+
+    &:before {
+      position: absolute;
+      content: "";
+      display: block;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #e1e1e1;
+      height: 1px;
+      margin: 0 0 -1px;
+    }
+
+    &.inner {
+      &:after {
+        left: 10px;
+      }
+
+      &:before {
+        left: 10px;
+        right: 10px;
+      }
+    }
+  }
+}

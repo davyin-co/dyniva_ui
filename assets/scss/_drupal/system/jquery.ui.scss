@@ -1,0 +1,19 @@
+/* jquery.ui */
+.ui-widget-overlay {
+  @extend .full-screen;
+  position: fixed;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+.ui-widget {
+  .ui-widget-header {
+    padding: $space;
+    background-color: $bg-lighter;
+    border-bottom: 1px solid $border-color;
+  }
+
+  .ui-widget-content {
+    padding: $space;
+  }
+}

@@ -1,0 +1,38 @@
+// mixins
+@import "./system/mixins/grid-framework.scss";
+@import "./system/mixins/grid.scss";
+
+@import "./system/grid.scss";
+@import "./system/breadcrumb.scss";
+@import "./system/block.scss";
+@import "./system/field.scss";
+@import "./system/layout.scss";
+@import "./system/table.scss";
+
+/* menu */
+@import "./system/menu.task.scss";
+@import "./system/menu.tabs.scss";
+
+/* form */
+@import "./system/form.scss";
+@import "./system/form.search.scss";
+@import "./system/form.password.scss";
+@import "./system/pannel.scss";
+
+/* tabledrag */
+@import "./system/script.tabledrag.scss";
+
+/* dropbutton */
+@import "./system/script.dropbutton.scss";
+@import "./system/script.autocomplete.scss";
+
+/* vertical tabs */
+@import "./system/script.vertical.tabs.scss";
+
+/* Jquery */
+@import "./system/jquery.ui.scss";
+@import "./system/jquery.ui.button.scss";
+@import "./system/jquery.ui.dialog.scss";
+
+
+@import './admin.scss';
