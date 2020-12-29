@@ -1,0 +1,72 @@
+name: SUBTHEME
+type: theme
+description: A modern, powerful, HTML5 starting theme with component-based CSS and a responsive, mobile-first grid design.
+package: dyniva
+
+base theme: dyniva_ui
+
+# add Custom Libraries
+libraries:
+  # UI Base
+  - SUBTHEME/build
+  - SUBTHEME/drupal
+  # UI Plugin
+  # - SUBTHEME/bootstrap.tab
+
+regions:
+  topbar         : Topbar
+  logo           : Logo
+  primary_menu   : Primary menu
+  secondary_menu : Secondary menu
+  hero_slider    : Media Hero Slider
+  help           : Help
+  highlighted    : Highlighted
+  breadcrumb     : Breadcrumb
+  title          : Title
+  content        : Content
+  sidebar_first  : Left sidebar
+  sidebar_second : Right sidebar
+  footer         : Footer
+  bottom         : Bottom
+  page_top       : Page top
+  page_bottom    : Page bottom
+
+  # Add Custom Region
+  modal          : Modal
+  outside        : Outside
+
+features:
+  logo: true
+  name: true
+  slogan: true
+  node_user_picture: true
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: true
+  main_menu: true
+  secondary_menu: true
+
+#libraries-override:
+#  core/drupal.dropbutton:
+#    js:
+#      misc/dropbutton/dropbutton.js: {}
+#    css:
+#      component:
+#        misc/dropbutton/dropbutton.css: false
+
+libraries-override:
+  dyniva_ui/build:
+    css:
+      theme:
+        build/init.css: false
+
+# name space
+component-libraries:
+  dyniva_ui:
+    paths:
+      - assets/templates
+      - templates
+
+version: 8.x-1.0-unstable
+core: 8.x
+project: 'SUBTHEME'
