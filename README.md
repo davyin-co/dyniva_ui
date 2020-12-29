@@ -27,3 +27,10 @@
   // 压缩编译js和css文件
 
 ```
+
+# 生成子主题
+>  执行脚本
+```bash
+# run inside dyniva_ui/
+sh subThemeGenerator.sh
+```
