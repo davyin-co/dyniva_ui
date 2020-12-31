@@ -1,8 +1,8 @@
 # 前端开发
-## **1. npm install 安装前端开发工具**
+## **1. ```yarn install``` (or ```npm install```) 安装前端开发工具**
 > cnpm install find have some isuue
 
-## **2. bower install 安装主题依赖包**
+## **2. ```bower install``` 安装主题依赖包**
 
 > 依赖包里面的内容，只提交需调用的部分，不要全部提交，新的依赖包安装，请save进bower.json
 
@@ -27,6 +27,7 @@
   // 压缩编译js和css文件
 
 ```
+
 
 # 生成子主题
 >  执行脚本
