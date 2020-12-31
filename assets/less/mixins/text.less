@@ -1,0 +1,116 @@
+.text-overflow() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Px to Rem */
+.font-size-rem(@px) {
+  font-size: @px / @font-size * 1rem;
+}
+
+.line-height-rem(@px) {
+  line-height: @px / @font-size * 1rem;
+}
+
+.font-size(@size) {
+  font-size: unit(@size, px);
+  .font-size-rem(@size);
+}
+
+.line-height(@size) {
+  line-height: unit(@size, px) !important;
+  .line-height-rem(@size) !important;
+}
+
+.font-size_line-height(@size, @sizeln) {
+  font-size: unit(@size, px);
+  .font-size-rem(@size);
+  line-height: unit(@sizeln, px) !important;
+  .line-height-rem(@sizeln) !important;
+}
+
+.reset-text() {
+  font-family: @font-family;
+  // We deliberately do NOT reset font-size.
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-break: auto;
+  line-height: @line-height-base;
+  text-align: left; // Fallback for where `start` is not supported
+  text-align: start;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  white-space: normal;
+  word-break: normal;
+  word-spacing: normal;
+  word-wrap: normal;
+}
+
+.multi-line(@showline: 2, @fontsize: @font-size) {
+  overflow: hidden;
+  min-height: @fontsize * 1.5 * @showline;
+  display: -webkit-box;
+  -webkit-line-clamp: @showline;
+  -webkit-box-orient: vertical;
+}
+
+.text-shadow(@shadow) {
+  -webkit-text-shadow+: @shadow; // iOS <4.3 & Android <4.1
+  -moz-text-shadow+: @shadow;
+  text-shadow+: @shadow;
+}
+
+// Placeholder text
+.placeholder(@color: @input-color-placeholder) {
+  // Firefox
+  &::-moz-placeholder {
+    color: @color;
+    opacity: 1; //Firefox's unusual default opacity;
+  }
+
+  &:-ms-input-placeholder {
+    color: @color;
+  }
+
+  // Internet Explorer 10+
+  &::-webkit-input-placeholder {
+    color: @color;
+  }
+
+  // Safari and Chrome
+}
+
+/* one line */
+.line(@border-color: #dddddd, @one-line-position: bottom) {
+  -webkit-background-size: 100% 0.01rem;
+  background-size: 100% 0.01rem;
+  background-repeat: no-repeat;
+  background-position: @one-line-position;
+  background-image: -webkit-linear-gradient(
+    90deg,
+    @border-color,
+    @border-color 50%,
+    transparent 50%
+  );
+  background-image: -moz-linear-gradient(
+    90deg,
+    @border-color,
+    @border-color 50%,
+    transparent 50%
+  );
+  background-image: -o-linear-gradient(
+    90deg,
+    @border-color,
+    @border-color 50%,
+    transparent 50%
+  );
+  background-image: linear-gradient(
+    0deg,
+    @border-color,
+    @border-color 50%,
+    transparent 50%
+  );
+}

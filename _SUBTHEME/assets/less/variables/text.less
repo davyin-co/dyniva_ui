@@ -1,0 +1,27 @@
+
+/* Font size */
+@font-size: 14px;
+@font-size-larger: ceil((@font-size * 1.7));
+@font-size-larg: ceil((@font-size * 1.25)); // 18px
+@font-size-small: 13px;
+@font-size-mini: ceil((@font-size * 0.85)); // 12px
+
+/* Title */
+@h1: floor((@font-size * 2.6)); // 36px
+@h2: floor((@font-size * 2.15)); // 30px
+@h3: ceil((@font-size * 1.7)); // 24px
+@h4: ceil((@font-size * 1.25)); // 18px
+@h5: @font-size; // 14px
+@h6: ceil((@font-size * 0.85)); // 12px
+
+@font-family: "Microsoft YaHei", "微软雅黑", "PingFangSC-Regular", "PingFangTC-Regular", sans-serif;
+@font-family-title: @font-family;
+
+/* Text color */
+@text-color-darker: @global-color;
+@text-color-dark: @global-color-darker;
+@text-color: rgba(0, 0, 0, .6); // 中强调文字和提示文字 #212121
+@header-color: rgba(0, 0, 0, .87); // 高强调文字 #616161
+@disable-color: rgba(0, 0, 0, 0.38); // 禁用文字 #9e9e9e
+@text-color-light: @global-color-light;
+@text-color-lighter: @global-color-lighter;

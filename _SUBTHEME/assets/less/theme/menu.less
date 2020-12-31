@@ -33,7 +33,7 @@
       }
     }
 
-    .open>.dropdown-menu {
+    .open > .dropdown-menu {
       display: block;
     }
 
@@ -68,7 +68,7 @@
           // &:first-child{
           //   border-top: 3px solid #e5e5e5;
           // }
-          >a {
+          > a {
             color: @global-color-dark;
 
             &.is-active,
@@ -96,15 +96,15 @@
     }
   }
 
-
   .open {
-    >.dropdown-menu {
+    > .dropdown-menu {
       display: block;
 
-      >li {}
+      > li {
+      }
     }
 
-    >a {
+    > a {
       outline: 0;
     }
   }
@@ -150,7 +150,7 @@
     right: 0;
     background-color: @site-base;
     border-bottom: 3px solid #02a7f7;
-    animation: menu_sticky 0.70s ease-in-out;
+    animation: menu_sticky 0.7s ease-in-out;
 
     .logo {
       display: block;
@@ -226,41 +226,41 @@
       }
     }
 
-    >.menu-item {
+    > .menu-item {
       text-align: center;
 
       &:nth-last-child(4),
-      &:nth-last-child(4)~li {
+      &:nth-last-child(4) ~ li {
         width: 25%;
       }
 
       &:nth-last-child(5),
-      &:nth-last-child(5)~li {
+      &:nth-last-child(5) ~ li {
         width: 20%;
       }
 
       &:nth-last-child(6),
-      &:nth-last-child(6)~li {
+      &:nth-last-child(6) ~ li {
         width: 16.66%;
       }
 
       &:nth-last-child(7),
-      &:nth-last-child(7)~li {
+      &:nth-last-child(7) ~ li {
         width: 14.2857%;
       }
 
       &:nth-last-child(8),
-      &:nth-last-child(8)~li {
+      &:nth-last-child(8) ~ li {
         width: 12.5%;
       }
 
       &:nth-last-child(9),
-      &:nth-last-child(9)~li {
+      &:nth-last-child(9) ~ li {
         width: 11.1111%;
       }
 
       &:nth-last-child(10),
-      &:nth-last-child(10)~li {
+      &:nth-last-child(10) ~ li {
         width: 10%;
       }
     }
@@ -308,7 +308,6 @@
             &:hover {
               color: #fff;
               background-color: darken(@site-base, 7.5%);
-              ;
             }
           }
         }
@@ -373,17 +372,16 @@
   .sidebar-menu;
 
   .nav-menu {
-
     // level 1
-    >.menu-item {
-      >a {
+    > .menu-item {
+      > a {
         background-color: @global-color-lighter;
         margin-bottom: 2px;
         position: relative;
       }
 
       &.active {
-        >a {
+        > a {
           background-color: @site-base;
           color: #fff;
           font-weight: bold;
@@ -460,24 +458,24 @@
       list-style: none;
     }
 
-    >ul.nav {
+    > ul.nav {
       position: relative;
       .f-l;
       .clearfix;
 
-      >li {
+      > li {
         position: relative;
         .f-l;
         .d_b;
 
-        >a {
+        > a {
           color: #fff;
           padding: 15px;
           line-height: 18px;
 
           &:hover {
             color: #f6f6f6;
-            background-color: rgba(0, 0, 0, .1)
+            background-color: rgba(0, 0, 0, 0.1);
           }
 
           .icon {
@@ -492,7 +490,7 @@
             text-align: center;
             font-size: 9px;
             padding: 2px 3px;
-            line-height: .9;
+            line-height: 0.9;
             border: 0;
           }
         }
@@ -562,7 +560,7 @@
                     margin-left: 50px;
 
                     p {
-                      margin: @space/4 0;
+                      margin: @space / 4 0;
                       overflow: hidden;
                       text-overflow: ellipsis;
                     }

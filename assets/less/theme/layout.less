@@ -2,7 +2,7 @@
 -- Layout Style
 -------------------------------------------------------------- */
 
-.inner{
+.inner {
   .g-in;
   .inside-min-lr;
   .inside-min-tb;
@@ -10,21 +10,21 @@
   max-width: @screen-lg;
   margin: 0 auto;
   position: relative;
-  width: @width-base;
-  @media (min-width: @screen-sm){
+  width: 100%;
+  @media (min-width: @screen-sm) {
     width: 750px;
   }
-  @media (min-width: @screen-md){
+  @media (min-width: @screen-md) {
     width: 970px;
   }
-  @media (min-width: @screen-lg){
+  @media (min-width: @screen-lg) {
     width: 1170px;
   }
 }
 
 // when has sidebar set content inner width auto
-.has-sidebar{
-  .inner{
+.has-sidebar {
+  .inner {
     width: auto;
     .inside-c;
     .outside-c;

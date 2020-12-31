@@ -1,0 +1,19 @@
+/* image responsive */
+.img(@display: block) {
+  display: @display;
+  max-width: 100%;
+  height: auto;
+}
+
+/* opacity */
+.opacity(@opacity) {
+  opacity: @opacity;
+  @opacity-ie: (@opacity * 100);
+  filter:~"alpha(opacity=@{opacity-ie})";
+}
+
+.box-shadow (@x: 0px, @y: 3px, @blur: 5px, @alpha: 0.5) {
+  -webkit-box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+  -moz-box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+  box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+}

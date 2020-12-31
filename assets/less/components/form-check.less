@@ -1,11 +1,10 @@
-/* =============================================================================
-   Checkbox && Radio Button
-   ========================================================================== */
-
+/* ==========================================================================
+  Checkbox && Radio Button
+========================================================================== */
 /* ------
-@chooses-size:20px;
 @chooses-color: @site-base;
 ----- */
+@chooses-size: @font-size-larg;
 
 .btn-chooses {
   background-color: #ffffff;
@@ -20,11 +19,11 @@
 .btn-choose-square {
   .btn-choose-mark {
     &:before {
-      content: '\e63c';
+      content: "\e63c";
     }
 
     &:after {
-      content: '\e61a';
+      content: "\e61a";
     }
   }
 }
@@ -32,11 +31,11 @@
 .btn-choose-round {
   .btn-choose-mark {
     &:before {
-      content: '\e6d4';
+      content: "\e6d4";
     }
 
     &:after {
-      content: '\e6ab';
+      content: "\e6ab";
     }
   }
 }
@@ -67,7 +66,7 @@
       display: block;
       position: absolute;
       top: 50%;
-      margin-top: -@chooses-size/2;
+      margin-top: -@chooses-size / 2;
 
       -webkit-transition-property: all;
       -moz-transition-property: all;
@@ -83,12 +82,14 @@
       transition-timing-function: cubic-bezier(0.5, 1.6, 0.5, 1);
     }
 
-    &:before {}
+    &:before {
+    }
 
-    &:after {}
+    &:after {
+    }
   }
 
-  >.btn-choose-mark {
+  > .btn-choose-mark {
     visibility: visible;
     z-index: 1;
     .y-m;
@@ -105,7 +106,7 @@
     }
   }
 
-  >.btn-choose-input {
+  > .btn-choose-input {
     visibility: hidden;
     position: absolute;
 
@@ -120,7 +121,7 @@
     //   }
     // }
     &:checked {
-      +.btn-choose-mark {
+      + .btn-choose-mark {
         &:before {
           .opacity(0);
         }
@@ -166,8 +167,8 @@
 
   .btn-choose-mark {
     &:before {
-      .opacity(.85) !important;
-      color: @text-color  !important;
+      .opacity(0.85) !important;
+      color: @text-color !important;
     }
 
     &:after {
@@ -175,19 +176,19 @@
     }
   }
 
-  >.btn-choose-input {
+  > .btn-choose-input {
     visibility: hidden;
     position: absolute;
 
     &:checked {
-      +.btn-choose-mark {
+      + .btn-choose-mark {
         &:before {
           .opacity(0) !important;
         }
 
         &:after {
-          .opacity(.85) !important;
-          color: @text-color  !important;
+          .opacity(0.85) !important;
+          color: @text-color !important;
         }
       }
     }
