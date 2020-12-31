@@ -11,7 +11,6 @@ const compileLess = () => {
   return src(['assets/less/index.less'])
     .pipe(sourcemaps.init({ loadMaps: true }))
     .pipe(less())
-    // .pipe(postcss([prefixer(), gradient({ angleFallback: false })]))
     .pipe(rename('init.css'))
     .pipe(sourcemaps.write('./', { sourceRoot: '../assets/less' }))
     .pipe(dest('build/'))
