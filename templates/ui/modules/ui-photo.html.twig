@@ -1,0 +1,84 @@
+{# note: header.html.twig must be include in header block, the sub theme be able to override header #}
+{% block header %}
+  {% include '@dyniva_ui/ui/pages/header.html.twig' %}
+{% endblock %}
+
+<div id="wall" class="page-title promo">
+  <div class="dy-components-demo inner">
+    <h1 class="page-title">相册</h1>
+    <h5 class="title">常用的一些多个图片展示</h5>
+  </div>
+</div>
+<div class="panel panel-ui">
+  {# start section #}
+  <section class="dy-components" id="photo">
+    <h2 class="section-header inner">瀑布流相册</h2>
+    {# start components #}
+
+    <div class="section-item title-box" id="dy-photo-1-0">
+      <h4 class="title inner">相册 1.0</h4>
+      <p class="rules inner">瀑布流相册</p>
+      <div class="dy-components-demo inner">
+        {% include'@dyniva_ui/ui/modules/photo/dy-photo-1-0.html.twig' %}
+      </div>
+      <div class="dy-components-markup inner">
+        <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse" aria-expanded="false"
+           aria-controls="collapseCode">
+          <i class="icon">&#xe818;</i>
+          开发说明
+        </a>
+        <div class="collapse">
+          <div>
+            <pre class="prettyprint lang-html">
+              {%- filter escape -%}
+                {{~ "{{ attach_library('dyniva_ui/masonry') }}" ~}}
+                {{~ "{{ attach_library('dyniva_ui/bbModal') }}" ~}}
+                {% include'@dyniva_ui/ui/modules/photo/dy-photo-1-0.html.twig' %}
+              {%- endfilter -%}
+              </pre>
+          </div>
+          <div class="dy-components-desc">
+            <table class="table table-full">
+              <thead>
+              <tr>
+                <th>Class</th>
+                <th>说明</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>
+                  <code>.dy-photo-1-0</code>
+                </td>
+                <td>相册1.0</td>
+              </tr>
+              <tr>
+                <td>
+                  <code>.masonry-container</code>
+                </td>
+                <td>瀑布流容器</td>
+              </tr>
+              <tr>
+                <td>
+                  <code>[data-masonry]</code>
+                </td>
+                <td>瀑布流配置项</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    {# end components #}
+    {% block masonry %}{% endblock %}
+  </section>
+  {# end section #}
+
+  {% block section %}{% endblock %}
+</div>
+
+{# note: ui-footer.html.twig must be include in footer block, the sub theme be able to override footer #}
+{% block footer %}
+  {% include directory ~ '@dyniva_ui/ui/pages/ui-footer.html.twig' %}
+{% endblock %}

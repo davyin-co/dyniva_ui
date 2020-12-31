@@ -1,0 +1,133 @@
+/* -----------------
+---- Code Prettify ----
+----------------- */
+/*! Color themes for Google Code Prettify | MIT License | github.com/jmblog/color-themes-for-google-code-prettify */
+pre.prettyprint {
+  font-size: 12px;
+  background: #2f3640 !important;
+  font-family: Menlo, "Bitstream Vera Sans Mono", "DejaVu Sans Mono", Monaco, Consolas, monospace !important;
+  border: 0 !important;
+  max-height: 400px;
+  overflow: auto;
+}
+
+pre.pln {
+  color: #e6e9ed !important;
+}
+
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #656d78 !important;
+}
+pre.prettyprint li{
+  margin-bottom: 0;
+}
+pre.prettyprint li.L0,
+pre.prettyprint li.L1,
+pre.prettyprint li.L2,
+pre.prettyprint li.L3,
+pre.prettyprint li.L4,
+pre.prettyprint li.L5,
+pre.prettyprint li.L6,
+pre.prettyprint li.L7,
+pre.prettyprint li.L8,
+pre.prettyprint li.L9 {
+  padding-left: 1em;
+  background-color: #2f3640;
+  list-style-type: decimal;
+}
+
+@media screen {
+
+  pre.prettyprint .pln {
+    color: #e6e9ed;
+  }
+
+  /* string content */
+
+  pre.prettyprint .str {
+    color: #ffce54;
+  }
+
+  /* keyword */
+
+  pre.prettyprint .kwd {
+    color: #4fc1e9;
+  }
+
+  /* comment */
+
+  pre.prettyprint .com {
+    color: #656d78;
+  }
+
+  /* type name */
+
+  pre.prettyprint .typ {
+    color: #4fc1e9;
+  }
+
+  /* literal value */
+
+  pre.prettyprint .lit {
+    color: #ac92ec;
+  }
+
+  /* punctuation */
+
+  pre.prettyprint .pun {
+    color: #e6e9ed;
+  }
+
+  /* lisp open bracket */
+
+  pre.prettyprint .opn {
+    color: #e6e9ed;
+  }
+
+  /* lisp close bracket */
+
+  pre.prettyprint .clo {
+    color: #e6e9ed;
+  }
+
+  /* markup tag name */
+
+  pre.prettyprint .tag {
+    color: #ed5565;
+  }
+
+  /* markup attribute name */
+
+  pre.prettyprint .atn {
+    color: #a0d468;
+  }
+
+  /* markup attribute value */
+
+  pre.prettyprint .atv {
+    color: #ffce54;
+  }
+
+  /* declaration */
+
+  pre.prettyprint .dec {
+    color: #ac92ec;
+  }
+
+  /* variable name */
+
+  pre.prettyprint .var {
+    color: #e6e9ed;
+  }
+
+  /* function name */
+
+  pre.prettyprint .fun {
+    color: #e6e9ed;
+  }
+}
+
+

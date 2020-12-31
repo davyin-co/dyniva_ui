@@ -1,0 +1,15 @@
+{
+  "name": "laydate",
+  "homepage": "https://github.com/sentsin/laydate",
+  "version": "5.0.85",
+  "_release": "5.0.85",
+  "_resolution": {
+    "type": "version",
+    "tag": "v5.0.85",
+    "commit": "4803de1dba2cf730db1f2a08e1a67a4781f00422"
+  },
+  "_source": "https://github.com/sentsin/laydate.git",
+  "_target": "^5.0.85",
+  "_originalSource": "https://github.com/sentsin/laydate.git",
+  "_direct": true
+}

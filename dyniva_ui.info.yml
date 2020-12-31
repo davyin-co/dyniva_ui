@@ -1,0 +1,104 @@
+name: Dyniva UI
+type: theme
+description: A modern, powerful, HTML5 starting theme with component-based CSS and a responsive, mobile-first grid design.
+package: dyniva
+
+base theme: false
+
+# add Custom Libraries
+libraries:
+  # UI Base
+  - dyniva_ui/build
+  - dyniva_ui/drupal
+  # UI Plugin
+  - dyniva_ui/bootstrap.tab
+  - dyniva_ui/dropdown
+  - dyniva_ui/slick
+  - dyniva_ui/slider
+  - dyniva_ui/mmenu
+  - dyniva_ui/waypoints
+  - dyniva_ui/animate
+  - dyniva_ui/lazysizes
+  - dyniva_ui/prognroll
+  - dyniva_ui/fixIE
+  - dyniva_ui/media
+  - dyniva_ui/ellipsis
+  - dyniva_ui/bsTooltip
+  - dyniva_ui/goToTop
+  - dyniva_ui/slimScroll
+
+regions:
+  topbar         : Topbar
+  logo           : Logo
+  primary_menu   : Primary menu
+  secondary_menu : Secondary menu
+  hero_slider    : Media Hero Slider
+  help           : Help
+  highlighted    : Highlighted
+  breadcrumb     : Breadcrumb
+  title          : Title
+  content        : Content
+  sidebar_first  : Left sidebar
+  sidebar_second : Right sidebar
+  footer         : Footer
+  bottom         : Bottom
+  page_top       : Page top
+  page_bottom    : Page bottom
+
+  # Add Custom Region
+  modal          : Modal
+  outside        : Outside
+
+features:
+  logo: true
+  name: true
+  slogan: true
+  node_user_picture: true
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: true
+  main_menu: true
+  secondary_menu: true
+
+libraries-override:
+  core/drupal.dropbutton:
+    # js:
+    #   misc/dropbutton/dropbutton.js: {}
+    css:
+      component:
+        misc/dropbutton/dropbutton.css: false
+  core/drupal.vertical-tabs:
+    css:
+      component:
+        misc/vertical-tabs.css: false
+  core/jquery.ui:
+    css:
+      theme:
+        assets/vendor/jquery.ui/themes/base/theme.css: false
+  core/jquery.ui.button:
+    css:
+      component:
+        assets/vendor/jquery.ui/themes/base/button.css: false
+  core/jquery.ui.dialog:
+    css:
+      component:
+        assets/vendor/jquery.ui/themes/base/dialog.css: false
+  system/base: false
+# @Toolbar Libraries
+  toolbar/toolbar:
+    js:
+      # View.
+      js/views/ToolbarVisualView.js: js/toolbar/views/ToolbarVisualView.js
+  admin_toolbar/toolbar.tree: false
+  admin_toolbar_tools/toolbar.icon: false
+
+# name space @DAVYINUI
+component-libraries:
+  dyniva_ui:
+    paths:
+      - assets/templates
+      - templates
+
+version: 8.x-1.0-unstable
+core: 8.x
+project: 'dyniva_ui'

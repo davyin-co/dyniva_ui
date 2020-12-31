@@ -1,0 +1,86 @@
+{# note: header.html.twig must be include in header block, the sub theme be able to override header #}
+{% block header %}
+  {% include '@dyniva_ui/ui/pages/header.html.twig' %}
+{% endblock %}
+
+<div id="wall" class="page-title promo">
+  <div class="inner">
+    <h1 class="page-title">欢迎访问 Dyniva UI 使用文档</h1>
+    <h5 class="title">这是一个现代的、强大的、HTML5、移动端优先的前端框架，用于快速开发响应式布局的项目。</h5>
+  </div>
+</div>
+<div class="ui-feature block inside-tb outside-tb">
+  <h2 class="t-c outside-tb">为跨设备访问而设计</h2>
+  <div class="inner outside-tb">
+    <div class="row">
+      <div class="col col-sm-4">
+        <div class="panel panel-floor t-c">
+            <div class="inside-tb outside-tb t-c text-color-primary">
+              <i class="icon icon-3x">&#xe96f;</i>
+            </div>
+            <h3 class="title outside-tb"><strong>Less 预处理</strong></h3>
+            <h4 class="three-line text-ligh">基于 Less 处理脚本开发，通过色轮也可以定制自己想要的颜色。</h4>
+        </div>
+      </div>
+      <div class="col col-sm-4">
+        <div class="panel panel-floor t-c">
+            <div class="inside-tb outside-tb text-color-primary">
+              <i class="icon icon-3x">&#xe610;</i>
+            </div>
+            <h3 class="title outside-tb"><strong>一个框架、多种设备</strong></h3>
+            <h4 class="three-line text-ligh">同一个框架可以有效的适配手机、平板、桌面电脑，适应移动互联网潮流。</h4>
+        </div>
+      </div>
+      <div class="col col-sm-4">
+        <div class="panel panel-floor t-c">
+            <div class="inside-tb outside-tb text-color-primary">
+              <i class="icon icon-3x">&#xe60a;</i>
+            </div>
+            <h3 class="title outside-tb"><strong>风格自定义</strong></h3>
+            <h4 class="three-line text-ligh">前后台主题支持自定义配色，系统根据配色重新渲染控件、组件和模块的颜色方案。</h4>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-sm-4">
+        <div class="panel panel-floor t-c">
+            <div class="inside-tb outside-tb text-color-primary">
+              <i class="icon icon-3x">&#xe61d;</i>
+            </div>
+            <h3 class="title outside-tb"><strong>组件齐全</strong></h3>
+            <h4 class="three-line text-ligh">你在这里能够找到关于HTML元素、CSS 组件、模块的详细示例。</h4>
+        </div>
+      </div>
+      <div class="col col-sm-4">
+        <div class="panel panel-floor t-c">
+            <div class="inside-tb outside-tb text-color-primary">
+              <i class="icon icon-3x">&#xe64d;</i>
+            </div>
+            <h3 class="title outside-tb t-c"><strong>模块化</strong></h3>
+            <h4 class="three-line text-ligh">拥有丰富的组合和模块，可以快速的构建出出色的、体验优秀的页面。</h4>
+        </div>
+      </div>
+      <div class="col col-sm-4">
+        <div class="panel panel-floor t-c">
+            <div class="inside-tb outside-tb text-color-primary">
+              <i class="icon icon-3x">&#xe75b;</i>
+            </div>
+            <h3 class="title outside-tb"><strong>拖放布局</strong></h3>
+            <h4 class="three-line text-ligh">通过拖放工具可以把合适的内容放入布局中，无需技术支持就可以编译，实现所见即所得。</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bg-base outside-tb inside-b promo">
+    <div class="t-c">
+      <h4 class="text-base inside-tb">在这里，你可以预览相关的基础样式、控件、组件和模板。</h4>
+      <a class="btn btn-base-outline btn-radius btn-raised" href="{{ base_path }}ui-preview/foundation/color.html.twig">从基础颜色开始了解</a>
+    </div>
+  </div>
+</div>
+
+{# note: ui-footer.html.twig must be include in footer block, the sub theme be able to override footer #}
+{% block footer %}
+  {% include directory ~ '@dyniva_ui/ui/pages/ui-footer.html.twig' %}
+{% endblock %}
+

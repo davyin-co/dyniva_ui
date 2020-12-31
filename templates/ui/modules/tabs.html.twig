@@ -1,0 +1,197 @@
+{# note: header.html.twig must be include in header block, the sub theme be able to override header #}
+{% block header %}
+  {% include '@dyniva_ui/ui/pages/header.html.twig' %}
+{% endblock %}
+
+{{ attach_library('dyniva_ui/bootstrap.tab') }}
+
+<div id="wall" class="page-title promo">
+  <div class="inner">
+    <h1 class="page-title">选项卡</h1>
+    <h5 class="title">提供平级的区域将大块内容进行收纳和展现，保持界面整洁。</h5>
+  </div>
+</div>
+
+<div class="panel panel-ui">
+  <section class="dy-components" id="tabs">
+    <h2 class="section-header inner">选项卡</h2>
+
+    <div class="section-item title-box" id="dy-tab-1-0">
+      <h4 class="title inner">选项卡 1.0</h4>
+      <div class="dy-components-demo inner">
+        {% include '@dyniva_ui/ui/modules/navigation/dy-tab-1-0.html.twig' %}
+      </div>
+      <div class="dy-components-markup inner">
+        <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse"
+           aria-expanded="false"
+           aria-controls="collapseCode">
+          <i class="icon">&#xe818;</i> 开发说明
+        </a>
+        <div class="collapse">
+          <pre class="prettyprint lang-html">
+            {%- filter escape -%}
+              {% include '@dyniva_ui/ui/modules/navigation/dy-tab-1-0.html.twig' %}
+            {%- endfilter -%}
+          </pre>
+          <div class="dy-components-desc">
+            <table class="table table-full">
+              <thead>
+              <tr>
+                <th>Class</th>
+                <th>说明</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td><code>.tab-nav-1</code></td>
+                <td>选项卡 v1</td>
+              </tr>
+              <tr>
+                <td><code>.panel-tabs-auto / .tab-pane</code></td>
+                <td>js会根据该类初始化页面中所有的选项卡</td>
+              </tr>
+              <tr>
+                <td><code>.tab-content</code></td>
+                <td>选项卡的内容</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-item title-box" id="dy-tab-2-0">
+      <h4 class="title inner">选项卡 2.0</h4>
+      <div class="dy-components-demo inner">
+        {% include '@dyniva_ui/ui/modules/navigation/dy-tab-2-0.html.twig' %}
+      </div>
+      <div class="dy-components-markup inner">
+        <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse"
+           aria-expanded="false"
+           aria-controls="collapseCode">
+          <i class="icon">&#xe818;</i> 开发说明
+        </a>
+        <div class="collapse">
+          <pre class="prettyprint lang-html">
+            {%- filter escape -%}
+              {% include '@dyniva_ui/ui/modules/navigation/dy-tab-2-0.html.twig' %}
+            {%- endfilter -%}
+          </pre>
+          <div class="dy-components-desc">
+            <table class="table table-full">
+              <thead>
+              <tr>
+                <th>Class</th>
+                <th>说明</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td><code>.tab-nav-2</code></td>
+                <td>选项卡 v2</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-item title-box" id="dy-tab-3-0">
+      <h4 class="title inner">选项卡 3.0</h4>
+      <div class="dy-components-demo inner">
+        {% include '@dyniva_ui/ui/modules/navigation/dy-tab-3-0.html.twig' %}
+        <div class="spacer-md"></div>
+        {% include '@dyniva_ui/ui/modules/navigation/dy-tab-3-0.html.twig' with{
+          class: 'tab-nav-3-red'
+        }%}
+      </div>
+      <div class="dy-components-markup inner">
+        <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse"
+           aria-expanded="false"
+           aria-controls="collapseCode">
+          <i class="icon">&#xe818;</i> 开发说明
+        </a>
+        <div class="collapse">
+          <pre class="prettyprint lang-html">
+            {%- filter escape -%}
+              {% include '@dyniva_ui/ui/modules/navigation/dy-tab-3-0.html.twig' %}
+
+              {{~ '// red theme' -}}
+              {% include '@dyniva_ui/ui/modules/navigation/dy-tab-3-0.html.twig' with{
+                class: 'tab-nav-3-red'
+              }%}
+            {%- endfilter -%}
+          </pre>
+          <div class="dy-components-desc">
+            <table class="table table-full">
+              <thead>
+              <tr>
+                <th>Class</th>
+                <th>说明</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td><code>.tab-nav-3</code></td>
+                <td>选项卡 v3</td>
+              </tr>
+              <tr>
+                <td><code>.tab-nav-3-red</code></td>
+                <td>主题红色</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-item title-box" id="dy-tab-4-0">
+      <h4 class="title inner">选项卡 4.0</h4>
+      <div class="dy-components-demo inner">
+        {% include '@dyniva_ui/ui/modules/navigation/dy-tab-4-0.html.twig' %}
+      </div>
+      <div class="dy-components-markup inner">
+        <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse"
+           aria-expanded="false"
+           aria-controls="collapseCode">
+          <i class="icon">&#xe818;</i> 开发说明
+        </a>
+        <div class="collapse">
+          <pre class="prettyprint lang-html">
+            {%- filter escape -%}
+              {% include '@dyniva_ui/ui/modules/navigation/dy-tab-4-0.html.twig' %}
+            {%- endfilter -%}
+          </pre>
+          <div class="dy-components-desc">
+            <table class="table table-full">
+              <thead>
+              <tr>
+                <th>Class</th>
+                <th>说明</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td><code>.tab-nav-4</code></td>
+                <td>选项卡 v4</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% block tabs %}{% endblock %}
+  </section>
+
+  {% block section %}{% endblock %}
+</div>
+
+{# note: ui-footer.html.twig must be include in footer block, the sub theme be able to override footer #}
+{% block footer %}
+  {% include directory ~ '@dyniva_ui/ui/pages/ui-footer.html.twig' %}
+{% endblock %}

@@ -1,0 +1,58 @@
+
+<div class="dy-list-wrapper dy-list-2-0">
+  <div class="inner">
+    <div class="head">
+      <h1>自身建设</h1>
+      <a href="javascript:void(0);">
+        <i class="icon icon-right"></i>
+      </a>
+    </div>
+    <div class="list-body clearfix">
+      {%- for item in items | default([
+        {
+          sign: '综合',
+          time: '2019-08-03',
+          media: base_path~'themes/custom/dyniva_ui/templates/ui/images/media/book.jpg',
+          title: 'Drupal开发专家，让您的应用快速落地',
+          desc: '移动平台网页，手机App，微信应用或者小程序，我们都可以帮您实现。协助您驾驭Drupal的优势，管理数以百计的校园网站，促成学术创新。无纸化的培训管理，连接线上和线下，节约管理成本，提升培训效率。'
+        },
+        {
+          sign: '综合',
+          time: '2019-08-03',
+          media: base_path~'themes/custom/dyniva_ui/templates/ui/images/media/book.jpg',
+          title: 'Drupal开发专家，让您的应用快速落地',
+          desc: '移动平台网页，手机App，微信应用或者小程序，我们都可以帮您实现。协助您驾驭Drupal的优势，管理数以百计的校园网站，促成学术创新。无纸化的培训管理，连接线上和线下，节约管理成本，提升培训效率。'
+        },
+        {
+          sign: '综合',
+          time: '2019-08-03',
+          media: base_path~'themes/custom/dyniva_ui/templates/ui/images/media/book.jpg',
+          title: 'Drupal开发专家，让您的应用快速落地',
+          desc: '移动平台网页，手机App，微信应用或者小程序，我们都可以帮您实现。协助您驾驭Drupal的优势，管理数以百计的校园网站，促成学术创新。无纸化的培训管理，连接线上和线下，节约管理成本，提升培训效率。'
+        }
+      ]) ~%}
+      <div class="list-item">
+        <div class="item-l">
+          <div class="sign bg-brown">{{ item.sign }}</div>
+          <p class="time">{{ item.time }}</p>
+        </div>
+        <div class="item-r"
+          data-toggle="bsTooltip"
+          data-tooltip-Class="theme-white"
+          data-container="body"
+          data-placement="right"
+          data-html="true"
+          title="<div class='bg-center' style='width:180px;height:180px;background: url({{ item.media }})' />"
+          >
+          <div class="title">
+            <a href="javascript:void(0);">{{ item.title }}</a>
+          </div>
+          <div class="item-text ellipsis" data-ellipsis='{}'>
+            <p>{{ item.desc }}</p>
+          </div>
+        </div>
+      </div>
+      {%- endfor ~%}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,100 @@
+// bootstrap modal for video
+.video-modal-container {
+  .modal-dialog {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    max-width: 1280px;
+    max-height: 790px;
+    -webkit-transform: translate(-50%, -50%) !important;
+    -ms-transform: translate(-50%, -50%) !important;
+    transform: translate(-50%, -50%) !important;
+    padding: 0 10px;
+    margin: 0;
+    box-sizing: border-box;
+
+    .modal-content {
+      background-color: transparent;
+      border: 0;
+      box-shadow: none;
+      border-radius: 0;
+
+      .modal-header {
+        display: none;
+
+        .close {
+          position: absolute;
+          top: -40px;
+          right: 0;
+          margin-top: 0;
+          color: #fff;
+          opacity: 1;
+          font-weight: normal;
+          width: 40px;
+          height: 40px;
+          font-size: 0;
+
+          &:before,
+          &:after {
+            content: "";
+            display: inline-block;
+            width: 24px;
+            height: 1px;
+            position: absolute;
+            top: 20px;
+            left: 10px;
+            background-color: #fff;
+            -webkit-transform-origin: center;
+            -ms-transform-origin: center;
+            transform-origin: center;
+          }
+
+          &:before {
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+          }
+
+          &:after {
+            -webkit-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+          }
+        }
+      }
+
+      .modal-body {
+        padding: 0;
+      }
+    }
+
+    video {
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .modal-dialog {
+      padding: 0 40px;
+    }
+  }
+
+  .iframe-video {
+    width: 100%;
+    height: 0;
+    padding-top: 56.25%;
+
+    iframe {
+      border: none;
+      background-color: rgba(0, 0, 0, 1);
+    }
+  }
+
+}
+
+.tooltip {
+  h3 {
+    color: inherit;
+  }
+}

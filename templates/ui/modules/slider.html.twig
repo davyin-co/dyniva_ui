@@ -1,0 +1,88 @@
+{# note: header.html.twig must be include in header block, the sub theme be able to override header #}
+{% block header %}
+  {% include '@dyniva_ui/ui/pages/header.html.twig' %}
+{% endblock %}
+
+<div id="wall" class="page-title promo">
+  <div class="inner">
+    <h1 class="page-title">滑动条</h1>
+    <h5 class="title">
+      <a href="https://github.com/leongersen/noUiSlider" target="_blank">noUiSlider</a>
+      滑动条组件具有良好的兼容性，提供了丰富的配置选项和事件方法。
+    </h5>
+  </div>
+</div>
+
+<div class="panel panel-ui">
+  <section class="dy-components" id="sliders">
+    <h2 class="section-header inner">滑动条</h2>
+
+    <div class="section-item title-box">
+      <h4 class="title inner">基本使用</h4>
+      <p class="rules inner">对noUiSlider进行了封装，<code>Drupal.behaviors.slider.init(arg1,arg2)</code>
+        参数1为元素，参数2为配置对象，<code>data-slider</code> 参数优先于arg2，默认开启 <code>tooltip</code></p>
+      <div class="dy-components-demo inner">
+        <br>
+        <div class="dy-slider outside-tb"></div>
+        <br>
+        <div class="dy-slider outside-tb" data-slider='{"start":[10,90], "step":0.5}'></div>
+        <br>
+        <div class="dy-slider outside-tb" data-slider='{"start":[400,800], "range": {"min":[200],"max":[1000]}}'></div>
+      </div>
+      <div class="dy-components-markup inner">
+        <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse" aria-expanded="false"
+           aria-controls="collapseCode">
+          <i class="icon">&#xe818;</i> 开发说明
+        </a>
+        <div class="collapse">
+          <div>
+            {% set blocks = '
+<div class="dy-slider"></div>
+<div class="dy-slider" data-slider=\'{"start":[10,90], "step":0.5}\'></div>
+<div class="dy-slider" data-slider=\'{"start":[400,800], "range": {"min":[200],"max":[1000]}}\'></div>
+// js use
+Drupal.behaviors.slider.init(\'.dy-slider\')
+' %}
+            <pre class="prettyprint lang-html">
+                  {{ blocks }}
+                  </pre>
+          </div>
+          <div class="dy-components-desc">
+            <table class="table table-full">
+              <thead>
+              <tr>
+                <th>常用参数</th>
+                <th>说明</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td><code>{start: [10, 90]}</code></td>
+                <td>默认起始值</td>
+              </tr>
+              <tr>
+                <td><code>{range:{"min":[200], "max":[1000]}}</code></td>
+                <td>最大最小值范围</td>
+              </tr>
+              <tr>
+                <td><code>{step: 0.5}</code></td>
+                <td>步长</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% block sliders %}{% endblock %}
+  </section>
+
+  {% block section %}{% endblock %}
+</div>
+
+
+{# note: ui-footer.html.twig must be include in footer block, the sub theme be able to override footer #}
+{% block footer %}
+  {% include directory ~ '@dyniva_ui/ui/pages/ui-footer.html.twig' %}
+{% endblock %}

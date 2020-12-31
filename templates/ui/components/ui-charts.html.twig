@@ -1,0 +1,623 @@
+{# note: header.html.twig must be include in header block, the sub theme be able to override header #}
+{% block header %}
+{% include '@dyniva_ui/ui/pages/header.html.twig' %}
+{% endblock %}
+{{ attach_library('dyniva_ui/echart') }}
+
+<div id="wall" class="page-title promo">
+  <div class="inner">
+    <h1 class="page-title">图表</h1>
+    <h5 class="title">多维度数据分析，多设备随意展示，无障碍访问支持</h5>
+  </div>
+</div>
+
+<div class="panel panel-ui">
+  <section class="dy-components" id="titles">
+    <div class="inner dy-components-inner">
+      <div class="row">
+        <div class="col-xs-12 col-md-2">
+          <h2 class="section-header inner">图表</h2>
+        </div>
+        <div class="col-xs-12 col-md-10">
+          <div class="section-item title-box">
+            <h4 class="title inner">折线图 v1</h4>
+            <div class="dy-components-demo inner">
+              <div id="dy-chart-line-v1" class="dy-chart" style="width:100%; height:400px"></div>
+            </div>
+            <div class="dy-components-markup inner">
+              <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse"
+                aria-expanded="false" aria-controls="collapseCode">
+                <i class="icon">&#xe818;</i> 开发说明
+              </a>
+              <div class="collapse">
+                <div>
+                  {% set blocks = '
+ option  {
+  title: {
+      text: \'本周发文统计\'
+    },
+    tooltip: {
+      trigger: \'axis\'
+    },
+    legend: {
+      data: [\'发文总量\', \'文章发文量\', \'着陆页发文量\', \'活动发文量\', \'JSON\']
+    },
+    grid: {
+      left: \'3%\',
+      right: \'4%\',
+      bottom: \'3%\',
+      containLabel: true
+    },
+    toolbox: {
+      feature: {
+        saveAsImage: {}
+      }
+    },
+    xAxis: {
+      type: \'category\',
+      boundaryGap: false,
+      data: [\'周一\', \'周二\', \'周三\', \'周四\', \'周五\', \'周六\', \'周日\']
+    },
+    yAxis: {
+      type: \'value\'
+    },
+    series: [{
+        name: \'发文总量\',
+        type: \'line\',
+        data: [1511, 1678, 1594, 1656, 2160, 2320, 2360]
+      },
+      {
+        name: \'文章发文量\',
+        type: \'line\',
+        data: [820, 932, 901, 934, 1290, 1330, 1320]
+      },
+      {
+        name: \'着陆页发文量\',
+        type: \'line\',
+        data: [150, 232, 201, 154, 190, 330, 410]
+      },
+      {
+        name: \'活动发文量\',
+        type: \'line\',
+        data: [320, 332, 301, 334, 390, 330, 320]
+      },
+      {
+        name: \'JSON\',
+        type: \'line\',
+        data: [220, 182, 191, 234, 290, 330, 310]
+      }
+    ]
+};
+                  ' %}
+                  <pre class="prettyprint lang-html">
+                  {{ blocks }}
+                  </pre>
+
+                </div>
+                <div class="dy-components-desc">
+                  <table class="table table-full">
+                    <thead>
+                      <tr>
+                        <th>Class</th>
+                        <th>说明</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><code>.bg-white</code></td>
+                        <td>添加白色背景</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>{# end section #}
+          <div class="outside-tb-lg">
+          </div>
+          <div class="section-item title-box">
+            <h4 class="title inner">折线图 v2</h4>
+            <div class="dy-components-demo inner">
+              <div id="dy-chart-line-v2" class="dy-chart" style="width:100%; height:400px"></div>
+            </div>
+            <div class="dy-components-markup inner">
+              <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse"
+                aria-expanded="false" aria-controls="collapseCode">
+                <i class="icon">&#xe818;</i> 开发说明
+              </a>
+              <div class="collapse">
+                <div>
+                  {% set blocks = '
+option {
+  title: {
+      text: \'用户活跃统计\'
+    },
+    tooltip: {
+      trigger: \'axis\'
+    },
+    legend: {
+      data: [\'Admin\', \'张三\', \'李四\', \'王五\', \'赵六\']
+    },
+    grid: {
+      left: \'3%\',
+      right: \'4%\',
+      bottom: \'3%\',
+      containLabel: true
+    },
+    toolbox: {
+      feature: {
+        saveAsImage: {}
+      }
+    },
+    xAxis: {
+      type: \'category\',
+      boundaryGap: false,
+      data: [\'2019-10-25\', \'2019-10-26\', \'2019-10-27\', \'2019-10-28\', \'2019-10-29\', \'2019-10-30\', \'2019-10-31\']
+    },
+    yAxis: {
+      type: \'value\'
+    },
+    series: [{
+        name: \'Admin\',
+        type: \'line\',
+        data: [8, 7, 8, 5, 13, 14, 20]
+      },
+      {
+        name: \'张三\',
+        type: \'line\',
+        data: [5, 6, 5, 12, 15, 10, 12]
+      },
+      {
+        name: \'李四\',
+        type: \'line\',
+        data: [3, 4, 6, 6, 8, 11, 9]
+      },
+      {
+        name: \'王五\',
+        type: \'line\',
+        data: [1, 6, 4, 4, 7, 9, 13]
+      },
+      {
+        name: \'赵六\',
+        type: \'line\',
+        data: [0, 7, 7, 9, 7, 5, 12]
+      }
+    ]
+};
+                  ' %}
+                  <pre class="prettyprint lang-html">
+                  {{ blocks }}
+                  </pre>
+
+                </div>
+                <div class="dy-components-desc">
+                  <table class="table table-full">
+                    <thead>
+                      <tr>
+                        <th>Class</th>
+                        <th>说明</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><code>.bg-white</code></td>
+                        <td>添加白色背景</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="outside-tb-lg">
+          </div>
+          <div class="section-item title-box">
+            <h4 class="title inner">柱状图 v1</h4>
+            <div class="dy-components-demo inner">
+              <div id="dy-chart-bar-v1" class="dy-chart" style="width:100%; height:800px"></div>
+            </div>
+            <div class="dy-components-markup inner">
+              <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse"
+                aria-expanded="false" aria-controls="collapseCode">
+                <i class="icon">&#xe818;</i> 开发说明
+              </a>
+              <div class="collapse">
+                <div>
+                  {% set blocks = '
+option {
+  "color": ["#7527a1", "#80bdfe", "#ff7640"],
+  "title": {
+    "text": "网络与信息中心本年度发文统计",
+    "left": "left"
+  },
+  "legend": {
+    "data": ["发文总量", "文章发文量", "活动发文量"],
+    "left": "center",
+    "bottom": "bottom"
+  },
+  "xAxis": {
+    "type": "category",
+    "axisTick": {
+      "show": false
+    },
+    "data": ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"]
+  },
+  "yAxis": {
+    "name": "数字",
+    "type": "value"
+  },
+  "series": [{
+    "name": "发文总量",
+    "type": "bar",
+    "barGap": 0,
+    "label": {
+      "normal": {
+        "show": true,
+        "position": "top"
+      }
+    },
+    "data": ["6", "10", "3", "13", "26", "2", "4", "6", "8", "20", "12", "32"]
+  }, {
+    "name": "文章发文量",
+    "type": "bar",
+    "label": {
+      "normal": {
+        "show": true,
+        "position": "top"
+      }
+    },
+    "data": ["4", "7", "1", "7", "17", "1", "3", "4", "3", "15", "4", "15"]
+  }, {
+    "name": "活动发文量",
+    "type": "bar",
+    "label": {
+      "normal": {
+        "show": true,
+        "position": "top"
+      }
+    },
+    "data": ["2", "3", "2", "6", "9", "1", "1", "2", "5", "5", "8", "17"]
+  }],
+  "grid": {
+    "containLabel": true,
+    "left": "10",
+    "right": "10",
+    "bottom": "40"
+  },
+  "toolbox": {
+    "show": true,
+    "right": "30",
+    "feature": {
+      "saveAsImage": {}
+    }
+  }
+};
+                  ' %}
+                  <pre class="prettyprint lang-html">
+                  {{ blocks }}
+                  </pre>
+
+                </div>
+                <div class="dy-components-desc">
+                  <table class="table table-full">
+                    <thead>
+                      <tr>
+                        <th>Class</th>
+                        <th>说明</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><code>.bg-white</code></td>
+                        <td>添加白色背景</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="outside-tb-lg">
+            <div class="section-item title-box">
+              <h4 class="title inner">柱状图 v2</h4>
+              <div class="dy-components-demo inner">
+                <div id="dy-chart-bar-v2" class="dy-chart" style="width:100%; height:600px"></div>
+              </div>
+              <div class="dy-components-markup inner">
+                <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse"
+                  aria-expanded="false" aria-controls="collapseCode">
+                  <i class="icon">&#xe818;</i> 开发说明
+                </a>
+                <div class="collapse">
+                  <div>
+                    {% set blocks = '
+option {
+  "color": ["#80bdfe", "#7ec857", "#f2b33f"],
+  "title": {
+    "text": "院部发布信息数排行 Top10",
+    "left": "left"
+  },
+  "legend": {
+    "data": ["发文总量", "文章发文量", "活动发文量"],
+    "left": "center",
+    "bottom": "bottom"
+  },
+  "xAxis": {
+    "name": "数字",
+    "type": "value"
+  },
+  "yAxis": {
+    "type": "category",
+    "axisTick": {
+      "show": false
+    },
+    "data": ["机电学院", "后勤集团", "建筑学院", "外国语学院", "人事处", "航天学院", "电信学院", "产业工委", "化工化学学院", "网络与信息中心"]
+  },
+  "series": [{
+    "name": "发文总量",
+    "type": "bar",
+    "barGap": 0,
+    "label": {
+      "normal": {
+        "show": true,
+        "position": "right"
+      }
+    },
+    "data": ["1", "1", "2", "2", "8", "16", "17", "21", "72", "110"]
+  }, {
+    "name": "文章发文量",
+    "type": "bar",
+    "label": {
+      "normal": {
+        "show": true,
+        "position": "right"
+      }
+    },
+    "data": ["1", "1", "2", "2", "2", "12", "8", "9", "31", "58"]
+  }, {
+    "name": "活动发文量",
+    "type": "bar",
+    "label": {
+      "normal": {
+        "show": true,
+        "position": "right"
+      }
+    },
+    "data": ["0", "0", "0", "0", "2", "1", "4", "3", "12", "12"]
+  }],
+  "grid": {
+    "containLabel": true,
+    "left": "10",
+    "right": "10",
+    "bottom": "40"
+  },
+  "toolbox": {
+    "show": true,
+    "right": "30",
+    "feature": {
+      "saveAsImage": {}
+    }
+  }
+};
+                  ' %}
+                    <pre class="prettyprint lang-html">
+                    {{ blocks }}
+                    </pre>
+
+                  </div>
+                  <div class="dy-components-desc">
+                    <table class="table table-full">
+                      <thead>
+                        <tr>
+                          <th>Class</th>
+                          <th>说明</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><code>.bg-white</code></td>
+                          <td>添加白色背景</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="outside-tb-lg">
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="section-item title-box">
+                  <h4 class="title inner">饼图 v1</h4>
+                  <div class="dy-components-demo inner">
+                    <div id="dy-chart-pie-v1" class="dy-chart" style="width:100%; height:400px"></div>
+                  </div>
+                  <div class="dy-components-markup inner">
+                    <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse"
+                      aria-expanded="false" aria-controls="collapseCode">
+                      <i class="icon">&#xe818;</i> 开发说明
+                    </a>
+                    <div class="collapse">
+                      <div>
+                        {% set blocks = '
+option  {
+  title: {
+      text: \'发文统计\',
+      x: \'left\'
+    },
+    tooltip: {
+      trigger: \'item\',
+      formatter: "{a} <br/>{b} : {c} ({d}%)"
+    },
+    legend: {
+      orient: \'vertical\',
+      left: \'right\',
+      data: [\'文章\', \'着陆页\', \'活动\', \'JSON\']
+    },
+    series: [{
+      name: \'发文统计\',
+      type: \'pie\',
+      radius: \'55%\',
+      center: [\'50%\', \'60%\'],
+      data: [{
+          value: 335,
+          name: \'文章\'
+        },
+        {
+          value: 122,
+          name: \'着陆页\'
+        },
+        {
+          value: 96,
+          name: \'活动\'
+        },
+        {
+          value: 56,
+          name: \'JSON\'
+        }
+      ],
+      itemStyle: {
+        emphasis: {
+          shadowBlur: 10,
+          shadowOffsetX: 0,
+          shadowColor: \'rgba(0, 0, 0, 0.5)\'
+        }
+      }
+    }]
+};
+                  ' %}
+                        <pre class="prettyprint lang-html">
+                        {{ blocks }}
+                        </pre>
+
+                      </div>
+                      <div class="dy-components-desc">
+                        <table class="table table-full">
+                          <thead>
+                            <tr>
+                              <th>Class</th>
+                              <th>说明</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td><code>.bg-white</code></td>
+                              <td>添加白色背景</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="outside-tb-lg">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="section-item title-box">
+                  <h4 class="title inner">饼图 v1</h4>
+                  <div class="dy-components-demo inner">
+                    <div id="dy-chart-pie-v2" class="dy-chart" style="width:100%; height:400px"></div>
+                  </div>
+                  <div class="dy-components-markup inner">
+                    <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse"
+                      aria-expanded="false" aria-controls="collapseCode">
+                      <i class="icon">&#xe818;</i> 开发说明
+                    </a>
+                    <div class="collapse">
+                      <div>
+                        {% set blocks = '
+option {
+  tooltip: {
+      trigger: \'item\',
+      formatter: "{a} <br/>{b}: {c} ({d}%)"
+    },
+    legend: {
+      orient: \'vertical\',
+      x: \'right\',
+      data: [\'文章\', \'着陆页\', \'活动\', \'JSON\']
+    },
+    series: [{
+      name: \'发文统计\',
+      type: \'pie\',
+      radius: [\'40%\', \'60%\'],
+      avoidLabelOverlap: false,
+      label: {
+        normal: {
+          show: false,
+          position: \'center\'
+        },
+        emphasis: {
+          show: true,
+          textStyle: {
+            fontSize: \'30\',
+            fontWeight: \'bold\'
+          }
+        }
+      },
+      labelLine: {
+        normal: {
+          show: false
+        }
+      },
+      data: [{
+          value: 335,
+          name: \'文章\'
+        },
+        {
+          value: 122,
+          name: \'着陆页\'
+        },
+        {
+          value: 96,
+          name: \'活动\'
+        },
+        {
+          value: 56,
+          name: \'JSON\'
+        }
+      ],
+    }]
+};
+                  ' %}
+                        <pre class="prettyprint lang-html">
+                        {{ blocks }}
+                        </pre>
+
+                      </div>
+                      <div class="dy-components-desc">
+                        <table class="table table-full">
+                          <thead>
+                            <tr>
+                              <th>Class</th>
+                              <th>说明</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td><code>.bg-white</code></td>
+                              <td>添加白色背景</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="outside-tb-lg">
+                </div>
+              </div>
+            </div>
+            {# end section #}
+            {% block section %}{% endblock %}
+          </div>
+        </div>
+      </div>
+  </section>
+</div>
+
+{# note: ui-footer.html.twig must be include in footer block, the sub theme be able to override footer #}
+{% block footer %}
+{% include directory ~ '@dyniva_ui/ui/pages/ui-footer.html.twig' %}
+{% endblock %}

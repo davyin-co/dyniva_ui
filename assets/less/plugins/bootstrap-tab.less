@@ -1,0 +1,223 @@
+// tab
+
+.panel-tabs {
+  .tab-nav {
+    display: flex;
+    .clearfix;
+
+    li {
+      .g-in;
+      position: relative;
+      flex: 1;
+
+      a {
+        width: 100%;
+        .btn;
+        font-size: @font-size;
+        padding: 14px 0;
+        &:hover{
+          opacity: 1;
+        }
+      }
+
+      &.active {
+        a {
+          cursor: default;
+        }
+      }
+    }
+    @media screen and (min-width: 768px) {
+      display: block;
+
+      > li {
+        float: left;
+        width: 100%;
+        &:nth-last-child(2),
+        &:nth-last-child(2) ~ li {
+          width: 50%;
+        }
+
+        &:nth-last-child(3),
+        &:nth-last-child(3) ~ li {
+          width: 33.33%;
+        }
+
+        &:nth-last-child(4),
+        &:nth-last-child(4) ~ li {
+          width: 25%;
+        }
+
+        &:nth-last-child(5),
+        &:nth-last-child(5) ~ li {
+          width: 20%;
+        }
+
+        &:nth-last-child(6),
+        &:nth-last-child(6) ~ li {
+          width: 16.66%;
+        }
+
+        &:nth-last-child(7),
+        &:nth-last-child(7) ~ li {
+          width: 14.2857%;
+        }
+
+        &:nth-last-child(8),
+        &:nth-last-child(8) ~ li {
+          width: 12.5%;
+        }
+
+        &:nth-last-child(9),
+        &:nth-last-child(9) ~ li {
+          width: 11.1111%;
+        }
+
+        &:nth-last-child(10),
+        &:nth-last-child(10) ~ li {
+          width: 10%;
+        }
+      }
+    }
+  }
+
+  .tab-nav-1 {
+    border-bottom: 2px solid @site-base;
+
+    li {
+      overflow: hidden;
+      margin-top: -2px;
+      margin-bottom: -2px;
+
+      a {
+        border: 2px solid transparent;
+      }
+
+      &.active {
+        a {
+          color: @site-base;
+          border-color: @site-base;
+          border-bottom-color: @bg-base;
+        }
+      }
+    }
+  }
+
+  .tab-nav-2 {
+
+    .clearfix;
+
+    li {
+      background-color: @site-base;
+      border-top: 3px solid @site-base;
+      overflow: hidden;
+
+      a {
+        color: #ffffff;
+      }
+
+      &.active {
+        a {
+          color: @site-base;
+          background-color: #ffffff;
+        }
+      }
+    }
+  }
+
+  .tab-nav-3 {
+
+    .clearfix;
+
+    li {
+      overflow: hidden;
+      border-bottom: 3px solid @site-base;
+      a {
+        color: @site-base;
+        font-size: @font-size;
+      }
+
+      &.active {
+        a {
+          color: #ffffff;
+          background-color: @site-base;
+        }
+      }
+    }
+  }
+
+  .tab-nav-3-red {
+
+
+    li {
+      border-bottom: 3px solid @state-danger;
+      a {
+        color: @state-danger;
+      }
+
+      &.active {
+        a {
+          background-color: @state-danger;
+        }
+      }
+    }
+  }
+
+  .tab-nav-3-blue {
+    border-bottom: 3px solid @color-info;
+
+    li {
+      a {
+        color: @color-info;
+      }
+
+      &.active {
+        a {
+          background-color: @color-info;
+        }
+      }
+    }
+  }
+
+  .tab-nav-3-orange {
+
+    li {
+      border-bottom: 3px solid @color-warning;
+      a {
+        color: @color-warning;
+      }
+
+      &.active {
+        a {
+          background-color: @color-warning;
+        }
+      }
+    }
+  }
+
+  .tab-content {
+    .outside-min-tb;
+
+    .tab-pane {
+      display: none;
+    }
+
+    .active {
+      display: block;
+    }
+  }
+
+  .tab-nav-4 {
+    ul{
+
+    }
+    li {
+      border-bottom: 1px solid @bg-light;
+      &.active {
+        border-bottom: 2px solid @site-base;
+      }
+      a{
+        font-size: @h2;
+      }
+    }
+  }
+}

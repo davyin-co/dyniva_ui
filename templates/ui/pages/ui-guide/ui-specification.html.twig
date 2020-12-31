@@ -1,0 +1,36 @@
+/*
+ * 示例 卡片组件
+ */
+<div class="card card-1">
+  <div class="card-media">
+    // 推荐尺寸： 220x220
+    <img src="..." alt="" />
+  </div>
+  <div class="card-content">
+    <h4 class="card-title"><a href="#" title="">标题</a></h4>
+    <div class="card-body">内容</div>
+  </div>
+  <div class="card-footer">
+    <p>页脚</p>
+  </div>
+</div>
+
+
+/*
+ * Less
+ */
+.card-1 {
+  border: 1px solid #eee;
+
+  .card-media {
+    margin-right: 12px;
+  }
+
+  .card-body{
+    padding: 12px;
+  }
+
+  .card-title {
+    font-size: 12px;
+  }
+}

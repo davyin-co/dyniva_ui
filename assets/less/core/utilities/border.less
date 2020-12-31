@@ -1,0 +1,130 @@
+// boder color
+.border-colored {
+  border: 1px solid @site-base;
+}
+
+.border-shadow {
+  border: 1px solid @border-color;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.size-lr {
+  font-size: @font-size-larger;
+}
+
+.size-l {
+  font-size: @font-size-larg;
+}
+
+.size-b {
+  font-size: @font-size;
+}
+
+.size-s {
+  font-size: @font-size-small;
+}
+
+.size-m {
+  font-size: @font-size-mini;
+}
+
+.one-line {
+  .text-ellipsis;
+}
+
+.two-line {
+  .multi-line(2);
+
+  &.size-lr {
+    .multi-line(2, @font-size-larger);
+  }
+
+  &.size-l {
+    .multi-line(2, @font-size-larg);
+  }
+
+  &.size-s {
+    .multi-line(2, @font-size-small);
+  }
+
+  &.size-m {
+    .multi-line(2, @font-size-mini);
+  }
+}
+
+.three-line {
+  .multi-line(3);
+
+  &.size-lr {
+    .multi-line(3, @font-size-larger);
+  }
+
+  &.size-l {
+    .multi-line(3, @font-size-larg);
+  }
+
+  &.size-s {
+    .multi-line(3, @font-size-small);
+  }
+
+  &.size-m {
+    .multi-line(3, @font-size-mini);
+  }
+}
+
+.four-line {
+  .multi-line(4);
+
+  &.size-lr {
+    .multi-line(4, @font-size-larger);
+  }
+
+  &.size-l {
+    .multi-line(4, @font-size-larg);
+  }
+
+  &.size-s {
+    .multi-line(4, @font-size-small);
+  }
+
+  &.size-m {
+    .multi-line(4, @font-size-mini);
+  }
+}
+
+/*
+ * 快速添加border类名
+ */
+.border-top {
+  border-top: 1px solid @border-color;
+}
+
+.border-bottom {
+  border-bottom: 1px solid @border-color;
+}
+
+.border-left {
+  border-left: 1px solid @border-color;
+}
+
+.border-right {
+  border-right: 1px solid @border-color;
+}
+
+.border-x {
+  .border-left;
+  .border-right;
+}
+
+.border-y {
+  .border-top;
+  .border-bottom;
+}
+
+.border-xy {
+  .border-x;
+  .border-y;
+}
