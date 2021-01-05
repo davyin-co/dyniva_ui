@@ -1,5 +1,5 @@
-{{ attach_library('dyniva_ui/masonry') }}
-{{ attach_library('dyniva_ui/bbModal') }}
+{{- attach_library('dyniva_ui/masonry') -}}
+{{- attach_library('dyniva_ui/bbModal') -}}
 
 <div class="dy-photo-1-0 masonry"
      data-masonry-container=".masonry-container"
@@ -7,7 +7,7 @@
 >
   <div class="inner">
     <div class="masonry-container">
-      {% for item in [
+      {%- for item in [
         {image: theme~'/templates/ui/images/media/showcase3-0.png', alt:''},
         {image: theme~'/templates/ui/images/media/showcase3-1.png', alt:''},
         {image: theme~'/templates/ui/images/media/showcase3-1.png', alt:''},
@@ -16,11 +16,11 @@
         {image: theme~'/templates/ui/images/media/showcase3-0.png', alt:''},
         {image: theme~'/templates/ui/images/media/showcase3-1.png', alt:''},
         {image: theme~'/templates/ui/images/media/showcase3-0.png', alt:''}
-      ] %}
+      ] ~%}
         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 masonry-item">
           <a data-toggle="modal"
-             data-mode="html"
-             data-selector=".masonry-item-modal-{{ loop.index }}"
+            data-mode="html"
+            data-selector=".masonry-item-modal-{{ loop.index }}"
           >
             <img src="{{ item.image }}" alt="{{ item.alt }}">
           </a>
@@ -31,7 +31,7 @@
             </div>
           </div>
         </div>
-      {% endfor %}
+      {%- endfor ~%}
     </div>
     <div class="masonry-more t-c inside-min-tb">
       <a class="d_ib underline-hover" href="javascript:void(0);">

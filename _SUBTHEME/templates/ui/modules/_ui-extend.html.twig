@@ -4,7 +4,8 @@
  * - custom sub theme header, also can add new components
  */
 #}
-{% extends '@dyniva_ui/ui/modules/ui-photo.html.twig' %}
+{% extends '@dyniva_ui/ui/modules/action-1-0' %}
+
 
 {# overwrite block header #}
 {% block header %}
@@ -13,7 +14,36 @@
 
 {# overwrite block dyniva_ui_section #}
 {% block dyniva_ui_section %}
-  {% for section in [] %}
+  {% for section in [
+    {
+      id: 'section id',
+      title: 'section title',
+      items: [
+        {
+          id: 'item id',
+          title: 'item title',
+          rule: 'item rule',
+          demoClass: 'class push in dy-component-demo',
+          libraries: [
+            'attach_libraries list'
+          ],
+          templates: [
+            {
+              url: 'module url',
+              gridClass: 'col class(col-xs-6,col-md-3,etc.)',
+              param: { module_params: true },
+            }
+          ],
+          descs: [
+            {
+              code: 'class-example',
+              text: 'desc-example'
+            },
+          ]
+        },
+      ]
+    },
+  ] %}
     <section class="dy-components" id="{{ section.id }}">
       <h2 class="section-header inner">{{ section.title }}</h2>
       {% for item in section.items %}

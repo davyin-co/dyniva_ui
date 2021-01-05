@@ -1,20 +1,98 @@
-{# note: header.html.twig must be include in header block, the sub theme be able to override header #}
+{#
+/**
+ * - extends base theme components body
+ * - custom sub theme header, also can add new components
+ */
+#}
+
+{# override base theme header,logo,menu links #}
 {% block header %}
   {% include '@dyniva_ui/ui/pages/header.html.twig' %}
 {% endblock %}
 
-<div id="wall" class="page-title promo">
+<div id="wall" class="page-title">
   <div class="inner">
     <h1 class="page-title">引导</h1>
-    <h5 class="title"></h5>
+    <h5 class="title outside-t">常用的链接合集</h5>
   </div>
 </div>
 
 <div class="panel panel-ui">
-  {% block section %}{% endblock %}
+  {% for section in [] %}
+    <section class="dy-components" id="{{ section.id }}">
+      <h2 class="section-header inner">{{ section.title }}</h2>
+      {% for item in section.items %}
+        <div class="section-item title-box" id="{{ item.id }}">
+          {% if item.title %}
+            <h4 class="title inner">{{ item.title }}</h4>
+          {% endif %}
+          {% if item.rule %}
+            <p class="rules inner">{{ item.rule }}</p>
+          {% endif %}
+
+          <div class="dy-components-demo overflow-hidden {{ item.demoClass }}">
+            <div class="row">
+              {% for template in item.templates %}
+                {% if template.spacer %}
+                  <div class="spacer-{{ spacer }}"></div>
+                {% endif %}
+                <div class="col-xs-12 {{ template.gridClass }}">
+                  {{ include('@dyniva_ui/ui/modules' ~ template.url, template.param ? template.param : {}) }}
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+
+          <div class="dy-components-markup inner">
+            <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="collapseCode">
+              <i class="icon">&#xe818;</i>开发说明
+            </a>
+            <div class="collapse">
+              {% if item.descs %}
+                <div class="code-description">
+                  <table class="table table-full">
+                    <thead>
+                      <tr>
+                        <th>Class</th>
+                        <th>说明</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for desc in item.descs %}
+                      <tr>
+                        <td><code>{{ desc.code }}</code></td>
+                        <td>{{ desc.text }}</td>
+                      </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
+              {% endif %}
+
+              <div class="code-preview">
+                <pre class="prettyprint lang-html">
+                  {%- for library in item.libraries ~%}
+                    {{~ "{{ attach_library('"~library~"') }}" ~}}
+                  {%- endfor ~%}
+
+                  {%- for template in item.templates ~%}
+
+                    {{~ include('@dyniva_ui/ui/modules' ~ template.url, template.param ? template.param : {}) | escape ~}}
+                  {%- endfor ~%}
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </section>
+  {% endfor %}
+
+  {# sub theme components extend here dont remove section block #}
+  {% block dyniva_ui_section %}{% endblock %}
 </div>
 
-{# note: ui-footer.html.twig must be include in footer block, the sub theme be able to override footer #}
+{# override base theme footer #}
 {% block footer %}
-  {% include directory ~ '@dyniva_ui/ui/pages/ui-footer.html.twig' %}
+  {% include '@dyniva_ui/ui/pages/ui-footer.html.twig' %}
 {% endblock %}

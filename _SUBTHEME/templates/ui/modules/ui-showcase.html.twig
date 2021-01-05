@@ -6,17 +6,84 @@
 #}
 {% extends '@dyniva_ui/ui/modules/ui-showcase.html.twig' %}
 
-{# override base theme header,logo,menu links #}
+{# overwrite block header #}
 {% block header %}
   {% include '@SUBTHEME/ui/pages/header.html.twig' %}
 {% endblock %}
 
-{# sub theme add custom component #}
-{% block section %}
-  {#  add new custom components code here #}
+{# overwrite block dyniva_ui_section #}
+{% block dyniva_ui_section %}
+  {% for section in [] %}
+    <section class="dy-components" id="{{ section.id }}">
+      <h2 class="section-header inner">{{ section.title }}</h2>
+      {% for item in section.items %}
+        <div class="section-item title-box" id="{{ item.id }}">
+          {% if item.title %}
+            <h4 class="title inner">{{ item.title }}</h4>
+          {% endif %}
+          {% if item.rule %}
+            <p class="rules inner">{{ item.rule }}</p>
+          {% endif %}
+
+          <div class="dy-components-demo overflow-hidden {{ item.demoClass }}">
+            <div class="row">
+              {% for template in item.templates %}
+                {% if template.spacer %}
+                  <div class="spacer-{{ spacer }}"></div>
+                {% endif %}
+                <div class="col-xs-12 {{ template.gridClass }}">
+                  {{ include('@SUBTHEME/ui/modules' ~ template.url, template.param ? template.param : {}) }}
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+
+          <div class="dy-components-markup inner">
+            <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="collapseCode">
+              <i class="icon">&#xe818;</i>开发说明
+            </a>
+            <div class="collapse">
+              {% if item.descs %}
+                <div class="code-description">
+                  <table class="table table-full">
+                    <thead>
+                      <tr>
+                        <th>Class</th>
+                        <th>说明</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for desc in item.descs %}
+                      <tr>
+                        <td><code>{{ desc.code }}</code></td>
+                        <td>{{ desc.text }}</td>
+                      </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
+              {% endif %}
+
+              <div class="code-preview">
+                <pre class="prettyprint lang-html">
+                  {%- for library in item.libraries ~%}
+                    {{~ "{{ attach_library('"~library~"') }}" ~}}
+                  {%- endfor ~%}
+                  {%- for template in item.templates ~%}
+                    {{~ include('@SUBTHEME/ui/modules' ~ template.url, template.param ? template.param : {}) | escape ~}}
+                  {%- endfor ~%}
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </section>
+  {% endfor %}
+  
 {% endblock %}
 
-{# override base theme footer #}
+{# overwrite block footer #}
 {% block footer %}
   {% include '@SUBTHEME/ui/pages/ui-footer.html.twig' %}
 {% endblock %}

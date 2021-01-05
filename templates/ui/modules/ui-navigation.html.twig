@@ -1,4 +1,11 @@
-{# note: header.html.twig must be include in header block, the sub theme be able to override header #}
+{#
+/**
+ * - extends base theme components body
+ * - custom sub theme header, also can add new components
+ */
+#}
+
+{# override base theme header,logo,menu links #}
 {% block header %}
   {% include '@dyniva_ui/ui/pages/header.html.twig' %}
 {% endblock %}
@@ -9,342 +16,298 @@
     <h5 class="title">导航包括一些常用的主菜单，边栏菜单，切换菜单和面包屑。</h5>
   </div>
 </div>
-<div class="outside">&nbsp</div>
 
 <div class="panel panel-ui">
-  <section class="dy-components" id="menu">
-    <h2 class="section-header inner">菜单 menu</h2>
-
-    <div class="section-item title-box" id="dy-menu-1-0">
-      <h4 class="title inner">主菜单 1.0</h4>
-      <p class="rules inner">该菜单带有下拉二级菜单，使用Drupal默认菜单结构，一级菜单宽度一致。</p>
-      <div class="dy-components-demo inner">
-        {% include '@dyniva_ui/ui/modules/navigation/dy-menu-1-0.html.twig' %}
-      </div>
-      <div class="dy-components-markup inner">
-        <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse"
-           aria-expanded="false"
-           aria-controls="collapseCode">
-          <i class="icon">&#xe818;</i> 开发说明
-        </a>
-        <div class="collapse">
-          <pre class="prettyprint lang-html">
-            {%- filter escape -%}
-              {% include '@dyniva_ui/ui/modules/navigation/dy-menu-1-0.html.twig' %}
-            {%- endfilter -%}
-          </pre>
-          <div class="dy-components-desc">
-            <table class="table table-full">
-              <thead>
-              <tr>
-                <th>Class</th>
-                <th>说明</th>
-              </tr>
-              </thead>
-              <tbody>
-              <tr>
-                <td><code>.main-menu-v1</code></td>
-                <td>组件版本 v1</td>
-              </tr>
-              <tr>
-                <td><code>.js-main-menu</code></td>
-                <td>下拉菜单需要这个类来初始化</td>
-              </tr>
-              <tr>
-                <td><code>.clearfix</code></td>
-                <td>如果浮动有问题，需要添加此类</td>
-              </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    {% block menu %}{% endblock %}
-  </section>
-
-  <section class="dy-components" id="sidebar">
-    <h2 class="section-header inner">边栏菜单</h2>
-
-    <div class="section-item title-box" id="dy-sidebar-1-0">
-      <h4 class="title inner">边栏菜单 1.0</h4>
-      <p class="rules inner">菜单的层级结构和主菜单一致，都是由drupal核心menu输出，默认会展开已激活项，当一个菜单展开，其他展开的菜单会收起。需要单独在模板中引入资源库<code>dyniva_ui/sidebar</code>
-      </p>
-      <div class="dy-components-demo inner">
-        <div class="row">
-          <div class="col-xs-12 col-md-4">
-            {% include '@dyniva_ui/ui/modules/navigation/dy-sidebar-1-0.html.twig' %}
-          </div>
-        </div>
-      </div>
-      <div class="dy-components-markup inner">
-        <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse" aria-expanded="false"
-           aria-controls="collapseCode">
-          <i class="icon">&#xe818;</i> 开发说明
-        </a>
-        <div class="collapse">
-          <pre class="prettyprint lang-html">
-            {%- filter escape -%}
-              {{~ "{{ attach_library('dyniva_ui/sidebar') }}" ~}}
-              {% include '@dyniva_ui/ui/modules/navigation/dy-sidebar-1-0.html.twig' %}
-            {%- endfilter -%}
-          </pre>
-          <div class="dy-components-desc">
-            <table class="table table-full">
-              <thead>
-              <tr>
-                <th>Class</th>
-                <th>说明</th>
-              </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><code>.sidebar-menu-v1</code></td>
-                  <td>组件版本 v1</td>
-                </tr>
-                <tr>
-                  <td><code>.js-sidebar-menu</code></td>
-                  <td>边栏二级菜单的展开收缩根据这个类来初始化</td>
-                </tr>
-                <tr>
-                  <td><code>.menu-collapse</code></td>
-                  <td>覆写对应的menu模板，添加<code>.menu-collapse</code>类</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    {% block sidebar %}{% endblock %}
-  </section>
-
-  <section class="dy-components" id="navbar">
-    <h2 class="section-header inner">导航栏</h2>
-
-    <div class="section-item title-box" id="dy-navbar-1-0">
-      <h4 class="title inner">导航栏 1.0</h4>
-      <p class="rules inner">消息如果有分类可以添加对应的分类图标和对应的颜色，限制最大高度，超出滚动显示。提供了三种信息类型：图文、列表、图片</p>
-      <div class="dy-components-demo inner">
-        {% include '@dyniva_ui/ui/modules/navigation/dy-navbar-1-0.html.twig' %}
-      </div>
-      <div class="dy-components-markup inner">
-        <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse" aria-expanded="false"
-           aria-controls="collapseCode">
-          <i class="icon">&#xe818;</i> 开发说明
-        </a>
-        <div class="collapse">
-          <pre class="prettyprint lang-html">
-            {%- filter escape -%}
-              {% include '@dyniva_ui/ui/modules/navigation/dy-navbar-1-0.html.twig' %}
-            {%- endfilter -%}
-          </pre>
-          <div class="dy-components-desc">
-            <table class="table table-full">
-              <thead>
-              <tr>
-                <th>Class</th>
-                <th>说明</th>
-              </tr>
-              </thead>
-              <tbody>
-              <tr>
-                <td><code>.navbar-static-top</code></td>
-                <td>顶部toolbar静态菜单栏</td>
-              </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    {% block navbar %}{% endblock %}
-  </section>
-
-
-  <section class="dy-components" id="tabs">
-    <h2 class="section-header inner">选项卡</h2>
-
-    <div class="section-item title-box" id="dy-tab-1-0">
-      <h4 class="title inner">选项卡 1.0</h4>
-      <div class="dy-components-demo inner">
-        {% include '@dyniva_ui/ui/modules/navigation/dy-tab-1-0.html.twig' %}
-      </div>
-      <div class="dy-components-markup inner">
-        <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse"
-           aria-expanded="false"
-           aria-controls="collapseCode">
-          <i class="icon">&#xe818;</i> 开发说明
-        </a>
-        <div class="collapse">
-          <pre class="prettyprint lang-html">
-            {%- filter escape -%}
-              {% include '@dyniva_ui/ui/modules/navigation/dy-tab-1-0.html.twig' %}
-            {%- endfilter -%}
-          </pre>
-          <div class="dy-components-desc">
-            <table class="table table-full">
-              <thead>
-              <tr>
-                <th>Class</th>
-                <th>说明</th>
-              </tr>
-              </thead>
-              <tbody>
-              <tr>
-                <td><code>.tab-nav-1</code></td>
-                <td>选项卡 v1</td>
-              </tr>
-              <tr>
-                <td><code>.panel-tabs-auto / .tab-pane</code></td>
-                <td>js会根据该类初始化页面中所有的选项卡</td>
-              </tr>
-              <tr>
-                <td><code>.tab-content</code></td>
-                <td>选项卡的内容</td>
-              </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section-item title-box" id="dy-tab-2-0">
-      <h4 class="title inner">选项卡 2.0</h4>
-      <div class="dy-components-demo inner">
-        {% include '@dyniva_ui/ui/modules/navigation/dy-tab-2-0.html.twig' %}
-      </div>
-      <div class="dy-components-markup inner">
-        <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse"
-           aria-expanded="false"
-           aria-controls="collapseCode">
-          <i class="icon">&#xe818;</i> 开发说明
-        </a>
-        <div class="collapse">
-          <pre class="prettyprint lang-html">
-            {%- filter escape -%}
-              {% include '@dyniva_ui/ui/modules/navigation/dy-tab-2-0.html.twig' %}
-            {%- endfilter -%}
-          </pre>
-          <div class="dy-components-desc">
-            <table class="table table-full">
-              <thead>
-              <tr>
-                <th>Class</th>
-                <th>说明</th>
-              </tr>
-              </thead>
-              <tbody>
-              <tr>
-                <td><code>.tab-nav-2</code></td>
-                <td>选项卡 v2</td>
-              </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section-item title-box" id="dy-tab-3-0">
-      <h4 class="title inner">选项卡 3.0</h4>
-      <div class="dy-components-demo inner">
-        {% include '@dyniva_ui/ui/modules/navigation/dy-tab-3-0.html.twig' %}
-        <div class="spacer-md"></div>
-        {% include '@dyniva_ui/ui/modules/navigation/dy-tab-3-0.html.twig' with{
-          class: 'tab-nav-3-red'
-        }%}
-      </div>
-      <div class="dy-components-markup inner">
-        <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse"
-           aria-expanded="false"
-           aria-controls="collapseCode">
-          <i class="icon">&#xe818;</i> 开发说明
-        </a>
-        <div class="collapse">
-          <pre class="prettyprint lang-html">
-            {%- filter escape -%}
-              {% include '@dyniva_ui/ui/modules/navigation/dy-tab-3-0.html.twig' %}
-
-              {{~ '// red theme' -}}
-              {% include '@dyniva_ui/ui/modules/navigation/dy-tab-3-0.html.twig' with{
+  {% for section in [
+    {
+      id: 'menu',
+      title: '菜单',
+      items: [
+        {
+          id: 'dy-menu-1-0',
+          title: '主菜单 1.0',
+          rule: '该菜单带有下拉二级菜单，使用Drupal默认菜单结构，一级菜单宽度一致。',
+          demoClass: 'inner',
+          libraries: [],
+          templates: [
+            {
+              url: '/navigation/dy-menu-1-0.html.twig',
+              gridClass: 'col-xs-12',
+            }
+          ],
+          descs: [
+            {
+              code: '.main-menu-v1',
+              text: '组件版本 v1'
+            },
+            {
+              code: '.js-main-menu',
+              text: '下拉菜单需要这个类来初始化'
+            },
+          ]
+        },
+      ]
+    },
+    {
+      id: 'sidebar',
+      title: '边栏菜单',
+      items: [
+        {
+          id: 'dy-sidebar-1-0',
+          title: '边栏菜单 1.0',
+          rule: '菜单的层级结构和主菜单一致，都是由drupal核心menu输出，默认会展开已激活项，当一个菜单展开，其他展开的菜单会收起。需要单独在模板中引入资源库',
+          demoClass: 'inner',
+          libraries: [
+            'dyniva_ui/sidebar',
+          ],
+          templates: [
+            {
+              url: '/navigation/dy-sidebar-1-0.html.twig',
+              gridClass: 'col-xs-12 col-md-4',
+            }
+          ],
+          descs: [
+            {
+              code: '.sidebar-menu-v1',
+              text: '组件版本 v1'
+            },
+            {
+              code: '.js-sidebar-menu',
+              text: '边栏二级菜单的展开收缩根据这个类来初始化'
+            },
+            {
+              code: '.menu-collapse',
+              text: '覆写对应的menu模板，添加.menu-collapse类'
+            },
+          ]
+        },
+      ]
+    },
+    {
+      id: 'navbar',
+      title: '导航栏',
+      items: [
+        {
+          id: 'dy-navbar-1-0',
+          title: '导航栏 1.0',
+          rule: '消息如果有分类可以添加对应的分类图标和对应的颜色，限制最大高度，超出滚动显示。提供了三种信息类型：图文、列表、图片',
+          demoClass: 'inner',
+          libraries: [],
+          templates: [
+            {
+              url: '/navigation/dy-navbar-1-0.html.twig',
+              gridClass: 'col-xs-12',
+            }
+          ],
+          descs: [
+            {
+              code: '.navbar-static-top',
+              text: '顶部toolbar静态菜单栏'
+            },
+          ]
+        },
+      ]
+    },
+    {
+      id: 'tab',
+      title: '选项卡',
+      items: [
+        {
+          id: 'dy-tab-1-0',
+          title: '选项卡 1.0',
+          rule: '',
+          demoClass: 'inner',
+          libraries: [],
+          templates: [
+            {
+              url: '/navigation/dy-tab-1-0.html.twig',
+              gridClass: 'col-xs-12',
+            }
+          ],
+          descs: [
+            {
+              code: '.tab-nav-1',
+              text: '选项卡 v1'
+            },
+            {
+              code: '.panel-tabs-auto / .tab-pane',
+              text: 'js会根据该类初始化页面中所有的选项卡'
+            },
+            {
+              code: '.tab-content',
+              text: '选项卡的内容'
+            },
+          ]
+        },
+        {
+          id: 'dy-tab-2-0',
+          title: '选项卡 2.0',
+          rule: '',
+          demoClass: 'inner',
+          libraries: [],
+          templates: [
+            {
+              url: '/navigation/dy-tab-2-0.html.twig',
+              gridClass: 'col-xs-12',
+            }
+          ],
+          descs: [
+            {
+              code: '.tab-nav-2',
+              text: '选项卡 v2'
+            },
+            {
+              code: '.panel-tabs-auto / .tab-pane',
+              text: 'js会根据该类初始化页面中所有的选项卡'
+            },
+            {
+              code: '.tab-content',
+              text: '选项卡的内容'
+            },
+          ]
+        },
+        {
+          id: 'dy-tab-3-0',
+          title: '选项卡 3.0',
+          rule: '',
+          demoClass: 'inner',
+          libraries: [],
+          templates: [
+            {
+              url: '/navigation/dy-tab-3-0.html.twig',
+              gridClass: 'col-xs-12',
+            },
+            {
+              url: '/navigation/dy-tab-3-0.html.twig',
+              gridClass: 'col-xs-12',
+              param: {
                 class: 'tab-nav-3-red'
-              }%}
-            {%- endfilter -%}
-          </pre>
-          <div class="dy-components-desc">
-            <table class="table table-full">
-              <thead>
-              <tr>
-                <th>Class</th>
-                <th>说明</th>
-              </tr>
-              </thead>
-              <tbody>
-              <tr>
-                <td><code>.tab-nav-3</code></td>
-                <td>选项卡 v3</td>
-              </tr>
-              <tr>
-                <td><code>.tab-nav-3-red</code></td>
-                <td>主题红色</td>
-              </tr>
-              </tbody>
-            </table>
+              }
+            },
+          ],
+          descs: [
+            {
+              code: '.tab-nav-3',
+              text: '选项卡 v3'
+            },
+            {
+              code: '.tab-nav-3-red',
+              text: '主题红色'
+            },
+            {
+              code: '.panel-tabs-auto / .tab-pane',
+              text: 'js会根据该类初始化页面中所有的选项卡'
+            },
+            {
+              code: '.tab-content',
+              text: '选项卡的内容'
+            },
+          ]
+        },
+        {
+          id: 'dy-tab-4-0',
+          title: '选项卡 4.0',
+          rule: '',
+          demoClass: 'inner',
+          libraries: [],
+          templates: [
+            {
+              url: '/navigation/dy-tab-4-0.html.twig',
+              gridClass: 'col-xs-12',
+            },
+          ],
+          descs: [
+            {
+              code: '.tab-nav-4',
+              text: '选项卡 v4'
+            },
+            {
+              code: '.panel-tabs-auto / .tab-pane',
+              text: 'js会根据该类初始化页面中所有的选项卡'
+            },
+            {
+              code: '.tab-content',
+              text: '选项卡的内容'
+            },
+          ]
+        },
+      ]
+    },
+  ] %}
+    <section class="dy-components" id="{{ section.id }}">
+      <h2 class="section-header inner">{{ section.title }}</h2>
+      {% for item in section.items %}
+        <div class="section-item title-box" id="{{ item.id }}">
+          {% if item.title %}
+            <h4 class="title inner">{{ item.title }}</h4>
+          {% endif %}
+          {% if item.rule %}
+            <p class="rules inner">{{ item.rule }}</p>
+          {% endif %}
+
+          <div class="dy-components-demo overflow-hidden {{ item.demoClass }}">
+            <div class="row">
+              {% for template in item.templates %}
+                {% if template.spacer %}
+                  <div class="spacer-{{ spacer }}"></div>
+                {% endif %}
+                <div class="col-xs-12 {{ template.gridClass }}">
+                  {{ include('@dyniva_ui/ui/modules' ~ template.url, template.param ? template.param : {}) }}
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+
+          <div class="dy-components-markup inner">
+            <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="collapseCode">
+              <i class="icon">&#xe818;</i>开发说明
+            </a>
+            <div class="collapse">
+              {% if item.descs %}
+                <div class="code-description">
+                  <table class="table table-full">
+                    <thead>
+                      <tr>
+                        <th>Class</th>
+                        <th>说明</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for desc in item.descs %}
+                      <tr>
+                        <td><code>{{ desc.code }}</code></td>
+                        <td>{{ desc.text }}</td>
+                      </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
+              {% endif %}
+
+              <div class="code-preview">
+                <pre class="prettyprint lang-html">
+                  {%- for library in item.libraries ~%}
+                    {{~ "{{ attach_library('"~library~"') }}" ~}}
+                  {%- endfor ~%}
+
+                  {%- for template in item.templates ~%}
+
+                    {{~ include('@dyniva_ui/ui/modules' ~ template.url, template.param ? template.param : {}) | escape ~}}
+                  {%- endfor ~%}
+                </pre>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+      {% endfor %}
+    </section>
+  {% endfor %}
 
-    <div class="section-item title-box" id="dy-tab-4-0">
-      <h4 class="title inner">选项卡 4.0</h4>
-      <div class="dy-components-demo inner">
-        {% include '@dyniva_ui/ui/modules/navigation/dy-tab-4-0.html.twig' %}
-      </div>
-      <div class="dy-components-markup inner">
-        <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse"
-           aria-expanded="false"
-           aria-controls="collapseCode">
-          <i class="icon">&#xe818;</i> 开发说明
-        </a>
-        <div class="collapse">
-          <pre class="prettyprint lang-html">
-            {%- filter escape -%}
-              {% include '@dyniva_ui/ui/modules/navigation/dy-tab-4-0.html.twig' %}
-            {%- endfilter -%}
-          </pre>
-          <div class="dy-components-desc">
-            <table class="table table-full">
-              <thead>
-              <tr>
-                <th>Class</th>
-                <th>说明</th>
-              </tr>
-              </thead>
-              <tbody>
-              <tr>
-                <td><code>.tab-nav-4</code></td>
-                <td>选项卡 v4</td>
-              </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    {% block tabs %}{% endblock %}
-  </section>
-
-  {% block section %}{% endblock %}
+  {# sub theme components extend here dont remove section block #}
+  {% block dyniva_ui_section %}{% endblock %}
 </div>
 
-{# note: ui-footer.html.twig must be include in footer block, the sub theme be able to override footer #}
+{# override base theme footer #}
 {% block footer %}
-  {% include directory ~ '@dyniva_ui/ui/pages/ui-footer.html.twig' %}
+  {% include '@dyniva_ui/ui/pages/ui-footer.html.twig' %}
 {% endblock %}
-

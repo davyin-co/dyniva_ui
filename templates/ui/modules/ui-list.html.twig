@@ -1,4 +1,11 @@
-{# note: header.html.twig must be include in header block, the sub theme be able to override header #}
+{#
+/**
+ * - extends base theme components body
+ * - custom sub theme header, also can add new components
+ */
+#}
+
+{# override base theme header,logo,menu links #}
 {% block header %}
   {% include '@dyniva_ui/ui/pages/header.html.twig' %}
 {% endblock %}
@@ -11,220 +18,208 @@
 </div>
 
 <div class="panel panel-ui">
-  <section class="dy-components" id="lists">
-    <h2 class="section-header inner">列表</h2>
+  {% for section in [
+    {
+      id: 'list',
+      title: '列表',
+      items: [
+        {
+          id: 'dy-list-1-0',
+          title: '列表1.0',
+          rule: '有标题、描述、图片和时间的列表',
+          demoClass: '',
+          libraries: [],
+          templates: [
+            {
+              url: '/list/dy-list-1-0.html.twig',
+              gridClass: 'col-xs-12',
+              param: { }
+            }
+          ],
+          descs: [
+            {
+              code: '.dy-list-wrapper',
+              text: '列表容器'
+            },
+            {
+              code: '.dy-list-1-0',
+              text: '列表1.0'
+            },
+            {
+              code: '.list-body',
+              text: '列表文字内容'
+            },
+            {
+              code: '.has-media',
+              text: '有图片添加此类，不添加表示文字铺满'
+            },
+            {
+              code: '.list-media',
+              text: '列表图片或'
+            },
+            {
+              code: '<hr/>',
+              text: '两个item的分割线'
+            },
+          ]
+        },
+        {
+          id: 'dy-list-1-1',
+          title: '列表 1.1',
+          rule: '只有标题的列表',
+          demoClass: '',
+          libraries: [],
+          templates: [
+            {
+              url: '/list/dy-list-1-1.html.twig',
+              gridClass: 'col-xs-12',
+              param: { }
+            }
+          ],
+          descs: [
+            {
+              code: '.dy-list-wrapper',
+              text: '列表容器'
+            },
+            {
+              code: '.dy-list-1-1',
+              text: '列表 1.1'
+            },
+          ]
+        },
+        {
+          id: 'dy-list-2-0',
+          title: '列表 2.0',
+          rule: '一行排列，hover有图片显示',
+          demoClass: '',
+          libraries: [],
+          templates: [
+            {
+              url: '/list/dy-list-2-0.html.twig',
+              gridClass: 'col-xs-12',
+              param: { }
+            }
+          ],
+          descs: [
+            {
+              code: '.dy-list-wrapper',
+              text: '列表容器'
+            },
+            {
+              code: '.bg-*',
+              text: '标记的北京颜色：.bg-brown棕色，.bg-blue蓝色，.bg-red红色'
+            },
+            {
+              code: '.list-item',
+              text: '列表item项'
+            },
+            {
+              code: '.dy-list-2-0',
+              text: '列表2.0'
+            },
+          ]
+        },
+        {
+          id: 'dy-list-3-0',
+          title: '列表 3.0',
+          rule: '一行两个排列，多行，带有标题和时间',
+          demoClass: '',
+          libraries: [],
+          templates: [
+            {
+              url: '/list/dy-list-3-0.html.twig',
+              gridClass: 'col-xs-12',
+              param: { }
+            }
+          ],
+          descs: [
+            {
+              code: '.dy-list-wrapper',
+              text: '列表容器'
+            },
+            {
+              code: '.dy-list-3-0',
+              text: '列表 3.0'
+            },
+          ]
+        },
+      ]
+    },
+  ] %}
+    <section class="dy-components" id="{{ section.id }}">
+      <h2 class="section-header inner">{{ section.title }}</h2>
+      {% for item in section.items %}
+        <div class="section-item title-box" id="{{ item.id }}">
+          {% if item.title %}
+            <h4 class="title inner">{{ item.title }}</h4>
+          {% endif %}
+          {% if item.rule %}
+            <p class="rules inner">{{ item.rule }}</p>
+          {% endif %}
 
-    <div class="section-item title-box" id="dy-list-1-0">
-      <h4 class="title inner">列表1.0</h4>
-      <p class="rules inner">有标题、描述、图片和时间的列表</p>
-      <div class="dy-components-demo outside-tb">
-        {% include "@dyniva_ui/ui/modules/list/dy-list-1-0.html.twig" %}
-      </div>
-      <div class="dy-components-markup inner">
-        <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse" aria-expanded="false"
-            aria-controls="collapseCode">
-          <i class="icon">&#xe818;</i> 开发说明
-        </a>
-        <div class="collapse">
-          <pre class="prettyprint lang-html">
-            {%- filter escape -%}
-              {% include "@dyniva_ui/ui/modules/list/dy-list-1-0.html.twig" %}
-            {%- endfilter -%}
-          </pre>
-          <div class="dy-components-desc">
-            <table class="table table-full">
-              <thead>
-                <tr>
-                  <th>属性</th>
-                  <th>说明</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><code>.dy-list-wrapper</code></td>
-                  <td>列表容器</td>
-                </tr>
-                <tr>
-                  <td><code>.dy-list-1-0</code></td>
-                  <td>列表1.0</td>
-                </tr>
-                <tr>
-                  <td><code>.list-body</code></td>
-                  <td>列表文字内容</td>
-                </tr>
-                <tr>
-                  <td><code>.has-media</code></td>
-                  <td>有图片添加此类，不添加表示文字铺满</td>
-                </tr>
-                <tr>
-                  <td><code>.list-media</code></td>
-                  <td>列表图片或</td>
-                </tr>
-                <tr>
-                  <td><code>hr</code></td>
-                  <td>两个item的分割线</td>
-                </tr>
-              </tbody>
-            </table>
+          <div class="dy-components-demo overflow-hidden {{ item.demoClass }}">
+            <div class="row">
+              {% for template in item.templates %}
+                {% if template.spacer %}
+                  <div class="spacer-{{ spacer }}"></div>
+                {% endif %}
+                <div class="col-xs-12 {{ template.gridClass }}">
+                  {{ include('@dyniva_ui/ui/modules' ~ template.url, template.param ? template.param : {}) }}
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+
+          <div class="dy-components-markup inner">
+            <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="collapseCode">
+              <i class="icon">&#xe818;</i>开发说明
+            </a>
+            <div class="collapse">
+              {% if item.descs %}
+                <div class="code-description">
+                  <table class="table table-full">
+                    <thead>
+                      <tr>
+                        <th>Class</th>
+                        <th>说明</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for desc in item.descs %}
+                      <tr>
+                        <td><code>{{ desc.code }}</code></td>
+                        <td>{{ desc.text }}</td>
+                      </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
+              {% endif %}
+
+              <div class="code-preview">
+                <pre class="prettyprint lang-html">
+                  {%- for library in item.libraries ~%}
+                    {{~ "{{ attach_library('"~library~"') }}" ~}}
+                  {%- endfor ~%}
+
+                  {%- for template in item.templates ~%}
+
+                    {{~ include('@dyniva_ui/ui/modules' ~ template.url, template.param ? template.param : {}) | escape ~}}
+                  {%- endfor ~%}
+                </pre>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-    {# end section #}
-
-    <div class="section-item title-box" id="dy-list-1-1">
-      <h4 class="title inner">列表1.1</h4>
-      <p class="rules inner">只有标题的列表</p>
-      <div class="dy-components-demo outside-tb">
-        {% include "@dyniva_ui/ui/modules/list/dy-list-1-1.html.twig" %}
-      </div>
-      <div class="dy-components-markup inner">
-        <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse" aria-expanded="false"
-           aria-controls="collapseCode">
-          <i class="icon">&#xe818;</i> 开发说明
-        </a>
-        <div class="collapse">
-          <pre class="prettyprint lang-html">
-            {%- filter escape -%}
-              {% include "@dyniva_ui/ui/modules/list/dy-list-1-1.html.twig" %}
-            {%- endfilter -%}
-          </pre>
-          <div class="dy-components-desc">
-            <table class="table table-full">
-              <thead>
-                <tr>
-                  <th>属性</th>
-                  <th>说明</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><code>.dy-list-wrapper</code></td>
-                  <td>列表容器</td>
-                </tr>
-                <tr>
-                  <td><code>.dy-list-1-1</code></td>
-                  <td>列表1.1</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section-item title-box" id="dy-list-2-0">
-      <h4 class="title inner">列表2.0</h4>
-      <p class="rules inner">一行排列，hover有图片显示</p>
-      <div class="dy-components-demo outside-tb">
-        {% include "@dyniva_ui/ui/modules/list/dy-list-2-0.html.twig" %}
-      </div>
-      <div class="dy-components-markup inner">
-        <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse" aria-expanded="false"
-            aria-controls="collapseCode">
-          <i class="icon">&#xe818;</i> 开发说明
-        </a>
-        <div class="collapse">
-          <pre class="prettyprint lang-html">
-            {%- filter escape -%}
-              {% include "@dyniva_ui/ui/modules/list/dy-list-2-0.html.twig" %}
-            {%- endfilter -%}
-          </pre>
-          <div class="dy-components-desc">
-            <table class="table table-full">
-              <thead>
-                <tr>
-                  <th>属性</th>
-                  <th>说明</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><code>.dy-list-wrapper</code></td>
-                  <td>列表容器</td>
-                </tr>
-                <tr>
-                  <td><code>.dy-list-2-0</code></td>
-                  <td>列表2.0</td>
-                </tr>
-                <tr>
-                  <td><code>.bg-*</code></td>
-                  <td>标记的北京颜色：.bg-brown棕色，.bg-blue蓝色，.bg-red红色</td>
-                </tr>
-                <tr>
-                  <td><code>.list-item</code></td>
-                  <td>列表item项</td>
-                </tr>
-                <tr>
-                  <td><code>.dy-list-2-0</code></td>
-                  <td>列表2.0</td>
-                </tr>
-                <tr>
-                  <td><code>.dy-list-2-0</code></td>
-                  <td>列表2.0</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section-item title-box" id="dy-list-3-0">
-      <h4 class="title inner">列表3.0</h4>
-      <p class="rules inner">一行两个排列，多行，带有标题和时间</p>
-      <div class="dy-components-demo outside-tb">
-        {% include "@dyniva_ui/ui/modules/list/dy-list-3-0.html.twig" %}
-      </div>
-      <div class="dy-components-markup inner">
-        <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse" aria-expanded="false"
-            aria-controls="collapseCode">
-          <i class="icon">&#xe818;</i> 开发说明
-        </a>
-        <div class="collapse">
-          <pre class="prettyprint lang-html">
-            {%- filter escape -%}
-              {% include "@dyniva_ui/ui/modules/list/dy-list-3-0.html.twig" %}
-            {%- endfilter -%}
-          </pre>
-          </div>
-          <div class="dy-components-desc">
-            <table class="table table-full">
-              <thead>
-                <tr>
-                  <th>属性</th>
-                  <th>说明</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><code>.dy-list-wrapper</code></td>
-                  <td>列表容器</td>
-                </tr>
-                <tr>
-                  <td><code>.dy-list-3-0</code></td>
-                  <td>列表3.0</td>
-                </tr>
-                <tr>
-                  <td><code>.list-item</code></td>
-                  <td>列表item项</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-    {# end section #}
-
-    {% block lists %}{% endblock %}
-  </section>
+      {% endfor %}
+    </section>
+  {% endfor %}
 
   {# sub theme components extend here dont remove section block #}
-  {% block section %}{% endblock %}
+  {% block dyniva_ui_section %}{% endblock %}
 </div>
 
-{# note: ui-footer.html.twig must be include in footer block, the sub theme be able to override footer #}
+{# override base theme footer #}
 {% block footer %}
-  {% include directory ~ '@dyniva_ui/ui/pages/ui-footer.html.twig' %}
+  {% include '@dyniva_ui/ui/pages/ui-footer.html.twig' %}
 {% endblock %}

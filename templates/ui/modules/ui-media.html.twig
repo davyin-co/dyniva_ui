@@ -1,8 +1,14 @@
-{# note: header.html.twig must be include in header block, the sub theme be able to override header #}
+{#
+/**
+ * - extends base theme components body
+ * - custom sub theme header, also can add new components
+ */
+#}
+
+{# override base theme header,logo,menu links #}
 {% block header %}
-{% include '@dyniva_ui/ui/pages/header.html.twig' %}
+  {% include '@dyniva_ui/ui/pages/header.html.twig' %}
 {% endblock %}
-{{ attach_library('dyniva_ui/videojs') }}
 
 <div id="wall" class="page-title promo">
   <div class="inner">
@@ -11,216 +17,202 @@
   </div>
 </div>
 
+{{ attach_library('dyniva_ui/videojs') }}
 <div class="panel panel-ui">
-  <section class="dy-components" id="video">
-    <h2 class="section-header inner">视频</h2>
+  {% for section in [
+    {
+      id: 'video',
+      title: '视频',
+      items: [
+        {
+          id: 'dy-video-1-0',
+          title: '视频 1.0',
+          rule: '使用原生 Html5 Video 视频',
+          demoClass: 'inner',
+          libraries: [],
+          templates: [
+            {
+              url: '/media/dy-media-1-0.html.twig',
+              gridClass: 'col-xs-12',
+            }
+          ],
+          descs: [
+            {
+              code: '.dy-video-wrapper',
+              text: '视频容器'
+            },
+            {
+              code: '.dy-video-1',
+              text: '视频1，使用H5视频'
+            },
+            {
+              code: 'aotuplay',
+              text: '添加该属性启用自动播放'
+            },
+            {
+              code: 'poster',
+              text: '视频封面，没有则不设置'
+            },
+          ]
+        },
+        {
+          id: 'dy-video-1-1',
+          title: '视频 1.1',
+          rule: '使用 Video-js插件',
+          demoClass: 'inner',
+          libraries: ['dyniva_ui/videojs'],
+          templates: [
+            {
+              url: '/media/dy-media-1-1.html.twig',
+              gridClass: 'col-xs-12',
+            }
+          ],
+          descs: [
+            {
+              code: '.dy-video-wrapper',
+              text: '视频容器'
+            },
+            {
+              code: '.dy-video-1-1',
+              text: '使用video-js插件'
+            },
+            {
+              code: 'poster',
+              text: '视频封面，没有则不设置'
+            },
+          ]
+        },
+        {
+          id: 'dy-video-2-0',
+          title: '视频 2.0',
+          rule: '弹层中播放，该风格使用 Backbone 和 bootstrap 封装，将视频播放地址存在点击目标对象中。',
+          demoClass: 'inner',
+          libraries: ['dyniva_ui/videojs'],
+          templates: [
+            {
+              url: '/media/dy-media-2-0.html.twig',
+              gridClass: 'col-xs-12',
+            }
+          ],
+          descs: [
+            {
+              code: '.video-modal',
+              text: '目标对象'
+            },
+            {
+              code: 'data-src',
+              text: '在目标对象上存放视频地址'
+            },
+            {
+              code: 'data-poster',
+              text: '在目标对象上存放封面图'
+            },
+          ]
+        },
+        {
+          id: 'dy-video-2-1',
+          title: '视频 2.1',
+          rule: '弹层中播放，嵌套iframe',
+          demoClass: 'inner',
+          libraries: ['dyniva_ui/videojs'],
+          templates: [
+            {
+              url: '/media/dy-media-2-1.html.twig',
+              gridClass: 'col-xs-12',
+            }
+          ],
+          descs: [
+            {
+              code: '.video-modal',
+              text: '目标对象'
+            },
+            {
+              code: 'data-src',
+              text: '在目标对象上存放视频地址'
+            },
+            {
+              code: 'data-poster',
+              text: '在目标对象上存放封面图'
+            },
+          ]
+        },
+      ]
+    },
+  ] %}
+    <section class="dy-components" id="{{ section.id }}">
+      <h2 class="section-header inner">{{ section.title }}</h2>
+      {% for item in section.items %}
+        <div class="section-item title-box" id="{{ item.id }}">
+          {% if item.title %}
+            <h4 class="title inner">{{ item.title }}</h4>
+          {% endif %}
+          {% if item.rule %}
+            <p class="rules inner">{{ item.rule }}</p>
+          {% endif %}
 
-    <div class="section-item title-box" id="dy-media-1-0">
-      <h4 class="title inner">media 1.0 </h4>
-      <p class="rules inner">使用原生 Html5 Video 视频</p>
-      <div class="dy-components-demo inner">
-        {% include "@dyniva_ui/ui/modules/media/dy-media-1-0.html.twig" %}
-      </div>
-      <div class="dy-components-markup inner">
-        <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse"
-           aria-expanded="false" aria-controls="collapseCode">
-          <i class="icon">&#xe818;</i>开发说明
-        </a>
-        <div class="collapse">
-          <pre class="prettyprint lang-html">
-            {%- filter escape -%}
-              {% include "@dyniva_ui/ui/modules/media/dy-media-1-0.html.twig" %}
-            {%- endfilter -%}
-          </pre>
-          <div class="dy-components-desc">
-            <table class="table table-full">
-              <thead>
-              <tr>
-                <th>Class</th>
-                <th>说明</th>
-              </tr>
-              </thead>
-              <tbody>
-              <tr>
-                <td><code>.dy-video-wrapper</code></td>
-                <td>视频容器</td>
-              </tr>
-              <tr>
-                <td><code>.dy-video-1</code></td>
-                <td>视频1，使用H5视频</td>
-              </tr>
-              <tr>
-                <td><code>aotuplay</code></td>
-                <td>添加该属性启用自动播放</td>
-              </tr>
-              <tr>
-                <td><code>poster</code></td>
-                <td>视频封面，没有则不设置</td>
-              </tr>
-              </tbody>
-            </table>
+          <div class="dy-components-demo overflow-hidden {{ item.demoClass }}">
+            <div class="row">
+              {% for template in item.templates %}
+                {% if template.spacer %}
+                  <div class="spacer-{{ spacer }}"></div>
+                {% endif %}
+                <div class="col-xs-12 {{ template.gridClass }}">
+                  {{ include('@dyniva_ui/ui/modules' ~ template.url, template.param ? template.param : {}) }}
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+
+          <div class="dy-components-markup inner">
+            <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="collapseCode">
+              <i class="icon">&#xe818;</i>开发说明
+            </a>
+            <div class="collapse">
+              {% if item.descs %}
+                <div class="code-description">
+                  <table class="table table-full">
+                    <thead>
+                      <tr>
+                        <th>Class</th>
+                        <th>说明</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for desc in item.descs %}
+                      <tr>
+                        <td><code>{{ desc.code }}</code></td>
+                        <td>{{ desc.text }}</td>
+                      </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
+              {% endif %}
+
+              <div class="code-preview">
+                <pre class="prettyprint lang-html">
+                  {%- for library in item.libraries ~%}
+                    {{~ "{{ attach_library('"~library~"') }}" ~}}
+                  {%- endfor ~%}
+
+                  {%- for template in item.templates ~%}
+
+                    {{~ include('@dyniva_ui/ui/modules' ~ template.url, template.param ? template.param : {}) | escape ~}}
+                  {%- endfor ~%}
+                </pre>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+      {% endfor %}
+    </section>
+  {% endfor %}
 
-    <div class="section-item title-box" id="dy-media-1-1">
-      <h4 class="title inner">media 1.1 </h4>
-      <p class="rules inner">使用 Video-js插件</p>
-      <div class="dy-components-demo inner">
-        {% include "@dyniva_ui/ui/modules/media/dy-media-1-1.html.twig" %}
-      </div>
-      <div class="dy-components-markup inner">
-        <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse"
-           aria-expanded="false" aria-controls="collapseCode">
-          <i class="icon">&#xe818;</i>开发说明
-        </a>
-        <div class="collapse">
-          <pre class="prettyprint lang-html">
-            {%- filter escape -%}
-              {% include "@dyniva_ui/ui/modules/media/dy-media-1-1.html.twig" %}
-            {%- endfilter -%}
-          </pre>
-          <div class="dy-components-desc">
-            <table class="table table-full">
-              <thead>
-              <tr>
-                <th>Class</th>
-                <th>说明</th>
-              </tr>
-              </thead>
-              <tbody>
-              <tr>
-                <td><code>.dy-video-wrapper</code></td>
-                <td>视频容器</td>
-              </tr>
-              <tr>
-                <td><code>.dy-video-1</code></td>
-                <td>视频1，使用H5视频</td>
-              </tr>
-              <tr>
-                <td><code>poster</code></td>
-                <td>视频封面，没有则不设置</td>
-              </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section-item title-box" id="dy-media-2-0">
-      <h4 class="title inner">2.0 弹层中播放</h4>
-      <p class="rules inner">该风格使用 Backbone 和 bootstrap 封装，将视频播放地址存在点击目标对象中。</p>
-      <div class="dy-components-demo inner">
-        {% include "@dyniva_ui/ui/modules/media/dy-media-2-0.html.twig" %}
-      </div>
-      <div class="dy-components-markup inner">
-        <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse"
-           aria-expanded="false" aria-controls="collapseCode">
-          <i class="icon">&#xe818;</i>
-          开发说明
-        </a>
-        <div class="collapse">
-          <pre class="prettyprint lang-html">
-            {%- filter escape -%}
-              {% include "@dyniva_ui/ui/modules/media/dy-media-2-0.html.twig" %}
-            {%- endfilter -%}
-          </pre>
-          <div class="dy-components-desc">
-            <table class="table table-full">
-              <thead>
-              <tr>
-                <th>Class</th>
-                <th>说明</th>
-              </tr>
-              </thead>
-              <tbody>
-              <tr>
-                <td>
-                  <code>.video-modal</code>
-                </td>
-                <td>目标对象</td>
-              </tr>
-              <tr>
-                <td>
-                  <code>data-src</code>
-                </td>
-                <td>在目标对象上存放视频地址</td>
-              </tr>
-              <tr>
-                <td>
-                  <code>data-poster</code>
-                </td>
-                <td>在目标对象上存放封面图</td>
-              </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section-item title-box" id="dy-media-2-1">
-      <h4 class="title inner">media 2.1</h4>
-      <p class="rules inner">弹层中播放，嵌套iframe</p>
-      <div class="dy-components-demo inner">
-        {% include '@dyniva_ui/ui/modules/media/dy-media-2-1.html.twig' %}
-      </div>
-      <div class="dy-components-markup inner">
-        <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse"
-           aria-expanded="false" aria-controls="collapseCode">
-          <i class="icon">&#xe818;</i>
-          开发说明
-        </a>
-        <div class="collapse">
-          <pre class="prettyprint lang-html">
-            {%- filter escape -%}
-              {% include '@dyniva_ui/ui/modules/media/dy-media-2-1.html.twig' %}
-            {%- endfilter -%}
-          </pre>
-          <div class="dy-components-desc">
-            <table class="table table-full">
-              <thead>
-              <tr>
-                <th>Class</th>
-                <th>说明</th>
-              </tr>
-              </thead>
-              <tbody>
-              <tr>
-                <td>
-                  <code>.video-modal</code>
-                </td>
-                <td>目标对象</td>
-              </tr>
-              <tr>
-                <td>
-                  <code>data-src</code>
-                </td>
-                <td>在目标对象上存放视频地址</td>
-              </tr>
-              <tr>
-                <td>
-                  <code>data-poster</code>
-                </td>
-                <td>在目标对象上存放封面图</td>
-              </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-    {# end section #}
-    {% block video %}{% endblock %}
-  </section>
   {# sub theme components extend here dont remove section block #}
-  {% block section %}{% endblock %}
-
+  {% block dyniva_ui_section %}{% endblock %}
 </div>
 
-{# note: ui-footer.html.twig must be include in footer block, the sub theme be able to override footer #}
+{# override base theme footer #}
 {% block footer %}
-  {% include directory ~ '@dyniva_ui/ui/pages/ui-footer.html.twig' %}
+  {% include '@dyniva_ui/ui/pages/ui-footer.html.twig' %}
 {% endblock %}
