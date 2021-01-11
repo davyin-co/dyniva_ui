@@ -24,6 +24,7 @@
           title: 'item title',
           rule: 'item rule',
           demoClass: 'class push in dy-component-demo',
+          rowClass: 'row',
           libraries: [
             'attach_libraries list'
           ],
@@ -31,7 +32,7 @@
             {
               url: 'module url',
               gridClass: 'col class(col-xs-6,col-md-3,etc.)',
-              param: { module_params: true },
+              param: { module_params: true }
             }
           ],
           descs: [
@@ -55,15 +56,15 @@
             <p class="rules inner">{{ item.rule }}</p>
           {% endif %}
 
-          <div class="dy-components-demo overflow-hidden {{ item.demoClass }}">
-            <div class="row">
+          <div class="dy-components-demo {{ item.demoClass }}">
+            <div class="{{ rowClass | default('row') }}">
               {% for template in item.templates %}
+                <div class="{{ template.gridClass | default('col-xs-12') }}">
+                  {{ include('@SUBTHEME/ui/modules' ~ template.url, template.param ? template.param : {}) }}
+                </div>
                 {% if template.spacer %}
                   <div class="spacer-{{ spacer }}"></div>
                 {% endif %}
-                <div class="col-xs-12 {{ template.gridClass }}">
-                  {{ include('@SUBTHEME/ui/modules' ~ template.url, template.param ? template.param : {}) }}
-                </div>
               {% endfor %}
             </div>
           </div>
@@ -99,7 +100,9 @@
                   {%- for library in item.libraries ~%}
                     {{~ "{{ attach_library('"~library~"') }}" ~}}
                   {%- endfor ~%}
+
                   {%- for template in item.templates ~%}
+
                     {{~ include('@SUBTHEME/ui/modules' ~ template.url, template.param ? template.param : {}) | escape ~}}
                   {%- endfor ~%}
                 </pre>
