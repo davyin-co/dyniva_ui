@@ -158,7 +158,7 @@
           {% endif %}
 
           <div class="dy-components-demo {{ item.demoClass }}">
-            <div class="{{ rowClass | default('row') }}">
+            <div class="{{ item.rowClass | default('row') }}">
               {% for template in item.templates %}
                 <div class="{{ template.gridClass | default('col-xs-12') }}">
                   {{ include('@dyniva_ui/ui/modules' ~ template.url, template.param ? template.param : {}) }}
