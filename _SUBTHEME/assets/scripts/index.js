@@ -1,9 +1,4 @@
-// require('bootstrap/js/transition');
-// require('bootstrap/js/alert');
-// require('bootstrap/js/tab');
-// require('bootstrap/js/modal');
-// require('bootstrap/js/dropdown');
-// require('bootstrap/js/collapse');
+require('../../bower_components/bootstrap/js/modal');
 
 // ----- 上面部分按需使用 ----- //
 // ----- ==  ReadMe  == ----- //
@@ -31,6 +26,7 @@ let Drupal = window.Drupal || {};
       this.librarys.footer($);
 
       // Set Swiper 2.7.3
+      // if(this.plugins && this.plugins.swipers2) this.plugins.swipers2.init();
 
       this.first = false;
 
@@ -41,9 +37,29 @@ let Drupal = window.Drupal || {};
     },
     librarys: {
       // Core
-      'messages': require('./drupal/davyinui.messages'),
-      'footer': require('./drupal/davyinui.footer')
+      'messages': require('../../bower_components/bootstrap/js/alert'),
+      'footer': require('./drupal/dynivaui.footer')
     }
   }
 
+  /**
+   * 定义loading方法
+   */
+  $.fn.showLoading = function () {
+    var $load =
+      '<svg class="load" viewBox="22 22 44 44">\n' +
+      '  <circle class="loading" cx="44" cy="44" r="20.2" fill="none" stroke-width="3.6"/>\n' +
+      "</svg>";
+
+    if ($(this).css("position") === "static") {
+      $(this).css("position", "relative");
+    }
+
+    $(this).attr("data-loading", "loading");
+    $(this).append($load);
+  };
+  $.fn.hideLoading = function () {
+    $(this).removeAttr("data-loading", "");
+    $(this).find(".load").remove();
+  };
 }(jQuery));
