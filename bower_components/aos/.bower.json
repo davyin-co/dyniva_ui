@@ -45,6 +45,6 @@
   },
   "_source": "https://github.com/michalsnik/aos.git",
   "_target": "^2.3.4",
-  "_originalSource": "https://github.com/michalsnik/aos.git",
+  "_originalSource": "aos",
   "_direct": true
 }

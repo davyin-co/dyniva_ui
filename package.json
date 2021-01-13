@@ -20,11 +20,6 @@
     "> 0.01% in cn",
     "not ie <= 8"
   ],
-  "dependencies": {
-    "bootstrap": "^3.3.7",
-    "normalize.css": "^7.0.0",
-    "waypoints": "^4.0.1"
-  },
   "devDependencies": {
     "ansi-colors": "^4.1.1",
     "autoprefixer": "^9.8.5",

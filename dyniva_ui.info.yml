@@ -17,7 +17,7 @@ libraries:
   - dyniva_ui/common.media
   - dyniva_ui/common.bsTooltip
   - dyniva_ui/common.goToTop
-  - dyniva_ui/common.slimScroll
+  - dyniva_ui/common.slimscroll
   - dyniva_ui/common.animate
   - dyniva_ui/common.waypoints
   - dyniva_ui/common.prognroll

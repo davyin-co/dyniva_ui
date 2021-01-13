@@ -1,15 +1,29 @@
-module.exports = function($){
-	var childAll = 0, mainH = 0, windH = $(window).height();
-  $.each($('#page')[0].children, function(index, child) {
-  	var height = $(child).outerHeight();
-  	 		childAll += height; if(child.id == 'main'){ mainH = height; }
-  });
-  if(childAll < windH){
-  	if($('#main').length){
-			$('#main').css('min-height', windH - childAll + mainH);
-  	}
-  }
-  if($('.js-dy-footer').length){
-  	$('.js-dy-footer').css('visibility', 'visible');
+module.exports = function ($) {
+	var $main = document.querySelector('#main');
+	var $previewPanel = document.querySelector('.panel-ui');
+	var $body = document.querySelector('body');
+
+	if ($main) {
+		var mainH = $main.offsetHeight;
+		var winH = window.innerHeight;
+		var bodyH = $body.offsetHeight;
+	
+		var diffH = winH - bodyH;
+	
+		if (diffH > 0) {
+			$main.style.minHeight = mainH + diffH + 'px';
+		}
+	}	
+	
+	if ($previewPanel) {
+		var panelH = $previewPanel.offsetHeight;
+		var winH = window.innerHeight;
+		var bodyH = $body.offsetHeight;
+	
+		var diffH = winH - bodyH;
+	
+		if (diffH > 0) {
+			$previewPanel.style.minHeight = panelH + diffH + 'px';
+		}
 	}
 }

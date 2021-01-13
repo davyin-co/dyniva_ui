@@ -59,6 +59,8 @@ libraries-override:
     css:
       theme:
         build/init.css: false
+    js:
+      build/init.js: false
 
 # name space
 component-libraries:

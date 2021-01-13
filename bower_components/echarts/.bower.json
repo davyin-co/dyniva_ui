@@ -1,0 +1,15 @@
+{
+  "name": "echarts",
+  "homepage": "https://github.com/ecomfe/echarts",
+  "version": "5.0.0",
+  "_release": "5.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "5.0.0",
+    "commit": "de46c55144e695240305d38e8ea874e03e323506"
+  },
+  "_source": "https://github.com/ecomfe/echarts.git",
+  "_target": "^5.0.0",
+  "_originalSource": "echarts",
+  "_direct": true
+}

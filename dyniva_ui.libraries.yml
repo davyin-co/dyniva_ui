@@ -76,27 +76,27 @@ plugin.fixIE:
   dependencies:
     - core/html5shiv
 
-plugin.slick:
+plugin.slick-carousel:
   js:
     bower_components/slick-carousel/slick/slick.min.js: { minified: true }
 
-plugin.slider:
+plugin.nouislider:
   js:
     bower_components/nouislider/distribute/nouislider.min.js: { minified: true }
 
-plugin.mmenu:
+plugin.jquery.mmenu:
   css:
     theme:
       bower_components/jQuery.mmenu/dist/jquery.mmenu.all.css: {}
   js:
     bower_components/jQuery.mmenu/dist/jquery.mmenu.all.js: {}
 
-plugin.hamburgers:
+plugin.css-hamburgers:
   css:
     theme:
       bower_components/css-hamburgers/dist/hamburgers.min.css: {}
 
-plugin.video:
+plugin.video-js:
   css:
     theme:
       js/plugins/video-js/video-js.min.css: { minified: true }
@@ -105,43 +105,43 @@ plugin.video:
   dependencies:
    - dyniva_ui/bbModal
 
-plugin.tooltip-enhance:
+plugin.bootstrap.tooltip:
   js:
-    js/plugins/tooltip-enhance.js: { }
+    bower_components/bootstrap/js/tooltip.js: { }
 
-plugin.bbModal:
+plugin.backbone.bootstrap-modal:
   js:
-    js/plugins/backbone.bootstrap-modal.js: {}
+    bower_components/backbone.bootstrap-modal/src/backbone.bootstrap-modal.js: {}
 
 plugin.echarts:
   js:
-    js/plugins/echarts.common.min.js: { minified: true }
-
+    bower_components/echarts/dist/echarts.common.min.js: { minified: true }
+    
 plugin.skrollr:
   js:
-    js/plugins/skrollr.min.js: { minified: true }
-
+    bower_components/skrollr/dist/skrollr.min.js: { minified: true }
+    
 plugin.laydate:
   js:
     bower_components/laydate/dist/laydate.js: { minified: true, preprocess: false }
 
-plugin.slimscroll:
+plugin.jquery.slimscroll:
   js:
-    js/plugins/jquery.slimscroll.min.js: { minified: true }
-
-plugin.imageloaded:
+    bower_components/jquery-slimscroll/jquery.slimscroll.min.js: { minified: true }
+    
+plugin.imagesloaded:
   js:
-    bower_components/masonry-layout/dist/imagesloaded.js: { minified: true }
+    bower_components/imagesloaded/imagesloaded.pkgd.min.js: { minified: true }
 
 plugin.masonry:
   js:
-    bower_components/masonry-layout/dist/imagesloaded.js: { minified: true }
+    bower_components/masonry-layout/dist/masonry.pkgd.min.js: { minified: true }
 
-plugin.collapse:
+plugin.bootstrap.collapse:
   js:
     bower_components/bootstrap/js/collapse.js: {}
 
-plugin.tab:
+plugin.bootstrap.tab:
   js:
     bower_components/bootstrap/js/tab.js: {}
 
@@ -163,7 +163,7 @@ common.bbModal:
     - core/jQuery
     - core/underscore
     - core/backbone
-    - dyniva_ui/plugin.bbMmodal
+    - dyniva_ui/plugin.backbone.bootstrap-modal
 
 # https://github.com/Prinzhorn/skrollr
 common.parallax:
@@ -186,19 +186,19 @@ common.goToTop:
   dependencies:
     - core/jquery
 
-common.slimScroll:
+common.slimscroll:
   js:
     js/commons/slimscroll.js: {}
   dependencies:
     - core/jquery
-    - dyniva_ui/plugin.slimscroll
+    - dyniva_ui/plugin.jquery.slimscroll
 
 common.codeprettify:
   js:
     js/commons/expandcode.js: {}
   dependencies:
     - core/jquery
-    - dyniva_ui/plugin.collapse
+    - dyniva_ui/plugin.bootstrap.collapse
     - dyniva_ui/plugin.prettify
     
 common.bsTooltip:
@@ -207,7 +207,7 @@ common.bsTooltip:
   dependencies:
     - core/jQuery
     - core/jquery.ui.tooltip
-    - dyniva_ui/plugin.tooltip-enhance
+    - dyniva_ui/plugin.bootstrap.tooltip
 
 common.media:
   js:
@@ -256,7 +256,7 @@ module.slick:
     js/modules/slick.js: {}
   dependencies:
     - core/jquery
-    - dyniva_ui/plugin.slick
+    - dyniva_ui/plugin.slick-carousel
 
 module.slider:
   js:
@@ -264,7 +264,7 @@ module.slider:
   dependencies:
     - core/jquery
     - core/underscore
-    - dyniva_ui/plugin.slider
+    - dyniva_ui/plugin.nouislider
 
 module.dropdown:
   js:
@@ -285,8 +285,8 @@ module.mmenu:
     js/modules/mmenu.js: {}
   dependencies:
     - core/jquery
-    - dyniva_ui/plugin.mmenu
-    - dyniva_ui/plugin.hamburgers
+    - dyniva_ui/plugin.jquery.mmenu
+    - dyniva_ui/plugin.css-hamburgers
 
 module.echart:
   js:
@@ -317,5 +317,5 @@ module.masonry:
   dependencies:
     - core/jquery
     - dyniva_ui/plugin.masonry
-    - dyniva_ui/plugin.imageloaded
+    - dyniva_ui/plugin.imagesloaded
 
