@@ -10,22 +10,23 @@ libraries:
   # UI Base
   - dyniva_ui/build
   - dyniva_ui/drupal
-  # UI Plugin
-  - dyniva_ui/bootstrap.tab
-  - dyniva_ui/dropdown
-  - dyniva_ui/slick
-  - dyniva_ui/slider
-  - dyniva_ui/mmenu
-  - dyniva_ui/waypoints
-  - dyniva_ui/animate
-  - dyniva_ui/lazysizes
-  - dyniva_ui/prognroll
-  - dyniva_ui/fixIE
-  - dyniva_ui/media
-  - dyniva_ui/ellipsis
-  - dyniva_ui/bsTooltip
-  - dyniva_ui/goToTop
-  - dyniva_ui/slimScroll
+  # Plugin
+  - dyniva_ui/plugin.lazysizes
+  - dyniva_ui/plugin.fixIE
+  # Common
+  - dyniva_ui/common.media
+  - dyniva_ui/common.bsTooltip
+  - dyniva_ui/common.goToTop
+  - dyniva_ui/common.slimScroll
+  - dyniva_ui/common.animate
+  - dyniva_ui/common.waypoints
+  - dyniva_ui/common.prognroll
+  # Module 
+  - dyniva_ui/module.mmenu
+  - dyniva_ui/module.tab
+  - dyniva_ui/module.dropdown
+  - dyniva_ui/module.slick
+  - dyniva_ui/module.slider
 
 regions:
   topbar         : Topbar

@@ -27,7 +27,7 @@
             <!--源码预览, 需要escape的过滤器包裹-->
               {{ "{%- filter escape -%}" }}
                 <!--当需要引入资源库，代码预览中添加如下-->
-                {{ "{{- \"{{ attach_library('dyniva_ui/masonry') }}\" -}}" }}
+                {{ "{{- \"{{ attach_library('dyniva_ui/module.laydate') }}\" -}}" }}
                 <!--引入对应的模板-->
                 {{ "{% include'@dyniva_ui/ui/modules/photo/dy-photo-1-0.html.twig' %}" }}
                 <!-- 需要传参时 -->
@@ -35,7 +35,7 @@
               {{ "{%- endfilter -%}" }}
 
             <!-- 或者使用include方法 -->
-              {{ "{{- \"{{ attach_library('dyniva_ui/masonry') }}\" -}}" }}
+              {{ "{{- \"{{ attach_library('dyniva_ui/module.laydate') }}\" -}}" }}
               <!--引入对应的模板-->
               {{ "{{ include('@dyniva_ui/ui/modules/photo/dy-photo-1-0.html.twig') | escape }}" }}
               <!-- 需要传参时 -->

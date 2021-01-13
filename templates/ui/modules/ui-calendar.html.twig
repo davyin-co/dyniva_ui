@@ -4,7 +4,7 @@
  * - custom sub theme header, also can add new components
  */
 #}
-{{ attach_library('dyniva_ui/laydate') }}
+{{ attach_library('dyniva_ui/module.laydate') }}
 
 {# override base theme header,logo,menu links #}
 {% block header %}
@@ -28,7 +28,7 @@
           id: 'inline',
           title: '直接嵌套显示',
           demoClass: 'inner',
-          libraries: ['dyniva_ui/laydate'],
+          libraries: ['dyniva_ui/module.laydate'],
           templates: [
             {
               url: '/calendar/dy-calendar-base.html.twig',
@@ -75,7 +75,7 @@
           id: 'yy-mm-dd',
           title: '年月日',
           demoClass: 'inner',
-          libraries: ['dyniva_ui/laydate'],
+          libraries: ['dyniva_ui/module.laydate'],
           templates: [
             {
               url: '/calendar/dy-calendar-base.html.twig',
@@ -150,7 +150,7 @@
           id: 'range',
           title: '范围选择器',
           demoClass: 'inner',
-          libraries: ['dyniva_ui/laydate'],
+          libraries: ['dyniva_ui/module.laydate'],
           templates: [
             {
               url: '/calendar/dy-calendar-base.html.twig',
@@ -229,7 +229,7 @@
           id: 'custom-format',
           title: '自定义格式',
           demoClass: 'inner',
-          libraries: ['dyniva_ui/laydate'],
+          libraries: ['dyniva_ui/module.laydate'],
           templates: [
             {
               url: '/calendar/dy-calendar-base.html.twig',
@@ -321,7 +321,7 @@
           id: 'mark',
           title: '时间标记',
           demoClass: 'inner',
-          libraries: ['dyniva_ui/laydate'],
+          libraries: ['dyniva_ui/module.laydate'],
           templates: [
             {
               url: '/calendar/dy-calendar-base.html.twig',
@@ -349,7 +349,7 @@
           id: 'min-max',
           title: '控制可选日期与时间',
           demoClass: 'inner',
-          libraries: ['dyniva_ui/laydate'],
+          libraries: ['dyniva_ui/module.laydate'],
           templates: [
             {
               url: '/calendar/dy-calendar-base.html.twig',
@@ -403,7 +403,7 @@
           title: '其他类型',
           rule: '其他可定制类型，详细参数参阅：https://www.layui.com/doc/modules/laydate.html',
           demoClass: 'inner',
-          libraries: ['dyniva_ui/laydate'],
+          libraries: ['dyniva_ui/module.laydate'],
           templates: [
             {
               url: '/calendar/dy-calendar-base.html.twig',

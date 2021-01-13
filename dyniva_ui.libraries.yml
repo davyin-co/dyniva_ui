@@ -1,5 +1,6 @@
+#------------------
 # Theme Base
-
+#------------------
 drupal:
   css:
     theme:
@@ -18,9 +19,9 @@ drupal:
 build:
   css:
     theme:
-     build/init.css: {}
+      build/init.css: {}
   js:
-     build/init.js: {}
+    build/init.js: {}
   dependencies:
     - core/jquery
     - core/underscore
@@ -36,131 +37,66 @@ color.preview:
   dependencies:
     - color/drupal.color
 
-# Quick Plugins
-# Use Need:
-# 1)Bower install source first.
-# 2)Create new theme libraries here and include to THEMENAME.info (@SEE .info line 29).
-# 3)Push scripts files(just the part of used) and bower.info to theme git repository .
 
-# codeprettify only attach ui preview page, see templates/ui/pages/header.html.twig
-codeprettify:
-  css:
-    theme:
-      css/code.prettify.css: {}
-  js:
-    bower_components/code-prettify/loader/prettify.js: { minified: true }
-    js/commons/expandcode.js: {}
-  dependencies:
-     - core/jquery
-     - dyniva_ui/bootstrap.collapse
-
-bootstrap.collapse:
-  js:
-    bower_components/bootstrap/js/collapse.js: {}
-  dependencies:
-    - core/jquery
-
-bootstrap.tab:
-  js:
-    bower_components/bootstrap/js/tab.js: {}
-    js/modules/tab.js: {}
-  dependencies:
-    - core/jquery
-
-# animate demo: https://daneden.github.io/animate.css/
-# https://github.com/graingert/wow
-# https://github.com/michalsnik/aos
-# TODO: will remove wow and animate.css
-animate:
+#------------------
+# Plugins
+#------------------
+plugin.aos:
   css:
     theme:
       bower_components/aos/dist/aos.css: { minified: true }
   js:
-    bower_components/wow/dist/wow.min.js: { minified: true }
     bower_components/aos/dist/aos.js: { minified: true }
-    js/commons/wow.js: {}
-    js/commons/animate.js: {}
-  dependencies:
-    - core/jquery
 
-waypoints:
+plugin.waypoints:
   js:
     bower_components/waypoints/lib/jquery.waypoints.min.js: { minified: true }
     bower_components/waypoints/lib/shortcuts/inview.min.js: { minified: true }
     bower_components/waypoints/lib/shortcuts/sticky.min.js: { minified: true }
-    js/commons/inviews.js: {}
-    js/commons/sticky.js: {}
-  dependencies:
-    - core/jquery
 
-lazysizes:
+plugin.lazysizes:
   js:
     bower_components/lazysizes/lazysizes.min.js: { minified: true }
     bower_components/lazysizes/plugins/progressive/ls.progressive.min.js: { minified: true }
     bower_components/lazysizes/plugins/bgset/ls.bgset.min.js: { minified: true }
     bower_components/lazysizes/plugins/unveilhooks/ls.unveilhooks.min.js: { minified: true }
-
-holderjs:
+    
+plugin.holder:
   js:
     bower_components/holderjs/holder.min.js: { minified: true }
 
-prognroll:
+plugin.prognroll:
   js:
     bower_components/prognroll/src/prognroll.min.js: { minified: true }
-    js/commons/prognroll.js: {}
-  dependencies:
-    - core/jquery
 
-fixIE:
+plugin.fixIE:
   header: true
   js:
     bower_components/respond/dest/respond.min.js: { weight: -22, browsers: { IE: 'lte IE 8', '!IE': false }, minified: true }
   dependencies:
     - core/html5shiv
 
-slick:
+plugin.slick:
   js:
     bower_components/slick-carousel/slick/slick.min.js: { minified: true }
-    js/modules/slick.js: {}
 
-slider:
+plugin.slider:
   js:
     bower_components/nouislider/distribute/nouislider.min.js: { minified: true }
-    js/modules/slider.js: {}
-  dependencies:
-    - core/jquery
-    - core/underscore
 
-dropdown:
-  js:
-    js/modules/dropdown.js: {}
-  dependencies:
-    - core/jQuery
-    - core/jquery.once
-    - core/underscore
-
-sidebar:
-  js:
-    js/modules/sidebar.js: {}
-  dependencies:
-    - core/jquery
-
-mmenu:
+plugin.mmenu:
   css:
     theme:
-      bower_components/css-hamburgers/dist/hamburgers.min.css: {}
       bower_components/jQuery.mmenu/dist/jquery.mmenu.all.css: {}
   js:
     bower_components/jQuery.mmenu/dist/jquery.mmenu.all.js: {}
-    js/modules/mmenu.js: {}
 
-media:
-  js:
-    js/commons/media.js: {}
-  dependencies:
-    - core/jQuery
+plugin.hamburgers:
+  css:
+    theme:
+      bower_components/css-hamburgers/dist/hamburgers.min.css: {}
 
-videojs:
+plugin.video:
   css:
     theme:
       js/plugins/video-js/video-js.min.css: { minified: true }
@@ -169,34 +105,191 @@ videojs:
   dependencies:
    - dyniva_ui/bbModal
 
-bsTooltip:
+plugin.tooltip-enhance:
   js:
     js/plugins/tooltip-enhance.js: { }
-    js/commons/bs-tooltip.js: {}
-  dependencies:
-    - core/jQuery
-    - core/jquery.ui.tooltip
 
-# backbone bootstrap modal
-bbModal:
+plugin.bbModal:
   js:
     js/plugins/backbone.bootstrap-modal.js: {}
+
+plugin.echarts:
+  js:
+    js/plugins/echarts.common.min.js: { minified: true }
+
+plugin.skrollr:
+  js:
+    js/plugins/skrollr.min.js: { minified: true }
+
+plugin.laydate:
+  js:
+    bower_components/laydate/dist/laydate.js: { minified: true, preprocess: false }
+
+plugin.slimscroll:
+  js:
+    js/plugins/jquery.slimscroll.min.js: { minified: true }
+
+plugin.imageloaded:
+  js:
+    bower_components/masonry-layout/dist/imagesloaded.js: { minified: true }
+
+plugin.masonry:
+  js:
+    bower_components/masonry-layout/dist/imagesloaded.js: { minified: true }
+
+plugin.collapse:
+  js:
+    bower_components/bootstrap/js/collapse.js: {}
+
+plugin.tab:
+  js:
+    bower_components/bootstrap/js/tab.js: {}
+
+plugin.prettify:
+  css:
+    theme:
+      css/code.prettify.css: {}
+  js:
+    bower_components/code-prettify/loader/prettify.js: { minified: true }
+
+
+#------------------
+# Commons
+#------------------
+common.bbModal:
+  js:
     js/commons/backbone-modal.js: {}
   dependencies:
     - core/jQuery
     - core/underscore
     - core/backbone
+    - dyniva_ui/plugin.bbMmodal
 
-ellipsis:
+# https://github.com/Prinzhorn/skrollr
+common.parallax:
   js:
-    js/plugins/jquery.dotdotdot.js: { minified: true }
-    js/commons/ellipsis.js: {}
+    js/commons/parallax.js: {}
+  dependencies:
+    - core/jquery
+    - dyniva_ui/plugin.skrollr
+
+common.preview:
+  js:
+    js/commons/preview.js: {}
+  dependencies:
+    - core/jquery
+    - core/underscore
+
+common.goToTop:
+  js:
+    js/commons/gototop.js: {}
+  dependencies:
+    - core/jquery
+
+common.slimScroll:
+  js:
+    js/commons/slimscroll.js: {}
+  dependencies:
+    - core/jquery
+    - dyniva_ui/plugin.slimscroll
+
+common.codeprettify:
+  js:
+    js/commons/expandcode.js: {}
+  dependencies:
+    - core/jquery
+    - dyniva_ui/plugin.collapse
+    - dyniva_ui/plugin.prettify
+    
+common.bsTooltip:
+  js:
+    js/commons/bs-tooltip.js: {}
+  dependencies:
+    - core/jQuery
+    - core/jquery.ui.tooltip
+    - dyniva_ui/plugin.tooltip-enhance
+
+common.media:
+  js:
+    js/commons/media.js: {}
   dependencies:
     - core/jQuery
 
-echart:
+# animate demo: https://daneden.github.io/animate.css/
+# https://github.com/michalsnik/aos
+# TODO: will remove animate.css
+common.animate:
   js:
-    js/plugins/echarts.common.min.js: { minified: true }
+    js/commons/animate.js: {}
+  dependencies:
+    - core/jquery
+    - dyniva_ui/plugin.aos
+
+common.waypoints:
+  js:
+    js/commons/inviews.js: {}
+    js/commons/sticky.js: {}
+  dependencies:
+    - core/jquery
+    - dyniva_ui/plugin.waypoints
+
+common.prognroll:
+  js:
+    js/commons/prognroll.js: {}
+  dependencies:
+    - core/jquery
+    - dyniva_ui/plugin.prognroll
+
+
+#------------------
+# Modules
+#------------------
+module.tab:
+  js:
+    js/modules/tab.js: {}
+  dependencies:
+    - core/jquery
+    - dyniva_ui/plugin.tab
+
+module.slick:
+  js:
+    js/modules/slick.js: {}
+  dependencies:
+    - core/jquery
+    - dyniva_ui/plugin.slick
+
+module.slider:
+  js:
+    js/modules/slider.js: {}
+  dependencies:
+    - core/jquery
+    - core/underscore
+    - dyniva_ui/plugin.slider
+
+module.dropdown:
+  js:
+    js/modules/dropdown.js: {}
+  dependencies:
+    - core/jQuery
+    - core/jquery.once
+    - core/underscore
+
+module.sidebar:
+  js:
+    js/modules/sidebar.js: {}
+  dependencies:
+    - core/jquery
+
+module.mmenu:
+  js:
+    js/modules/mmenu.js: {}
+  dependencies:
+    - core/jquery
+    - dyniva_ui/plugin.mmenu
+    - dyniva_ui/plugin.hamburgers
+
+module.echart:
+  js:
     js/modules/echart/models.js: {}
     js/modules/echart/dy-chart.js: {}
     js/modules/echart.js: {}
@@ -206,47 +299,23 @@ echart:
     - core/drupal
     - core/drupalSettings
     - core/underscore
-
-# https://github.com/Prinzhorn/skrollr
-parallax:
-  js:
-    js/plugins/skrollr.min.js: { minified: true }
-    js/commons/parallax.js: {}
-  dependencies:
-    - core/jquery
-
-preview:
-  js:
-    js/commons/preview.js: {}
-  dependencies:
-    - core/jquery
-    - core/underscore
+    - dyniva_ui/plugin.echarts
 
 # TODO：need to enhance css, maybe attach in libraries is better
 # the laydate will change src js, if change need to build js
 # new: we can use preprocess set false can fix css path issue
-laydate:
+module.laydate:
   js:
-    bower_components/laydate/dist/laydate.js: { minified: true, preprocess: false }
     js/modules/laydate.js: { preprocess: false }
   dependencies:
     - core/jquery
+    - dyniva_ui/plugin.laydate
 
-goToTop:
+module.masonry:
   js:
-    js/commons/gototop.js: {}
-  dependencies:
-    - core/jquery
-
-slimScroll:
-  js:
-    js/plugins/jquery.slimscroll.min.js: { minified: true }
-    js/commons/slimscroll.js: {}
-  dependencies:
-    - core/jquery
-
-masonry:
-  js:
-    bower_components/masonry-layout/dist/imagesloaded.js: { minified: true }
-    bower_components/masonry-layout/dist/masonry.pkgd.min.js: { minified: true }
     js/modules/masonry.js: {}
+  dependencies:
+    - core/jquery
+    - dyniva_ui/plugin.masonry
+    - dyniva_ui/plugin.imageloaded
+
