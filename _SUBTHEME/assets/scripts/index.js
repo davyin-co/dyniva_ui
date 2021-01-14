@@ -1,4 +1,4 @@
-require('../../bower_components/bootstrap/js/modal');
+require('../../../dyniva_ui/bower_components/bootstrap/js/modal');
 
 // ----- 上面部分按需使用 ----- //
 // ----- ==  ReadMe  == ----- //
@@ -37,7 +37,7 @@ let Drupal = window.Drupal || {};
     },
     librarys: {
       // Core
-      'messages': require('../../bower_components/bootstrap/js/alert'),
+      'messages': require('../../../dyniva_ui/bower_components/bootstrap/js/alert'),
       'footer': require('./drupal/dynivaui.footer')
     }
   }
