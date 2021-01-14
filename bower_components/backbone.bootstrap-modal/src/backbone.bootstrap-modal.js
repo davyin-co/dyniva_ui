@@ -21,24 +21,29 @@
     evaluate: /<%([\s\S]+?)%>/g
   }
 
+  // template源码已被修改和bootstrap.modal同步
   var template = _.template('\
+    <div class="modal-dialog"><div class="modal-content">\
     <% if (title) { %>\
       <div class="modal-header">\
         <% if (allowCancel) { %>\
-          <a class="close">×</a>\
+          <a class="close">&times;</a>\
         <% } %>\
-        <h3>{{title}}</h3>\
+        <h4>{{title}}</h4>\
       </div>\
     <% } %>\
     <div class="modal-body">{{content}}</div>\
-    <div class="modal-footer">\
-      <% if (allowCancel) { %>\
-        <% if (cancelText) { %>\
-          <a href="#" class="btn cancel">{{cancelText}}</a>\
+    <% if (showFooter) { %>\
+      <div class="modal-footer">\
+        <% if (allowCancel) { %>\
+          <% if (cancelText) { %>\
+            <a href="#" class="btn cancel">{{cancelText}}</a>\
+          <% } %>\
         <% } %>\
-      <% } %>\
-      <a href="#" class="btn ok btn-primary">{{okText}}</a>\
-    </div>\
+        <a href="#" class="btn ok btn-primary">{{okText}}</a>\
+      </div>\
+    <% } %>\
+    </div></div>\
   ');
 
   //Reset to users' template settings
