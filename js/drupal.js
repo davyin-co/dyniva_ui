@@ -20,13 +20,10 @@
 
       // Init inview block Anmi.
       this.inviews('.inview-box');
+      
+      // init sticky header
       if ($('.sticky-header .sticky-wrapper').length > 0) {
         this.sticky('.sticky-header .sticky-wrapper');
-      }
-
-      // prettyPrint
-      if ($('.prettyprint').length) {
-        PR.prettyPrint()
       }
 
       this.first = false;

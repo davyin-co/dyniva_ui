@@ -15,5 +15,12 @@
       })
     }
   }
+
+  $(function () {  
+    // prettyPrint
+    if ($('.prettyprint').length) {
+      PR.prettyPrint()
+    }
+  })
 }(jQuery))
 

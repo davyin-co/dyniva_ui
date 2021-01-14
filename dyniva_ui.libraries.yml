@@ -249,7 +249,7 @@ module.tab:
     js/modules/tab.js: {}
   dependencies:
     - core/jquery
-    - dyniva_ui/plugin.tab
+    - dyniva_ui/plugin.bootstrap.tab
 
 module.slick:
   js:

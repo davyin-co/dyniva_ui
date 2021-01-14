@@ -13,6 +13,7 @@ libraries:
   # Plugin
   - dyniva_ui/plugin.lazysizes
   - dyniva_ui/plugin.fixIE
+  - dyniva_ui/plugin.prettify
   # Common
   - dyniva_ui/common.media
   - dyniva_ui/common.bsTooltip
