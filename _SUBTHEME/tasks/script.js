@@ -7,7 +7,7 @@ const vinylify = require('vinyl-source-stream');
 const buffer = require('vinyl-buffer');
 
 const compileScript = (bundle) => {
-  return bundle.transform("babelify", { presets: ["babel-preset-es2015"] })
+  return bundle.transform("babelify", { babelrc: false, presets: ["@babel/preset-env"] })
     .bundle()
     .on('error', (err) => { console.log(colors.red('Watch Script Error:') + err) })
     .pipe(vinylify('init.js'))
@@ -22,12 +22,14 @@ const watchScript = (bundle) => {
 }
 
 const buildScript = (bundle) => {
-  return bundle.transform("babelify", { presets: ["babel-preset-es2015"] })
+  return bundle.transform("babelify", { presets: ["@babel/preset-env"] })
     .bundle()
     .on('error', (err) => { console.log(colors.red('Watch Script Error:') + err) })
     .pipe(vinylify('init.js'))
     .pipe(buffer())
+    .pipe(sourcemaps.init({ loadMaps: true }))
     .pipe(cleanJs())
+    .pipe(sourcemaps.write('./'))
     .pipe(dest('build/').on('end', () => {
       bundle.close();
     }))
