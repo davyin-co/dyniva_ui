@@ -103,7 +103,7 @@ plugin.video-js:
   js:
     js/plugins/video-js/video.min.js: { minified: true }
   dependencies:
-   - dyniva_ui/bbModal
+   - dyniva_ui/common.bbModal
 
 plugin.bootstrap.tooltip:
   js:
