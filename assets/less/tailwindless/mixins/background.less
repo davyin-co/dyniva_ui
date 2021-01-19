@@ -1,0 +1,8 @@
+.bg-color(@name, @color, @hover:true, @opacity: true){
+  .bg-@{name} {
+    background-color: @color;
+  }
+
+  .hook-hover(~'bg-@{name}', background-color, @color, @hover);
+  .hook-color-opacity(~'bg-@{name}', background-color, @color, @opacity, @hover);
+}

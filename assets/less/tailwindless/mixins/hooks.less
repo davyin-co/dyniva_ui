@@ -1,0 +1,77 @@
+
+.hook-hover-multiple(@selector, @properties, @values, @hover) when (@hover) {
+  .hover:hover .hover\:@{selector},
+  .hover\:@{selector}:hover {
+    each(@properties, .(@vProperty, @kProperty, @iProperty) {
+      each(@values, .(@vValue, @kValue, @iValue) {
+        & when (@iProperty = @iValue) {
+          @{vProperty}: @vValue;
+        }
+      })
+    })
+  }
+}
+
+.hook-hover-single(@selector, @property, @value, @hover) when (@hover) {
+  .hover:hover .hover\:@{selector},
+  .hover\:@{selector}:hover {
+    @{property}: @value;
+  }
+}
+
+// default use multiple
+.hook-hover(@selector, @properties, @values, @hover) when (@hover) {
+  .hook-hover-multiple(@selector, @properties, @values, @hover);
+}
+
+.hook-focus-multiple(@selector, @properties, @values, @focus) when (@focus) {
+  .focus:focus .focus\:@{selector},
+  .focus\:@{selector}:focus {
+    each(@properties, .(@vProperty, @kProperty, @iProperty) {
+      each(@values, .(@vValue, @kValue, @iValue) {
+        & when (@iProperty = @iValue) {
+          @{vProperty}: @vValue;
+        }
+      })
+    })
+  }
+}
+
+.hook-focus-single(@selector, @property, @value, @focus) when (@focus) {
+  .focus:focus .focus\:@{selector},
+  .focus\:@{selector}:focus {
+    @{property}: @value;
+  }
+}
+
+// default use multiple
+.hook-focus(@selector, @properties, @values, @focus) {
+  .hook-focus-multiple(@selector, @properties, @values, @focus);
+}
+
+.hook-color-opacity(@selector, @properties, @value, @opacity, @hover: false) when (@opacity) {
+  each(.opacity-dictionary(),.(@v, @k, @i) {
+    .@{selector}-@{k} {
+      each(@properties, .(@vP, @kP, @Pi) {
+        @{vP}: fade(@value, @v);
+      })
+    }
+
+    .hook-hover-single(~'@{selector}-@{k}', @properties, fade(@value, @v), @hover);
+  });
+}
+
+// pseudo class
+.hook-pseudo(@selector, @properties, @value, @pseudo) when (@pseudo) {
+  .last\:@{selector}:last-child {
+    each(@properties, .(@property){
+      @{property}: @value;
+    })
+  }
+
+  .first\:@{selector}:first-child {
+    each(@properties, .(@property){
+      @{property}: @value;
+    })
+  }
+}

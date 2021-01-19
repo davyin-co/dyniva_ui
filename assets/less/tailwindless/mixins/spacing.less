@@ -1,0 +1,55 @@
+.spacer-minus(@name, @size, @useMinus) when (@useMinus) {
+  each(.direction-abbreviation(), .(@v, @k, @i) {
+    .-m@{k}-@{name}{
+      each(@v, {
+        margin-@{value}: -@size;
+      })
+    }
+  })
+
+  .-m-@{name} {
+    margin: -@size;
+  }
+}
+
+.spacer(@name, @size) {
+  each(.direction-abbreviation(), .(@v, @k, @i) {
+    each(.margin-abbreviation(), .(@vMargin, @kMargin, @iMargin) {  
+      .@{kMargin}@{k}-@{name}{
+        each(@v, {
+          @{vMargin}-@{value}: @size;
+          
+        })
+      }
+      
+      @pseudo: if((@name = 0) and (length(@v) = 1), true, false);
+      .hook-pseudo(~'@{kMargin}@{k}-@{name}', ~'@{vMargin}-@{v}', @size, @pseudo);
+    });
+  })
+
+  .m-@{name} {
+    margin: @size;
+  }
+
+  .p-@{name} {
+    padding:  @size;
+  }
+
+  @useMinus: if(@name = 0, false, true);
+  .spacer-minus(@name, @size, @useMinus);
+
+}
+
+.margin-auto(){
+  each(.direction-abbreviation(), .(@v, @k, @i) {
+    .m@{k}-auto{
+      each(@v, {
+        margin-@{value}: auto;
+      })
+    }
+  });
+
+  .m-auto {
+    margin: auto;
+  }
+}

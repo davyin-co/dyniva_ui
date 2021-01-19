@@ -1,0 +1,7 @@
+.width-loop(@width, @count) when(@width > 0) {
+  .width-loop(@width - 1, @count);
+
+  .w-@{width}\/@{count}{
+    width: @width/@count * 100%;
+  }
+}
