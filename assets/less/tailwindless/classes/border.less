@@ -1,19 +1,13 @@
 // border radius
-.rounded(1, 1px);
-.rounded(2, 2px);
-.rounded(3, 3px);
-.rounded(4, 4px);
-.rounded(5, 5px);
+each(range(1, 5, 1), {
+  .rounded(@value, ~'@{value}px')
+})
 .rounded(full, 9999px);
 
 // border width
-.border-width(0, 0px);
-.border-width(1, 1px);
-.border-width(2, 2px);
-.border-width(3, 3px);
-.border-width(4, 4px);
-.border-width(5, 5px);
-.border-width(6, 6px);
+each(range(0, 6, 1), {
+  .border-width(@value, ~'@{value}px')
+})
 
 // border color
 .border-color(base, @border-color);

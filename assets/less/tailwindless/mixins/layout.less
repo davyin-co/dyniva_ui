@@ -1,29 +1,29 @@
 // 单个值
-.position-single(@nameSuffix, @size, @v-properties, @isMinus: false) when (length(@v-properties) = 1){
-  @selector: if(@isMinus, ~'-@{v-properties}-@{nameSuffix}', ~'@{v-properties}-@{nameSuffix}');
+.position-single(@nameSuffix, @size, @properties, @isMinus: false) when (length(@properties) = 1){
+  @selector: if(@isMinus, ~'-@{properties}-@{nameSuffix}', ~'@{properties}-@{nameSuffix}');
 
   .@{selector} {
-    @{v-properties}: if(@isMinus, @size * -1, @size);
+    @{properties}: if(@isMinus, @size * -1, @size);
   }
 }
 
 // 多个值
-.position-multiple(@nameSuffix, @size, @k-name, @v-properties, @isMinus: false) when (length(@v-properties) > 1){
-  @selector: if(@isMinus, ~'-inset-@{k-name}-@{nameSuffix}', ~'inset-@{k-name}-@{nameSuffix}');
+.position-multiple(@nameSuffix, @size, @name, @properties, @isMinus: false) when (length(@properties) > 1){
+  @selector: if(@isMinus, ~'-inset-@{name}-@{nameSuffix}', ~'inset-@{name}-@{nameSuffix}');
 
   .@{selector} {
-    each(@v-properties,.(@v-property) {
-      @{v-property}: if(@isMinus, @size * -1, @size);
+    each(@properties,.(@property) {
+      @{property}: if(@isMinus, @size * -1, @size);
     })
   }
 }
 
 // 生成负的
 .position-minus(@nameSuffix, @size, @useMinus) when (@useMinus) {
-  each(.direction-abbreviation(), .(@v-properties, @k-name){
+  each(#table.direction-abbreviation(), .(@vDirection, @kDirection){
 
-    .position-single(@nameSuffix, @size, @v-properties, @isMinus: true);
-    .position-multiple(@nameSuffix, @size, @k-name, @v-properties, @isMinus: true);
+    .position-single(@nameSuffix, @size, @vDirection, @isMinus: true);
+    .position-multiple(@nameSuffix, @size, @kDirection, @vDirection, @isMinus: true);
   })
 
   .-inset-@{nameSuffix} {
@@ -36,10 +36,10 @@
 
 // base
 .position(@nameSuffix, @size) {
-  each(.direction-abbreviation(), .(@v-properties, @k-name){
+  each(#table.direction-abbreviation(), .(@vDirection, @kDirection){
 
-    .position-single(@nameSuffix, @size, @v-properties);
-    .position-multiple(@nameSuffix, @size, @k-name, @v-properties);
+    .position-single(@nameSuffix, @size, @vDirection, @isMinus: false);
+    .position-multiple(@nameSuffix, @size, @kDirection, @vDirection, @isMinus: false);
   })
 
   .inset-@{nameSuffix} {
@@ -52,4 +52,12 @@
   // auto和0的时候不生成负的类
   @useMinus: if((@nameSuffix = auto) or (@nameSuffix = 0), false, true);
   .position-minus(@nameSuffix, @size, @useMinus);
+}
+
+.z-index(@name, @size, @hover: false) {
+  .z-@{name}{
+    z-index: @size;
+  }
+  
+  #hooks.hover(~'z-@{name}', { z-index: @size }, @hover);
 }

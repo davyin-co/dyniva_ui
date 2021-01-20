@@ -11,12 +11,9 @@
     transform: scale(@value);
   }
 
-  .hook-hover(~'scale-x-@{name}', transform, scaleX(@value), @hover);
-  .hook-hover(~'scale-y-@{name}', transform, scaleY(@value), @hover);
-  .hook-hover(~'scale-@{name}', transform, scale(@value), @hover);
-
-  // if need generator
-  // .transform-scale(@name - 10, @value - 0.1, @hover);
+  #hooks.hover(~'scale-x-@{name}', { transform: scaleX(@value) }, @hover);
+  #hooks.hover(~'scale-y-@{name}', { transform: scaleY(@value) }, @hover);
+  #hooks.hover(~'scale-@{name}', { transform: scale(@value) }, @hover);
 }
 
 .transform-rotate(@name, @angle, @hover: true){
@@ -27,8 +24,8 @@
     transform: rotate(@angle * -1);
   }
   
-  .hook-hover(~'rotate-@{name}', transform, rotate(@angle), @hover);
-  .hook-hover(~'-rotate-@{name}', transform, rotate(@angle * -1), @hover);
+  #hooks.hover(~'rotate-@{name}', { transform: rotate(@angle) }, @hover);
+  #hooks.hover(~'-rotate-@{name}', { transform: rotate(@angle * -1) }, @hover);
 }
 
 .transform-translate(@name, @size) {

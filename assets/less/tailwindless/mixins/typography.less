@@ -1,33 +1,33 @@
-.truncate-line(@line, @height: false, @hover: false) {
-  @defaultHeight: if(@height, @height, 1rem * 1.5 * @line);
-
-  .truncate-@{line} {
+.truncate-line(@line, @fontSize: 1rem, @lineHeight: 1.5, @hover: true, @responsive: true) when (@line > 1) {
+  .defaultProperties(){
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: @line;
-    height: @defaultHeight;
     overflow: hidden !important;
   }
-
-  @properties: -webkit-line-clamp, height;
-  @values: @line, @defaultHeight;
   
-  .hook-hover(~'truncate-@{line}', @properties, @values, @hover);
+  .truncate-@{line} {
+    .defaultProperties();
+    -webkit-line-clamp: @line;
+    height: @fontSize * @lineHeight * @line;
+  }
+  
+  #hooks.hover(~'truncate-@{line}', { 
+    .defaultProperties();
+    -webkit-line-clamp: @line;
+    height: @fontSize * @lineHeight * @line;
+  }, @hover);
+  
+  #hooks.responsive(~'truncate-@{line}', { 
+    .defaultProperties();
+    -webkit-line-clamp: @line;
+    height: @fontSize * @lineHeight * @line;
+  }, @responsive);
 }
 
-.text-color(@name, @color, @hover: false, @focus: false, @opacity: false) {
+.text-color(@name, @color, @hover: true) {
   .text-@{name}{
     color: @color;
   }
 
-  .hook-hover(~'text-@{name}', color, @color, @hover);
-  .hook-color-opacity(~'text-@{name}', color, @color, @opacity);
-}
-
-.z-index(@name, @size, @hover: false) {
-  .z-@{name}{
-    z-index: @size;
-  }
-  
-  .hook-hover-single(~'z-@{name}', z-index, @size, @hover);
+  #hooks.hover(~'text-@{name}', { color: @color }, @hover);
 }

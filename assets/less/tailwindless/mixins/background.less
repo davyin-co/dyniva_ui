@@ -3,6 +3,6 @@
     background-color: @color;
   }
 
-  .hook-hover(~'bg-@{name}', background-color, @color, @hover);
-  .hook-color-opacity(~'bg-@{name}', background-color, @color, @opacity, @hover);
+  #hooks.hover(~'bg-@{name}', { background-color: @color }, @hover);
+  #hooks.opacity-color(~'bg-@{name}', { background-color: @color }, @opacity, @hover);
 }

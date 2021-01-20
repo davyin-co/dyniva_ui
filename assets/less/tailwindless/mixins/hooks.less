@@ -1,77 +1,61 @@
-
-.hook-hover-multiple(@selector, @properties, @values, @hover) when (@hover) {
-  .hover:hover .hover\:@{selector},
-  .hover\:@{selector}:hover {
-    each(@properties, .(@vProperty, @kProperty, @iProperty) {
-      each(@values, .(@vValue, @kValue, @iValue) {
-        & when (@iProperty = @iValue) {
-          @{vProperty}: @vValue;
-        }
-      })
-    })
-  }
-}
-
-.hook-hover-single(@selector, @property, @value, @hover) when (@hover) {
-  .hover:hover .hover\:@{selector},
-  .hover\:@{selector}:hover {
-    @{property}: @value;
-  }
-}
-
-// default use multiple
-.hook-hover(@selector, @properties, @values, @hover) when (@hover) {
-  .hook-hover-multiple(@selector, @properties, @values, @hover);
-}
-
-.hook-focus-multiple(@selector, @properties, @values, @focus) when (@focus) {
-  .focus:focus .focus\:@{selector},
-  .focus\:@{selector}:focus {
-    each(@properties, .(@vProperty, @kProperty, @iProperty) {
-      each(@values, .(@vValue, @kValue, @iValue) {
-        & when (@iProperty = @iValue) {
-          @{vProperty}: @vValue;
-        }
-      })
-    })
-  }
-}
-
-.hook-focus-single(@selector, @property, @value, @focus) when (@focus) {
-  .focus:focus .focus\:@{selector},
-  .focus\:@{selector}:focus {
-    @{property}: @value;
-  }
-}
-
-// default use multiple
-.hook-focus(@selector, @properties, @values, @focus) {
-  .hook-focus-multiple(@selector, @properties, @values, @focus);
-}
-
-.hook-color-opacity(@selector, @properties, @value, @opacity, @hover: false) when (@opacity) {
-  each(.opacity-dictionary(),.(@v, @k, @i) {
-    .@{selector}-@{k} {
-      each(@properties, .(@vP, @kP, @Pi) {
-        @{vP}: fade(@value, @v);
+#hooks {
+  .hover(@selector, @hashesHover, @hover) when (@hover) {
+    .hover:hover .hover\:@{selector},
+    .hover\:@{selector}:hover {
+      each(@hashesHover, .(@value, @property) {
+        @{property}: @value;
       })
     }
+  }
 
-    .hook-hover-single(~'@{selector}-@{k}', @properties, fade(@value, @v), @hover);
-  });
-}
+  .focus(@selector, @hashesFocus, @focus) when (@focus) {
+    .focus:focus .focus\:@{selector},
+    .focus\:@{selector}:focus {
+      each(@hashesFocus, .(@value, @property) {
+        @{property}: @value;
+      })
+    }
+  }
 
-// pseudo class
-.hook-pseudo(@selector, @properties, @value, @pseudo) when (@pseudo) {
-  .last\:@{selector}:last-child {
-    each(@properties, .(@property){
-      @{property}: @value;
+  .responsive(@selector, @hashesResponsive, @responsive) when (@responsive) {
+    each(#table.responsive(), .(@vResponsive, @kResponsive, @iResponsive) {
+      @media (min-width: @vResponsive) {
+        .@{kResponsive}\:@{selector} {  
+          each(@hashesResponsive, .(@value, @property) {
+            @{property}: @value;
+          })
+        }
+      }
     })
   }
 
-  .first\:@{selector}:first-child {
-    each(@properties, .(@property){
-      @{property}: @value;
-    })
+  .opacity-color(@selector, @hashesColorOpacity, @opacity, @hover) when (@opacity) {
+    each(#table.opacity(),.(@vOpacity, @kOpacity) {
+      .@{selector}-@{kOpacity} {
+        each(@hashesColorOpacity, .(@value, @property) {
+          @{property}: fade(@value, @vOpacity);
+        })
+      }
+
+      #hooks.hover(~'@{selector}-@{kOpacity}', {
+        each(@hashesColorOpacity, .(@value, @property) {
+          @{property}: fade(@value, @vOpacity);
+        })
+      }, @hover);
+    });
+  }
+
+  .pseudo(@selector, @hashesPseudo, @pseudo) when (@pseudo) {
+    .last\:@{selector}:last-child {
+      each(@hashesPseudo, .(@value, @property) {
+        @{property}: @value;
+      })
+    }
+  
+    .first\:@{selector}:first-child {
+      each(@hashesPseudo, .(@value, @property) {
+        @{property}: @value;
+      })
+    }
   }
 }
