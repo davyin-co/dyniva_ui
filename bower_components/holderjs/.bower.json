@@ -1,0 +1,16 @@
+{
+  "name": "holderjs",
+  "main": "holder.js",
+  "license": "MIT",
+  "homepage": "https://github.com/imsky/holder",
+  "version": "2.9.8",
+  "_release": "2.9.8",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.9.8",
+    "commit": "4c0c9320b25c317be7a2dd8d35bdd25c93f61b1a"
+  },
+  "_source": "https://github.com/imsky/holder.git",
+  "_target": "^2.9.4",
+  "_originalSource": "holderjs"
+}

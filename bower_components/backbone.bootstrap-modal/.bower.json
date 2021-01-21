@@ -1,0 +1,14 @@
+{
+  "name": "backbone.bootstrap-modal",
+  "homepage": "https://github.com/powmedia/backbone.bootstrap-modal",
+  "version": "0.9.0",
+  "_release": "0.9.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.9.0",
+    "commit": "846e8d70376912fbbbd71c382ddf7a5885249931"
+  },
+  "_source": "https://github.com/powmedia/backbone.bootstrap-modal.git",
+  "_target": "^0.9.0",
+  "_originalSource": "backbone.bootstrap-modal"
+}

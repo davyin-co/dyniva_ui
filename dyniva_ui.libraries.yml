@@ -171,7 +171,7 @@ videojs:
 
 bsTooltip:
   js:
-    js/plugins/tooltip-enhance.js: { }
+    bower_components/bootstrap/js/tooltip.js: { }
     js/commons/bs-tooltip.js: {}
   dependencies:
     - core/jQuery
@@ -180,7 +180,7 @@ bsTooltip:
 # backbone bootstrap modal
 bbModal:
   js:
-    js/plugins/backbone.bootstrap-modal.js: {}
+    bower_components/backbone.bootstrap-modal/src/backbone.bootstrap-modal.js: {}
     js/commons/backbone-modal.js: {}
   dependencies:
     - core/jQuery
@@ -189,14 +189,14 @@ bbModal:
 
 ellipsis:
   js:
-    js/plugins/jquery.dotdotdot.js: { minified: true }
+    bower_components/jQuery.dotdotdot/dist/jquery.dotdotdot.js: { minified: true }
     js/commons/ellipsis.js: {}
   dependencies:
     - core/jQuery
-
+    
 echart:
   js:
-    js/plugins/echarts.common.min.js: { minified: true }
+    bower_components/echarts/dist/echarts.common.min.js: { minified: true }
     js/modules/echart/models.js: {}
     js/modules/echart/dy-chart.js: {}
     js/modules/echart.js: {}
@@ -210,7 +210,7 @@ echart:
 # https://github.com/Prinzhorn/skrollr
 parallax:
   js:
-    js/plugins/skrollr.min.js: { minified: true }
+    bower_components/skrollr/dist/skrollr.min.js: { minified: true }
     js/commons/parallax.js: {}
   dependencies:
     - core/jquery
@@ -240,7 +240,7 @@ goToTop:
 
 slimScroll:
   js:
-    js/plugins/jquery.slimscroll.min.js: { minified: true }
+    bower_components/jquery-slimscroll/jquery.slimscroll.min.js: { minified: true }
     js/commons/slimscroll.js: {}
   dependencies:
     - core/jquery
