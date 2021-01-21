@@ -1,17 +1,23 @@
-.spacer-minus(@name, @size, @useMinus) when (@useMinus) {
-  each(#table.direction-abbreviation(), .(@v, @k, @i) {
-    .-m@{k}-@{name}{
-      each(@v, {
+.spacer-minus(@name, @size, @useMinus, @useResponsive) when (@useMinus) {
+  each(#table.direction-abbreviation(), .(@vDirection, @kDirection) {
+    .-m@{kDirection}-@{name}{
+      each(@vDirection, {
         margin-@{value}: -@size;
       })
     }
+
+    #hooks.responsive(~'-m@{kDirection}-@{name}', {
+      each(@vDirection, {
+        margin-@{value}: -@size;
+      })
+    }, @useResponsive);
   })
     .-m-@{name} {
     margin: -@size;
   }
 }
 
-.spacer(@name, @size) {
+.spacer(@name, @size, @useResponsive: true) {
   each(#table.direction-abbreviation(), .(@vDirection, @kDirection, @iDirection) {
     each(#table.margin-abbreviation(), .(@vMargin, @kMargin, @iMargin) {
 
@@ -27,7 +33,6 @@
         @{vMargin}-@{vDirection}: @size
       }, @pseudo);
 
-      @useResponsive: true;
       #hooks.responsive(~'@{kMargin}@{kDirection}-@{name}', {
         each(@vDirection, {
           @{vMargin}-@{value}: @size;
@@ -44,7 +49,7 @@
   }
 
   @useMinus: if(@name = 0, false, true);
-  .spacer-minus(@name, @size, @useMinus);
+  .spacer-minus(@name, @size, @useMinus, @useResponsive);
 }
 
 .margin-auto() {

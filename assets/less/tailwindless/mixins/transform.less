@@ -28,7 +28,7 @@
   #hooks.hover(~'-rotate-@{name}', { transform: rotate(@angle * -1) }, @hover);
 }
 
-.transform-translate(@name, @size) {
+.transform-translate(@name, @size, @resnponsive: true) {
   .translate-x-@{name} {
     transform: translateX(@size);
   }
@@ -47,4 +47,11 @@
   .-translate-@{name} {
     transform: translate(@size * -1, @size * -1);
   }
+
+  #hooks.responsive(~'translate-x-@{name}', { transform: translateX(@size) }, @resnponsive);
+  #hooks.responsive(~'translate-y-@{name}', { transform: translateY(@size) }, @resnponsive);
+  #hooks.responsive(~'translate-@{name}', { transform: translate(@size, @size) }, @resnponsive);
+  #hooks.responsive(~'-translate-x-@{name}', { transform: translateX(@size * -1) }, @resnponsive);
+  #hooks.responsive(~'-translate-y-@{name}', { transform: translateY(@size * -1) }, @resnponsive);
+  #hooks.responsive(~'-translate-@{name}', { transform: translate(@size * -1, @size * -1) }, @resnponsive);
 }
