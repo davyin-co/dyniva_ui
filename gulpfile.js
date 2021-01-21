@@ -4,21 +4,15 @@ const watchify = require('watchify');
 
 const { buildStyle, watchStyle } = require('./tasks/style');
 const { watchScript, buildScript } = require('./tasks/script');
-const { configScript } = require('./tasks/config');
-const { minifyImage } = require('./tasks/image');
-const { cleaner } = require('./tasks/clean');
 const { startingLog, finishedLog } = require('./tasks/tools');
 
 const bConfig = {
   ...watchify.args,
-  entries: [...configScript.source],
+  entries: ['assets/scripts/index.js'],
   debug: true,
   plugin: [watchify]
 };
 
-task('clean', cleaner);
-
-task('imagemin', minifyImage);
 
 task('watch:style', watchStyle);
 task('build:style', buildStyle);
@@ -55,6 +49,6 @@ task('build:script', async () => {
 });
 
 task('watch', parallel('watch:style', 'watch:script'));
-task('build', series('clean', parallel('build:style', 'build:script')));
+task('build', parallel('build:style', 'build:script'));
 
 
