@@ -8,6 +8,8 @@
 .spacing(60, 60px);
 .spacing(80, 80px);
 .margin-auto();
+.spacing(~'1\/2', 50%);
+.spacing(full, 100%);
 
 // with responsive
 each(#table.responsive(), .(@vResponsive, @kResponsive) {
@@ -23,6 +25,8 @@ each(#table.responsive(), .(@vResponsive, @kResponsive) {
     .spacing(40, 40px, @namePrefix);
     .spacing(60, 60px, @namePrefix);
     .spacing(80, 80px, @namePrefix);
+    .spacing(~'1\/2', 50%, @namePrefix);
+    .spacing(full, 100%, @namePrefix);
     .margin-auto(@namePrefix);
   }
 })
