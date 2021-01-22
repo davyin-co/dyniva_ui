@@ -1,8 +1,25 @@
-.bg-color(@name, @color, @hover:true, @opacity: true){
+.bg-color(@name, @color) {
   .bg-@{name} {
     background-color: @color;
   }
 
-  #hooks.hover(~'bg-@{name}', { background-color: @color }, @hover);
-  #hooks.opacity-color(~'bg-@{name}', { background-color: @color }, @opacity, @hover);
+  each(range(10, 90, 10),.(@opacity) {
+    .bg-@{name}-@{opacity} {
+      background-color: fade(@color, @opacity);
+    }
+  });
+}
+
+.bg-color-hover(@name, @color) {
+  .hover:hover .hover\:bg-@{name},
+  .hover\:bg-@{name}:hover {
+    background-color: @color;
+  }
+
+  each(range(10, 90, 10),.(@opacity) {
+    .hover:hover .hover\:bg-@{name}-@{opacity},
+    .hover\:bg-@{name}-@{opacity}:hover {
+      background-color: fade(@color, @opacity);
+    }
+  });
 }

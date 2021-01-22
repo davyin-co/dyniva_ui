@@ -1,4 +1,4 @@
-.transform-scale(@name, @value, @hover: true){
+.transform-scale(@name, @value){
   .scale-x-@{name} {
     transform: scaleX(@value);
   }
@@ -10,48 +10,60 @@
   .scale-@{name}{
     transform: scale(@value);
   }
+};
+.transform-scale-hover(@name, @value){
+  .hover:hover .hover\:scale-x-@{name},
+  .hover\:scale-x-@{name}:hover {
+    transform: scaleX(@value);
+  }
 
-  #hooks.hover(~'scale-x-@{name}', { transform: scaleX(@value) }, @hover);
-  #hooks.hover(~'scale-y-@{name}', { transform: scaleY(@value) }, @hover);
-  #hooks.hover(~'scale-@{name}', { transform: scale(@value) }, @hover);
+  .hover:hover .hover\:scale-y-@{name},
+  .hover\:scale-y-@{name}:hover {
+    transform: scaleY(@value);
+  }
+
+  .hover:hover .hover\:scale-@{name},
+  .hover\:scale-@{name}:hover {
+    transform: scale(@value);
+  }
 }
 
-.transform-rotate(@name, @angle, @hover: true){
+.transform-rotate(@name, @angle){
   .rotate-@{name} {
     transform: rotate(@angle);
   }
   .-rotate-@{name} {
     transform: rotate(@angle * -1);
   }
-  
-  #hooks.hover(~'rotate-@{name}', { transform: rotate(@angle) }, @hover);
-  #hooks.hover(~'-rotate-@{name}', { transform: rotate(@angle * -1) }, @hover);
+}
+.transform-rotate-hover(@name, @angle){
+  .hover:hover .hover\:rotate-@{name},
+  .hover\:rotate-@{name}:hover {
+    transform: rotate(@angle);
+  }
+  .hover:hover .hover\:-rotate-@{name},
+  .hover\:-rotate-@{name}:hover {
+    transform: rotate(@angle * -1);
+  }
 }
 
-.transform-translate(@name, @size, @resnponsive: true) {
-  .translate-x-@{name} {
+.transform-translate(@name, @size, @namePrefix: ~'') {
+  .@{namePrefix}translate-x-@{name} {
     transform: translateX(@size);
   }
-  .translate-y-@{name} {
+  .@{namePrefix}translate-y-@{name} {
     transform: translateY(@size);
   }
-  .translate-@{name} {
+  .@{namePrefix}translate-@{name} {
     transform: translate(@size, @size);
   }
-  .-translate-x-@{name} {
+  .@{namePrefix}-translate-x-@{name} {
     transform: translateX(@size * -1);
   }
-  .-translate-y-@{name} {
+  .@{namePrefix}-translate-y-@{name} {
     transform: translateY(@size * -1);
   }
-  .-translate-@{name} {
+  .@{namePrefix}-translate-@{name} {
     transform: translate(@size * -1, @size * -1);
   }
-
-  #hooks.responsive(~'translate-x-@{name}', { transform: translateX(@size) }, @resnponsive);
-  #hooks.responsive(~'translate-y-@{name}', { transform: translateY(@size) }, @resnponsive);
-  #hooks.responsive(~'translate-@{name}', { transform: translate(@size, @size) }, @resnponsive);
-  #hooks.responsive(~'-translate-x-@{name}', { transform: translateX(@size * -1) }, @resnponsive);
-  #hooks.responsive(~'-translate-y-@{name}', { transform: translateY(@size * -1) }, @resnponsive);
-  #hooks.responsive(~'-translate-@{name}', { transform: translate(@size * -1, @size * -1) }, @resnponsive);
 }

@@ -1,14 +1,16 @@
-.opacity(@name, @opacity, @hover: true) {
-  .opacity-@{name} {
-    opacity: @opacity;
+.opacity-base(@opacity) when (@opacity >= 0) {
+  .opacity-base(@opacity - 10);
+
+  .opacity-@{opacity} {
+    opacity: @opacity * 0.01;
   }
-  
-  #hooks.hover(~'opacity-@{name}', { opacity: @opacity }, @hover);
 }
 
-.opacity-generator(@name, @opacity) when (@name >= 0) and (@opacity >= 0) {
-  .opacity-generator(@name - 10, @opacity - 0.1);
+.opacity-hover(@opacity) when (@opacity >= 0) {
+  .opacity-hover(@opacity - 10);
 
-  .opacity(@name, @opacity);
+  .hover:hover .hover\:opacity-@{opacity},
+  .hover\:opacity-@{opacity}:hover {
+    opacity: @opacity * 0.01;
+  }
 }
-

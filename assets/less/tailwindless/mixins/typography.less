@@ -1,33 +1,31 @@
-.truncate-line(@line, @fontSize: 1rem, @lineHeight: 1.5, @hover: true, @responsive: true) when (@line > 1) {
-  .defaultProperties(){
+.truncate-line(@line, @fontSize: 1rem, @lineHeight: 1.5, @namePrefix: ~'') {
+  .truncate-@{line} {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden !important;
-  }
-  
-  .truncate-@{line} {
-    .defaultProperties();
     -webkit-line-clamp: @line;
     height: @fontSize * @lineHeight * @line;
   }
-  
-  #hooks.hover(~'truncate-@{line}', { 
-    .defaultProperties();
+}
+.truncate-line-hover(@line, @fontSize: 1rem, @lineHeight: 1.5, @namePrefix: ~'') {
+  .hover:hover .@{namePrefix}hover\:truncate-@{line},
+  .@{namePrefix}hover\:truncate-@{line}:hover {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden !important;
     -webkit-line-clamp: @line;
     height: @fontSize * @lineHeight * @line;
-  }, @hover);
-  
-  #hooks.responsive(~'truncate-@{line}', { 
-    .defaultProperties();
-    -webkit-line-clamp: @line;
-    height: @fontSize * @lineHeight * @line;
-  }, @responsive);
+  }
 }
 
-.text-color(@name, @color, @hover: true) {
+.text-color(@name, @color) {
   .text-@{name}{
     color: @color;
   }
-
-  #hooks.hover(~'text-@{name}', { color: @color }, @hover);
+}
+.text-color-hover(@name, @color) {
+  .hover:hover .hover\:text-@{name},
+  .hover\:text-@{name}:hover{
+    color: @color;
+  }
 }

@@ -29,11 +29,23 @@
 
 // scale with hover
 .transform-scale(105, 1.05);
+.transform-scale-hover(105, 1.05);
 
 // rotate
 .transform-rotate(90, 90deg);
 .transform-rotate(180, 180deg);
 .transform-rotate(360, 360deg);
+.transform-rotate-hover(90, 90deg);
+.transform-rotate-hover(180, 180deg);
+.transform-rotate-hover(360, 360deg);
 
 // translate
 .transform-translate(~'1\/2', 50%);
+each(#table.responsive(), .(@vResponsive, @kResponsive) {
+  @screenName: ~'screen-@{kResponsive}';
+  @namePrefix: ~'@{kResponsive}\:';
+
+  @media (min-content: @@screenName) {
+    .transform-translate(~'1\/2', 50%, @namePrefix);
+  }
+})

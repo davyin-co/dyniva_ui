@@ -1,22 +1,40 @@
 // width percent
-.width(11, 12);
-.width(1, 2);
-.width(2, 3);
-.width(3, 4);
-.width(4, 5);
-.width(5, 6);
 .w-full {
   width: 100%;
 }
 .w-screen {
   width: 100vw;
 }
-.w-min{
+.w-min {
   width: min-content;
 }
 .w-max {
   width: max-content;
 }
+.width(11, 12);
+.width(4, 5);
+// width percent with responsive
+each(#table.responsive(), .(@vResponsive, @kResponsive) {
+  @screenName: ~'screen-@{kResponsive}';
+  @namePrefix: ~'@{kResponsive}\:';
+
+  @media (min-content: @@screenName) {
+    .width(11, 12, @namePrefix);
+    .width(4, 5, @namePrefix);
+    .@{namePrefix}w-full {
+      width: 100%;
+    }
+    @{namePrefix}w-screen {
+      width: 100vw;
+    }
+    .@{namePrefix}w-min {
+      width: min-content;
+    }
+    .@{namePrefix}w-max {
+      width: max-content;
+    }
+  }
+})
 
 // min-width
 .min-w-0 {

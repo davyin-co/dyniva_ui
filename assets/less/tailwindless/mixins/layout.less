@@ -6,7 +6,6 @@
     @{properties}: if(@isMinus, @size * -1, @size);
   }
 }
-
 // 多个值
 .position-multiple(@nameSuffix, @size, @name, @properties, @isMinus: false) when (length(@properties) > 1){
   @selector: if(@isMinus, ~'-inset-@{name}-@{nameSuffix}', ~'inset-@{name}-@{nameSuffix}');
@@ -17,7 +16,6 @@
     })
   }
 }
-
 // 生成负的
 .position-minus(@nameSuffix, @size, @useMinus) when (@useMinus) {
   each(#table.direction-abbreviation(), .(@vDirection, @kDirection){
@@ -33,7 +31,6 @@
     top: @size * -1;
   }
 }
-
 // base
 .position(@nameSuffix, @size) {
   each(#table.direction-abbreviation(), .(@vDirection, @kDirection){
@@ -54,10 +51,15 @@
   .position-minus(@nameSuffix, @size, @useMinus);
 }
 
-.z-index(@name, @size, @hover: false) {
+.z-index(@name, @size: @name) {
   .z-@{name}{
     z-index: @size;
   }
   
-  #hooks.hover(~'z-@{name}', { z-index: @size }, @hover);
+}
+.z-index-hover(@name, @size: @name) {
+  .hover:hover .hover\:z-@{name},
+  .hover\:z-@{name}:hover{
+    z-index: @size;
+  }
 }
