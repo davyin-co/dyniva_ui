@@ -203,7 +203,7 @@ each(#table.responsive(), .(@vResponsive, @kResponsive) {
   @screenName: ~'screen-@{kResponsive}';
   @namePrefix: ~'@{kResponsive}\:';
 
-  @media (min-content: @@screenName) {
+  @media (min-width: @@screenName) {
     .@{namePrefix}truncate-1 {
       overflow: hidden !important;
       text-overflow: ellipsis;
@@ -219,7 +219,7 @@ each(#table.responsive(), .(@vResponsive, @kResponsive) {
   @screenName: ~'screen-@{kResponsive}';
   @namePrefix: ~'@{kResponsive}\:';
 
-  @media (min-content: @@screenName) {
+  @media (min-width: @@screenName) {
     .hover:hover .@{namePrefix}hover\:truncate-1,
     .@{namePrefix}hover\:truncate-1:hover {
       overflow: hidden !important;

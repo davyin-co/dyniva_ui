@@ -18,7 +18,7 @@ each(#table.responsive(), .(@vResponsive, @kResponsive) {
   @screenName: ~'screen-@{kResponsive}';
   @namePrefix: ~'@{kResponsive}\:';
 
-  @media (min-content: @@screenName) {
+  @media (min-width: @@screenName) {
     .width(11, 12, @namePrefix);
     .width(4, 5, @namePrefix);
     .@{namePrefix}w-full {
