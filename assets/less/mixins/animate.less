@@ -1,0 +1,43 @@
+// Transitions
+.transition(@transition) {
+  -webkit-transition: @transition;
+  -moz-transition: @transition;
+  -o-transition: @transition;
+  transition: @transition;
+}
+
+.transform(@transform) {
+  -webkit-transform: @transform;
+  -moz-transform: @transform;
+  -o-transform: @transform;
+  transform: @transform;
+}
+
+.transform-origin(@transform) {
+  -webkit-transform-origin: @transform;
+  -moz-transform-origin: @transform;
+  -o-transform-origin: @transform;
+  transform-origin: @transform;
+}
+
+.translate(@x; @y) {
+  -webkit-transform: translate(@x, @y);
+  -ms-transform: translate(@x, @y); // IE9 only
+  -o-transform: translate(@x, @y);
+  transform: translate(@x, @y);
+}
+
+.transition-transform(@transition) {
+  -webkit-transition: -webkit-transform @transition;
+  -moz-transition: -moz-transform @transition;
+  -o-transition: -o-transform @transition;
+  transition: transform @transition;
+}
+
+.scale (@scale: 0) {
+  -o-transform: scale(@scale);
+  -ms-transform: scale(@scale);
+  -moz-transform: scale(@scale);
+  -webkit-transform: scale(@scale);
+  transform: scale(@scale);
+}
