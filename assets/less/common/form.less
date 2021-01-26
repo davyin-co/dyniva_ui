@@ -32,7 +32,6 @@ textarea {
 
 input {
   background-color: #ffffff;
-  -webkit-transform: translateY(0);
   outline: none;
   padding-bottom: 3px;
   padding-top: 3px;
@@ -40,40 +39,6 @@ input {
 
   &:-webkit-autofill {
     .box-shadow(inset 0 0 0 1000px #fff);
-  }
-
-  &[type="search"] {
-    // Not on safari desktop
-    //-webkit-textfield-decoration-container
-    //-webkit-appearance: searchfield;
-  }
-
-  &[type="submit"] {
-    // letter-spacing: 1px;
-  }
-
-  &[type="text"],
-  &[type="email"] {
-    background-color: transparent;
-    border: 1px solid transparent;
-  }
-
-  &[type="password"] {
-    background-color: transparent;
-    border: 1px solid transparent;
-  }
-
-  &[type="number"] {
-    background-color: transparent;
-    border: none;
-  }
-
-  &[type="radio"] {
-    padding: 0;
-  }
-
-  &[type="checkbox"] {
-    padding: 0;
   }
 
   &[type=range] {
