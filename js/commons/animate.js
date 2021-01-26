@@ -9,10 +9,11 @@
           animatedClassName: 'dy-animate',
           once: true
         });
+        
+        this.first = false;
       } else {
         AOS.refreshHard()
       }
-      this.first = false;
     }
   }
 })(jQuery)

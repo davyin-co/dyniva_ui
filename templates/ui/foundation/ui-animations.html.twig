@@ -22,144 +22,118 @@
             {
               name: "fade",
               animate: "fade",
-              media: theme~'/templates/ui/images/light/light-03.jpg'
             },
             {
               name: "fade up",
               animate: "fade-up",
-              media: theme~'/templates/ui/images/light/light-03.jpg'
             },
             {
               name: "fade down",
               animate: "fade-down",
-              media: theme~'/templates/ui/images/light/light-03.jpg'
             },
             {
               name: "fade left",
               animate: "fade-left",
-              media: theme~'/templates/ui/images/light/light-03.jpg'
             },
             {
               name: "fade right",
               animate: "fade-right",
-              media: theme~'/templates/ui/images/light/light-03.jpg'
             },
             {
               name: "fade up right",
               animate: "fade-up-right",
-              media: theme~'/templates/ui/images/light/light-03.jpg'
             },
             {
               name: "fade up left",
               animate: "fade-up-left",
-              media: theme~'/templates/ui/images/light/light-03.jpg'
             },
             {
               name: "fade down right",
               animate: "fade-down-right",
-              media: theme~'/templates/ui/images/light/light-03.jpg'
             },
             {
               name: "fade down left",
               animate: "fade-down-left",
-              media: theme~'/templates/ui/images/light/light-03.jpg'
             },
             {
               name: "flip up",
               animate: "flip-up",
-              media: theme~'/templates/ui/images/light/light-03.jpg'
             },
             {
               name: "flip down",
               animate: "flip-down",
-              media: theme~'/templates/ui/images/light/light-03.jpg'
             },
             {
               name: "flip left",
               animate: "flip-left",
-              media: theme~'/templates/ui/images/light/light-03.jpg'
             },
             {
               name: "flip right",
               animate: "flip-right",
-              media: theme~'/templates/ui/images/light/light-03.jpg'
             },
             {
               name: "slide up",
               animate: "slide-up",
-              media: theme~'/templates/ui/images/light/light-03.jpg'
             },
             {
               name: "slide down",
               animate: "slide-down",
-              media: theme~'/templates/ui/images/light/light-03.jpg'
             },
             {
               name: "slide left",
               animate: "slide-left",
-              media: theme~'/templates/ui/images/light/light-03.jpg'
             },
             {
               name: "slide right",
               animate: "slide-right",
-              media: theme~'/templates/ui/images/light/light-03.jpg'
             },
             {
               name: "zoom in",
               animate: "zoom-in",
-              media: theme~'/templates/ui/images/light/light-03.jpg'
             },
             {
               name: "zoom in up",
               animate: "zoom-in-up",
-              media: theme~'/templates/ui/images/light/light-03.jpg'
             },
             {
               name: "zoom in down",
               animate: "zoom-in-down",
-              media: theme~'/templates/ui/images/light/light-03.jpg'
             },
             {
               name: "zoom in left",
               animate: "zoom-in-left",
-              media: theme~'/templates/ui/images/light/light-03.jpg'
             },
             {
               name: "zoom in right",
               animate: "zoom-in-right",
-              media: theme~'/templates/ui/images/light/light-03.jpg'
             },
             {
               name: "zoom out",
               animate: "zoom-out",
-              media: theme~'/templates/ui/images/light/light-03.jpg'
             },
             {
               name: "zoom out up",
               animate: "zoom-out-up",
-              media: theme~'/templates/ui/images/light/light-03.jpg'
             },
             {
               name: "zoom out down",
               animate: "zoom-out-down",
-              media: theme~'/templates/ui/images/light/light-03.jpg'
             },
             {
               name: "zoom out left",
               animate: "zoom-out-left",
-              media: theme~'/templates/ui/images/light/light-03.jpg'
             },
             {
               name: "zoom out right",
               animate: "zoom-out-right",
-              media: theme~'/templates/ui/images/light/light-03.jpg'
             }
           ] %}
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 40px; z-index: -{{ loop.index }}">
               <h4 class="bold outside-min-b">{{ item.name }}</h4>
               <div data-aos="{{ item.animate }}" data-aos-duration="1000"
-                   data-aos-delay="{{ (loop.index - 1) % 4 * 1000 }}">
-                <img src="{{ item.media }}" alt="{{ item.animateName }}">
+                data-aos-delay="{{ (loop.index - 1) % 4 * 1000 }}"
+              >
+                <img src="holder.js/300x300?theme=sky" alt="{{ item.animateName }}">
               </div>
             </div>
           {% endfor %}
