@@ -44,7 +44,7 @@
 .transform-translate(full, 100%);
 each(#table.responsive(), .(@vResponsive, @kResponsive) {
   @screenName: ~'screen-@{kResponsive}';
-  @namePrefix: ~'@{kResponsive}\:';
+  @namePrefix: ~'@{kResponsive}\|';
 
   @media (min-width: @@screenName) {
     .transform-translate(~'1\/2', 50%, @namePrefix);

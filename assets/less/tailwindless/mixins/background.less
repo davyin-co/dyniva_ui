@@ -11,14 +11,14 @@
 }
 
 .bg-color-hover(@name, @color) {
-  .hover:hover .hover\:bg-@{name},
-  .hover\:bg-@{name}:hover {
+  .hover:hover .hover\|bg-@{name},
+  .hover\|bg-@{name}:hover {
     background-color: @color;
   }
 
   each(range(10, 90, 10),.(@opacity) {
-    .hover:hover .hover\:bg-@{name}-@{opacity},
-    .hover\:bg-@{name}-@{opacity}:hover {
+    .hover:hover .hover\|bg-@{name}-@{opacity},
+    .hover\|bg-@{name}-@{opacity}:hover {
       background-color: fade(@color, @opacity);
     }
   });

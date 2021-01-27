@@ -8,8 +8,8 @@
   }
 }
 .truncate-line-hover(@line, @fontSize: 1rem, @lineHeight: 1.5, @namePrefix: ~'') {
-  .hover:hover .@{namePrefix}hover\:truncate-@{line},
-  .@{namePrefix}hover\:truncate-@{line}:hover {
+  .hover:hover .@{namePrefix}hover\|truncate-@{line},
+  .@{namePrefix}hover\|truncate-@{line}:hover {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden !important;
@@ -24,8 +24,8 @@
   }
 }
 .text-color-hover(@name, @color) {
-  .hover:hover .hover\:text-@{name},
-  .hover\:text-@{name}:hover{
+  .hover:hover .hover\|text-@{name},
+  .hover\|text-@{name}:hover{
     color: @color;
   }
 }

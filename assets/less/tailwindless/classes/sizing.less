@@ -16,7 +16,7 @@
 // width percent with responsive
 each(#table.responsive(), .(@vResponsive, @kResponsive) {
   @screenName: ~'screen-@{kResponsive}';
-  @namePrefix: ~'@{kResponsive}\:';
+  @namePrefix: ~'@{kResponsive}\|';
 
   @media (min-width: @@screenName) {
     .width(11, 12, @namePrefix);

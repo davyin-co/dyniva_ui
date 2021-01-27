@@ -161,7 +161,7 @@
 .underline {
   text-decoration: underline;
 }
-.hover\:underline:hover {
+.hover\|underline:hover {
   text-decoration: underline;
 }
 
@@ -189,8 +189,8 @@ each(range(2, 10, 1), {
   .truncate-line(@value);
 })
 // hover
-.hover:hover .hover\:truncate-1,
-.hover\:truncate-1:hover {
+.hover:hover .hover\|truncate-1,
+.hover\|truncate-1:hover {
   overflow: hidden !important;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -201,7 +201,7 @@ each(range(2, 10, 1), {
 // responsive
 each(#table.responsive(), .(@vResponsive, @kResponsive) {
   @screenName: ~'screen-@{kResponsive}';
-  @namePrefix: ~'@{kResponsive}\:';
+  @namePrefix: ~'@{kResponsive}\|';
 
   @media (min-width: @@screenName) {
     .@{namePrefix}truncate-1 {
@@ -217,11 +217,11 @@ each(#table.responsive(), .(@vResponsive, @kResponsive) {
 // responsive with hover
 each(#table.responsive(), .(@vResponsive, @kResponsive) {
   @screenName: ~'screen-@{kResponsive}';
-  @namePrefix: ~'@{kResponsive}\:';
+  @namePrefix: ~'@{kResponsive}\|';
 
   @media (min-width: @@screenName) {
-    .hover:hover .@{namePrefix}hover\:truncate-1,
-    .@{namePrefix}hover\:truncate-1:hover {
+    .hover:hover .@{namePrefix}hover\|truncate-1,
+    .@{namePrefix}hover\|truncate-1:hover {
       overflow: hidden !important;
       text-overflow: ellipsis;
       white-space: nowrap;

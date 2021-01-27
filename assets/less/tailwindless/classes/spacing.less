@@ -14,7 +14,7 @@
 // with responsive
 each(#table.responsive(), .(@vResponsive, @kResponsive) {
   @screenName: ~'screen-@{kResponsive}';
-  @namePrefix: ~'@{kResponsive}\:';
+  @namePrefix: ~'@{kResponsive}\|';
 
   @media (min-width: @@screenName) {
     .spacing(5, 5px, @namePrefix);

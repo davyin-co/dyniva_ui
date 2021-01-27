@@ -12,18 +12,18 @@
   }
 };
 .transform-scale-hover(@name, @value){
-  .hover:hover .hover\:scale-x-@{name},
-  .hover\:scale-x-@{name}:hover {
+  .hover:hover .hover\|scale-x-@{name},
+  .hover\|scale-x-@{name}:hover {
     transform: scaleX(@value);
   }
 
-  .hover:hover .hover\:scale-y-@{name},
-  .hover\:scale-y-@{name}:hover {
+  .hover:hover .hover\|scale-y-@{name},
+  .hover\|scale-y-@{name}:hover {
     transform: scaleY(@value);
   }
 
-  .hover:hover .hover\:scale-@{name},
-  .hover\:scale-@{name}:hover {
+  .hover:hover .hover\|scale-@{name},
+  .hover\|scale-@{name}:hover {
     transform: scale(@value);
   }
 }
@@ -37,12 +37,12 @@
   }
 }
 .transform-rotate-hover(@name, @angle){
-  .hover:hover .hover\:rotate-@{name},
-  .hover\:rotate-@{name}:hover {
+  .hover:hover .hover\|rotate-@{name},
+  .hover\|rotate-@{name}:hover {
     transform: rotate(@angle);
   }
-  .hover:hover .hover\:-rotate-@{name},
-  .hover\:-rotate-@{name}:hover {
+  .hover:hover .hover\|-rotate-@{name},
+  .hover\|-rotate-@{name}:hover {
     transform: rotate(@angle * -1);
   }
 }

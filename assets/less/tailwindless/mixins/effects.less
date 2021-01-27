@@ -9,8 +9,8 @@
 .opacity-hover(@opacity) when (@opacity >= 0) {
   .opacity-hover(@opacity - 10);
 
-  .hover:hover .hover\:opacity-@{opacity},
-  .hover\:opacity-@{opacity}:hover {
+  .hover:hover .hover\|opacity-@{opacity},
+  .hover\|opacity-@{opacity}:hover {
     opacity: @opacity * 0.01;
   }
 }
