@@ -1,4 +1,7 @@
 // width percent
+.w-auto {
+  width: auto;
+}
 .w-full {
   width: 100%;
 }
@@ -32,6 +35,9 @@ each(#table.responsive(), .(@vResponsive, @kResponsive) {
     }
     .@{namePrefix}w-max {
       width: max-content;
+    }
+    .@{namePrefix}w-auto {
+      width: auto;
     }
   }
 })
