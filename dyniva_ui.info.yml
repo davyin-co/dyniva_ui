@@ -101,6 +101,6 @@ component-libraries:
       - assets/templates
       - templates
 
-version: 8.x-1.0-unstable
+version: 2.x
 core: 8.x
 project: 'dyniva_ui'
