@@ -63,3 +63,11 @@
     z-index: @size;
   }
 }
+
+.order-base(@number) when (@number > 0){
+  .order-base(@number - 1);
+  
+  .order-@{number} {
+    order: @number;
+  }
+ }
