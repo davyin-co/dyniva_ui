@@ -105,6 +105,10 @@ plugin.video-js:
   dependencies:
    - dyniva_ui/common.bbModal
 
+plugin.bootstrap.transition:
+  js:
+    bower_components/bootstrap/js/transition.js: {}
+
 plugin.bootstrap.tooltip:
   js:
     bower_components/bootstrap/js/tooltip.js: { }
@@ -137,9 +141,12 @@ plugin.masonry:
   js:
     bower_components/masonry-layout/dist/masonry.pkgd.min.js: { minified: true }
 
+
 plugin.bootstrap.collapse:
   js:
     bower_components/bootstrap/js/collapse.js: {}
+  dependencies:
+    - dyniva_ui/plugin.bootstrap.transition
 
 plugin.bootstrap.tab:
   js:
