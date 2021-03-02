@@ -1,0 +1,56 @@
+each({
+  start: flex-start;
+  end: flex-end;
+  center: center;
+  between: space-between;
+  around: space-around;
+  evenly: space-evenly
+},.(@value, @name){
+  // justify content
+  .justify-content(@name, @value);
+  // Align Content
+  .align-content(@name, @value);
+}) 
+
+each({
+  start: flex-start;
+  end: flex-end;
+  center: center;
+  between: space-between;
+  around: space-around;
+  evenly: space-evenly;
+  stretch: stretch;
+},.(@value, @name){
+  // Place Content
+  .place-content(@name, @value);
+}) 
+
+each({
+  start: flex-start;
+  end: flex-end;
+  center: center;
+  baseline: baseline;
+  stretch: stretch;
+},.(@value, @name){
+  // Align Items
+  .align-items(@name, @value);
+  // Align Self
+  .align-self(@name, @value);
+}) 
+
+each({
+  start: start;
+  end: end;
+  center: center;
+  auto: auto;
+  stretch: stretch;
+},.(@value, @name){
+  // Justify Items
+  .justify-items(@name, @value);
+  // Justify Self
+  .justify-self(@name, @value);
+  // Place Items
+  .place-items(@name, @value);
+  // Place Self
+  .place-self(@name, @value);
+}) 
