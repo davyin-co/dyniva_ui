@@ -89,8 +89,6 @@ libraries-override:
     js:
       # View.
       js/views/ToolbarVisualView.js: js/toolbar/views/ToolbarVisualView.js
-  admin_toolbar/toolbar.tree: false
-  admin_toolbar_tools/toolbar.icon: false
 
 # name space @DAVYINUI
 component-libraries:
