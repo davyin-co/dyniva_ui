@@ -3,7 +3,7 @@
    * Slick carousel init
    * @type {{attach: Drupal.behaviors.slick.attach}}
    */
-  Drupal.behaviors.slick = {
+  Drupal.behaviors.dyniva_ui_slick = {
     first: true,
     instance: null,
     attach: function (context) {
