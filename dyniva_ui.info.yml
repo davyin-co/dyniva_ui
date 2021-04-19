@@ -100,5 +100,5 @@ component-libraries:
       - templates
 
 version: 2.x
-core: 8.x
+core_version_requirement: ^8.6 || ^9
 project: 'dyniva_ui'
