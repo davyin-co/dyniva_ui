@@ -70,14 +70,26 @@ function SUBTHEME_preprocess_form_element(&$variables) {
   if (!empty($element['#type']) && $element['#type'] == 'machine_name'){
   }
 
-  // Modify the label variable
-  if (!empty($element['#type']) && in_array($element['#type'], array('checkbox', 'radio'))) {
+  // Modify the label variable;
+  ## if the using the bootstrap_styles module, the check box will be override. here to avoid the override.
+  $bootstrap_styles_support = array_key_exists('#array_parents', $element) && (count($element['#array_parents']) >= 4) && $element['#array_parents'][0] == 'ui' && $element['#array_parents'][1] == 'tab_content' && $element['#array_parents'][2] == 'appearance';
+  $bootstrap_styles_support = $bootstrap_styles_support || array_key_exists('#array_parents', $element) && (count($element['#array_parents']) >= 4) && $element['#array_parents'][0] == 'layout_settings' && $element['#array_parents'][1] == 'ui' && $element['#array_parents'][2] == 'tab_content';
+  if (!$bootstrap_styles_support && !empty($element['#type']) && in_array($element['#type'], [
+      'checkbox',
+      'radio',
+    ])) {
     // Set the label variable to just the title for checkbox and radio inputs
-    $variables['label'] = $variables['title'];
-  } else {
+    $variables['label'] = isset($variables['title']) ? $variables['title'] : ' ';
+  }
+  else {
     // Use default label rendering for any other inputs
-    $variables['label'] = array('#theme' => 'form_element_label');
-    $variables['label'] += array_intersect_key($element, array_flip(array('#id', '#required', '#title', '#title_display')));
+    $variables['label'] = ['#theme' => 'form_element_label'];
+    $variables['label'] += array_intersect_key($element, array_flip([
+      '#id',
+      '#required',
+      '#title',
+      '#title_display',
+    ]));
   }
 }
 

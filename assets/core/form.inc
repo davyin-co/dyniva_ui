@@ -72,7 +72,8 @@ function dyniva_ui_preprocess_form_element(&$variables) {
 
  // Modify the label variable;
   ## if the using the bootstrap_styles module, the check box will be override. here to avoid the override.
-  $bootstrap_styles_support = $element['#array_parents'][0] == 'ui' && $element['#array_parents'][1] == 'tab_content' && $element['#array_parents'][2] == 'appearance';
+  $bootstrap_styles_support = array_key_exists('#array_parents', $element) && (count($element['#array_parents']) >= 4) && $element['#array_parents'][0] == 'ui' && $element['#array_parents'][1] == 'tab_content' && $element['#array_parents'][2] == 'appearance';
+  $bootstrap_styles_support = $bootstrap_styles_support || array_key_exists('#array_parents', $element) && (count($element['#array_parents']) >= 4) && $element['#array_parents'][0] == 'layout_settings' && $element['#array_parents'][1] == 'ui' && $element['#array_parents'][2] == 'tab_content';
   if (!$bootstrap_styles_support && !empty($element['#type']) && in_array($element['#type'], array('checkbox', 'radio'))) {
     // Set the label variable to just the title for checkbox and radio inputs
     $variables['label'] = isset($variables['title'])?$variables['title'] : ' ';
