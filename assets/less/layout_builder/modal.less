@@ -1,0 +1,61 @@
+// layout builder 的配置框样式
+.ui-dialog.ui-layout-builder-modal {
+  width: 1000px !important;
+  height: 96vh !important;
+  max-height: none;
+  overflow: hidden;
+  top: 2vh !important;
+  left: 50% !important;
+  transform: translateX(-50%);
+  background: #383A40;
+
+  // 颜色选择样式
+  .bs_input-circles .fieldset-wrapper label {
+    line-height: 100px;
+    text-align: center;
+
+    .bs_tooltip {
+      line-height: 1.5;
+    }
+  }
+
+  // 关闭按钮样式
+  .ui-dialog-titlebar-close {
+    z-index: 2;
+    top: 30px;
+  }
+
+  #layout-builder-modal {
+    max-height: max-content !important;
+    padding: 0;
+
+    #bs_ui {
+      margin: 0;
+
+      #bs_nav-tabs {
+        margin: 0;
+        width: 100%;
+        padding: 0;
+      }
+
+      .blb_tab-content {
+        height: calc(96vh - 200px);
+        overflow: auto;
+        padding: 2rem;
+      }
+    }
+
+    form.layout-builder-configure-block {
+      height: 100%;
+
+      .form-item {
+        margin-top: 0;
+        margin-bottom: 1.5rem;
+      }
+
+      input[type="submit"] {
+        margin: 1.5rem 1.5rem 0 0 !important;
+      }
+    }
+  }
+}
