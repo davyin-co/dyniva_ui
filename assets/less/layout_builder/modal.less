@@ -29,6 +29,29 @@
     max-height: max-content !important;
     padding: 0;
 
+    details {
+
+      &+details {
+        margin-top: 20px;
+      }
+
+      border: 1px solid #ffffff;
+
+      &>summary {
+        box-shadow: none;
+        border-radius: 0;
+
+        &::after {
+          border-right-color: #ffffff;
+          border-bottom-color: #ffffff;
+        }
+      }
+    }
+
+    .btn-choose>.btn-choose-mark:after {
+      color: #ffffff !important;
+    }
+
     #bs_ui {
       margin: 0;
 
@@ -84,5 +107,11 @@
         background-color: black !important;
       }
     }
+
+    [data-drupal-selector="edit-appearance-typography-text-alignment"] .input-icon,
+    .bs_input-boxes--box-model .fieldset-wrapper>div>div input~label:after {
+      position: absolute;
+    }
+
   }
 }
