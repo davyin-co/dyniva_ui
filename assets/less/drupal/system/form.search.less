@@ -1,32 +1,35 @@
 /* Search Form */
-.search-form{
-  .form-search{
-  }
-}
-.search-page-form{
+.search-page-form {
+
   details,
-  fieldset{
+  fieldset {
     clear: both;
   }
-  div.form-item{
+
+  div.form-item {
     float: left;
   }
-  .form-actions{
+
+  .form-actions {
     float: left;
     .outside-l;
-    .form-submit{
+
+    .form-submit {
       margin-top: 21px;
     }
-    a{
+
+    a {
       .btn;
       .outside-min-r;
       margin-top: 21px;
-      &.search-help-link{
+
+      &.search-help-link {
         background-color: @bg-lighter;
-        color:@color-warning;
+        color: @color-warning;
         .radius-base();
-        &:before{
-          content:'\e88f';
+
+        &:before {
+          content: '\e88f';
           .icon;
           position: relative;
           margin-top: -4px;
@@ -37,21 +40,29 @@
       }
     }
   }
-  #edit-keywords-fieldset{
-    .fieldset-wrapper{
+
+  #edit-keywords-fieldset {
+    .fieldset-wrapper {
       .make-row();
-      .form-item{
+
+      .form-item {
         .make-sm-column(6);
         .make-xs-column(12);
-        .form-element{
+
+        .form-element {
           width: 100%;
         }
       }
     }
   }
-  .action{
-    .form-submit{
+
+  .action {
+    .form-submit {
       .btn-base;
     }
   }
+}
+
+.admin-toolbar-search-autocomplete-list {
+  background-color: #ffffff;
 }
