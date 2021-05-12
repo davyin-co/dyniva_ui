@@ -1,42 +1,44 @@
 (function ($) {
-
   Drupal.behaviors.masonry = {
-    selector: '.masonry',
-    container: null,
-    options: null,
-    instance: null,
-    isFirstLoad: true,
     attach: function (ctx) {
-      if (this.isFirstLoad) {
-        this.isFirstLoad = false;
-
-        this.container = $(this.selector).attr('data-masonry-container');
-        this.options = JSON.parse($(this.selector).attr('data-masonry-options') || '{}');
-
-        this.render();
-      } else {
-        this.reload()
-      }
-    },
-    render: function () {
+      var $masonries = $('.masonry', ctx);
       var that = this;
-      var containerSelector = that.selector + ' ' + that.container;
 
-      if (!$(containerSelector).hasClass('row')) {
-        $(containerSelector).addClass('row');
-      }
-
-      that.instance = $(containerSelector).masonry(that.options);
-      that.instance.imagesLoaded().progress(function () {
-        that.instance.masonry('layout');
+      $masonries.each(function () {
+        if ($(this).hasClass('masonry-initialed')) {
+          that.reload($(this))
+        } else {
+          that.render($(this));
+        }
       })
     },
-    reload: function () {
-      var that = this;
+    render: function ($ele) {
+      var options = null;
+      var $masonry = $ele.find($ele.attr('data-masonry-container'));
 
-      that.instance.masonry('reloadItems');
-      that.instance.imagesLoaded().progress(function () {
-        that.instance.masonry('layout');
+      try {
+        options = JSON.parse($ele.attr('data-masonry'));
+      } catch (error) {
+        options = {};
+      }
+
+      if (!$masonry.hasClass('row')) {
+        $masonry.addClass('row');
+      }
+
+      $masonry.masonry(options);
+      $masonry.imagesLoaded().progress(function () {
+        $masonry.masonry('layout');
+      })
+
+      $masonry.addClass('masonry-initialed')
+    },
+    reload: function ($ele) {
+      var $masonry = $ele.find($ele.attr('data-masonry-container'));
+
+      $masonry.masonry('reloadItems');
+      $masonry.imagesLoaded().progress(function () {
+        $masonry.masonry('layout');
       })
     }
   };

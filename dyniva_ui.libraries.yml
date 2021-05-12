@@ -247,6 +247,6 @@ slimScroll:
 
 masonry:
   js:
-    bower_components/masonry-layout/dist/imagesloaded.js: { minified: true }
+    bower_components/imagesloaded/imagesloaded.pkgd.min.js: { minified: true }
     bower_components/masonry-layout/dist/masonry.pkgd.min.js: { minified: true }
     js/modules/masonry.js: {}
