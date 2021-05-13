@@ -10,27 +10,27 @@ use Drupal\Core\Form\FormStateInterface;
 /**
  * Implements hook_form_alter() to add classes to the search form.
  */
-  function dyniva_ui_preprocess_form(array &$variables) {
-   $element = $variables['element'];
-  }
+function dyniva_ui_preprocess_form(array &$variables) {
+  $element = $variables['element'];
+}
 
-  function dyniva_ui_preprocess_input(array &$variables) {
-    $element = $variables['element'];
-    if(($element['#type'] == 'textfield' || $element['#type'] == 'email') && !empty($element['#title'])){
-      $variables['attributes']['placeholder'] = $element['#title'];
-    }
+function dyniva_ui_preprocess_input(array &$variables) {
+  $element = $variables['element'];
+  if (($element['#type'] == 'textfield' || $element['#type'] == 'email') && !empty($element['#title'])) {
+    $variables['attributes']['placeholder'] = $element['#title'];
   }
+}
 
-  function dyniva_ui_preprocess_textarea(&$variables) {
-    $element = $variables['element'];
-    if(!empty($element['#title'])){
-      $variables['attributes']['placeholder'] = $element['#title'];
-    }
+function dyniva_ui_preprocess_textarea(&$variables) {
+  $element = $variables['element'];
+  if (!empty($element['#title'])) {
+    $variables['attributes']['placeholder'] = $element['#title'];
   }
+}
 
-  // function dyniva_ui_preprocess_select(array &$variables) {
-  //   //$variables['attributes']['class'][] = 'select-chosen';
-  // }
+// function dyniva_ui_preprocess_select(array &$variables) {
+//   //$variables['attributes']['class'][] = 'select-chosen';
+// }
 
 /**
  * Implements hook_form_alter(&$form, FormStateInterface $form_state, $form_id).
@@ -47,8 +47,8 @@ function dyniva_ui_form_alter(&$form, FormStateInterface $form_state, $form_id) 
   // if($form_id == 'search_block_form'){
   // }
 
-  if(($form_id == 'search_form') && isset($form['help_link'])){
-    if(isset($form['basic']) && isset($form['basic'][$key])){
+  if (($form_id == 'search_form') && isset($form['help_link'])) {
+    if (isset($form['basic']) && isset($form['basic'][$key])) {
       $form['basic'][$key][] = $form['help_link'];
       unset($form['help_link']);
     }
@@ -67,17 +67,26 @@ function dyniva_ui_preprocess_form_element(&$variables) {
   }
 
   // Modify Machine name element
-  if (!empty($element['#type']) && $element['#type'] == 'machine_name'){
+  if (!empty($element['#type']) && $element['#type'] == 'machine_name') {
   }
 
-  // Modify the label variable
-  if (!empty($element['#type']) && in_array($element['#type'], array('checkbox', 'radio'))) {
+  // Modify the label variable;
+  ## if the using the bootstrap_styles module, the check box will be override. here to avoid the override.
+  $bootstrap_styles_support = array_key_exists('#array_parents', $element) && (count($element['#array_parents']) >= 4) && $element['#array_parents'][0] == 'ui' && $element['#array_parents'][1] == 'tab_content' && $element['#array_parents'][2] == 'appearance';
+  $bootstrap_styles_support = $bootstrap_styles_support || array_key_exists('#array_parents', $element) && (count($element['#array_parents']) >= 4) && $element['#array_parents'][0] == 'layout_settings' && $element['#array_parents'][1] == 'ui' && $element['#array_parents'][2] == 'tab_content';
+  if (!$bootstrap_styles_support && !empty($element['#type']) && in_array($element['#type'], array('checkbox', 'radio'))) {
     // Set the label variable to just the title for checkbox and radio inputs
-    $variables['label'] = isset($variables['title'])?$variables['title']:'';
-  } else {
+    $variables['label'] = isset($variables['title']) ? $variables['title'] : ' ';
+  }
+  else {
     // Use default label rendering for any other inputs
-    $variables['label'] = array('#theme' => 'form_element_label');
-    $variables['label'] += array_intersect_key($element, array_flip(array('#id', '#required', '#title', '#title_display')));
+    $variables['label'] = ['#theme' => 'form_element_label'];
+    $variables['label'] += array_intersect_key($element, array_flip([
+      '#id',
+      '#required',
+      '#title',
+      '#title_display',
+    ]));
   }
 }
 
@@ -101,7 +110,7 @@ function dyniva_ui_preprocess_form_element(&$variables) {
  * Implements hook_form_BASE_FORM_ID_alter() for \Drupal\node\NodeForm.
  *
  * Changes vertical tabs to container and adds meta information.
-*/
+ */
 function dyniva_ui_form_node_form_alter(&$form, FormStateInterface $form_state) {
   /** @var \Drupal\node\NodeInterface $node */
   $node = $form_state->getFormObject()->getEntity();
@@ -119,13 +128,19 @@ function dyniva_ui_form_node_form_alter(&$form, FormStateInterface $form_state) 
     '#weight' => -100,
     'changed' => [
       '#type' => 'item',
-      '#wrapper_attributes' => ['class' => ['entity-meta__last-saved', 'container-inline']],
+      '#wrapper_attributes' => [
+        'class' => [
+          'entity-meta__last-saved',
+          'container-inline',
+        ],
+      ],
       '#markup' => '<h4 class="label inline">' . t('Last saved') . '</h4> ' . $is_new,
     ],
     'author' => [
       '#type' => 'item',
       '#wrapper_attributes' => ['class' => ['author', 'container-inline']],
-      '#markup' => '<h4 class="label inline">' . t('Author') . '</h4> ' . $node->getOwner()->getUsername(),
+      '#markup' => '<h4 class="label inline">' . t('Author') . '</h4> ' . $node->getOwner()
+          ->getUsername(),
     ],
   ];
   $form['revision_information']['#type'] = 'container';

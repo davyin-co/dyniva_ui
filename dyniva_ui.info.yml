@@ -22,7 +22,7 @@ libraries:
   - dyniva_ui/common.animate
   - dyniva_ui/common.waypoints
   - dyniva_ui/common.prognroll
-  # Module 
+  # Module
   - dyniva_ui/module.mmenu
   - dyniva_ui/module.tab
   - dyniva_ui/module.dropdown
@@ -91,6 +91,10 @@ libraries-override:
     js:
       # View.
       js/views/ToolbarVisualView.js: js/toolbar/views/ToolbarVisualView.js
+  lb_ux/drupal.lb_ux:
+    css:
+      theme:
+        css/layout-builder-ux.css: false
 
 # name space @DAVYINUI
 component-libraries:
@@ -100,5 +104,5 @@ component-libraries:
       - templates
 
 version: 2.x
-core: 8.x
+core_version_requirement: ^8.8 || ^9
 project: 'dyniva_ui'

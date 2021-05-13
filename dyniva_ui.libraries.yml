@@ -60,7 +60,7 @@ plugin.lazysizes:
     bower_components/lazysizes/plugins/progressive/ls.progressive.min.js: { minified: true }
     bower_components/lazysizes/plugins/bgset/ls.bgset.min.js: { minified: true }
     bower_components/lazysizes/plugins/unveilhooks/ls.unveilhooks.min.js: { minified: true }
-    
+
 plugin.holder:
   js:
     bower_components/holderjs/holder.min.js: { minified: true }
@@ -113,6 +113,10 @@ plugin.bootstrap.tooltip:
   js:
     bower_components/bootstrap/js/tooltip.js: { }
 
+plugin.bootstrap.dropdown:
+  js:
+    bower_components/bootstrap/js/dropdown.js: { }
+
 plugin.backbone.bootstrap-modal:
   js:
     bower_components/backbone.bootstrap-modal/src/backbone.bootstrap-modal.js: {}
@@ -120,11 +124,11 @@ plugin.backbone.bootstrap-modal:
 plugin.echarts:
   js:
     bower_components/echarts/dist/echarts.common.min.js: { minified: true }
-    
+
 plugin.skrollr:
   js:
     bower_components/skrollr/dist/skrollr.min.js: { minified: true }
-    
+
 plugin.laydate:
   js:
     bower_components/laydate/dist/laydate.js: { minified: true, preprocess: false }
@@ -132,7 +136,7 @@ plugin.laydate:
 plugin.jquery.slimscroll:
   js:
     bower_components/jquery-slimscroll/jquery.slimscroll.min.js: { minified: true }
-    
+
 plugin.imagesloaded:
   js:
     bower_components/imagesloaded/imagesloaded.pkgd.min.js: { minified: true }
@@ -207,7 +211,7 @@ common.codeprettify:
     - core/jquery
     - dyniva_ui/plugin.bootstrap.collapse
     - dyniva_ui/plugin.prettify
-    
+
 common.bsTooltip:
   js:
     js/commons/bs-tooltip.js: {}
