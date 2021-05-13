@@ -1,7 +1,7 @@
 (function ($) {
   Drupal.behaviors.masonry = {
-    attach: function (ctx) {
-      var $masonries = $('.masonry', ctx);
+    attach: function () {
+      var $masonries = $('.masonry');
       var that = this;
 
       $masonries.each(function () {
@@ -31,7 +31,7 @@
         $masonry.masonry('layout');
       })
 
-      $masonry.addClass('masonry-initialed')
+      $ele.addClass('masonry-initialed')
     },
     reload: function ($ele) {
       var $masonry = $ele.find($ele.attr('data-masonry-container'));
