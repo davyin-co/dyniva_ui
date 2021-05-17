@@ -95,6 +95,10 @@ libraries-override:
     css:
       theme:
         css/layout-builder-ux.css: false
+  layout_builder/drupal.layout_builder:
+    css:
+      theme:
+        css/layout-builder.css: false
 
 # name space @DAVYINUI
 component-libraries:
