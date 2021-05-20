@@ -91,6 +91,10 @@ libraries-override:
     js:
       # View.
       js/views/ToolbarVisualView.js: js/toolbar/views/ToolbarVisualView.js
+  lb_ux/drupal.lb_ux:
+    css:
+      theme:
+        css/layout-builder-ux.css: false
 
 # name space @DAVYINUI
 component-libraries:
