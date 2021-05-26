@@ -1,22 +1,11 @@
-{#
-/**
- * - extends base theme components body
- * - custom sub theme header, also can add new components
- */
-#}
 {% extends '@dyniva_ui/ui/foundation/icons.html.twig' %}
 
-{# override base theme header,logo,menu links #}
+{# overwrite block header #}
 {% block header %}
-  {% include '@SUBTHEME/ui/pages/header.html.twig' %}
+  {% include '@SUBTHEME/ui/preview/dy-preview-header.html.twig' %}
 {% endblock %}
 
-{# sub theme add custom component #}
-{% block section %}
-  {#  add new custom components code here #}
-{% endblock %}
-
-{# override base theme footer #}
+{# overwrite block footer #}
 {% block footer %}
-  {% include '@SUBTHEME/ui/pages/ui-footer.html.twig' %}
+  {% include '@SUBTHEME/ui/preview/dy-preview-footer.html.twig' %}
 {% endblock %}

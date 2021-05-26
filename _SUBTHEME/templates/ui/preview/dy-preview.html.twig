@@ -1,0 +1,37 @@
+{#
+/**
+ * - extends base theme components body
+ * - custom sub theme header, also can add new components
+ */
+#}
+{% block header %}
+  {% include '@SUBTHEME/ui/preview/dy-preview-header.html.twig' %}
+{% endblock %}
+
+{% block title %}
+  {% include '@SUBTHEME/ui/preview/dy-preview-title.html.twig' with { headers: param_headers } %}
+{% endblock %}
+
+<div class="panel panel-ui panel-ui-classes min-h-0 flex flex-nowrap flex-grow">
+  <aside class="hidden md|display-block md|w-auto max-h-full">
+    {% block aside %}  
+      {% include '@SUBTHEME/ui/preview/dy-preview-aside.html.twig' with { sections: param_sections } %}
+    {% endblock %}
+    {% block extend_aside %}{% endblock %}
+  </aside>
+
+  <section class="md|w-auto max-h-full max-w-full overflow-auto flex-grow px-20">
+    {% block sections %}
+      {% for param_section in param_sections %}
+        {% include '@SUBTHEME/ui/preview/dy-preview-section.html.twig' with { section: param_section } %}
+      {% endfor %}
+    {% endblock %}
+
+    {% block extend_section %}{% endblock %}
+  </section>
+</div>
+
+{# override base theme footer #}
+{% block footer %}
+  {% include '@SUBTHEME/ui/preview/dy-preview-footer.html.twig' %}
+{% endblock %}

@@ -4,119 +4,60 @@
  * - custom sub theme header, also can add new components
  */
 #}
-{% extends '@dyniva_ui/ui/modules/action-1-0' %}
+{% extends '@dyniva_ui/ui/modules/ui-action.html.twig' %}
 
-
-{# overwrite block header #}
+{# 覆写dyniva_ui的header #}
 {% block header %}
-  {% include '@SUBTHEME/ui/pages/header.html.twig' %}
+  {% include '@SUBTHEME/ui/preview/dy-preview-header.html.twig' %}
 {% endblock %}
 
-{# overwrite block dyniva_ui_section #}
-{% block dyniva_ui_section %}
-  {% for section in [
-    {
-      id: 'section id',
-      title: 'section title',
-      items: [
-        {
-          id: 'item id',
-          title: 'item title',
-          rule: 'item rule',
-          demoClass: 'class push in dy-component-demo',
-          rowClass: 'row',
-          libraries: [
-            'attach_libraries list'
-          ],
-          templates: [
-            {
-              url: 'module url',
-              gridClass: 'col class(col-xs-6,col-md-3,etc.)',
-              param: { module_params: true }
-            }
-          ],
-          descs: [
-            {
-              code: 'class-example',
-              text: 'desc-example'
-            },
-          ]
-        },
-      ]
-    },
-  ] %}
-    <section class="dy-components" id="{{ section.id }}">
-      <h2 class="section-header inner">{{ section.title }}</h2>
-      {% for item in section.items %}
-        <div class="section-item title-box" id="{{ item.id }}">
-          {% if item.title %}
-            <h4 class="title inner">{{ item.title }}</h4>
-          {% endif %}
-          {% if item.rule %}
-            <p class="rules inner">{{ item.rule }}</p>
-          {% endif %}
+{# 如果需要拓展内容 #}
+{% set extend_sections = [
+  {
+    id: 'section id',
+    title: 'section title',
+    items: [
+      {
+        id: 'item id',
+        title: 'item title',
+        rule: 'item rule',
+        demoClass: 'class push in dy-component-demo',
+        rowClass: 'row',
+        libraries: [
+          'attach_libraries list'
+        ],
+        templates: [
+          {
+            url: 'module url',
+            gridClass: 'col class(col-xs-6,col-md-3,etc.)',
+            param: { module_params: true }
+          }
+        ],
+        descs: [
+          {
+            code: 'class-example',
+            text: 'desc-example'
+          },
+        ]
+      },
+    ]
+  },
+] %}
 
-          <div class="dy-components-demo {{ item.demoClass }}">
-            <div class="{{ item.rowClass | default('row') }}">
-              {% for template in item.templates %}
-                <div class="{{ template.gridClass | default('col-xs-12') }}">
-                  {{ include('@SUBTHEME/ui/modules' ~ template.url, template.param ? template.param : {}) }}
-                </div>
-                {% if template.spacer %}
-                  <div class="spacer-{{ spacer }}"></div>
-                {% endif %}
-              {% endfor %}
-            </div>
-          </div>
-
-          <div class="dy-components-markup inner">
-            <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="collapseCode">
-              <i class="icon">&#xe818;</i>开发说明
-            </a>
-            <div class="collapse">
-              {% if item.descs %}
-                <div class="code-description">
-                  <table class="table table-full">
-                    <thead>
-                      <tr>
-                        <th>Class</th>
-                        <th>说明</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {% for desc in item.descs %}
-                      <tr>
-                        <td><code>{{ desc.code }}</code></td>
-                        <td>{{ desc.text }}</td>
-                      </tr>
-                      {% endfor %}
-                    </tbody>
-                  </table>
-                </div>
-              {% endif %}
-
-              <div class="code-preview">
-                <pre class="prettyprint lang-html">
-                  {%- for library in item.libraries ~%}
-                    {{~ "{{ attach_library('"~library~"') }}" ~}}
-                  {%- endfor ~%}
-
-                  {%- for template in item.templates ~%}
-
-                    {{~ include('@SUBTHEME/ui/modules' ~ template.url, template.param ? template.param : {}) | escape ~}}
-                  {%- endfor ~%}
-                </pre>
-              </div>
-            </div>
-          </div>
-        </div>
-      {% endfor %}
-    </section>
+{# 如果需要拓展内容 #}
+{% block extend_aside %}
+  {% for section in extend_sections  %}
+    {% include "@SUBTHEME/ui/preview/dy-preview-aside.html.twig" with { sections: extend_sections } %}
   {% endfor %}
-  
+{% endblock %}
+{# 如果需要拓展内容 #}
+{% block extend_section %}
+  {% for section in extend_sections  %}
+    {% include "@SUBTHEME/ui/preview/dy-preview-section.html.twig" with section %}
+  {% endfor %}
 {% endblock %}
 
-{# overwrite block footer #}
+{# 覆写dyniva_ui的footer #}
 {% block footer %}
-  {% include '@SUBTHEME/ui/pages/ui-footer.html.twig' %}
+  {% include '@SUBTHEME/ui/preview/dy-preview-footer.html.twig' %}
 {% endblock %}
