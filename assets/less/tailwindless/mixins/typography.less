@@ -1,4 +1,4 @@
-.truncate-line(@line, @fontSize: 1rem, @lineHeight: 1.5, @namePrefix: ~'') {
+.truncate-line(@line, @fontSize: 1rem, @lineHeight: 1.5, @namePrefix: ~'', @hover: false) {
   .truncate-@{line} {
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -6,8 +6,10 @@
     -webkit-line-clamp: @line;
     height: @fontSize * @lineHeight * @line;
   }
+
+  .truncate-line-hover(@line, @fontSize, @lineHeight, @namePrefix, @hover);
 }
-.truncate-line-hover(@line, @fontSize: 1rem, @lineHeight: 1.5, @namePrefix: ~'') {
+.truncate-line-hover(@line, @fontSize: 1rem, @lineHeight: 1.5, @namePrefix: ~'', @hover) when (@hover) {
   .hover:hover .@{namePrefix}hover\|truncate-@{line},
   .@{namePrefix}hover\|truncate-@{line}:hover {
     display: -webkit-box;
@@ -18,13 +20,14 @@
   }
 }
 
-.text-color(@name, @color) {
+.text-color(@name, @color, @hover: false) {
   .text-@{name}{
     color: @color;
   }
+
+  .text-color-hover(@name, @color, @hover);
 }
-.text-color-hover(@name, @color) {
-  .hover:hover .hover\|text-@{name},
+.text-color-hover(@name, @color, @hover) when (@hover) {
   .hover\|text-@{name}:hover{
     color: @color;
   }

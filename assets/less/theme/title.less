@@ -16,42 +16,32 @@
 }
 
 .title-box {
-  >.title {
-    position: relative;
-    padding-bottom: 10px;
-    // border-bottom: 1px solid #e1e1e1;
-    font-size: 16px;
+  position: relative;
+  // 修复锚点菜单跳转时的偏移量
+  padding-top: 52px;
+  margin-top: -32px;
 
-    &:after {
-      position: absolute;
-      content: "";
-      display: block;
-      left: 0;
-      bottom: 0;
-      background: #333;
-      height: 1px;
-      width: 40px;
-      margin: 0 0 -1px;
-    }
-    &:before {
-      position: absolute;
-      content: "";
-      display: block;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: #e1e1e1;
-      height: 1px;
-      margin: 0 0 -1px;
-    }
-    &.inner{
-      &:after {
-        left: 10px;
-      }
-      &:before {
-        left: 10px;
-        right: 10px;
-      }
-    }
+
+  &:first-of-type {
+    margin-top: -52px;
   }
+
+  >.title {
+    z-index: 2;
+    top: 52px;
+    position: sticky;
+    background-color: @bg-lighter;
+    padding: 10px;
+    font-size: 16px;
+  }
+}
+
+.section-header {
+  top: 0;
+  line-height: 32px;
+  background-color: @site-base;
+  color: #fff;
+  position: sticky;
+  z-index: 3;
+  padding: 10px;
 }

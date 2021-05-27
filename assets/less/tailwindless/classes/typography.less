@@ -1,15 +1,37 @@
 // font size
-.text-xl {
-  font-size: @font-size-larger;
+.text-normal,
+.text-size-base{
+  font-size: @font-size;
 }
-.text-lg {
-  font-size: @font-size-larg;
+.text-xs {
+  font-size: @font-size-mini;
 }
 .text-sm {
   font-size: @font-size-small;
 }
-.text-xs {
-  font-size: @font-size-mini;
+.text-lg {
+  font-size: @font-size-larg;
+}
+.text-xl {
+  font-size: @font-size-larger;
+}
+.text-h1 {
+  font-size: @h1;
+}
+.text-h2 {
+  font-size: @h2;
+}
+.text-h3 {
+  font-size: @h3;
+}
+.text-h4 {
+  font-size: @h4;
+}
+.text-h5 {
+  font-size: @h5;
+}
+.text-h6 {
+  font-size: @h6;
 }
 
 // font style
@@ -74,21 +96,11 @@
 }
 
 // line height
-.leading-20 {
-  line-height: 20px;
-}
-.leading-22 {
-  line-height: 22px;
-}
-.leading-26 {
-  line-height: 26px;
-}
-.leading-28 {
-  line-height: 28px;
-}
-.leading-30 {
-  line-height: 30px;
-}
+each(range(16, 32, 2), {
+  .leading-@{value} {
+    line-height: ~'@{value}px'
+  }
+})
 .leading-none {
   line-height: 1;
 }
@@ -145,17 +157,14 @@
 }
 
 // text color
-.text-color(base, @text-color);
-.text-color(primary, @site-base);
-.text-color(white, #fff);
-.text-color(darker, @text-color-darker);
-.text-color(dark, @text-color-dark);
-// text color with hover
-.text-color-hover(base, @text-color);
-.text-color-hover(primary, @site-base);
-.text-color-hover(white, #fff);
-.text-color-hover(darker, @text-color-darker);
-.text-color-hover(dark, @text-color-dark);
+.text-color(base, @text-color, @hover: true);
+.text-color(color-base, @text-color, @hover: true);
+.text-color(primary, @site-base, @hover: true);
+.text-color(white, #fff, @hover: true);
+.text-color(darker, @text-color-darker, @hover: true);
+.text-color(dark, @text-color-dark, @hover: true);
+.text-color(lighter, @text-color-lighter, @hover: true);
+.text-color(light, @text-color-light, @hover: true);
 
 // text decoration
 .underline {
@@ -163,6 +172,15 @@
 }
 .hover\|underline:hover {
   text-decoration: underline;
+}
+.line-through {
+  text-decoration: line-through;
+}
+.no-underline {
+  text-decoration: none;
+}
+.focus\|no-underline:focus {
+  text-decoration: none;
 }
 
 // text transform
@@ -185,10 +203,6 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-each(range(2, 10, 1), {
-  .truncate-line(@value);
-})
-// hover
 .hover:hover .hover\|truncate-1,
 .hover\|truncate-1:hover {
   overflow: hidden !important;
@@ -196,7 +210,7 @@ each(range(2, 10, 1), {
   white-space: nowrap;
 }
 each(range(2, 10, 1), {
-  .truncate-line-hover(@value);
+  .truncate-line(@value, @hover: true);
 })
 // responsive
 each(#table.responsive(), .(@vResponsive, @kResponsive) {
@@ -209,17 +223,6 @@ each(#table.responsive(), .(@vResponsive, @kResponsive) {
       text-overflow: ellipsis;
       white-space: nowrap;
     }
-    each(range(2, 10, 1), {
-      .truncate-line(@value, @namePrefix: @namePrefix);
-    })
-  }
-})
-// responsive with hover
-each(#table.responsive(), .(@vResponsive, @kResponsive) {
-  @screenName: ~'screen-@{kResponsive}';
-  @namePrefix: ~'@{kResponsive}\|';
-
-  @media (min-width: @@screenName) {
     .hover:hover .@{namePrefix}hover\|truncate-1,
     .@{namePrefix}hover\|truncate-1:hover {
       overflow: hidden !important;
@@ -227,11 +230,10 @@ each(#table.responsive(), .(@vResponsive, @kResponsive) {
       white-space: nowrap;
     }
     each(range(2, 10, 1), {
-      .truncate-line-hover(@value, @namePrefix: @namePrefix);
+      .truncate-line(@value, @namePrefix: @namePrefix);
     })
   }
 })
-
 .overflow-ellipsis {
   text-overflow: ellipsis;
 }

@@ -225,14 +225,13 @@
 
   // new component sections
   .dy-components {
-    margin-top: @space;
-
     &+.dy-components {
       margin-top: @space * 2;
     }
 
     .dy-components-demo {
       margin-top: @space;
+      margin-bottom: @space;
     }
 
     .dy-components-inner {
@@ -248,9 +247,9 @@
     }
 
     .section-item {
-
-      &+.section-item {
-        margin-top: @space * 1.5;
+      .btn.expand-code {
+        position: relative;
+        z-index: 1;
       }
     }
   }
@@ -278,42 +277,17 @@
   }
 }
 
-/* --------
-   wall
---------- */
-#wall {
-  background-color: #f1f1f1;
-  position: relative;
-  color: @text-color;
-  background-repeat: repeat;
-  background-size: auto;
-  min-height: 216px;
-
-  .title {
-    font-size: 16px;
-    color: @global-color-base;
-  }
-
-  h1.page-title {
-    display: block;
-  }
-
-  .inner {
-    padding: 55px @space;
-
-    p {
-      font-size: @h2;
-    }
-  }
-
-  @media (max-width: 767px) {
-    min-height: auto;
-  }
-}
-
+// ui preview dont show page title,breadcrumb
 .page-ui-preview {
   .block {
     .outside-c-b;
+  }
+  .page {
+
+    nav.breadcrumb,
+    h1.page-title {
+      display: none;
+    }
   }
 }
 
@@ -369,17 +343,6 @@
   }
 }
 
-// ui preview dont show page title,breadcrumb
-.page-ui-preview {
-  .page {
-
-    nav.breadcrumb,
-    h1.page-title {
-      display: none;
-    }
-  }
-}
-
 .panel-ui-color .dy-components-demo {
   .col-sm-5 {
     float: left;
@@ -419,5 +382,35 @@
     line-height: 100px;
     box-sizing: border-box;
     font-size: 300%;
+  }
+}
+
+// use flex
+.page-ui-preview,
+.page-ui-preview-theme {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  .mm-page,
+  .page {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .block-system {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .panel-ui {
+    flex-grow: 1;
+    min-height: 0;
+    overflow: auto;
+  }
+
+  .dy-preview-aside {
+    min-width: 200px;
   }
 }

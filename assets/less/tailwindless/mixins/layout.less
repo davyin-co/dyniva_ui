@@ -51,16 +51,31 @@
   .position-minus(@nameSuffix, @size, @useMinus);
 }
 
-.z-index(@name, @size: @name) {
+.z-index(@name, @size: @name, @hover: false, @minus: false) {
   .z-@{name}{
     z-index: @size;
   }
   
+  .z-index-minus(@name, @size, @minus);
+  .z-index-hover(@name, @size, @hover);
+  .z-index-hover-minus(@name, @size, @hover, @minus);
 }
-.z-index-hover(@name, @size: @name) {
-  .hover:hover .hover\|z-@{name},
+// 生成负值
+.z-index-minus(@name, @size, @minux) when (@minus) {
+  .-z-@{name}{
+    z-index: @size * -1;
+  }
+}
+// 生成hover
+.z-index-hover(@name, @size, @hover) when (@hover) {
   .hover\|z-@{name}:hover{
     z-index: @size;
+  }
+}
+// 生成hover和负值
+.z-index-hover-minus(@name, @size, @hover, @minus) when (@hover) and (@minus) {
+  .hover\|-z-@{name}:hover{
+    z-index: @size * -1;
   }
 }
 

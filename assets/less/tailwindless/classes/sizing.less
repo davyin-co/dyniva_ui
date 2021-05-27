@@ -2,17 +2,17 @@
 .w-auto {
   width: auto;
 }
-.w-full {
-  width: 100%;
-}
-.w-screen {
-  width: 100vw;
-}
 .w-min {
   width: min-content;
 }
 .w-max {
   width: max-content;
+}
+.w-full {
+  width: 100%;
+}
+.w-screen {
+  width: 100vw;
 }
 .width(11, 12);
 .width(4, 5);
@@ -22,13 +22,8 @@ each(#table.responsive(), .(@vResponsive, @kResponsive) {
   @namePrefix: ~'@{kResponsive}\|';
 
   @media (min-width: @@screenName) {
-    .width(11, 12, @namePrefix);
-    .width(4, 5, @namePrefix);
-    .@{namePrefix}w-full {
-      width: 100%;
-    }
-    @{namePrefix}w-screen {
-      width: 100vw;
+    .@{namePrefix}w-auto {
+      width: auto;
     }
     .@{namePrefix}w-min {
       width: min-content;
@@ -36,9 +31,14 @@ each(#table.responsive(), .(@vResponsive, @kResponsive) {
     .@{namePrefix}w-max {
       width: max-content;
     }
-    .@{namePrefix}w-auto {
-      width: auto;
+    .@{namePrefix}w-full {
+      width: 100%;
     }
+    @{namePrefix}w-screen {
+      width: 100vw;
+    }
+    .width(11, 12, @namePrefix);
+    .width(4, 5, @namePrefix);
   }
 })
 
@@ -60,14 +60,28 @@ each(#table.responsive(), .(@vResponsive, @kResponsive) {
 .max-w-0 {
   max-width: 0px;
 }
-.max-w-full {
-  max-width: 100%;
+.max-w-none {
+  max-width: none;
 }
 .max-w-min {
   max-width: min-content;
 }
 .max-w-max {
   max-width: max-content;
+}
+.max-w-full {
+  max-width: 100%;
+}
+
+// min-height
+.h-0 {
+  height: 0;
+}
+.h-full {
+  height: 100%;
+}
+.h-screen {
+  height: 100vh;
 }
 
 // min-height
