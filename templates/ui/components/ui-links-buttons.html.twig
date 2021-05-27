@@ -1,0 +1,260 @@
+{% extends "@dyniva_ui/ui/preview/ui-preview.html.twig" %}
+
+{% set page_title = '链接和按钮' %}
+
+{% set page_descs = [
+  '链接和按钮是最基本的设计元素，在不同的场景应用不用的字体大小、颜色、边框、背景色，传达重要或者次要信息，给用户做出相应的选择。'
+] %}
+
+{% set preview_sections = [
+  {
+    id: 'links',
+    title: '链接',
+    items: [
+      {
+        id: 'links--demo',
+        title: '简单使用',
+        rules: [
+          '默认颜色为主色调, <code>.underline</code>可为其添加下划线。',
+        ],
+        demoClass: '',
+        rowClass: 'row',
+        templates: [
+          {
+            url: 'components/links-buttons/dy-links--demo.html.twig',
+            gridClass: 'col-xs-12',
+            param: {  }
+          }
+        ],
+      },
+      {
+        id: 'links--status',
+        title: '状态',
+        rules: [
+          '不同的链接状态应用在不同的应用场景中。',
+        ],
+        demoClass: '',
+        rowClass: 'row',
+        templates: [
+          {
+            url: 'components/links-buttons/dy-links--status.html.twig',
+            gridClass: 'col-xs-12',
+            param: {  }
+          }
+        ],
+        descs: [
+          {
+            code: '.text-color-success',
+            text: '成功'
+          },
+          {
+            code: '.text-color-info',
+            text: '信息'
+          },
+          {
+            code: '.text-color-warning',
+            text: '警告'
+          },
+          {
+            code: '.text-color-error',
+            text: '错误'
+          },
+          {
+            code: '.active',
+            text: '激活'
+          },
+        ]
+      },
+      {
+        id: 'links--color',
+        title: '颜色',
+        rules: [],
+        demoClass: '',
+        rowClass: 'row',
+        templates: [
+          {
+            url: 'components/links-buttons/dy-links--color.html.twig',
+            gridClass: 'col-xs-12',
+            param: {  }
+          }
+        ],
+        descs: [
+          {
+            code: '.text-color-success',
+            text: '成功'
+          },
+          {
+            code: '.text-color-info',
+            text: '信息'
+          },
+          {
+            code: '.text-color-warning',
+            text: '警告'
+          },
+          {
+            code: '.text-color-error',
+            text: '错误'
+          },
+          {
+            code: '.active',
+            text: '激活'
+          },
+        ]
+      },
+    ]
+  },
+  {
+    id: 'buttons',
+    title: '按钮',
+    items: [
+      {
+        id: 'buttons--base',
+        title: '基础样式',
+        rules: [
+          '<code>.btn</code>是最基础的按钮样式，鼠标经过产生 <code>0.85</code> 不透明度效果。'
+        ],
+        demoClass: '',
+        rowClass: 'row',
+        templates: [
+          {
+            url: 'components/links-buttons/dy-buttons--base.html.twig',
+            gridClass: 'col-xs-12',
+            param: {  }
+          }
+        ],
+        descs: [
+          {
+            code: '.btn-base',
+            text: '默认按钮样式，背景色为主色'
+          },
+          {
+            code: '.btn-info',
+            text: '背景色为信息类蓝色背景'
+          },
+          {
+            code: '.btn-warning',
+            text: '背景色为警告色黄色背景'
+          },
+          {
+            code: '.btn-error',
+            text: '背景色为错误类红色背景'
+          },
+          {
+            code: '.btn-gray',
+            text: '背景色为灰色背景'
+          },
+        ]
+      },
+      {
+        id: 'buttons--radiu',
+        title: '圆角按钮',
+        rules: [
+          '添加类 <code>.btn-radius</code> 即可。'
+        ],
+        demoClass: '',
+        rowClass: 'row',
+        templates: [
+          {
+            url: 'components/links-buttons/dy-buttons--radiu.html.twig',
+            gridClass: 'col-xs-12',
+            param: {  }
+          }
+        ],
+      },
+      {
+        id: 'buttons--radiu',
+        title: '半圆角按钮',
+        rules: [
+          '添加类 <code>.btn-ele-circle</code> 即可'
+        ],
+        demoClass: '',
+        rowClass: 'row',
+        templates: [
+          {
+            url: 'components/links-buttons/dy-buttons--circle.html.twig',
+            gridClass: 'col-xs-12',
+            param: {  }
+          }
+        ],
+      },
+      {
+        id: 'buttons--active',
+        title: '激活样式',
+        rules: [
+          '添加类 <code>.active</code> 即可。'
+        ],
+        demoClass: '',
+        rowClass: 'row',
+        templates: [
+          {
+            url: 'components/links-buttons/dy-buttons--active.html.twig',
+            gridClass: 'col-xs-12',
+            param: {  }
+          }
+        ],
+      },
+      {
+        id: 'buttons--disabled',
+        title: '禁用状态',
+        rules: [
+          '添加 <code>.disabled</code> 即可，降低 <code>0.55</code>不透明度，<code>cursor: not-allowed </code>'
+        ],
+        demoClass: '',
+        rowClass: 'row',
+        templates: [
+          {
+            url: 'components/links-buttons/dy-buttons--disabled.html.twig',
+            gridClass: 'col-xs-12',
+            param: {  }
+          }
+        ],
+      },
+      {
+        id: 'buttons--sizing',
+        title: '大小',
+        rules: [
+          '四中尺寸大小，默认内边距 <code>padding:7px 14px;</code>'
+        ],
+        demoClass: '',
+        rowClass: 'row',
+        templates: [
+          {
+            url: 'components/links-buttons/dy-buttons--sizing.html.twig',
+            gridClass: 'col-xs-12',
+            param: {  }
+          }
+        ],
+        descs: [
+          {
+            code: '.btn-min',
+            text: '<code>padding: 2px 7px; font-size: 12px;</code>',
+          },
+          {
+            code: '.btn-sm',
+            text: '<code>font-size: 13px; padding: 3.5px 14px;</code>',
+          },
+          {
+            code: '.btn-lg',
+            text: '<code>font-size: 16px; padding: 14px 28px;</code>',
+          },
+        ]
+      },
+      {
+        id: 'buttons--icon',
+        title: '附带图标',
+        rules: [
+          '<code>.btn-icon</code>是必不可少的类。'
+        ],
+        demoClass: '',
+        rowClass: 'row',
+        templates: [
+          {
+            url: 'components/links-buttons/dy-buttons--icon.html.twig',
+            gridClass: 'col-xs-12',
+            param: {  }
+          }
+        ],
+      },
+    ]
+  },
+] %}

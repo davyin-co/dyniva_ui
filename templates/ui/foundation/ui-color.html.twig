@@ -1,0 +1,169 @@
+{% extends "@dyniva_ui/ui/preview/ui-preview.html.twig" %}
+
+{% set page_title = '色彩系统' %}
+
+{% set page_descs = [
+  '现代的色彩系统可以帮助您创建出品牌或者风格的颜色主题。'
+] %}
+
+{% set preview_sections = [
+  {
+    id: 'rules',
+    title: '原则规范',
+    items: [
+      {
+        id: 'gradation',
+        title: '层次',
+        rules: [
+          '颜色表示哪些元素是可交互的，它们与页面上其他元素的关系和重要程度，重要的元素应该突出显示。'
+        ],
+        hide_markup: true,
+        hide_demo: true,
+      },
+      {
+        id: 'clear-easy',
+        title: '清晰易读',
+        rules: [
+          '文字和重要元素（例如图标）在有背景的元素上都应该清晰易读。'
+        ],
+        hide_preview: true,
+        hide_demo: true,
+        hide_collapse: true,
+      },
+    ]
+  },
+  {
+    id: 'color-main',
+    title: '主要颜色',
+    items: [
+      {
+        id: 'color-main--application',
+        title: '应用',
+        rules: [
+          '主要颜色包括主色调、主色调辅助色调、背景颜色、文字颜色、边框颜色等常用的颜色。'
+        ],
+        hide_markup: true,
+        rowClass: 'row',
+        demoClass: '',
+        templates: [
+          {
+            url: 'foundation/color/dy-color.html.twig',
+            gridClass: 'col-xs-12 col-md-6',
+            param: {  
+              classes: 'panel-ui-pick-color-primary',
+              title: '主色',
+              desc: '页面和组件中使用最频繁的颜色，可以使用来强调元素。'
+            }
+          },
+          {
+            url: 'foundation/color/dy-color.html.twig',
+            gridClass: 'col-xs-12 col-md-6',
+            param: {  
+              classes: 'panel-ui-pick-color-black',
+              title: '黑色',
+              desc: '默认文字颜色'
+            }
+          },
+          {
+            url: 'foundation/color/dy-color.html.twig',
+            gridClass: 'col-xs-12 col-md-6',
+            param: {  
+              classes: 'panel-ui-pick-border-color',
+              title: '浅灰色',
+              desc: '使用在组件背景色，不应使用在文本字体颜色。'
+            }
+          },
+          {
+            url: 'foundation/color/dy-color.html.twig',
+            gridClass: 'col-xs-12 col-md-6',
+            param: {  
+              classes: 'panel-ui-pick-color-white',
+              badge_class: 'border-shadow',
+              title: '白色',
+              desc: '默认背景色，当组件使用深色背景色时，作为文字的颜色。'
+            }
+          },
+        ]
+      },
+    ]
+  },
+  {
+    id: 'color-secondary',
+    title: '次要颜色',
+    items: [
+      {
+        id: 'color-secondary--application',
+        title: '应用',
+        rules: [
+          '次要颜色提供了更多的方式来强调和区分组件，辅助色是可选的，如果没有辅助色可使用主色; 浮动按钮、选择控件、突出所选文本、进度条、链接和标题'
+        ],
+        hide_markup: true,
+        rowClass: 'row',
+        demoClass: '',
+        templates: [
+          {
+            url: 'foundation/color/dy-color.html.twig',
+            gridClass: 'col-xs-12 col-md-6',
+            param: {  
+              classes: 'panel-ui-pick-color-light',
+            }
+          },
+        ]
+      },
+    ]
+  },
+  {
+    id: 'color-status',
+    title: '状态颜色',
+    items: [
+      {
+        id: 'color-status--application',
+        title: '应用',
+        rules: [
+          '状态展示颜色，交互状态颜色'
+        ],
+        hide_markup: true,
+        rowClass: 'row',
+        demoClass: '',
+        templates: [
+          {
+            url: 'foundation/color/dy-color.html.twig',
+            gridClass: 'col-xs-12 col-md-6',
+            param: {  
+              classes: 'panel-ui-pick-color-success',
+              title: '成功',
+              desc: '成功信息提示的文字颜色'
+            }
+          },
+          {
+            url: 'foundation/color/dy-color.html.twig',
+            gridClass: 'col-xs-12 col-md-6',
+            param: {  
+              classes: 'panel-ui-pick-color-info',
+              title: '一般信息',
+              desc: '一般信息提示的文字颜色'
+            }
+          },
+          {
+            url: 'foundation/color/dy-color.html.twig',
+            gridClass: 'col-xs-12 col-md-6',
+            param: {  
+              classes: 'panel-ui-pick-color-warning',
+              title: '警告',
+              desc: '警告信息提示的文字颜色'
+            }
+          },
+          {
+            url: 'foundation/color/dy-color.html.twig',
+            gridClass: 'col-xs-12 col-md-6',
+            param: {  
+              classes: 'panel-ui-pick-color-error',
+              title: '错误',
+              desc: '错误信息提示的文字颜色'
+            }
+          },
+        ]
+      },
+    ]
+  },
+] %}

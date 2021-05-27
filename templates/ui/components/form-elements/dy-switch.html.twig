@@ -1,0 +1,7 @@
+<div class="form-item form-item-switch{% if disabled %} disabled{% endif %}">
+  <label class="form-switch">
+    <input type="checkbox" class="form-radio form-switch-input"{% if disabled %} disabled="disabled"{% endif %}{% for attr in attrs %} {{ attr }}{% endfor %}>
+    <i class="form-switch-toggle"></i>
+  </label>
+  {{ label }}
+</div>

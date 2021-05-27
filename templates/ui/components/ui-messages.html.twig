@@ -1,0 +1,38 @@
+{% extends "@dyniva_ui/ui/preview/ui-preview.html.twig" %}
+
+{% set page_title = '消息与通知' %}
+
+{% set page_descs = [
+  '通过提供一些灵活的预定义消息，为常见的用户动作提供反馈消息。'
+] %}
+
+{% set preview_sections = [
+  {
+    id: 'message',
+    title: '消息与通知',
+    items: [
+      {
+        id: 'message--link',
+        title: '带链接',
+        rules: [
+          '全屏宽把 <code>.notices</code> 子元素使用 <code>.inner</code>包围',
+        ],
+        demoClass: '',
+        rowClass: '',
+        templates: [
+          {
+            url: 'components/notices/dy-notices.html.twig',
+            gridClass: '',
+            param: {  }
+          }
+        ],
+        descs: [
+          {
+            code: '',
+            text: ''
+          }
+        ]
+      }
+    ]
+  },
+] %}

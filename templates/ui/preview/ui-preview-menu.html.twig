@@ -1,0 +1,70 @@
+{%- set prefix = urlPrefix | default('/ui-preview-theme/dyniva_ui/') -%}
+<ul class="menu nav-menu">
+  {%- for menu in menus | default([
+    {
+      title: '基础',
+      pathPrefix: 'foundation/ui-',
+      childs: [
+        { path: 'color', name: '颜色方案' },
+        { path: 'grid', name: '网格系统' },
+        { path: 'typography', name: '文字排版' },
+        { path: 'icons', name: '字体图标' },
+      ]
+    },
+    {
+      title: '控件',
+      pathPrefix: 'components/ui-',
+      childs: [
+        { path: 'links-buttons', name: '链接和按钮' },
+        { path: 'form-elements', name: '表单元素' },
+        { path: 'messages', name: '消息与通知' },
+        { path: 'media', name: '媒体对象' },
+        { path: 'animations', name: '动画' },
+        { path: 'charts', name: '图表' },
+        { path: 'panel', name: '面板' },
+        { path: 'tables', name: '表格' },
+        { path: 'title', name: '标题' },
+        { path: 'background', name: '背景' },
+      ]
+    },
+    {
+      title: '组件',
+      pathPrefix: 'modules/ui-',
+      childs: [
+        { path:'brand', name: '品牌' },
+        { path:'navigation', name: '导航' },
+        { path:'hero', name: '头条' },
+        { path:'list', name: '列表' },
+        { path:'showcase', name: '图文混排' },
+        { path:'carousel', name: '轮播' },
+        { path:'calendar', name: '时间日历' },
+        { path:'action', name: '引导' },
+        { path:'media', name: '媒体' },
+        { path:'photo', name: '相册' },
+        { path:'map', name: '地图' },
+      ]
+    },
+    {
+      title: '开始使用',
+      pathPrefix: 'document/ui-',
+      childs: [
+        { path: 'classes', name: '常用类名' },
+        { path: 'guide', name: 'UI组件开发规范' },
+        { path: 'drupal-guide', name: 'Drupal开发规范' },
+        { path: 'jquery', name: 'jQuery最佳实践' },
+        { path: 'changelog', name: '更新记录' },
+      ]
+    },
+  ]) ~%}
+  <li class="menu-item expanded">
+    <a href="javascript:void(0)" class="menu-toggle">{{ menu.title }} <span class="caret"></span></a>
+    {%- if menu.childs ~%}
+      <ul class="menu level-menu">
+        {% for child in menu.childs %}
+        <li class="menu-item"><a href="{{ prefix }}{{ menu.pathPrefix }}{{ child.path }}.html.twig">{{ child.name }}</a></li>
+        {%- endfor ~%}
+      </ul>
+    {%- endif ~%}
+  </li>
+  {%- endfor ~%}
+</ul>

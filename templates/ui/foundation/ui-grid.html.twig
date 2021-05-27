@@ -1,0 +1,149 @@
+{% extends "@dyniva_ui/ui/preview/ui-preview.html.twig" %}
+
+{% set page_title = '布局系统' %}
+
+{% set page_descs = [
+  '布局系统通过一系列包含内容的行和列来创建页面布局，使用行业通用的12列响应式栅格系统。'
+] %}
+
+{% set preview_sections = [
+  {
+    id: 'layout-grid-system',
+    title: '网格系统',
+    items: [
+      {
+        id: 'layout-grid-system--breakpoint',
+        title: '断点',
+        rules: ['默认响应式断点，详细可以看let.less，为了适应不同的屏幕大小，预定了4个定义的断点'],
+        hide_markup: true,
+        rowClass: 'row',
+        templates: [
+          {
+            url: 'foundation/grid/dy-layout-grid-system--breakpoint.html.twig',
+            gridClass: 'col-xs-12'
+          }
+        ]
+      },
+      {
+        id: 'layout-grid-system--column',
+        title: '断点',
+        rules: ['参考了bootstrap的网格系统，有些个性化的修改。'],
+        hide_markup: true,
+        rowClass: 'row',
+        templates: [
+          {
+            url: 'foundation/grid/dy-layout-grid-system--column.html.twig',
+            gridClass: 'col-xs-12'
+          }
+        ]
+      },
+      {
+        id: 'layout-grid-system--demo',
+        title: '示例',
+        rules: ['参考了bootstrap的网格系统，有些个性化的修改。'],
+        rowClass: 'row',
+        templates: [
+          {
+            url: 'foundation/grid/dy-layout-grid-system--demo.html.twig',
+            gridClass: 'col-xs-12'
+          }
+        ]
+      },
+    ]
+  },
+  {
+    id: 'layout-table',
+    title: '表格布局',
+    items: [      
+      {
+        id: 'layout-table--demo',
+        title: '示例',
+        rules: ['使用表格可以很好的兼容浏览器，但是在移动端需要做额外的处理。'],
+        rowClass: 'row',
+        templates: [
+          {
+            url: 'foundation/grid/dy-layout-table--demo.html.twig',
+            gridClass: 'col-xs-12'
+          }
+        ]
+      },
+    ]
+  },
+  {
+    id: 'layout-spacer',
+    title: '间距系统',
+    items: [
+      {
+        id: 'layout-spapcer--rules',
+        title: '概念',
+        rules: ['间距系统是很重要的概念，在页面的区块或者组件中统一间距。'],
+        rowClass: 'row',
+        hide_markup: true,
+        hide_demo: true,
+      },
+      {
+        id: 'layout-spacer--larg',
+        title: '大号间距',
+        rules: ['高度为 80px，移动端高度为 40px，组件间距比较大时使用'],
+        rowClass: 'row',
+        templates: [
+          {
+            url: 'foundation/grid/dy-layout-spacer.html.twig',
+            gridClass: 'col-xs-12',
+            param: {
+              classes: 'spacer-lg'
+            }
+          }
+        ],
+        descs: [
+          {
+            code: '.spacer-lg',
+            text: '大间距',
+          }
+        ]
+      },
+      {
+        id: 'layout-spacer--medium',
+        title: '中等间距',
+        rules: ['高度为 40px，移动端高度为 20px'],
+        rowClass: 'row',
+        templates: [
+          {
+            url: 'foundation/grid/dy-layout-spacer.html.twig',
+            gridClass: 'col-xs-12',
+            param: {
+              classes: 'spacer-md'
+            }
+          }
+        ],
+        descs: [
+          {
+            code: '.spacer-md',
+            text: '中等间距',
+          }
+        ]
+      },
+      {
+        id: 'layout-spacer--small',
+        title: '小号间距',
+        rules: ['高度为 20px，移动端高度为 10px，组件间距比较小时使用'],
+        rowClass: 'row',
+        templates: [
+          {
+            url: 'foundation/grid/dy-layout-spacer.html.twig',
+            gridClass: 'col-xs-12',
+            param: {
+              classes: 'spacer-sm'
+            }
+          }
+        ],
+        descs: [
+          {
+            code: '.spacer-sm',
+            text: '小号间距',
+          }
+        ]
+      },
+    ]
+  },
+] %}

@@ -1,0 +1,675 @@
+{% extends "@dyniva_ui/ui/preview/ui-preview.html.twig" %}
+
+{% set page_title = 'Form 表单' %}
+
+{% set page_descs = [
+  '具有数据收集、校验和提交功能的表单，包含复选框、单选框、输入框、下拉选择框等元素。'
+] %}
+
+{% set preview_sections = [
+  {
+    id: 'input',
+    title: '输入框',
+    items: [
+      {
+        id: 'input--base',
+        title: '基础样式',
+        rules: [],
+        demoClass: '',
+        rowClass: 'row',
+        templates: [
+          {
+            url: 'components/form-elements/dy-input.html.twig',
+            gridClass: 'col-xs-12 col-md-3 my-10',
+            param: {  
+              classes: 'form-element-full',
+              placeholder: '基础样式'
+            }
+          },
+          {
+            url: 'components/form-elements/dy-input.html.twig',
+            gridClass: 'col-xs-12 col-md-3 my-10',
+            param: {  
+              classes: 'form-element-full',
+              placeholder: '禁用',
+              attrs: [
+                'disabled="disabled"',
+              ]
+            }
+          },
+          {
+            url: 'components/form-elements/dy-input.html.twig',
+            gridClass: 'col-xs-12 col-md-3 my-10',
+            param: {  
+              classes: 'form-element-full form-element-shadow',
+              placeholder: '阴影',
+            }
+          },
+          {
+            url: 'components/form-elements/dy-input.html.twig',
+            gridClass: 'col-xs-12 col-md-3 p-10 bg-primary',
+            param: {  
+              classes: 'form-element-full form-element-transparent',
+              value: '透明',
+            }
+          },
+          {
+            url: 'components/form-elements/dy-input.html.twig',
+            gridClass: 'col-xs-12 col-md-3 my-10',
+            param: {  
+              classes: 'form-element-full success',
+              placeholder: '成功',
+            }
+          },
+          {
+            url: 'components/form-elements/dy-input.html.twig',
+            gridClass: 'col-xs-12 col-md-3 my-10',
+            param: {  
+              classes: 'form-element-full info',
+              placeholder: '信息',
+            }
+          },
+          {
+            url: 'components/form-elements/dy-input.html.twig',
+            gridClass: 'col-xs-12 col-md-3 my-10',
+            param: {  
+              classes: 'form-element-full warning',
+              placeholder: '警告',
+            }
+          },
+          {
+            url: 'components/form-elements/dy-input.html.twig',
+            gridClass: 'col-xs-12 col-md-3 my-10',
+            param: {  
+              classes: 'form-element-full error',
+              placeholder: '错误',
+            }
+          },
+          {
+            url: 'components/form-elements/dy-input.html.twig',
+            gridClass: 'col-xs-12 col-md-3 my-10',
+            param: {  
+              classes: 'form-element-radius form-element-full error',
+              placeholder: '圆角',
+            }
+          },
+          {
+            url: 'components/form-elements/dy-input.html.twig',
+            gridClass: 'col-xs-12 col-md-3 my-10',
+            param: {  
+              classes: 'form-element-circle form-element-full error',
+              placeholder: '半圆角',
+            }
+          },
+        ],
+        descs: [
+          {
+            code: 'type="text"',
+            text: '表单元素为文本类型'
+          },
+          {
+            code: '.form-text',
+            text: '文本类型的表单样式类'
+          },
+          {
+            code: '.form-element-radius',
+            text: '给表单添加圆角'
+          },
+          {
+            code: '.form-element-circle',
+            text: '给表单添加半圆角'
+          },
+          {
+            code: '.form-element-shadow',
+            text: '给表单添加内阴影'
+          },
+          {
+            code: 'placeholder="Placeholder"',
+            text: '给表单添加占位符'
+          },
+          {
+            code: 'disabled',
+            text: '禁用表单'
+          },
+          {
+            code: '.success .info .warning .error',
+            text: '表单不同的状态类'
+          },
+        ]
+      },
+      {
+        id: 'input--width',
+        title: '宽度',
+        rules: ['给表单添加 <code>.form-element-full</code> 使表单占父元素100%宽度。'],
+        demoClass: '',
+        rowClass: 'row',
+        templates: [
+          {
+            url: 'components/form-elements/dy-input.html.twig',
+            gridClass: 'col-xs-12 col-md-4 my-10',
+            param: {  
+              classes: 'form-element-full',
+              placeholder: '占满4栏'
+            }
+          },
+          {
+            url: 'components/form-elements/dy-input.html.twig',
+            gridClass: 'col-xs-12 col-md-4 my-10',
+            param: {  
+              classes: 'form-element-full',
+              placeholder: '占满4栏',
+              attrs: []
+            }
+          },
+          {
+            url: 'components/form-elements/dy-input.html.twig',
+            gridClass: 'col-xs-12 col-md-4 my-10',
+            param: {  
+              classes: 'form-element-full',
+              placeholder: '占满4栏',
+            }
+          },
+          {
+            url: 'components/form-elements/dy-input.html.twig',
+            gridClass: 'col-xs-12 my-10',
+            param: {  
+              classes: 'form-element-full',
+              placeholder: '占满12栏',
+            }
+          },
+        ],
+      },
+      {
+        id: 'input--required',
+        title: '必填项',
+        rules: ['会在表单标签后面标记星号样式'],
+        demoClass: '',
+        rowClass: 'row',
+        templates: [
+          {
+            url: 'components/form-elements/dy-input.html.twig',
+            gridClass: 'col-xs-12 col-md-30',
+            param: {  
+              classes: 'form-element-full',
+              placeholder: '手机号码',
+              label: '联系方式',
+              required: true,
+            }
+          },
+        ],
+        descs: [
+          {
+            code: '.form-required',
+            text: '该表单是必填字段'
+          }
+        ]
+      },
+    ]
+  },
+  {
+    id: 'textarea',
+    title: '文本域',
+    items: [
+      {
+        id: 'textarea--base',
+        title: '基础样式',
+        rules: [],
+        demoClass: '',
+        rowClass: 'row',
+        templates: [
+          {
+            url: 'components/form-elements/dy-textarea.html.twig',
+            gridClass: 'col-xs-12 col-md-3 my-10',
+            param: {  
+              classes: 'form-element-full',
+              placeholder: '基础样式'
+            }
+          },
+          {
+            url: 'components/form-elements/dy-textarea.html.twig',
+            gridClass: 'col-xs-12 col-md-3 my-10',
+            param: {  
+              classes: 'form-element-full',
+              placeholder: '禁用',
+              attrs: [
+                'disabled="disabled"',
+              ]
+            }
+          },
+          {
+            url: 'components/form-elements/dy-textarea.html.twig',
+            gridClass: 'col-xs-12 col-md-3 my-10',
+            param: {  
+              classes: 'form-element-full form-element-shadow',
+              placeholder: '阴影',
+            }
+          },
+          {
+            url: 'components/form-elements/dy-textarea.html.twig',
+            gridClass: 'col-xs-12 col-md-3 p-10 bg-primary',
+            param: {  
+              classes: 'form-element-full form-element-transparent',
+              value: '透明',
+            }
+          },
+          {
+            url: 'components/form-elements/dy-textarea.html.twig',
+            gridClass: 'col-xs-12 col-md-3 my-10',
+            param: {  
+              classes: 'form-element-full success',
+              placeholder: '成功',
+            }
+          },
+          {
+            url: 'components/form-elements/dy-textarea.html.twig',
+            gridClass: 'col-xs-12 col-md-3 my-10',
+            param: {  
+              classes: 'form-element-full info',
+              placeholder: '信息',
+            }
+          },
+          {
+            url: 'components/form-elements/dy-textarea.html.twig',
+            gridClass: 'col-xs-12 col-md-3 my-10',
+            param: {  
+              classes: 'form-element-full warning',
+              placeholder: '警告',
+            }
+          },
+          {
+            url: 'components/form-elements/dy-textarea.html.twig',
+            gridClass: 'col-xs-12 col-md-3 my-10',
+            param: {  
+              classes: 'form-element-full error',
+              placeholder: '错误',
+            }
+          },
+          {
+            url: 'components/form-elements/dy-textarea.html.twig',
+            gridClass: 'col-xs-12 col-md-3 my-10',
+            param: {  
+              classes: 'form-element-radius form-element-full error',
+              placeholder: '圆角',
+            }
+          },
+          {
+            url: 'components/form-elements/dy-textarea.html.twig',
+            gridClass: 'col-xs-12 col-md-3 my-10',
+            param: {  
+              classes: 'form-element-circle form-element-full error',
+              placeholder: '半圆角',
+            }
+          },
+        ],
+        descs: [
+          {
+            code: '.form-textarea',
+            text: '文本域的表单样式类'
+          },
+          {
+            code: '.form-element-radius',
+            text: '给表单添加圆角'
+          },
+          {
+            code: '.form-element-circle',
+            text: '给表单添加半圆角'
+          },
+          {
+            code: '.form-element-shadow',
+            text: '给表单添加内阴影'
+          },
+          {
+            code: 'placeholder="Placeholder"',
+            text: '给表单添加占位符'
+          },
+          {
+            code: 'disabled',
+            text: '禁用表单'
+          },
+          {
+            code: '.success .info .warning .error',
+            text: '表单不同的状态类'
+          },
+        ]
+      },
+    ]
+  },
+  {
+    id: 'select',
+    title: '下拉列表',
+    items: [
+      {
+        id: 'select--base',
+        title: '基础样式',
+        rules: [],
+        demoClass: '',
+        rowClass: 'row',
+        templates: [
+          {
+            url: 'components/form-elements/dy-select.html.twig',
+            gridClass: 'col-xs-12 col-md-3 my-10',
+            param: {  
+              classes: 'form-element-full',
+              placeholder: '基础样式'
+            }
+          },
+          {
+            url: 'components/form-elements/dy-select.html.twig',
+            gridClass: 'col-xs-12 col-md-3 my-10',
+            param: {  
+              classes: 'form-element-full',
+              placeholder: '禁用',
+              attrs: [
+                'disabled="disabled"',
+              ]
+            }
+          },
+          {
+            url: 'components/form-elements/dy-select.html.twig',
+            gridClass: 'col-xs-12 col-md-3 my-10',
+            param: {  
+              classes: 'form-element-full form-element-shadow',
+              placeholder: '阴影',
+            }
+          },
+          {
+            url: 'components/form-elements/dy-select.html.twig',
+            gridClass: 'col-xs-12 col-md-3 my-10',
+            param: {  
+              classes: 'form-element-full success',
+              placeholder: '成功',
+            }
+          },
+          {
+            url: 'components/form-elements/dy-select.html.twig',
+            gridClass: 'col-xs-12 col-md-3 my-10',
+            param: {  
+              classes: 'form-element-full info',
+              placeholder: '信息',
+            }
+          },
+          {
+            url: 'components/form-elements/dy-select.html.twig',
+            gridClass: 'col-xs-12 col-md-3 my-10',
+            param: {  
+              classes: 'form-element-full warning',
+              placeholder: '警告',
+            }
+          },
+          {
+            url: 'components/form-elements/dy-select.html.twig',
+            gridClass: 'col-xs-12 col-md-3 my-10',
+            param: {  
+              classes: 'form-element-full error',
+              placeholder: '错误',
+            }
+          },
+          {
+            url: 'components/form-elements/dy-select.html.twig',
+            gridClass: 'col-xs-12 col-md-3 my-10',
+            param: {  
+              classes: 'form-element-radius form-element-full error',
+              placeholder: '圆角',
+            }
+          },
+          {
+            url: 'components/form-elements/dy-select.html.twig',
+            gridClass: 'col-xs-12 col-md-3 my-10',
+            param: {  
+              classes: 'form-element-circle form-element-full error',
+              placeholder: '半圆角',
+            }
+          },
+        ],
+        descs: [
+          {
+            code: '.form-select',
+            text: '下拉列表的表单样式类'
+          },
+          {
+            code: '.form-element-radius',
+            text: '给表单添加圆角'
+          },
+          {
+            code: '.form-element-circle',
+            text: '给表单添加半圆角'
+          },
+          {
+            code: '.form-element-shadow',
+            text: '给表单添加内阴影'
+          },
+          {
+            code: 'placeholder="Placeholder"',
+            text: '给表单添加占位符'
+          },
+          {
+            code: 'disabled',
+            text: '禁用表单'
+          },
+          {
+            code: '.success .info .warning .error',
+            text: '表单不同的状态类'
+          },
+        ]
+      },
+    ]
+  },
+  {
+    id: 'checkbox',
+    title: '复选框',
+    items: [
+      {
+        id: 'checkbox--base',
+        title: '基础样式',
+        rules: ['默认的 <code>input</code>元素被隐藏，使用 <code>i.btn-choose-mark.invisible</code>模拟选中。'],
+        demoClass: '',
+        rowClass: 'row',
+        templates: [
+          {
+            url: 'components/form-elements/dy-checkbox.html.twig',
+            gridClass: 'col-xs-12 col-md-12',
+            param: {  
+              classes: 'form-element-full',
+              attrs: [],
+              label: '未选择'
+            }
+          },
+          {
+            url: 'components/form-elements/dy-checkbox.html.twig',
+            gridClass: 'col-xs-12 col-md-12',
+            param: {  
+              classes: 'form-element-full',
+              attrs: [
+                'checked="checked"'
+              ],
+              label: '已选择'
+            }
+          },
+          {
+            url: 'components/form-elements/dy-checkbox.html.twig',
+            gridClass: 'col-xs-12 col-md-12',
+            param: {  
+              classes: 'form-element-full',
+              disabled: true,
+              attrs: [
+                'disabled="disabled"'
+              ],
+              label: '禁用选择'
+            }
+          },
+          {
+            url: 'components/form-elements/dy-checkbox.html.twig',
+            gridClass: 'col-xs-12 col-md-12',
+            param: {  
+              classes: 'form-element-full',
+              disabled: true,
+              attrs: [
+                'checked="checked"',
+                'disabled="disabled"'
+              ],
+              label: '禁用选择'
+            }
+          },
+        ],
+        descs: [
+          {
+            code: '.btn-choose.btn-choose-square',
+            text: '为复选框应用该类'
+          },
+        ]
+      },
+    ]
+  },
+  {
+    id: 'radio',
+    title: '单选',
+    items: [
+      {
+        id: 'radio--base',
+        title: '基础样式',
+        rules: ['默认的 <code>input</code>元素被隐藏，使用 <code>i.btn-choose-mark.invisible</code>模拟选中圆心。'],
+        demoClass: '',
+        rowClass: 'row',
+        templates: [
+          {
+            url: 'components/form-elements/dy-radio.html.twig',
+            gridClass: 'col-xs-12 col-md-12',
+            param: {  
+              classes: 'form-element-full',
+              attrs: [],
+              name: 'radio',
+              label: '可选'
+            }
+          },
+          {
+            url: 'components/form-elements/dy-radio.html.twig',
+            gridClass: 'col-xs-12 col-md-12',
+            param: {  
+              classes: 'form-element-full',
+              name: 'radio',
+              attrs: [
+                'checked="checked"'
+              ],
+              label: '已选'
+            }
+          },
+          {
+            url: 'components/form-elements/dy-radio.html.twig',
+            gridClass: 'col-xs-12 col-md-12',
+            param: {  
+              classes: 'form-element-full',
+              disabled: true,
+              name: 'radio-1',
+              attrs: [
+                'disabled="disabled"'
+              ],
+              label: '禁用选择'
+            }
+          },
+          {
+            url: 'components/form-elements/dy-radio.html.twig',
+            gridClass: 'col-xs-12 col-md-12',
+            param: {  
+              classes: 'form-element-full',
+              disabled: true,
+              name: 'radio-1',
+              attrs: [
+                'checked="checked"',
+                'disabled="disabled"'
+              ],
+              label: '禁用选择'
+            }
+          },
+        ],
+        descs: [
+          {
+            code: '.btn-choose.btn-choose-round',
+            text: '为单选框应用该类'
+          },
+        ]
+      },
+    ]
+  },
+  {
+    id: 'switch',
+    title: '切换',
+    items: [
+      {
+        id: 'switch--base',
+        title: '基础样式',
+        rules: ['默认的 <code>input</code>元素被隐藏，使用 <code>i.btn-choose-mark.invisible</code>模拟选中圆心。'],
+        demoClass: '',
+        rowClass: 'row',
+        templates: [
+          {
+            url: 'components/form-elements/dy-switch.html.twig',
+            gridClass: 'col-xs-12 col-md-12',
+            param: {  
+              classes: 'form-element-full',
+              attrs: [],
+              name: 'radio',
+              label: '切换关闭'
+            }
+          },
+          {
+            url: 'components/form-elements/dy-switch.html.twig',
+            gridClass: 'col-xs-12 col-md-12',
+            param: {  
+              classes: 'form-element-full',
+              name: 'radio',
+              attrs: [
+                'checked="checked"'
+              ],
+              label: '切换打开'
+            }
+          },
+          {
+            url: 'components/form-elements/dy-switch.html.twig',
+            gridClass: 'col-xs-12 col-md-12',
+            param: {  
+              classes: 'form-element-full',
+              disabled: true,
+              name: 'radio-1',
+              attrs: [
+                'disabled="disabled"'
+              ],
+              label: '禁用切换'
+            }
+          },
+          {
+            url: 'components/form-elements/dy-switch.html.twig',
+            gridClass: 'col-xs-12 col-md-12',
+            param: {  
+              classes: 'form-element-full',
+              disabled: true,
+              name: 'radio-1',
+              attrs: [
+                'checked="checked"',
+                'disabled="disabled"'
+              ],
+              label: '禁用切换'
+            }
+          },
+        ],
+        descs: [
+          {
+            code: '.form-switch',
+            text: '使用该类包含表单元素'
+          },
+          {
+            code: '.form-switch-toggle',
+            text: '该类包含动画切换效果'
+          },
+          {
+            code: 'checked="checked"',
+            text: '添加该属性，默认切换为选中'
+          },
+          {
+            code: 'disabled="disabled"',
+            text: '禁用选中'
+          },
+        ]
+      },
+    ]
+  },
+] %}

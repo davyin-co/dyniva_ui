@@ -1,0 +1,26 @@
+
+<ul class="icon_lists clearfix">
+  {%- for icon in icons ~%}
+    <li>
+      <i class="icon {{ icon.class }}"></i>
+      <input type="text" readonly 
+        value="{{ icon.unicode }}" 
+        size="{{ icon.unicode|length }}"
+        title="复制成功：{{ icon.unicode }}"
+        data-toggle="bsTooltip"
+        data-placement="top"
+        data-trigger="focus"
+        onclick="this.select();document.execCommand('copy')"
+      />
+      <input type="text" readonly 
+        value=".{{ icon.class }}" 
+        size="{{ icon.class|length }}"
+        title="复制成功：{{ icon.class }}" 
+        data-toggle="bsTooltip"
+        data-placement="top"
+        data-trigger="focus"
+        onclick="this.select();document.execCommand('copy')"
+      />
+    </li>
+  {%- endfor ~%}
+</ul>

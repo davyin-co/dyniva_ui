@@ -1,0 +1,4 @@
+{%- if label ~%}
+<label for="phone" class="{% if required %}form-required{% endif %}">{{ label }}</label>
+{%- endif ~%}
+<input type="text" class="form-text {{ classes }}" value="{{ value }}" name="{{ name }}" placeholder="{{ placeholder }}"{% for attr in attrs %} {{ attr }}{% endfor %}>

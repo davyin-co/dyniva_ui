@@ -1,0 +1,109 @@
+{% extends "@dyniva_ui/ui/preview/ui-preview.html.twig" %}
+
+{% set page_title = '文字排版' %}
+
+{% set page_descs = [
+  '文字作为内容的主要承载，担任务重要的角色，所有的元素都应该具有语义化，主次分明，颜色搭配协调，间距合理等等，才能够保持良好的阅读体验。',
+  '深色文字应用一下不透明级别：',
+  '
+    <ul class="px-35 mt-0">
+      <li>高强调文字的不透明度为 87％</li>
+      <li>中强调文字和提示文字的不透明度为 60％</li>
+      <li>停用文字的不透明度为 38％</li>
+    </ul>
+  ',
+] %}
+
+{% set preview_sections = [
+  {
+    id: 'title',
+    title: '标题',
+    items: [
+      {
+        id: 'heading',
+        title: 'H1~H6',
+        rules: [
+          '加粗使用 <code>strong</code> 标签包围文本即可。',
+          '默认的字体：<code>"Segoe UI", "Lucida Grande", Helvetica, "Microsoft YaHei", "微软雅黑", FreeSans, "Hiragino Sans GB", "Hiragino Sans GB W3", Arial, sans-serif;</code>',
+          '
+            <ul class="px-35 mt-0">
+              <li>Segoe UI - Windows UI 字体（从 Windows Vista 开始使用）；</li>
+              <li>有些 Windows 用户安装了丽黑字体，丽黑字体在 Windows 上渲染出来很模糊，所以把微软雅黑放在苹果丽黑之前；</li>
+              <li>FreeSans - 包括 Ubuntu 之类的 Linux 分发版包含的字体。</li>
+            </ul>
+          ',
+        ],
+        demoClass: '',
+        rowClass: 'row',
+        hide_demo: true,
+        hide_markup: true,
+        templates: [
+          {
+            url: 'foundation/typography/dy-heading.html.twig',
+            gridClass: 'col-xs-12',
+            param: {  }
+          }
+        ],
+      }
+    ]
+  },
+  {
+    id: 'paragraph',
+    title: '段落',
+    items: [
+      {
+        id: 'paragraph--element',
+        title: '基本元素',
+        rules: [
+          '文本默认字体：<code>Helvetica, Tahoma, Arial, STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑", sans-serif;</code>',
+        ],
+        demoClass: '',
+        rowClass: 'row',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'foundation/typography/dy-paragraph--element.html.twig',
+            gridClass: 'col-xs-12',
+            param: {  }
+          }
+        ],
+      }
+    ]
+  },
+  {
+    id: 'appearance',
+    title: '文本外观',
+    items: [
+      {
+        id: 'appearance--color',
+        title: '基本元素',
+        rules: [],
+        demoClass: '',
+        rowClass: 'row',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'foundation/typography/dy-appearance--color.html.twig',
+            gridClass: 'col-xs-12',
+            param: {  }
+          }
+        ],
+      },
+      {
+        id: 'appearance--sizing',
+        title: '字体大小',
+        rules: [],
+        demoClass: '',
+        rowClass: 'row',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'foundation/typography/dy-appearance--sizing.html.twig',
+            gridClass: 'col-xs-12',
+            param: {  }
+          }
+        ],
+      },
+    ]
+  },
+] %}

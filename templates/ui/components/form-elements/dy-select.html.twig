@@ -1,0 +1,8 @@
+{%- if label ~%}
+<label for="phone" class="{% if required %}form-required{% endif %}">{{ label }}</label>
+{%- endif ~%}
+<select class="form-select {{ classes }}" name="{{ name }}"{% for attr in attrs %} {{ attr }}{% endfor %}>
+  <option value="" selected>{{ placeholder }}</option>
+  <option value="选项一">选项一</option>
+  <option value="选项二">选项二</option>
+</select>

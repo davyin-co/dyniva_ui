@@ -1,15 +1,16 @@
 {# note: header.html.twig must be include in header block, the sub theme be able to override header #}
 {% block header %}
-  {% include '@dyniva_ui/ui/pages/header.html.twig' %}
+  {% include '@dyniva_ui/ui/preview/ui-preview-header.html.twig' %}
 {% endblock %}
 
-<div id="wall" class="page-title promo">
-  <div class="inner">
-    <h1 class="page-title">欢迎访问 Dyniva UI 使用文档</h1>
-    <h5 class="title">这是一个现代的、强大的、HTML5、移动端优先的前端框架，用于快速开发响应式布局的项目。</h5>
+<div class="ui-preview-info bg-lighter">
+  <div class="flex items-center p-20">
+    <h1 class="px-10">欢迎访问 Dyniva UI 使用文档</h1>
+    <h5 class="px-10">这是一个现代的、强大的、HTML5、移动端优先的前端框架，用于快速开发响应式布局的项目。</h5>
   </div>
 </div>
-<div class="ui-feature block inside-tb outside-tb">
+
+<div class="ui-feature flex-grow min-h-0 overflow-auto">
   <h2 class="t-c outside-tb">为跨设备访问而设计</h2>
   <div class="inner outside-tb">
     <div class="row">
@@ -81,6 +82,6 @@
 
 {# note: ui-footer.html.twig must be include in footer block, the sub theme be able to override footer #}
 {% block footer %}
-  {% include directory ~ '@dyniva_ui/ui/pages/ui-footer.html.twig' %}
+  {% include directory ~ '@dyniva_ui/ui/preview/ui-preview-footer.html.twig' %}
 {% endblock %}
 

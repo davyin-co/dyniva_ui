@@ -2,9 +2,10 @@
 <div class="page" id="page">
   {{ page.content }}
 
+  {# show on mobile #}
   <div id="outside">
     {% block menu %}
-      {% include '@dyniva_ui/ui/pages/ui-menu.html.twig' %}
+      {% include '@dyniva_ui/ui/preview/ui-preview-menu.html.twig' %}
     {% endblock %}
   </div>
 </div>

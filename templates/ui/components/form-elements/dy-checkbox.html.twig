@@ -1,0 +1,5 @@
+<label class="btn-choose btn-choose-square">
+  <input type="checkbox" name="{{ name }}" class="form-checkbox btn-choose-input{% if disabled %} btn-choose-disabled{% endif %}"{% for attr in attrs %} {{ attr }} {% endfor %} />
+  <i class="btn-choose-mark invisible"></i>
+  {{ label }}
+</label>

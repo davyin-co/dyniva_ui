@@ -1,0 +1,46 @@
+{#
+/**
+ * - extends base theme components body
+ * - custom sub theme header, also can add new components
+ */
+#}
+
+{# override base theme header,logo,menu links #}
+{% block header %}
+  {% include '@dyniva_ui/ui/preview/ui-preview-header.html.twig' %}
+{% endblock %}
+
+<div class="ui-preview-info bg-lighter">
+  <div class="flex items-center p-20">
+    <h1 class="px-10">{{ page_title| raw }}</h1>
+    <div class="px-10">
+      {% for page_desc in page_descs %}
+        <h5 class="py-5">{{ page_desc | raw }}</h5>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<div class="panel-ui flex flex-grow flex-nowrap overflow-hidden">
+  <aside class="preview-aside max-h-full overflow-y-auto overflow-x-hidden" style="min-width: 200px">
+
+  {% include "@dyniva_ui/ui/preview/ui-preview-aside.html.twig" with { sections: preview_sections } %}
+  
+  {# sub theme components extend here dont remove section block #}
+  {% block extend_aside %}{% endblock %}
+  </aside>
+  <div class="preview-content flex-grow flex-shrink min-w-0 max-h-full overflow-y-auto overflow-x-hidden">
+    {% for preview_section in preview_sections %}
+      {% include "@dyniva_ui/ui/preview/ui-preview-section.html.twig" with { section: preview_section } %}
+    {% endfor %}
+
+    {# sub theme components extend here dont remove section block #}
+    {% block extend_section %}{% endblock %}
+    <div class="spacer-md"></div>
+  </div>
+</div>
+
+{# override base theme footer #}
+{% block footer %}
+  {% include '@dyniva_ui/ui/preview/ui-preview-footer.html.twig' %}
+{% endblock %}
