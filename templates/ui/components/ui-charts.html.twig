@@ -1,0 +1,96 @@
+{% extends "@dyniva_ui/ui/preview/ui-preview.html.twig" %}
+
+{% set page_title = '图表' %}
+
+{% set page_descs = [
+  '多维度数据分析，多设备随意展示，无障碍访问支持'
+] %}
+
+{% set preview_sections = [
+  {
+    id: 'charts',
+    title: '图表',
+    items: [
+      {
+        id: 'chart-line-1-0',
+        title: '折线图 1.0',
+        rules: [],
+        demoClass: '',
+        rowClass: '',
+        libraries: ['dyniva_ui/module.echart'],
+        templates: [
+          {
+            url: 'components/charts/dy-chart-line-1-0.html.twig',
+            gridClass: '',
+            param: {  }
+          }
+        ],
+      },
+      {
+        id: 'chart-line-2-0',
+        title: '折线图 2.0',
+        rules: [],
+        demoClass: '',
+        rowClass: '',
+        libraries: ['dyniva_ui/module.echart'],
+        templates: [
+          {
+            url: 'components/charts/dy-chart-line-2-0.html.twig',
+            gridClass: '',
+            param: {  }
+          }
+        ],
+      },
+      {
+        id: 'chart-bar-1-0',
+        title: '柱状图 1.0',
+        rules: [],
+        demoClass: '',
+        rowClass: '',
+        libraries: ['dyniva_ui/module.echart'],
+        templates: [
+          {
+            url: 'components/charts/dy-chart-bar-1-0.html.twig',
+            gridClass: '',
+            param: {  }
+          }
+        ],
+      },
+      {
+        id: 'chart-bar-2-0',
+        title: '柱状图 2.0',
+        rules: [],
+        demoClass: '',
+        rowClass: '',
+        libraries: ['dyniva_ui/module.echart'],
+        templates: [
+          {
+            url: 'components/charts/dy-chart-bar-2-0.html.twig',
+            gridClass: '',
+            param: {  }
+          }
+        ],
+      },
+      {
+        id: 'chart-pie',
+        title: '饼图',
+        rules: [],
+        demoClass: '',
+        rowClass: 'row',
+        libraries: ['dyniva_ui/module.echart'],
+        templates: [
+          {
+            url: 'components/charts/dy-chart-pie-1-0.html.twig',
+            gridClass: 'col-xs-12 col-md-6',
+            param: {  }
+          },
+          {
+            url: 'components/charts/dy-chart-pie-2-0.html.twig',
+            gridClass: 'col-xs-12 col-md-6',
+            param: {  }
+          }
+        ],
+      },
+    ]
+  },
+] %}

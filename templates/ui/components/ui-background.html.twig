@@ -1,0 +1,216 @@
+{% extends "@dyniva_ui/ui/preview/ui-preview.html.twig" %}
+
+{% set page_title = '背景' %}
+
+{% set page_descs = [
+  '背景色、背景填充、视频背景、视差等'
+] %}
+
+{% set preview_sections = [
+  {
+    id: 'bg-color',
+    title: '背景色',
+    items: [
+      {
+        id: 'bg-color--base',
+        title: '应用',
+        rules: ['背景色可以应用在大块的组件背景，强调区块。'],
+        libraries: [],
+        demoClass: '',
+        rowClass: 'row',
+        templates: [
+          {
+            url: 'components/background/dy-bg-color.html.twig',
+            gridClass: 'col-xs-12 col-md-6',
+            param: {  
+              classes: 'bg-primary',
+              text_color: 'text-white',
+              label: '主色背景'
+            }
+          },
+          {
+            url: 'components/background/dy-bg-color.html.twig',
+            gridClass: 'col-xs-12 col-md-6',
+            param: {  
+              classes: 'bg-black',
+              text_color: 'text-white',
+              label: '黑色背景'
+            }
+          },
+          {
+            url: 'components/background/dy-bg-color.html.twig',
+            gridClass: 'col-xs-12 col-md-6',
+            param: {  
+              classes: 'bg-shadow',
+              label: '灰色背景'
+            }
+          },
+          {
+            url: 'components/background/dy-bg-color.html.twig',
+            gridClass: 'col-xs-12 col-md-6',
+            param: {  
+              classes: 'bg-white border-shadow',
+              label: '白色背景'
+            }
+          },
+        ],
+        descs: [
+          {
+            code: '',
+            text: ''
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'bg-effect',
+    title: '背景动效',
+    items: [
+      {
+        id: 'bg-effect--gradient',
+        title: '背景渐变',
+        rules: ['在页面滚动的过程中，对元素的属性进行过渡变化。'],
+        libraries: ['dyniva_ui/common.parallax'],
+        demoClass: '',
+        rowClass: 'row',
+        templates: [
+          {
+            url: 'components/background/dy-bg-effect--gradient.html.twig',
+            gridClass: 'col-xs-12',
+            param: { }
+          },
+        ],
+        descs: [
+          {
+            code: 'data-top',
+            text: '元素刚好滚动到页面顶部'
+          },
+          {
+            code: 'data-top-bottom',
+            text: '元素滚动并超出页面顶部'
+          },
+        ]
+      },
+      {
+        id: 'bg-effect--fixed',
+        title: '背景固定',
+        rules: ['在页面滚动的过程中，背景图片固定不跟随。'],
+        libraries: [],
+        demoClass: '',
+        rowClass: 'row',
+        templates: [
+          {
+            url: 'components/background/dy-bg-effect--fixed.html.twig',
+            gridClass: 'col-xs-12',
+            param: { }
+          },
+        ],
+        descs: [
+          {
+            code: '.bg-fixed',
+            text: '只要给有背景图片的元素设置即可'
+          },
+        ]
+      },
+    ]
+  },
+  {
+    id: 'bg-image',
+    title: '背景图片',
+    items: [
+      {
+        id: 'bg-image--place',
+        title: '背景图片定位',
+        rules: ['在页面滚动的过程中，对元素的属性进行过渡变化。'],
+        libraries: [],
+        demoClass: '',
+        rowClass: 'row',
+        templates: [
+          {
+            url: 'components/background/dy-bg-image--place.html.twig',
+            gridClass: 'col-xs-12 col-md-3 my-10',
+            param: { 
+              classes: "bg-center",
+              label: 'center'
+            }
+          },
+          {
+            url: 'components/background/dy-bg-image--place.html.twig',
+            gridClass: 'col-xs-12 col-md-3 my-10',
+            param: { 
+              classes: "bg-top",
+              label: 'top'
+            }
+          },
+          {
+            url: 'components/background/dy-bg-image--place.html.twig',
+            gridClass: 'col-xs-12 col-md-3 my-10',
+            param: { 
+              classes: "bg-right",
+              label: 'right'
+            }
+          },
+          {
+            url: 'components/background/dy-bg-image--place.html.twig',
+            gridClass: 'col-xs-12 col-md-3 my-10',
+            param: { 
+              classes: "bg-left",
+              label: 'left'
+            }
+          },
+          {
+            url: 'components/background/dy-bg-image--place.html.twig',
+            gridClass: 'col-xs-12 col-md-3 my-10',
+            param: { 
+              classes: "bg-bottom",
+              label: 'bottom'
+            }
+          },
+          {
+            url: 'components/background/dy-bg-image--place.html.twig',
+            gridClass: 'col-xs-12 col-md-3 my-10',
+            param: { 
+              classes: "bg-left-top",
+              label: 'left top'
+            }
+          },
+          {
+            url: 'components/background/dy-bg-image--place.html.twig',
+            gridClass: 'col-xs-12 col-md-3 my-10',
+            param: { 
+              classes: "bg-left-bottom",
+              label: 'left bottom'
+            }
+          },
+          {
+            url: 'components/background/dy-bg-image--place.html.twig',
+            gridClass: 'col-xs-12 col-md-3 my-10',
+            param: { 
+              classes: "bg-right-top",
+              label: 'right top'
+            }
+          },
+          {
+            url: 'components/background/dy-bg-image--place.html.twig',
+            gridClass: 'col-xs-12 col-md-3 my-10',
+            param: { 
+              classes: "bg-right-bottom",
+              label: 'right bottom'
+            }
+          },
+        ],
+        descs: [
+          {
+            code: 'data-top',
+            text: '元素刚好滚动到页面顶部'
+          },
+          {
+            code: 'data-top-bottom',
+            text: '元素滚动并超出页面顶部'
+          },
+        ]
+      },
+    ]
+  },
+] %}

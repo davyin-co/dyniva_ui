@@ -1,0 +1,102 @@
+{% extends "@dyniva_ui/ui/preview/ui-preview.html.twig" %}
+
+{% set page_title = '面板组件' %}
+
+{% set page_descs = [
+  '面板组件带有明显的轮廓、常用来放置带标题和文字的内容块，使用户更好的聚焦内容。'
+] %}
+
+{% set preview_sections = [
+  {
+    id: 'panel',
+    title: '面板',
+    items: [
+      {
+        id: 'panel-card',
+        title: '卡片风格',
+        rules: ['有明显的背景和轮廓。'],
+        libraries: [],
+        demoClass: '',
+        rowClass: 'row',
+        templates: [
+          {
+            url: 'components/panel/dy-panel-card.html.twig',
+            gridClass: 'col-xs-12 col-md-3',
+            param: {  
+              title: '张三',
+              descs: [
+                '讲师 / 硕士生导师',
+                '主要课程：《计算机与科学技术》',
+              ]
+            }
+          },
+          {
+            url: 'components/panel/dy-panel-card.html.twig',
+            gridClass: 'col-xs-12 col-md-3',
+            param: {  
+              title: '李四',
+              descs: [
+                '讲师 / 硕士生导师',
+                '主要课程：《基础物理》',
+              ]
+            }
+          },
+          {
+            url: 'components/panel/dy-panel-card.html.twig',
+            gridClass: 'col-xs-12 col-md-3',
+            param: {  
+              title: '王五',
+              descs: [
+                '讲师 / 硕士生导师',
+                '主要课程：《摄影基础》',
+              ]
+            }
+          },
+        ],
+      },
+      {
+        id: 'panel-card',
+        title: '对话风格',
+        rules: ['图片在下面。'],
+        libraries: [],
+        demoClass: '',
+        rowClass: 'row',
+        templates: [
+          {
+            url: 'components/panel/dy-panel-talk.html.twig',
+            gridClass: 'col-xs-12 col-md-3',
+            param: {  
+              title: '王五',
+              descs: [
+                '讲师 / 硕士生导师',
+                '主要课程：《摄影基础》',
+              ]
+            }
+          },
+          {
+            url: 'components/panel/dy-panel-talk.html.twig',
+            gridClass: 'col-xs-12 col-md-3',
+            param: {  
+              title: '王五',
+              descs: [
+                '讲师 / 硕士生导师',
+                '主要课程：《摄影基础》',
+              ]
+            }
+          },
+          {
+            url: 'components/panel/dy-panel-talk.html.twig',
+            gridClass: 'col-xs-12 col-md-3',
+            param: {  
+              title: '王五',
+              descs: [
+                '讲师 / 硕士生导师',
+                '主要课程：《摄影基础》',
+              ]
+            }
+          },
+        ],
+      },
+    ]
+  },
+] %}

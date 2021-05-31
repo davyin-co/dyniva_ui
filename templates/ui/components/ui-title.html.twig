@@ -1,0 +1,101 @@
+{% extends "@dyniva_ui/ui/preview/ui-preview.html.twig" %}
+
+{% set page_title = '标题组件' %}
+
+{% set page_descs = [
+  '可应用与区级标题样式'
+] %}
+
+{% set preview_sections = [
+  {
+    id: 'title',
+    title: '标题组件',
+    items: [
+      {
+        id: 'title-base',
+        title: '基本应用',
+        rules: ['上下都加了边距。'],
+        libraries: [],
+        demoClass: '',
+        rowClass: '',
+        templates: [
+          {
+            url: 'components/title/dy-title-base.html.twig',
+            gridClass: '',
+            param: {  }
+          }
+        ],
+        descs: [
+          {
+            code: '.bg-white',
+            text: '添加白色背景'
+          },
+          {
+            code: '.heading',
+            text: '标题组件'
+          },
+          {
+            code: '.heading-title',
+            text: '组件标题'
+          },
+          {
+            code: '.title-desc',
+            text: '组件描述信息'
+          },
+        ]
+      },
+      {
+        id: 'title-modifier',
+        title: '添加修饰符',
+        rules: [],
+        libraries: [],
+        demoClass: '',
+        rowClass: '',
+        templates: [
+          {
+            url: 'components/title/dy-title-modifier.html.twig',
+            gridClass: '',
+            param: {  }
+          }
+        ],
+        descs: [
+          {
+            code: '.bg-white',
+            text: '添加白色背景'
+          },
+          {
+            code: '.heading',
+            text: '标题组件'
+          },
+          {
+            code: '.heading-title',
+            text: '组件标题'
+          },
+          {
+            code: '.heading-icon',
+            text: '组件图标'
+          },
+          {
+            code: '.title-desc',
+            text: '组件描述信息'
+          },
+        ]
+      },
+      {
+        id: 'title-color',
+        title: '添加颜色',
+        rules: ['给标题使用 <code>strong</code>包围应用颜色'],
+        libraries: [],
+        demoClass: '',
+        rowClass: '',
+        templates: [
+          {
+            url: 'components/title/dy-title-color.html.twig',
+            gridClass: '',
+            param: {  }
+          }
+        ],
+      },
+    ]
+  },
+] %}

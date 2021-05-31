@@ -1,0 +1,58 @@
+{% extends "@dyniva_ui/ui/preview/ui-preview.html.twig" %}
+
+{% set page_title = '动画' %}
+
+{% set page_descs = [
+  '组件可以通过<code>data</code>属性自定义动画，包括自定义触发距离、动画效果、时长和延时，也可以自定义是否在手机端使用。'
+] %}
+
+{% set preview_sections = [
+  {
+    id: 'animation',
+    title: '常见动画',
+    items: [
+      {
+        id: 'animation--base',
+        title: '参数说明',
+        rules: [
+          '<a href="https://michalsnik.github.io/aos/" target="_blank">例子参考</a>',
+          '<a href="https://github.com/michalsnik/aos" target="_blank">文档参考</a>',
+        ],
+        demoClass: '',
+        rowClass: '',
+        hide_preview: true,
+        hide_demo: true,
+        descs: [
+          {
+            code: 'data-aos="fade-up"',
+            text: '使用 fade-up 动画效果'
+          },
+          {
+            code: 'data-aos-offset="200"',
+            text: '向上偏移200px时触发'
+          },
+          {
+            code: 'data-aos-delay="50"',
+            text: '动画延迟 50 毫秒出现'
+          },
+          {
+            code: 'data-aos-duration="1000"',
+            text: '动画持续时间 1000 毫秒'
+          },
+          {
+            code: 'data-aos-easing="ease-in-out"',
+            text: '动画曲线，<a href="https://github.com/michalsnik/aos#easing-functions" target="_blank">更多</a>'
+          },
+          {
+            code: 'data-aos-once="false"',
+            text: '动画是否只出现一次'
+          },
+          {
+            code: 'data-aos-anchor=".other-element"',
+            text: '当滚动到.other-element时触发'
+          }
+        ]
+      }
+    ]
+  },
+] %}

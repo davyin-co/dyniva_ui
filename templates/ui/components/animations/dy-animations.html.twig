@@ -1,0 +1,125 @@
+
+<div class="row">
+  {% for item in [
+    {
+      name: "fade",
+      animate: "fade",
+    },
+    {
+      name: "fade up",
+      animate: "fade-up",
+    },
+    {
+      name: "fade down",
+      animate: "fade-down",
+    },
+    {
+      name: "fade left",
+      animate: "fade-left",
+    },
+    {
+      name: "fade right",
+      animate: "fade-right",
+    },
+    {
+      name: "fade up right",
+      animate: "fade-up-right",
+    },
+    {
+      name: "fade up left",
+      animate: "fade-up-left",
+    },
+    {
+      name: "fade down right",
+      animate: "fade-down-right",
+    },
+    {
+      name: "fade down left",
+      animate: "fade-down-left",
+    },
+    {
+      name: "flip up",
+      animate: "flip-up",
+    },
+    {
+      name: "flip down",
+      animate: "flip-down",
+    },
+    {
+      name: "flip left",
+      animate: "flip-left",
+    },
+    {
+      name: "flip right",
+      animate: "flip-right",
+    },
+    {
+      name: "slide up",
+      animate: "slide-up",
+    },
+    {
+      name: "slide down",
+      animate: "slide-down",
+    },
+    {
+      name: "slide left",
+      animate: "slide-left",
+    },
+    {
+      name: "slide right",
+      animate: "slide-right",
+    },
+    {
+      name: "zoom in",
+      animate: "zoom-in",
+    },
+    {
+      name: "zoom in up",
+      animate: "zoom-in-up",
+    },
+    {
+      name: "zoom in down",
+      animate: "zoom-in-down",
+    },
+    {
+      name: "zoom in left",
+      animate: "zoom-in-left",
+    },
+    {
+      name: "zoom in right",
+      animate: "zoom-in-right",
+    },
+    {
+      name: "zoom out",
+      animate: "zoom-out",
+    },
+    {
+      name: "zoom out up",
+      animate: "zoom-out-up",
+    },
+    {
+      name: "zoom out down",
+      animate: "zoom-out-down",
+    },
+    {
+      name: "zoom out left",
+      animate: "zoom-out-left",
+    },
+    {
+      name: "zoom out right",
+      animate: "zoom-out-right",
+    }
+  ] %}
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 40px; z-index: -{{ loop.index }}">
+      <h4 class="bold outside-min-b">{{ item.name }}</h4>
+      <div class="w-full relative" 
+        data-aos="{{ item.animate }}" 
+        data-aos-duration="1000"
+        data-aos-delay="{{ (loop.index - 1) % 4 * 1000 }}"
+        style="padding-top: 100%"
+      >
+        <img class="w-full absolute left-0 top-0" src="holder.js/300x300?theme=sky" alt="{{ item.animateName }}">
+      </div>
+    </div>
+  {% endfor %}
+</div>

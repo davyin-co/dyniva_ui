@@ -153,6 +153,270 @@
           },
         ]
       },
+      {
+        id: 'image--thumb',
+        title: '缩略图',
+        rules: [],
+        demoClass: '',
+        rowClass: 'row',
+        templates: [
+          {
+            url: 'components/media/dy-image.html.twig',
+            gridClass: 'col-xs-12 col-md-4 col-md-offset-2',
+            param: {  
+              classes: 'img-thumbnail img-l',
+              alt: 'image thumbnail'
+            }
+          },
+        ],
+        descs: [
+          {
+            code: '.img-thumbnail',
+            text: '给图片添加一定的内边距并且有阴影效果'
+          },
+        ]
+      },
+      {
+        id: 'image--ratio',
+        title: '图片按比例显示',
+        rules: [
+          '如果是比较小的图，一般看移动端的最大尺寸来界定最大宽度，再推算出高度，确保使用推荐尺寸，以下示例同一张尺寸不同显示不同比例。另外一个作用是，不同的图片尺寸，可以隐性的设置图片的父元素相同的高度。',
+          '
+            <ul class="mt-0 pl-0 list-none flex">
+              <li class="mb-0 w-full px-10 md|w-4/12"><code>4:3</code></li>
+              <li class="mb-0 w-full px-10 md|w-4/12"><code>2:1</code></li>
+            </ul>
+          '
+        ],
+        demoClass: '',
+        rowClass: 'row',
+        templates: [
+          {
+            url: 'components/media/dy-image--ratio.html.twig',
+            gridClass: 'col-xs-12 col-md-4',
+            param: {  
+              classes: '',
+            }
+          },
+          {
+            url: 'components/media/dy-image--ratio.html.twig',
+            gridClass: 'col-xs-12 col-md-4',
+            param: {  
+              classes: 'ratio-2-1',
+            }
+          },
+        ],
+        descs: [
+          {
+            code: '.wrapper-image',
+            text: '图片外包围Class，图片默认比例4：3'
+          },
+          {
+            code: '.ratio-2-1',
+            text: '图片比例2：1'
+          },
+        ]
+      },
+    ]
+  },
+  {
+    id: 'image-lazyload',
+    title: '图片懒加载',
+    items: [
+      {
+        id: 'image-lazyload--base',
+        title: '基本使用',
+        rules: [
+          '图片懒加载无需使用js初始化。',
+        ],
+        demoClass: '',
+        rowClass: 'row',
+        templates: [
+          {
+            url: 'components/media/dy-image-lazyload--base.html.twig',
+            gridClass: 'col-xs-12 col-md-4',
+            param: {  
+              classes: '',
+            }
+          },
+        ],
+        descs: [
+          {
+            code: 'data-src',
+            text: '图片路径'
+          },
+          {
+            code: '.lazyload',
+            text: '懒加载必须添加该类'
+          },
+        ]
+      },
+      {
+        id: 'image-lazyload--bg',
+        title: '背景图片',
+        rules: [
+          '也可以对背景图片进行懒加载',
+        ],
+        demoClass: '',
+        rowClass: 'row',
+        templates: [
+          {
+            url: 'components/media/dy-image-lazyload--bg.html.twig',
+            gridClass: 'col-xs-12 col-md-4',
+            param: {  
+              classes: '',
+            }
+          },
+        ],
+        descs: [
+          {
+            code: 'data-bgset=""',
+            text: '背景图片路径'
+          },
+          {
+            code: '.lazyload',
+            text: '懒加载必须添加该类'
+          },
+        ]
+      },
+    ]
+  },
+  {
+    id: 'image-generation',
+    title: '图片生成',
+    items: [
+      {
+        id: 'image-generation--base',
+        title: '基本使用',
+        rules: [
+          '在开发阶段可使用图片生成占位符，快速调式。使用开源的 <a href="https://github.com/imsky/holder" target="_blank">holderjs</a> 插件来生成，多个参数选项使用 <code>&amp;</code> 链接。',
+        ],
+        demoClass: '',
+        rowClass: 'row',
+        templates: [
+          {
+            url: 'components/media/dy-image-generation--base.html.twig',
+            gridClass: 'col-xs-12 col-md-8 col-md-offset-2 flex',
+            param: {  
+              classes: '',
+            }
+          },
+        ],
+        descs: [
+          {
+            code: 'holder.js/300x200',
+            text: '生成300x200宽度的图片'
+          },
+          {
+            code: 'holder.js/300x200?random=yes',
+            text: '	随机主题'
+          },
+          {
+            code: 'holder.js/300x200?bg=eee',
+            text: '自定义背景色',
+          },
+          {
+            code: 'holder.js/300x200?text=Hello world!',
+            text: '自定义文字',
+          },
+          {
+            code: 'holder.js/300x200?bg=fff&text=Hello world!',
+            text: '自定义文字和背景色',
+          },
+          {
+            code: 'holder.js/300x200?size=50',
+            text: '自定义文本字体大小',
+          },
+          {
+            code: 'holder.js/300x200?align=left',
+            text: '自定义文本位置 <code>left/right</code>',
+          },
+          {
+            code: 'holder.js/300x200?outline=yes',
+            text: '给图片添加线框',
+          },
+        ]
+      },
+    ]
+  },
+  {
+    id: 'image-obj',
+    title: '媒体对象',
+    items: [
+      {
+        id: 'image-obj--base',
+        title: '基本使用',
+        rules: [
+          '在开发阶段可使用图片生成占位符，快速调式。使用开源的 <a href="https://github.com/imsky/holder" target="_blank">holderjs</a> 插件来生成，多个参数选项使用 <code>&amp;</code> 链接。',
+        ],
+        demoClass: '',
+        rowClass: 'row',
+        templates: [
+          {
+            url: 'components/media/dy-image-obj--base.html.twig',
+            gridClass: 'col-xs-12 col-md-4',
+            param: {  
+              classes: '',
+            }
+          },
+        ],
+        descs: [
+          {
+            code: '.media',
+            text: '媒体对象组件的包含类'
+          },
+          {
+            code: '.media-body',
+            text: '媒体对象内容'
+          },
+        ]
+      },
+      {
+        id: 'image-obj--style',
+        title: '默认样式',
+        rules: [
+          '默认样式的媒体对象组件允许在一个内容块的左边或右边展示一个多媒体内容（图像、视频、音频）。',
+        ],
+        demoClass: '',
+        rowClass: 'row',
+        templates: [
+          {
+            url: 'components/media/dy-image-obj--style.html.twig',
+            gridClass: 'col-xs-12 col-md-3',
+            param: {  
+              classes: 'flex-align-top',
+            }
+          },
+          {
+            url: 'components/media/dy-image-obj--style.html.twig',
+            gridClass: 'col-xs-12 col-md-3',
+            param: {  
+              classes: 'flex-align-center',
+            }
+          },
+          {
+            url: 'components/media/dy-image-obj--style.html.twig',
+            gridClass: 'col-xs-12 col-md-3',
+            param: {  
+              classes: 'flex-align-bottom',
+            }
+          },
+        ],
+        descs: [
+          {
+            code: '.flex-align-top',
+            text: '图片顶部对齐'
+          },
+          {
+            code: '.flex-align-center',
+            text: '图片居中对齐'
+          },
+          {
+            code: '.flex-align-bottom',
+            text: '图片底部对齐'
+          },
+        ]
+      },
     ]
   },
 ] %}

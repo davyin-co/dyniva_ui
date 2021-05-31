@@ -1,0 +1,61 @@
+{{- attach_library('dyniva_ui/module.echart') -}}
+<div id="dy-chart-line-v1" 
+  class="dy-chart" 
+  style="width:100%; height:400px"
+  data-option='{
+    title: {
+        text: "本周发文统计"
+      },
+      tooltip: {
+        trigger: "axis"
+      },
+      legend: {
+        data: ["发文总量", "文章发文量", "着陆页发文量", "活动发文量", "JSON"]
+      },
+      grid: {
+        left: "3%",
+        right: "4%",
+        bottom: "3%",
+        containLabel: true
+      },
+      toolbox: {
+        feature: {
+          saveAsImage: {}
+        }
+      },
+      xAxis: {
+        type: "category",
+        boundaryGap: false,
+        data: ["周一", "周二", "周三", "周四", "周五", "周六", "周日"]
+      },
+      yAxis: {
+        type: "value"
+      },
+      series: [{
+          name: "发文总量",
+          type: "line",
+          data: [1511, 1678, 1594, 1656, 2160, 2320, 2360]
+        },
+        {
+          name: "文章发文量",
+          type: "line",
+          data: [820, 932, 901, 934, 1290, 1330, 1320]
+        },
+        {
+          name: "着陆页发文量",
+          type: "line",
+          data: [150, 232, 201, 154, 190, 330, 410]
+        },
+        {
+          name: "活动发文量",
+          type: "line",
+          data: [320, 332, 301, 334, 390, 330, 320]
+        },
+        {
+          name: "JSON",
+          type: "line",
+          data: [220, 182, 191, 234, 290, 330, 310]
+        }
+      ]
+  }'
+></div>

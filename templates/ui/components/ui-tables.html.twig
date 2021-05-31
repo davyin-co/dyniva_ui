@@ -1,0 +1,86 @@
+{% extends "@dyniva_ui/ui/preview/ui-preview.html.twig" %}
+
+{% set page_title = '表格' %}
+
+{% set page_descs = [
+  '表格table默认基本的样式 — 少量的内补（padding）和水平方向的分隔线。'
+] %}
+
+{% set preview_sections = [
+  {
+    id: 'table',
+    title: '表格 Table',
+    items: [
+      {
+        id: 'table-base',
+        title: '基本样式',
+        rules: ['默认的表格样式有分隔线。'],
+        libraries: [],
+        demoClass: '',
+        rowClass: '',
+        templates: [
+          {
+            url: 'components/table/dy-table.html.twig',
+            gridClass: '',
+            param: {  }
+          }
+        ],
+        descs: [
+          {
+            code: '.table',
+            text: '默认有透明背景色'
+          },
+          {
+            code: '.table-full',
+            text: '使表格占满父元素'
+          },
+        ]
+      },
+      {
+        id: 'table-border',
+        title: '带边框的表格',
+        libraries: [],
+        demoClass: '',
+        rowClass: '',
+        templates: [
+          {
+            url: 'components/table/dy-table.html.twig',
+            gridClass: '',
+            param: {  
+              classes: 'table-bordered'
+            }
+          }
+        ],
+        descs: [
+          {
+            code: '.table-bordered',
+            text: '给表格添加边框'
+          },
+        ]
+      },
+      {
+        id: 'table-border',
+        title: '鼠标经过效果',
+        rules: [''],
+        libraries: [],
+        demoClass: '',
+        rowClass: '',
+        templates: [
+          {
+            url: 'components/table/dy-table.html.twig',
+            gridClass: '',
+            param: {  
+              classes: 'table-bordered table-hover'
+            }
+          }
+        ],
+        descs: [
+          {
+            code: '.table-hover',
+            text: '鼠标经过背景变色'
+          },
+        ]
+      },
+    ]
+  },
+] %}

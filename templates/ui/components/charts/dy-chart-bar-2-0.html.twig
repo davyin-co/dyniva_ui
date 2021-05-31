@@ -1,0 +1,73 @@
+{{- attach_library('dyniva_ui/module.echart') -}}
+<div id="dy-chart-bar-v2" 
+  class="dy-chart" 
+  style="width:100%; height:400px"
+  data-option='{
+    "color": ["#80bdfe", "#7ec857", "#f2b33f"],
+    "title": {
+      "text": "院部发布信息数排行 Top10",
+      "left": "left"
+    },
+    "legend": {
+      "data": ["发文总量", "文章发文量", "活动发文量"],
+      "left": "center",
+      "bottom": "bottom"
+    },
+    "xAxis": {
+      "name": "数字",
+      "type": "value"
+    },
+    "yAxis": {
+      "type": "category",
+      "axisTick": {
+        "show": false
+      },
+      "data": ["机电学院", "后勤集团", "建筑学院", "外国语学院", "人事处", "航天学院", "电信学院", "产业工委", "化工化学学院", "网络与信息中心"]
+    },
+    "series": [{
+      "name": "发文总量",
+      "type": "bar",
+      "barGap": 0,
+      "label": {
+        "normal": {
+          "show": true,
+          "position": "right"
+        }
+      },
+      "data": ["1", "1", "2", "2", "8", "16", "17", "21", "72", "110"]
+    }, {
+      "name": "文章发文量",
+      "type": "bar",
+      "label": {
+        "normal": {
+          "show": true,
+          "position": "right"
+        }
+      },
+      "data": ["1", "1", "2", "2", "2", "12", "8", "9", "31", "58"]
+    }, {
+      "name": "活动发文量",
+      "type": "bar",
+      "label": {
+        "normal": {
+          "show": true,
+          "position": "right"
+        }
+      },
+      "data": ["0", "0", "0", "0", "2", "1", "4", "3", "12", "12"]
+    }],
+    "grid": {
+      "containLabel": true,
+      "left": "10",
+      "right": "10",
+      "bottom": "40"
+    },
+    "toolbox": {
+      "show": true,
+      "right": "30",
+      "feature": {
+        "saveAsImage": {}
+      }
+    }
+  }'
+></div>

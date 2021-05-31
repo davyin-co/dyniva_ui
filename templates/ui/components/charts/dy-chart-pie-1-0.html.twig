@@ -1,0 +1,50 @@
+{{- attach_library('dyniva_ui/module.echart') -}}
+<div id="dy-chart-pie-v1" 
+  class="dy-chart" 
+  style="width:100%; height:400px"
+  data-option='{
+    title: {
+        text: "发文统计",
+        x: "left"
+      },
+      tooltip: {
+        trigger: "item",
+        formatter: "{a} <br/>{b} : {c} ({d}%)"
+      },
+      legend: {
+        orient: "vertical",
+        left: "right",
+        data: ["文章", "着陆页", "活动", "JSON"]
+      },
+      series: [{
+        name: "发文统计",
+        type: "pie",
+        radius: "55%",
+        center: ["50%", "60%"],
+        data: [{
+            value: 335,
+            name: "文章"
+          },
+          {
+            value: 122,
+            name: "着陆页"
+          },
+          {
+            value: 96,
+            name: "活动"
+          },
+          {
+            value: 56,
+            name: "JSON"
+          }
+        ],
+        itemStyle: {
+          emphasis: {
+            shadowBlur: 10,
+            shadowOffsetX: 0,
+            shadowColor: "rgba(0, 0, 0, 0.5)"
+          }
+        }
+      }]
+  }'
+></div>
