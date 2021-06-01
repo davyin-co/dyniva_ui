@@ -1,0 +1,48 @@
+{% extends "@dyniva_ui/ui/preview/ui-preview.html.twig" %}
+
+{% set page_title = '相册' %}
+
+{% set page_descs = [
+  '图片展示列表。'
+] %}
+
+{% set preview_sections = [
+  {
+    id: 'masonry',
+    title: '瀑布流相册',
+    items: [
+      {
+        id: 'dy-photo-1-0',
+        title: '相册 1.0',
+        rules: ['瀑布流相册'],
+        demoClass: '',
+        rowClass: 'row',
+        libraries: [ 
+          'dyniva_ui/module.masonry',
+          'dyniva_ui/common.bbModal',
+        ],
+        templates: [
+          {
+            url: 'modules/photo/dy-photo-1-0.html.twig',
+            gridClass: 'col-xs-12',
+            param: { module_params: true }
+          }
+        ],
+        descs: [
+          {
+            code: '.dy-photo-1-0',
+            text: '相册1.0'
+          },
+          {
+            code: '.masonry-container',
+            text: '瀑布流容器'
+          },
+          {
+            code: '[data-masonry]',
+            text: '瀑布流配置项'
+          },
+        ]
+      },
+    ]
+  },
+] %}

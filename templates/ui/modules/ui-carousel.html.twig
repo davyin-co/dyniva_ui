@@ -1,0 +1,171 @@
+{% extends "@dyniva_ui/ui/preview/ui-preview.html.twig" %}
+
+{% set page_title = '图片轮播' %}
+
+{% set page_descs = [
+  '<a class="hover|underline" href="https://github.com/kenwheeler/slick/" target="_blank">Slick</a>支持移动端手势滑动，响应式，兼容大于IE8浏览器，高度个性化配置。'
+] %}
+
+{% set preview_sections = [
+  {
+    id: 'carousel',
+    title: '图片轮播',
+    items: [
+      {
+        id: 'dy-carousel-1-0',
+        title: '图片轮播 1.0',
+        rules: [
+          '图片按比例缩放我们不是要背景图片的方式，而是在每个 slick 的 item 的组件使用 padding 来实现，不对 slick 进行限制，以免影响扩展。',
+          '轮播中可以显示标题和副标题，可配置不同的dots样式。'
+        ],
+        rowClass: 'row',
+        libraries: [],
+        templates: [
+          {
+            url: 'modules/carousel/dy-carousel-1-0.html.twig',
+            gridClass: 'col-xs-12 col-md-6',
+            param: {
+              class: 'arrow-inside dots-inside left-mode',
+              options: '{"dots": true}'
+            }
+          },
+          {
+            url: 'modules/carousel/dy-carousel-1-0.html.twig',
+            gridClass: 'col-xs-12 col-md-6',
+            param: {
+              class: 'arrow-inside dots-inside',
+              options: '{"dots": true, "dotsClass": "slick-dots dots-animate-width dots-highlight"}'
+            }
+          }
+        ],
+        descs: [
+          {
+            code: '.dy-carousel',
+            text: '图片轮播初始化的类'
+          },
+          {
+            code: '.arrow-inside',
+            text: '使左右控制键在内侧（默认在外侧）'
+          },
+          {
+            code: '.dots-inside',
+            text: '小圆点显示在内侧（默认在外侧）'
+          },
+          {
+            code: 'data-slick=\'{"dots": true}\'',
+            text: '显示小圆点'
+          },
+          {
+            code: '.left-mode',
+            text: '在移动端下一个轮播对象将显示20%的宽度，你可以根据具体组件的实际情况进行覆写扩展'
+          },
+          {
+            code: '.dy-carousel-wrapper',
+            text: '轮播容器，主要用于定义样式'
+          },
+          {
+            code: '.dy-carousel-container',
+            text: '轮播的内容区域'
+          },
+          {
+            code: '"dotsClass": "slick-dots dots-animate-width dots-highlight "',
+            text: '添加 dots 圆点宽度动画效果，并且黄色高亮'
+          },
+        ]
+      },
+      {
+        id: 'dy-carousel-2-0',
+        title: '图片轮播 2.0',
+        rules: [],
+        rowClass: 'row',
+        libraries: [],
+        templates: [
+          {
+            url: 'modules/carousel/dy-carousel-2-0.html.twig',
+            gridClass: 'col-xs-12',
+            param: {
+              class: 'left-mode has-link',
+              options: '{"dots": true,
+                "slidesToShow": 3,
+                "slidesToScroll": 3,
+                "responsive": [
+                  {
+                    "breakpoint": 1140,
+                    "settings": {
+                      "slidesToShow": 2,
+                      "slidesToScroll": 2
+                    }
+                  },
+                  {
+                    "breakpoint": 768,
+                    "settings": {
+                      "slidesToShow": 1,
+                      "slidesToScroll":1
+                    }
+                  }
+                ]
+              }'
+            }
+          }
+        ],
+        descs: [
+          {
+            code: '.dy-carousel-wrapper',
+            text: '轮播容器，主要用于定义样式'
+          },
+          {
+            code: '.dy-carousel-container',
+            text: '轮播的内容区域'
+          },
+          {
+            code: '.dy-carousel-2-0',
+            text: '轮播 2.0'
+          },
+        ]
+      },
+      {
+        id: 'dy-carousel-3-0',
+        title: '图片轮播 3.0',
+        rules: ['仅在移动端使用图片轮播显示（演示：切到移动端后刷新）'],
+        rowClass: 'row',
+        libraries: [],
+        templates: [
+          {
+            url: 'modules/carousel/dy-carousel-1-0.html.twig',
+            gridClass: 'col-xs-12',
+            param: {
+              class: 'only-mobile left-mode outside-b',
+              options: '{"slidesToShow": 1,"arrows": false, "dots": true, "mobileFirst": true, "responsive": [{"breakpoint": 768, "settings": "unslick"}]}',
+              items: [{
+                media: 'holder.js/150x112',
+                class: 'carousel-item d_ib inside-min-lr'
+              },{
+                media: 'holder.js/150x112',
+                class: 'carousel-item d_ib inside-min-lr'
+              },{
+                media: 'holder.js/150x112',
+                class: 'carousel-item d_ib inside-min-lr'
+              },{
+                media: 'holder.js/150x112',
+                class: 'carousel-item d_ib inside-min-lr'
+              },{
+                media: 'holder.js/150x112',
+                class: 'carousel-item d_ib inside-min-lr'
+              }]
+            }
+          }
+        ],
+        descs: [
+          {
+            code: '"mobileFirst": true',
+            text: '参数配置'
+          },
+          {
+            code: '.only-mobile',
+            text: '该图片轮播组件仅在移动端显示'
+          }
+        ]
+      },
+    ]
+  }
+] %}

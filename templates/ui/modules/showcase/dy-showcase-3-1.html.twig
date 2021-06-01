@@ -1,0 +1,61 @@
+
+<div class="dy-showcase-3-1 dy-showcase-wrapper">
+  <div class="inner">
+    <div class="showcase-body row">
+      {% for item in items | default([
+        {
+          media: base_path~'themes/custom/dyniva_ui/templates/ui/images/media/showcase3-0.png',
+          name: 'XXX',
+          post: '职位'
+        },
+        {
+          media: base_path~'themes/custom/dyniva_ui/templates/ui/images/media/showcase3-0.png',
+          name: 'XXX',
+          post: '职位'
+        },
+        {
+          media: base_path~'themes/custom/dyniva_ui/templates/ui/images/media/showcase3-0.png',
+          name: 'XXX',
+          post: '职位'
+        },
+        {
+          media: base_path~'themes/custom/dyniva_ui/templates/ui/images/media/showcase3-0.png',
+          name: 'XXX',
+          post: '职位'
+        },
+        {
+          media: base_path~'themes/custom/dyniva_ui/templates/ui/images/media/showcase3-0.png',
+          name: 'XXX',
+          post: '职位'
+        },
+        {
+          media: base_path~'themes/custom/dyniva_ui/templates/ui/images/media/showcase3-0.png',
+          name: 'XXX',
+          post: '职位'
+        },
+        {
+          media: base_path~'themes/custom/dyniva_ui/templates/ui/images/media/showcase3-0.png',
+          name: 'XXX',
+          post: '职位'
+        },
+        {
+          media: base_path~'themes/custom/dyniva_ui/templates/ui/images/media/showcase3-0.png',
+          name: 'XXX',
+          post: '职位'
+        }
+      ]) %}
+      <div class="col-xs-12 col-sm-4 col-md-3">
+        <div class="showcase-item box-shadow">
+          <div class="showcase-media">
+            <img class="img-l" src="{{ item.media }}"/>
+          </div>
+          <div class="showcase-body t-c  inside">
+            <h2 class="outside-b"><a href="javascript:void(0);">{{ item.name }}</a></h2>
+            <h3>{{ item.post }}</h3>
+          </div>
+        </div>
+      </div>
+      {%- endfor ~%}
+    </div>
+  </div>
+</div>

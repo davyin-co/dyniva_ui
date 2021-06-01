@@ -1,0 +1,139 @@
+{% extends "@dyniva_ui/ui/preview/ui-preview.html.twig" %}
+
+{% set page_title = '列表' %}
+
+{% set page_descs = [
+  '常见的文字列表、图文列表。'
+] %}
+
+{% set preview_sections = [
+  {
+    id: 'list',
+    title: '列表',
+    items: [
+      {
+        id: 'dy-list-1-0',
+        title: '列表1.0',
+        rules: ['有标题、描述、图片和时间的列表'],
+        rowClass: 'row',
+        libraries: [],
+        templates: [
+          {
+            url: 'modules/list/dy-list-1-0.html.twig',
+            gridClass: 'col-xs-12',
+            param: { }
+          }
+        ],
+        descs: [
+          {
+            code: '.dy-list-wrapper',
+            text: '列表容器'
+          },
+          {
+            code: '.dy-list-1-0',
+            text: '列表1.0'
+          },
+          {
+            code: '.list-body',
+            text: '列表文字内容'
+          },
+          {
+            code: '.has-media',
+            text: '有图片添加此类，不添加表示文字铺满'
+          },
+          {
+            code: '.list-media',
+            text: '列表图片或'
+          },
+          {
+            code: '<hr/>',
+            text: '两个item的分割线'
+          },
+        ]
+      },
+      {
+        id: 'dy-list-1-1',
+        title: '列表 1.1',
+        rules: ['只有标题的列表'],
+        demoClass: '',
+        rowClass: 'row',
+        libraries: [],
+        templates: [
+          {
+            url: 'modules/list/dy-list-1-1.html.twig',
+            gridClass: 'col-xs-12',
+            param: { }
+          }
+        ],
+        descs: [
+          {
+            code: '.dy-list-wrapper',
+            text: '列表容器'
+          },
+          {
+            code: '.dy-list-1-1',
+            text: '列表 1.1'
+          },
+        ]
+      },
+      {
+        id: 'dy-list-2-0',
+        title: '列表 2.0',
+        rules: ['一行排列，hover有图片显示'],
+        demoClass: '',
+        rowClass: 'row',
+        libraries: [],
+        templates: [
+          {
+            url: 'modules/list/dy-list-2-0.html.twig',
+            gridClass: 'col-xs-12',
+            param: { }
+          }
+        ],
+        descs: [
+          {
+            code: '.dy-list-wrapper',
+            text: '列表容器'
+          },
+          {
+            code: '.bg-*',
+            text: '标记的北京颜色：.bg-brown棕色，.bg-blue蓝色，.bg-red红色'
+          },
+          {
+            code: '.list-item',
+            text: '列表item项'
+          },
+          {
+            code: '.dy-list-2-0',
+            text: '列表2.0'
+          },
+        ]
+      },
+      {
+        id: 'dy-list-3-0',
+        title: '列表 3.0',
+        rules: ['一行两个排列，多行，带有标题和时间'],
+        demoClass: '',
+        rowClass: 'row',
+        libraries: [],
+        templates: [
+          {
+            url: 'modules/list/dy-list-3-0.html.twig',
+            gridClass: 'col-xs-12',
+            param: { }
+          }
+        ],
+        descs: [
+          {
+            code: '.dy-list-wrapper',
+            text: '列表容器'
+          },
+          {
+            code: '.dy-list-3-0',
+            text: '列表 3.0'
+          },
+        ]
+      },
+    ]
+  },
+] %}

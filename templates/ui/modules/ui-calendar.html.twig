@@ -1,0 +1,464 @@
+{% extends "@dyniva_ui/ui/preview/ui-preview.html.twig" %}
+
+{% set page_title = '日历' %}
+
+{% set page_descs = [
+  '时间选择器和活动排版等'
+] %}
+
+{% set preview_sections = [
+  {
+    id: 'time-picker',
+    title: '时间选择器',
+    items: [
+      {
+        id: 'inline',
+        title: '直接嵌套显示',
+        demoClass: '',
+        rowClass: 'row',
+        libraries: ['dyniva_ui/module.laydate'],
+        templates: [
+          {
+            url: 'modules/calendar/dy-calendar-base.html.twig',
+            gridClass: 'col-md-4 outside-tb',
+            param: {
+              options: '{"position": "static"}',
+              notInput: true,
+              attr: 'data-name="true"'
+            }
+          },
+          {
+            url: 'modules/calendar/dy-calendar-base.html.twig',
+            gridClass: 'col-md-4 outside-tb',
+            param: {
+              options: '{"position": "static", "lang": "en"}',
+              notInput: true
+            }
+          },
+          {
+            url: 'modules/calendar/dy-calendar-base.html.twig',
+            gridClass: 'col-md-4 outside-tb',
+            param: {
+              options: '{"position": "static", "type": "month"}',
+              notInput: true
+            }
+          },
+          {
+            url: 'modules/calendar/dy-calendar-base.html.twig',
+            gridClass: 'col-md-4 outside-tb',
+            param: {
+              options: '{"position": "static", "type": "time"}',
+              notInput: true
+            }
+          },
+        ],
+        descs: [
+          {
+            code: '{"position": "static"}',
+            text: '静态显示在页面上'
+          }
+        ]
+      },
+      {
+        id: 'yy-mm-dd',
+        title: '年月日',
+        demoClass: '',
+        rowClass: 'row',
+        libraries: ['dyniva_ui/module.laydate'],
+        templates: [
+          {
+            url: 'modules/calendar/dy-calendar-base.html.twig',
+            gridClass: 'col-md-4 outside-tb',
+            param: {
+              options: '{"type": "year"}',
+              placeholder: 'yyyy',
+              label: '年选择器'
+            }
+          },
+          {
+            url: 'modules/calendar/dy-calendar-base.html.twig',
+            gridClass: 'col-md-4 outside-tb',
+            param: {
+              options: '{"type": "month"}',
+              placeholder: 'yyyy-MM',
+              label: '年月选择器'
+            }
+          },
+          {
+            url: 'modules/calendar/dy-calendar-base.html.twig',
+            gridClass: 'col-md-4 outside-tb',
+            param: {
+              options: '{"type": "time"}',
+              placeholder: 'HH:mm:ss',
+              label: '时间选择器'
+            }
+          },
+          {
+            url: 'modules/calendar/dy-calendar-base.html.twig',
+            gridClass: 'col-md-4 outside-tb',
+            param: {
+              options: '{}',
+              placeholder: 'yyy-MM-dd',
+              label: '年月日选择器'
+            }
+          },
+          {
+            url: 'modules/calendar/dy-calendar-base.html.twig',
+            gridClass: 'col-md-4 outside-tb',
+            param: {
+              options: '{"lang": "en"}',
+              placeholder: 'yyy-MM-dd',
+              label: '英文版'
+            }
+          },
+        ],
+        descs: [
+          {
+            code: 'data-toggle="date"',
+            text: '标记时间对象'
+          },
+          {
+            code: '{"type": "year"}',
+            text: '年选择器'
+          },
+          {
+            code: '{"type": "month"}',
+            text: '月选择器'
+          },
+          {
+            code: '{"type": "time"}',
+            text: '时间选择器'
+          },
+          {
+            code: '{"lang": "en"}',
+            text: '英文版'
+          },
+        ]
+      },
+      {
+        id: 'range',
+        title: '范围选择器',
+        demoClass: '',
+        rowClass: 'row',
+        libraries: ['dyniva_ui/module.laydate'],
+        templates: [
+          {
+            url: 'modules/calendar/dy-calendar-base.html.twig',
+            gridClass: 'col-md-4 outside-tb',
+            param: {
+              options: '{"range": true}',
+              placeholder: ' - ',
+              label: '日期范围'
+            }
+          },
+          {
+            url: 'modules/calendar/dy-calendar-base.html.twig',
+            gridClass: 'col-md-4 outside-tb',
+            param: {
+              options: '{"type": "year", "range": true}',
+              placeholder: ' - ',
+              label: '年范围'
+            }
+          },
+          {
+            url: 'modules/calendar/dy-calendar-base.html.twig',
+            gridClass: 'col-md-4 outside-tb',
+            param: {
+              options: '{"type": "month", "range": true}',
+              placeholder: ' - ',
+              label: '年月范围'
+            }
+          },
+          {
+            url: 'modules/calendar/dy-calendar-base.html.twig',
+            gridClass: 'col-md-4 outside-tb',
+            param: {
+              options: '{"type": "time", "range": true}',
+              placeholder: ' - ',
+              label: '时间范围'
+            }
+          },
+          {
+            url: 'modules/calendar/dy-calendar-base.html.twig',
+            gridClass: 'col-md-4 outside-tb',
+            param: {
+              options: '{"type": "datetime", "range": true}',
+              placeholder: ' - ',
+              label: '日期时间范围'
+            }
+          },
+        ],
+        descs: [
+          {
+            code: 'data-toggle="date"',
+            text: '标记时间对象'
+          },
+          {
+            code: '{"range": true}',
+            text: '开启日期范围'
+          },
+          {
+            code: '{"type": "year", "range": true}',
+            text: '开启年范围'
+          },
+          {
+            code: '{"type": "month", "range": true}',
+            text: '开启月范围'
+          },
+          {
+            code: '{"type": "time", "range": true}',
+            text: '开始时间范围'
+          },
+          {
+            code: '{"type": "datetime", "range": true}',
+            text: '开启日期时间范围'
+          },
+        ]
+      },
+      {
+        id: 'custom-format',
+        title: '自定义格式',
+        demoClass: '',
+        rowClass: 'row',
+        libraries: ['dyniva_ui/module.laydate'],
+        templates: [
+          {
+            url: 'modules/calendar/dy-calendar-base.html.twig',
+            gridClass: 'col-md-4 outside-tb',
+            param: {
+              options: '{"format": "yyyy年MM月dd日"}',
+              placeholder: 'yyyy年MM月dd日',
+              label: '请选择日期'
+            }
+          },
+          {
+            url: 'modules/calendar/dy-calendar-base.html.twig',
+            gridClass: 'col-md-4 outside-tb',
+            param: {
+              options: '{"format": "dd/MM/yyyy"}',
+              placeholder: 'dd/MM/yyyy',
+              label: '请选择日期'
+            }
+          },
+          {
+            url: 'modules/calendar/dy-calendar-base.html.twig',
+            gridClass: 'col-md-4 outside-tb',
+            param: {
+              options: '{"format": "yyyyMM"}',
+              placeholder: 'yyyyMM',
+              label: '请选择月份'
+            }
+          },
+          {
+            url: 'modules/calendar/dy-calendar-base.html.twig',
+            gridClass: 'col-md-4 outside-tb',
+            param: {
+              options: '{"type": "time", "format": "H点M分"}',
+              placeholder: 'H点M分',
+              label: '请选择时间'
+            }
+          },
+          {
+            url: 'modules/calendar/dy-calendar-base.html.twig',
+            gridClass: 'col-md-4 outside-tb',
+            param: {
+              options: '{"type": "month", "range": "→", "format": "yyyy-MM"}',
+              placeholder: ' ~ ',
+              label: '请选择范围'
+            }
+          },
+          {
+            url: 'modules/calendar/dy-calendar-base.html.twig',
+            gridClass: 'col-md-4 outside-tb',
+            param: {
+              options: '{"type": "datetime", "range": "到", "format": "yyyy年M月d日H时m分s秒"}',
+              placeholder: '开始 到 结束',
+              label: '请选择范围'
+            }
+          },
+        ],
+        descs: [
+          {
+            code: 'data-toggle="date"',
+            text: '标记时间对象'
+          },
+          {
+            code: '{"format": "yyyy年MM月dd日"}',
+            text: '示例：2019年11月20日'
+          },
+          {
+            code: '{"format": "dd/MM/yyyy"}',
+            text: '示例：20/11/2019'
+          },
+          {
+            code: '{"format": "yyyy/MM"}',
+            text: '示例：2019/11'
+          },
+          {
+            code: '{"type": "time", "format": "H点M分"}',
+            text: '示例：16点11分'
+          },
+          {
+            code: '{"type": "month", "range": "→", "format": "yyyy-MM"}',
+            text: '示例：2019-03 → 2019-06'
+          },
+          {
+            code: '{"type": "datetime", "range": "到", "format": "yyyy年M月d日H时m分s秒"}',
+            text: '示例：2019年11月8日0时0分0秒 到 2019年12月17日0时0分0秒'
+          },
+        ]
+      },
+      {
+        id: 'mark',
+        title: '时间标记',
+        demoClass: '',
+        rowClass: 'row',
+        libraries: ['dyniva_ui/module.laydate'],
+        templates: [
+          {
+            url: 'modules/calendar/dy-calendar-base.html.twig',
+            gridClass: 'col-md-4 outside-tb',
+            param: {
+              options: '{"calendar": true}',
+              placeholder: 'yyyy-MM-dd',
+              label: '公历节日'
+            }
+          },
+          {
+            url: 'modules/calendar/dy-calendar-base.html.twig',
+            gridClass: 'col-md-4 outside-tb',
+            param: {
+              options: '{}',
+              placeholder: 'dd/MM/yyyy',
+              mark: '{"0-0-8":"工资", "0-0-15":"月中"}',
+              label: '节点标记'
+            }
+          },
+        ],
+        descs: []
+      },
+      {
+        id: 'min-max',
+        title: '控制可选日期与时间',
+        demoClass: '',
+        rowClass: 'row',
+        libraries: ['dyniva_ui/module.laydate'],
+        templates: [
+          {
+            url: 'modules/calendar/dy-calendar-base.html.twig',
+            gridClass: 'col-md-4 outside-tb',
+            param: {
+              options: '{"min": "2019-10-01", "max": "2020-01-01"}',
+              placeholder: 'yyyy-MM-dd',
+              label: '限定可选日期'
+            }
+          },
+          {
+            url: 'modules/calendar/dy-calendar-base.html.twig',
+            gridClass: 'col-md-4 outside-tb',
+            param: {
+              options: '{"min": -7, "max": 7}',
+              placeholder: 'yyyy-MM-dd',
+              label: '前后若干天可选'
+            }
+          },
+          {
+            url: 'modules/calendar/dy-calendar-base.html.twig',
+            gridClass: 'col-md-4 outside-tb',
+            param: {
+              options: '{"type": "time", "min": "09:30:00", "max": "18:00:00"}',
+              placeholder: 'HH:mm:ss',
+              label: '限定可选时间'
+            }
+          },
+        ],
+        descs: [
+          {
+            code: 'data-toggle="date"',
+            text: '标记时间对象'
+          },
+          {
+            code: '{"min": "2019-10-01", "max": "2020-01-01"}',
+            text: '限定可选日期'
+          },
+          {
+            code: '{"min": -7, "max": 7}',
+            text: '前后七天可选'
+          },
+          {
+            code: '{"type": "time", "min": "09:30:00", "max": "18:00:00"}',
+            text: '限定可选时间'
+          },
+        ]
+      },
+      {
+        id: 'others',
+        title: '其他类型',
+        rules: [
+          '其他可定制类型，详细参数参阅：<a class="hover|underline" href="https://www.layui.com/doc/modules/laydate.html" target="_blank">laydate</a>'
+        ],
+        demoClass: '',
+        rowClass: 'row',
+        libraries: ['dyniva_ui/module.laydate'],
+        templates: [
+          {
+            url: 'modules/calendar/dy-calendar-base.html.twig',
+            gridClass: 'col-md-4 outside-tb',
+            param: {
+              options: '{"value": "2019-11-20"}',
+              placeholder: 'yyyy-MM-dd',
+              label: '初始赋值'
+            }
+          },
+          {
+            url: 'modules/calendar/dy-calendar-base.html.twig',
+            gridClass: 'col-md-4 outside-tb',
+            param: {
+              options: '{"showBottom": false}',
+              placeholder: 'yyyy-MM-dd',
+              label: '不出现底部工具栏'
+            }
+          },
+          {
+            url: 'modules/calendar/dy-calendar-base.html.twig',
+            gridClass: 'col-md-4 outside-tb',
+            param: {
+              options: '{"btns": ["clear","confirm"]}',
+              placeholder: 'yyyy-MM-dd',
+              label: '只出现确定和清空按钮'
+            }
+          },
+          {
+            url: 'modules/calendar/dy-calendar-base.html.twig',
+            gridClass: 'col-md-4 outside-tb',
+            param: {
+              options: '{}',
+              notInput: true,
+              placeholder: '2020-05-20',
+              class: 'inside-min border-xy',
+              label: '非 input 元素'
+            }
+          },
+        ],
+        descs: [
+          {
+            code: 'data-toggle="date"',
+            text: '标记时间对象'
+          },
+          {
+            code: '{"value": "2019-11-20"}',
+            text: '赋初始值'
+          },
+          {
+            code: '{"btns": ["confirm","clear"]}',
+            text: '自定义按钮：支持三个按钮 clear、now、confirm'
+          },
+          {
+            code: '{"showBottom": false}',
+            text: '不显示底部按钮工具栏'
+          },
+        ]
+      },
+    ]
+  }
+] %}

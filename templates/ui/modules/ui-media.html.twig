@@ -1,0 +1,132 @@
+{% extends "@dyniva_ui/ui/preview/ui-preview.html.twig" %}
+
+{% set page_title = '媒体' %}
+
+{% set page_descs = [
+  '常见的图片、视频、音频等媒体。'
+] %}
+
+{% set preview_sections = [
+  {
+    id: 'video',
+    title: '视频',
+    items: [
+      {
+        id: 'dy-video-1-0',
+        title: '视频 1.0',
+        rules: ['使用原生 Html5 Video 视频'],
+        demoClass: '',
+        rowClass: 'row',
+        libraries: [],
+        templates: [
+          {
+            url: 'modules/media/dy-media-1-0.html.twig',
+            gridClass: 'col-xs-12',
+          }
+        ],
+        descs: [
+          {
+            code: '.dy-video-wrapper',
+            text: '视频容器'
+          },
+          {
+            code: '.dy-video-1',
+            text: '视频1，使用H5视频'
+          },
+          {
+            code: 'aotuplay',
+            text: '添加该属性启用自动播放'
+          },
+          {
+            code: 'poster',
+            text: '视频封面，没有则不设置'
+          },
+        ]
+      },
+      {
+        id: 'dy-video-1-1',
+        title: '视频 1.1',
+        rules: ['使用 Video-js插件'],
+        demoClass: '',
+        rowClass: 'row',
+        libraries: ['dyniva_ui/plugin.video-js'],
+        templates: [
+          {
+            url: 'modules/media/dy-media-1-1.html.twig',
+            gridClass: 'col-xs-12',
+          }
+        ],
+        descs: [
+          {
+            code: '.dy-video-wrapper',
+            text: '视频容器'
+          },
+          {
+            code: '.dy-video-1-1',
+            text: '使用video-js插件'
+          },
+          {
+            code: 'poster',
+            text: '视频封面，没有则不设置'
+          },
+        ]
+      },
+      {
+        id: 'dy-video-2-0',
+        title: '视频 2.0',
+        rules: ['弹层中播放，该风格使用 Backbone 和 bootstrap 封装，将视频播放地址存在点击目标对象中。'],
+        demoClass: '',
+        rowClass: 'row',
+        libraries: ['dyniva_ui/plugin.video-js'],
+        templates: [
+          {
+            url: 'modules/media/dy-media-2-0.html.twig',
+            gridClass: 'col-xs-12',
+          }
+        ],
+        descs: [
+          {
+            code: '.video-modal',
+            text: '目标对象'
+          },
+          {
+            code: 'data-src',
+            text: '在目标对象上存放视频地址'
+          },
+          {
+            code: 'data-poster',
+            text: '在目标对象上存放封面图'
+          },
+        ]
+      },
+      {
+        id: 'dy-video-2-1',
+        title: '视频 2.1',
+        rules: ['弹层中播放，嵌套iframe'],
+        demoClass: '',
+        rowClass: 'row',
+        libraries: ['dyniva_ui/plugin.video-js'],
+        templates: [
+          {
+            url: 'modules/media/dy-media-2-1.html.twig',
+            gridClass: 'col-xs-12',
+          }
+        ],
+        descs: [
+          {
+            code: '.video-modal',
+            text: '目标对象'
+          },
+          {
+            code: 'data-src',
+            text: '在目标对象上存放视频地址'
+          },
+          {
+            code: 'data-poster',
+            text: '在目标对象上存放封面图'
+          },
+        ]
+      },
+    ]
+  },
+] %}

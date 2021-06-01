@@ -1,0 +1,38 @@
+{{- attach_library('dyniva_ui/module.laydate') -}}
+{# 输出不转义 #}
+{%- autoescape false -%}
+  {# 默认是否使用input #}
+  {%- if notInput ~%}
+  {%- if label ~%}
+  <label for="">{{ label }}</label>
+  {%- endif ~%}
+  <div class="elem-laydate {{ class }}" data-toggle="date" data-options='{{ options }}'
+    {%- if attr ~%}
+    {{ attr }}
+    {%- endif ~%}
+  >
+    {{ placeholder }}
+  </div>
+  {%- else ~%}
+  {%- if label ~%}
+  <label for="">{{ label }}</label>
+  {%- endif ~%}
+  <input type="text" class="form-text form-element-radius form-element-full {{ class }}"
+    placeholder="{{ placeholder }}"
+    data-toggle="date"
+    data-options='{{ options | default('{}') }}'
+    {%- if change ~%}
+    data-change='{{ change }}'
+    {%- endif ~%}
+    {%- if done ~%}
+    data-done='{{ done }}'
+    {%- endif ~%}
+    {%- if mark ~%}
+    data-mark='{{ mark }}'
+    {%- endif ~%}
+    {%- if attr ~%}
+    {{ attr }}
+    {%- endif ~%}
+  />
+  {%- endif ~%}
+{%- endautoescape -%}
