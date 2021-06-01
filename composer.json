@@ -3,6 +3,7 @@
   "description": "Simple and beautiful theme for drupal.",
   "type": "drupal-custom-theme",
   "license": "GPL-2.0-or-later",
+  "version": "2.1.0",
   "homepage": "https://github.com/davyin-co/dyniva_ui",
   "require": {
     "drupal/core": "^8.6 || ^9"
