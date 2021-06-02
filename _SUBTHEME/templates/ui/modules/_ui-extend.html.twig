@@ -8,7 +8,7 @@
 
 {# 覆写dyniva_ui的header #}
 {% block header %}
-  {% include '@SUBTHEME/ui/preview/dy-preview-header.html.twig' %}
+  {% include '@SUBTHEME/ui/preview/ui-preview-header.html.twig' %}
 {% endblock %}
 
 {# 如果需要拓展内容 #}
@@ -47,17 +47,17 @@
 {# 如果需要拓展内容 #}
 {% block extend_aside %}
   {% for section in extend_sections  %}
-    {% include "@SUBTHEME/ui/preview/dy-preview-aside.html.twig" with { sections: extend_sections } %}
+    {% include "@SUBTHEME/ui/preview/ui-preview-aside.html.twig" with { sections: extend_sections } %}
   {% endfor %}
 {% endblock %}
 {# 如果需要拓展内容 #}
 {% block extend_section %}
   {% for section in extend_sections  %}
-    {% include "@SUBTHEME/ui/preview/dy-preview-section.html.twig" with section %}
+    {% include "@SUBTHEME/ui/preview/ui-preview-section.html.twig" with section %}
   {% endfor %}
 {% endblock %}
 
 {# 覆写dyniva_ui的footer #}
 {% block footer %}
-  {% include '@SUBTHEME/ui/preview/dy-preview-footer.html.twig' %}
+  {% include '@SUBTHEME/ui/preview/ui-preview-footer.html.twig' %}
 {% endblock %}

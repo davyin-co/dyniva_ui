@@ -1,4 +1,4 @@
-{% extends "@dyniva_ui/ui/preview/dy-preview-header.html.twig" %}
+{% extends "@dyniva_ui/ui/preview/ui-preview-header.html.twig" %}
 {% block header %}
 <div id="ui-header" class="ui-preview-header navbar-one bg-color-primary sticky-header">
   <div class="sticky-wrapper">
@@ -18,7 +18,7 @@
       </div>
       <div class="f-r js-main-menu">
         {% block menu %}
-          {% include '@SUBTHEME/ui/preview/dy-preview-menu.html.twig' %}
+          {% include '@SUBTHEME/ui/preview/ui-preview-menu.html.twig' %}
         {% endblock %}
         <button id="header-btns" class="hamburger hamburger--collapse" type="button">
           <span class="hamburger-box">
