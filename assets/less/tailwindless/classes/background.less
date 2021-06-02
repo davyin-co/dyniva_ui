@@ -25,6 +25,8 @@
 }
 
 // color with opacity
+.bg-color(black, #000);
+.bg-color(white, #fff);
 .bg-color(darker, @bg-darker);
 .bg-color(dark, @bg-dark);
 .bg-color(primary, @site-base);
@@ -32,14 +34,6 @@
 .bg-color(third, @site-third);
 .bg-color(light, @bg-light);
 .bg-color(lighter, @bg-lighter);
-// color with opacity => hover effect
-.bg-color-hover(darker, @bg-darker);
-.bg-color-hover(dark, @bg-dark);
-.bg-color-hover(primary, @site-base);
-.bg-color-hover(second, @site-second);
-.bg-color-hover(third, @site-third);
-.bg-color-hover(light, @bg-light);
-.bg-color-hover(lighter, @bg-lighter);
 
 // position
 .bg-bottom {
@@ -99,4 +93,7 @@
 }
 .bg-contain {
   background-size: contain;
+}
+.bg-full {
+  background-size: 100%;
 }

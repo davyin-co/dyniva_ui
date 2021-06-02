@@ -33,6 +33,58 @@
 .text-h6 {
   font-size: @h6;
 }
+each(range(12, 32, 1), {
+  .text-@{value} {
+    font-size: @value / @font-size * 1rem;
+  }
+})
+// fontsize with responsive
+each(#table.responsive(), .(@vResponsive, @kResponsive) {
+  @screenName: ~'screen-@{kResponsive}';
+  @namePrefix: ~'@{kResponsive}\|';
+
+  @media (min-width: @@screenName) {    
+    .@{namePrefix}text-normal,
+    .@{namePrefix}text-size-base{
+      font-size: @font-size;
+    }
+    .@{namePrefix}text-xs {
+      font-size: @font-size-mini;
+    }
+    .@{namePrefix}text-sm {
+      font-size: @font-size-small;
+    }
+    .@{namePrefix}text-lg {
+      font-size: @font-size-larg;
+    }
+    .@{namePrefix}text-xl {
+      font-size: @font-size-larger;
+    }
+    .@{namePrefix}text-h1 {
+      font-size: @h1;
+    }
+    .@{namePrefix}text-h2 {
+      font-size: @h2;
+    }
+    .@{namePrefix}text-h3 {
+      font-size: @h3;
+    }
+    .@{namePrefix}text-h4 {
+      font-size: @h4;
+    }
+    .@{namePrefix}text-h5 {
+      font-size: @h5;
+    }
+    .@{namePrefix}text-h6 {
+      font-size: @h6;
+    }
+    each(range(12, 32, 1), {
+      .@{namePrefix}text-@{value} {
+        font-size: @value / @font-size * 1rem;
+      }
+    })
+  }
+})
 
 // font style
 .italic {
@@ -165,6 +217,10 @@ each(range(16, 32, 2), {
 .text-color(dark, @text-color-dark, @hover: true);
 .text-color(lighter, @text-color-lighter, @hover: true);
 .text-color(light, @text-color-light, @hover: true);
+.text-color(success, @color-success, @hover: true);
+.text-color(info, @color-info, @hover: true);
+.text-color(warning, @color-warning, @hover: true);
+.text-color(error, @color-error, @hover: true);
 
 // text decoration
 .underline {
@@ -177,9 +233,6 @@ each(range(16, 32, 2), {
   text-decoration: line-through;
 }
 .no-underline {
-  text-decoration: none;
-}
-.focus\|no-underline:focus {
   text-decoration: none;
 }
 

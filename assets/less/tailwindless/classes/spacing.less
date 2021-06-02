@@ -1,10 +1,13 @@
-// generate spacer 5px ~ 80px and auto
-.margin-auto();
+// generate spacer 5px ~ 100px and auto
+.margin(auto, auto, @useMinus: false);
 each(range(0, 100, 5), {
   .spacing(@value, @value * 1px);
 })
-.spacing(~'1\/2', 50%);
-.spacing(full, 100%);
+.margin(~'1\/2', 50%);
+each(range(1, 12, 1), {
+  .margin(~'@{value}\/12', (@value / 12) * 100%);
+})
+.margin(full, 100%);
 
 // with responsive
 each(#table.responsive(), .(@vResponsive, @kResponsive) {
@@ -12,11 +15,16 @@ each(#table.responsive(), .(@vResponsive, @kResponsive) {
   @namePrefix: ~'@{kResponsive}\|';
 
   @media (min-width: @@screenName) {
-    .margin-auto(@namePrefix);
+    .margin(auto, auto, @namePrefix: @namePrefix, @useMinus: false);
+
     each(range(0, 100, 5), {
-      .spacing(@value, @value * 1px, @namePrefix);
+      .spacing(@value, @value * 1px, @namePrefix: @namePrefix);
     })
-    .spacing(~'1\/2', 50%, @namePrefix);
-    .spacing(full, 100%, @namePrefix);
+
+    each(range(1, 12, 1), {
+      .margin(~'@{value}\/12', (@value / 12) * 100%, @namePrefix: @namePrefix);
+    })
+    .margin(~'1\/2', 50%, @namePrefix: @namePrefix);
+    .margin(full, 100%, @namePrefix: @namePrefix);
   }
 })

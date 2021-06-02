@@ -29,17 +29,14 @@
 
 // scale with hover
 .transform-scale(105, 1.05);
-.transform-scale-hover(105, 1.05);
 
 // rotate
 .transform-rotate(90, 90deg);
 .transform-rotate(180, 180deg);
 .transform-rotate(360, 360deg);
-.transform-rotate-hover(90, 90deg);
-.transform-rotate-hover(180, 180deg);
-.transform-rotate-hover(360, 360deg);
 
 // translate
+.transform-translate(0, 0, @useMinus: false);
 .transform-translate(~'1\/2', 50%);
 .transform-translate(full, 100%);
 each(#table.responsive(), .(@vResponsive, @kResponsive) {
@@ -47,7 +44,8 @@ each(#table.responsive(), .(@vResponsive, @kResponsive) {
   @namePrefix: ~'@{kResponsive}\|';
 
   @media (min-width: @@screenName) {
-    .transform-translate(~'1\/2', 50%, @namePrefix);
-    .transform-translate(full, 100%, @namePrefix);
+    .transform-translate(0, 0, @namePrefix: @namePrefix, @useMinus: false);
+    .transform-translate(~'1\/2', 50%, @namePrefix: @namePrefix);
+    .transform-translate(full, 100%, @namePrefix: @namePrefix);
   }
 })

@@ -1,52 +1,48 @@
-.spacing-minus(@name, @size, @useMinus, @namePrefix) when (@useMinus) {
+.spacing(@name, @size, @namePrefix: ~'') {
+  .padding(@name, @size, @namePrefix);
+  .margin(@name, @size, @namePrefix);
+}
+
+.padding(@name, @size, @namePrefix) {  
+  each(#table.direction-abbreviation(), .(@vDirection, @kDirection) {
+    .@{namePrefix}p@{kDirection}-@{name}{
+      each(@vDirection, {
+        padding-@{value}: @size;
+      })
+    }
+  });
+
+  .@{namePrefix}p-@{name}{
+    padding: @size;
+  }
+}
+
+.margin(@name, @size, @namePrefix: ~'', @useMinus: true) {
+  each(#table.direction-abbreviation(), .(@vDirection, @kDirection) {
+    .@{namePrefix}m@{kDirection}-@{name}{
+      each(@vDirection, {
+        margin-@{value}: @size;
+      })
+    }
+  });
+
+  .@{namePrefix}m-@{name}{
+    margin: @size;
+  }
+
+  .margin-minus(@name, @size, @namePrefix, @useMinus);
+}
+
+.margin-minus(@name, @size, @namePrefix, @useMinus) when (@useMinus) and (@name > 0) {  
   each(#table.direction-abbreviation(), .(@vDirection, @kDirection) {
     .@{namePrefix}-m@{kDirection}-@{name}{
       each(@vDirection, {
         margin-@{value}: -@size;
       })
     }
-  });
-
-  .@{namePrefix}-m-@{name} {
+  });  
+  
+  .@{namePrefix}-m-@{name}{
     margin: -@size;
-  }
-}
-
-.spacing(@name, @size, @namePrefix: ~'') {
-  each(#table.direction-abbreviation(), .(@vDirection, @kDirection, @iDirection) {
-    each(#table.margin-abbreviation(), .(@vMargin, @kMargin, @iMargin) {
-
-      .@{namePrefix}@{kMargin}@{kDirection}-@{name}{
-        each(@vDirection, {
-          @{vMargin}-@{value}: @size;
-          
-        })
-      }
-    });
-  });
-
-  .@{namePrefix}m-@{name} {
-    margin: @size;
-  }
-
-  .@{namePrefix}p-@{name} {
-    padding: @size;
-  }
-
-  @useMinus: if(@name = 0, false, true);
-  .spacing-minus(@name, @size, @useMinus, @namePrefix);
-}
-
-.margin-auto(@namePrefix: ~'') {
-  each(#table.direction-abbreviation(), .(@v, @k, @i) {
-    .@{namePrefix}m@{k}-auto{
-      each(@v, {
-        margin-@{value}: auto;
-      })
-    }
-  });
-
-  .@{namePrefix}m-auto {
-    margin: auto;
   }
 }
