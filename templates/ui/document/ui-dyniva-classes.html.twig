@@ -1,0 +1,3296 @@
+{% extends "@dyniva_ui/ui/preview/ui-preview.html.twig" %}
+
+{% set page_title = 'Dyniva Classes' %}
+
+{% set page_descs = [
+  '通用类名，单击可复制使用'
+] %}
+
+{% set preview_sections = [
+  {
+    id: 'LAYOUT',
+    title: 'LAYOUT',
+    items: [
+      {
+        id: 'Box-Sizing',
+        title: 'Box Sizing',
+        rules: [
+          "Utilities for controlling how the browser should calculate an element's total size."
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'box-border',
+                  'box-sizing: border-box;'
+                ],
+                [
+                  'box-content',
+                  'box-sizing: content-box;'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'Display',
+        title: 'Display',
+        rules: [
+          "Utilities for controlling the display box type of an element."
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'display-block',
+                  'display: block;'
+                ],
+                [
+                  'inline-block',
+                  'display: inline-block;'
+                ],
+                [
+                  'inline',
+                  'display: inline;'
+                ],
+                [
+                  'flex',
+                  'display: flex'
+                ],
+                [
+                  'inline-flex',
+                  'display: inline-flex;'
+                ],
+                [
+                  'table',
+                  'display: inline-table;'
+                ],
+                [
+                  'inline-table',
+                  'display: inline-table;'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'Floats',
+        title: 'Floats',
+        rules: [
+          "Utilities for controlling the wrapping of content around an element."
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'float-right',
+                  'float: right;'
+                ],
+                [
+                  'float-left',
+                  'float: left;'
+                ],
+                [
+                  'float-none',
+                  'float: none;'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'Clear',
+        title: 'Clear',
+        rules: [
+          "Utilities for controlling the wrapping of content around an element."
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'clear-right',
+                  'clear: right;'
+                ],
+                [
+                  'clear-left',
+                  'clear: left;'
+                ],
+                [
+                  'clear-none',
+                  'clear: none;'
+                ],
+                [
+                  'clear-both',
+                  'clear: both;'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'Position',
+        title: 'Position',
+        rules: [
+          "Utilities for controlling how an element is positioned in the DOM."
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'static',
+                  'position: static;'
+                ],
+                [
+                  'fixed',
+                  'position: fixed;'
+                ],
+                [
+                  'absolute',
+                  'position: absolute;'
+                ],
+                [
+                  'relative',
+                  'position: relative;'
+                ],
+                [
+                  'sticky',
+                  'position: sticky;'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'Top-Right-Bottom-Left',
+        title: 'Top / Right / Bottom / Left',
+        rules: [
+          "Utilities for controlling the placement of positioned elements."
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'left-0',
+                  'left: 0;'
+                ],
+                [
+                  'right-0',
+                  'right: 0;'
+                ],
+                [
+                  'bottom-0',
+                  'bottom: 0;'
+                ],
+                [
+                  'top-0',
+                  'top: 0;'
+                ],
+                [
+                  'left-auto',
+                  'left: auto;'
+                ],
+                [
+                  'right-auto',
+                  'right: auto;'
+                ],
+                [
+                  'bottom-auto',
+                  'bottom: auto;'
+                ],
+                [
+                  'top-auto',
+                  'top: auto;'
+                ],
+                [
+                  'left-1/2',
+                  'left: 50%;'
+                ],
+                [
+                  'right-1/2',
+                  'right: 50%;'
+                ],
+                [
+                  'bottom-1/2',
+                  'bottom: 50%;'
+                ],
+                [
+                  'top-1/2',
+                  'top: 50%;'
+                ],
+                [
+                  '-left-1/2',
+                  'left: -50%;'
+                ],
+                [
+                  '-right-1/2',
+                  'right: -50%;'
+                ],
+                [
+                  '-bottom-1/2',
+                  'bottom: -50%;'
+                ],
+                [
+                  '-top-1/2',
+                  'top: -50%;'
+                ],
+                [
+                  'left-full',
+                  'left: 100%;'
+                ],
+                [
+                  'right-full',
+                  'right: 100%;'
+                ],
+                [
+                  'bottom-full',
+                  'bottom: 100%;'
+                ],
+                [
+                  'top-full',
+                  'top: 100%;'
+                ],
+                [
+                  '-left-full',
+                  'left: -100%;'
+                ],
+                [
+                  '-right-full',
+                  'right: -100%;'
+                ],
+                [
+                  '-bottom-full',
+                  'bottom: -100%;'
+                ],
+                [
+                  '-top-full',
+                  'top: -100%;'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'Visibility',
+        title: 'Visibility',
+        rules: [
+          "Utilities for controlling the visibility of an element."
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'visible',
+                  'visibility: visible;'
+                ],
+                [
+                  'invisible',
+                  'visibility: hidden;'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'Z-Index',
+        title: 'Z-Index',
+        rules: [
+          "Utilities for controlling the stack order of an element.",
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  '-z-1',
+                  'z-index: -1;'
+                ],
+                [
+                  'hover|-z-1',
+                  '.hover|-z-1:hover { z-index: -1; }'
+                ],
+                [
+                  'z-0',
+                  'z-index: 0;'
+                ],
+                [
+                  'hover|z-0',
+                  '.hover|z-0:hover { z-index: 0; }'
+                ],
+                [
+                  'z-1',
+                  'z-index: 1;'
+                ],
+                [
+                  'hover|z-1',
+                  '.hover|z-1:hover { z-index: 1; }'
+                ],
+                [
+                  'z-2',
+                  'z-index: 2;'
+                ],
+                [
+                  'hover|z-2',
+                  '.hover|z-2:hover { z-index: 2; }'
+                ],
+                [
+                  'z-3',
+                  'z-index: 3;'
+                ],
+                [
+                  'hover|z-3',
+                  '.hover|z-3:hover { z-index: 3; }'
+                ],
+                [
+                  'z-4',
+                  'z-index: 4;'
+                ],
+                [
+                  'hover|z-4',
+                  '.hover|z-4:hover { z-index: 4; }'
+                ],
+                [
+                  'z-5',
+                  'z-index: 5;'
+                ],
+                [
+                  'hover|z-5',
+                  '.hover|z-5:hover { z-index: 5; }'
+                ],
+                [
+                  'z-6',
+                  'z-index: 6;'
+                ],
+                [
+                  'hover|z-6',
+                  '.hover|z-6:hover { z-index: 6; }'
+                ],
+                [
+                  'z-7',
+                  'z-index: 7;'
+                ],
+                [
+                  'hover|z-7',
+                  '.hover|z-7:hover { z-index: 7; }'
+                ],
+                [
+                  'z-8',
+                  'z-index: 8;'
+                ],
+                [
+                  'hover|z-8',
+                  '.hover|z-8:hover { z-index: 8; }'
+                ],
+                [
+                  'z-9',
+                  'z-index: 9;'
+                ],
+                [
+                  'hover|z-9',
+                  '.hover|z-9:hover { z-index: 9; }'
+                ],
+                [
+                  'z-10',
+                  'z-index: 10;'
+                ],
+                [
+                  'hover|z-10',
+                  '.hover|z-10:hover { z-index: 10; }'
+                ],
+                [
+                  'z-99',
+                  'z-index: 99;'
+                ],
+                [
+                  'hover|z-99',
+                  '.hover|z-99:hover { z-index: 99; }'
+                ],
+                [
+                  'z-100',
+                  'z-index: 100;'
+                ],
+                [
+                  'hover|z-100',
+                  '.hover|z-100:hover { z-index: 100; }'
+                ],
+                [
+                  'z-auto',
+                  'z-index: auto;'
+                ],
+                [
+                  'hover|z-auto',
+                  '.hover|z-auto:hover { z-index: auto; }'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+    ]
+  },
+  {
+    id: 'FLEXBOX',
+    title: 'FLEXBOX',
+    items: [
+      {
+        id: 'Flex-Direction',
+        title: 'Flex Direction',
+        rules: [
+          "Utilities for controlling the direction of flex items."
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'flex-row',
+                  'flex-direction: row;'
+                ],
+                [
+                  'flex-row-reverse',
+                  'flex-direction: row-reverse;'
+                ],
+                [
+                  'flex-col',
+                  'flex-direction: column;'
+                ],
+                [
+                  'flex-col-reverse',
+                  'flex-direction: column-reverse;'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'Flex-Wrap',
+        title: 'Flex Wrap',
+        rules: [
+          "Utilities for controlling how flex items wrap.",
+          "所有的类都生成@media相关的类，不满足需求也可以继续拓展，对应的@screen变量参照：docroot/themes/custom/dyniva_ui/assets/less/variables/break-points.less"
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'flex-wrap',
+                  'flex-wrap: wrap;'
+                ],
+                [
+                  'flex-wrap-reverse',
+                  'flex-wrap: wrap-reverse;'
+                ],
+                [
+                  'flex-nowrap',
+                  'flex-wrap: nowrap;'
+                ],
+                [
+                  'sm|flex-wrap',
+                  '@media (min-width: @screen-sm) { .sm|flex-wrap { flex-wrap: wrap; } }'
+                ],
+                [
+                  'sm|flex-wrap-reverse',
+                  '@media (min-width: @screen-sm) { .sm|flex-wrap-reverse { flex-wrap: wrap-reverse; } }'
+                ],
+                [
+                  'sm|flex-nowrap',
+                  '@media (min-width: @screen-sm) { .sm|flex-nowrap { flex-wrap: nowrap; } }'
+                ],
+                [
+                  'md|flex-wrap',
+                  '@media (min-width: @screen-sm) { .md|flex-wrap { flex-wrap: wrap; } }'
+                ],
+                [
+                  'md|flex-wrap-reverse',
+                  '@media (min-width: @screen-sm) { .md|flex-wrap-reverse { flex-wrap: wrap-reverse; } }'
+                ],
+                [
+                  'md|flex-nowrap',
+                  '@media (min-width: @screen-sm) { .md|flex-nowrap { flex-wrap: nowrap; } }'
+                ],
+                [
+                  'lg|flex-wrap',
+                  '@media (min-width: @screen-sm) { .lg|flex-wrap { flex-wrap: wrap; } }'
+                ],
+                [
+                  'lg|flex-wrap-reverse',
+                  '@media (min-width: @screen-sm) { .lg|flex-wrap-reverse { flex-wrap: wrap-reverse; } }'
+                ],
+                [
+                  'lg|flex-nowrap',
+                  '@media (min-width: @screen-sm) { .lg|flex-nowrap { flex-wrap: nowrap; } }'
+                ],
+                [
+                  'xl|flex-wrap',
+                  '@media (min-width: @screen-sm) { .xl|flex-wrap { flex-wrap: wrap; } }'
+                ],
+                [
+                  'xl|flex-wrap-reverse',
+                  '@media (min-width: @screen-sm) { .xl|flex-wrap-reverse { flex-wrap: wrap-reverse; } }'
+                ],
+                [
+                  'xl|flex-nowrap',
+                  '@media (min-width: @screen-sm) { .xl|flex-nowrap { flex-wrap: nowrap; } }'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'Flex',
+        title: 'Flex',
+        rules: [
+          "Utilities for controlling how flex items both grow and shrink."
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'flex-1',
+                  'flex: 1 1 0%;'
+                ],
+                [
+                  'flex-auto',
+                  'flex: 1 1 auto;'
+                ],
+                [
+                  'flex-initial',
+                  'flex: 0 1 auto;'
+                ],
+                [
+                  'flex-none',
+                  'flex: none;'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'Flex-Grow',
+        title: 'Flex Grow',
+        rules: [
+          "Utilities for controlling how flex items grow."
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'flex-grow-0',
+                  'flex-grow: 0;'
+                ],
+                [
+                  'flex-grow',
+                  'flex-grow: 1;'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'Flex-Shrink',
+        title: 'Flex Shrink',
+        rules: [
+          "Utilities for controlling how flex items shrink."
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'flex-shrink-0',
+                  'flex-shrink: 0;'
+                ],
+                [
+                  'flex-shrink',
+                  'flex-shrink: 1;'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'Order',
+        title: 'Order',
+        rules: [
+          "Utilities for controlling the order of flex items."
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'order-1',
+                  'order: 1;'
+                ],
+                [
+                  'order-2',
+                  'order: 2;'
+                ],
+                [
+                  'order-3',
+                  'order: 3;'
+                ],
+                [
+                  'order-4',
+                  'order: 4;'
+                ],
+                [
+                  'order-5',
+                  'order: 5;'
+                ],
+                [
+                  'order-6',
+                  'order: 6;'
+                ],
+                [
+                  'order-7',
+                  'order: 7;'
+                ],
+                [
+                  'order-8',
+                  'order: 8;'
+                ],
+                [
+                  'order-9',
+                  'order: 9;'
+                ],
+                [
+                  'order-10',
+                  'order: 10;'
+                ],
+                [
+                  'order-11',
+                  'order: 11;'
+                ],
+                [
+                  'order-12',
+                  'order: 12;'
+                ],
+                [
+                  'order-first',
+                  'order: -9999;'
+                ],
+                [
+                  'order-last',
+                  'order: 9999;'
+                ],
+                [
+                  'order-none',
+                  'order: 0;'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'Justify-Content',
+        title: 'Justify Content',
+        rules: [
+          "Utilities for controlling how flex items are positioned along a container's main axis."
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'justify-start',
+                  'justify-content: flex-start;'
+                ],
+                [
+                  'justify-end',
+                  'justify-content: flex-end;'
+                ],
+                [
+                  'justify-center',
+                  'justify-content: center;'
+                ],
+                [
+                  'justify-between',
+                  'justify-content: space-between;'
+                ],
+                [
+                  'justify-around',
+                  'justify-content: space-around;'
+                ],
+                [
+                  'justify-evenly',
+                  'justify-content: space-evenly;'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'Align-Content',
+        title: 'Align Content',
+        rules: [
+          "Utilities for controlling how rows are positioned in multi-row flex containers."
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'content-start',
+                  'align-content: flex-start;'
+                ],
+                [
+                  'content-end',
+                  'align-content: flex-end;'
+                ],
+                [
+                  'content-center',
+                  'align-content: center;'
+                ],
+                [
+                  'content-between',
+                  'align-content: space-between;'
+                ],
+                [
+                  'content-around',
+                  'align-content: space-around;'
+                ],
+                [
+                  'content-evenly',
+                  'align-content: space-evenly;'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'Align-Items',
+        title: 'Align Items',
+        rules: [
+          "Utilities for controlling how flex items are positioned along a container's cross axis."
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'items-start',
+                  'align-items: flex-start;'
+                ],
+                [
+                  'items-end',
+                  'align-items: flex-end;'
+                ],
+                [
+                  'items-center',
+                  'align-items: center;'
+                ],
+                [
+                  'items-baseline',
+                  'align-items: baseline;'
+                ],
+                [
+                  'items-stretch',
+                  'align-items: stretch;'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'Align-Self',
+        title: 'Align Self',
+        rules: [
+          "Utilities for controlling how an individual flex item is positioned along its container's cross axis."
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'self-start',
+                  'align-self: flex-start;'
+                ],
+                [
+                  'self-end',
+                  'align-self: flex-end;'
+                ],
+                [
+                  'self-center',
+                  'align-self: center;'
+                ],
+                [
+                  'self-auto',
+                  'align-self: auto;'
+                ],
+                [
+                  'self-stretch',
+                  'align-self: stretch;'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+    ]
+  },
+  {
+    id: 'SPACING',
+    title: 'SPACING',
+    items: [
+      {
+        id: 'Padding',
+        title: 'Padding',
+        rules: [
+          "Utilities for controlling an element's padding.",
+          "0px-100px（间隔5px）的padding类：0，5px，10px,...100px，也会生成@screen相关的类"
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'pl-0',
+                  'padding-left: 0;'
+                ],
+                [
+                  'pr-0',
+                  'padding-right: 0;'
+                ],
+                [
+                  'pt-0',
+                  'padding-top: 0;'
+                ],
+                [
+                  'pb-0',
+                  'padding-bottom: 0;'
+                ],
+                [
+                  'px-0',
+                  'padding-left: 0; padding-right: 0;'
+                ],
+                [
+                  'py-0',
+                  'padding-bottom: 0; padding-top: 0;'
+                ],
+                [
+                  'p-0',
+                  'padding-left: 0; padding-right: 0; padding-bottom: 0; padding-top: 0;'
+                ],
+                [
+                  '@screen-xx',
+                  '@media (min-width: @screen-xx) { ... }'
+                ],
+                [
+                  'sm|pl-0',
+                  '@media (min-width: @screen-sm) { .sm|pl-0 { padding-left: 0 } }'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'Margin',
+        title: 'Margin',
+        rules: [
+          "Utilities for controlling an element's margin.",
+          "0px-100px（间隔5px）的margin类：0，5px，10px,...100px，和auto、1/2（50%）、1/12 - 12/12、full（100%）类，会生成所有@screen相关的类，还会生成除了auto和0以外的负类"
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'ml-0',
+                  'margin-left: 0;'
+                ],
+                [
+                  'mr-0',
+                  'margin-right: 0;'
+                ],
+                [
+                  'mt-0',
+                  'margin-top: 0;'
+                ],
+                [
+                  'mb-0',
+                  'margin-bottom: 0;'
+                ],
+                [
+                  'mx-0',
+                  'margin-left: 0; margin-right: 0;'
+                ],
+                [
+                  'my-0',
+                  'margin-bottom: 0; margin-top: 0;'
+                ],
+                [
+                  'm-0',
+                  'margin-left: 0; margin-right: 0; margin-bottom: 0; margin-top: 0;'
+                ],
+                [
+                  '...',
+                  '...'
+                ],
+                [
+                  'ml-1/2',
+                  'margin-left: 50%;'
+                ],
+                [
+                  '...',
+                  '...'
+                ],
+                [
+                  'ml-1/12',
+                  'margin-left: 1/12 * 100%;'
+                ],
+                [
+                  '...',
+                  '...'
+                ],
+                [
+                  '@screen-xx',
+                  '@media (min-width: @screen-xx) { ... }'
+                ],
+                [
+                  'sm|ml-0',
+                  '@media (min-width: @screen-sm) { .sm|ml-0 { margin-left: 0 } }'
+                ],
+                [
+                  '...',
+                  '...'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+    ]
+  },
+  {
+    id: 'SIZING',
+    title: 'SIZING',
+    items: [
+      {
+        id: 'Width',
+        title: 'Width',
+        rules: [
+          "Utilities for setting the width of an element",
+          "auto、min-content、max-content、1/12 - 11/12、1/5 - 4/5、full(100%)、screen（100vw），同时会生成@screen相关的类"
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'w-auto',
+                  'width: auto;'
+                ],
+                [
+                  'w-min',
+                  'width: min-content;'
+                ],
+                [
+                  'w-max',
+                  'width: max-content;'
+                ],
+                [
+                  'w-full',
+                  'width: 100%;'
+                ],
+                [
+                  'w-screen',
+                  'width: 100vw;'
+                ],
+                [
+                  'w-1/12',
+                  'width: 1/12 * 100%;'
+                ],
+                [
+                  '... -> w-11/12',
+                  '... -> width: 11/12 * 100%;'
+                ],
+                [
+                  'w-1/12',
+                  'width: 1/12 * 100%;'
+                ],
+                [
+                  '... -> w-4/5',
+                  '... -> width: 4/5 * 100%;'
+                ],
+                [
+                  '@screen-xx',
+                  '@media (min-width: @screen-xx) { ... }'
+                ],
+                [
+                  'sm|w-auto',
+                  '@media (min-width: @screen-sm) { .sm|w-auto { width: auto; } }'
+                ],
+                [
+                  '...',
+                  '...'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'Min-Width',
+        title: 'Min-Width',
+        rules: [
+          "Utilities for setting the minimum width of an element"
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'min-w-0',
+                  'min-width: 0px;'
+                ],
+                [
+                  'min-w-full',
+                  'min-width: 100%;'
+                ],
+                [
+                  'min-w-min',
+                  'min-width: min-content;'
+                ],
+                [
+                  'min-w-max',
+                  'min-width: max-content;'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'Max-Width',
+        title: 'Max-Width',
+        rules: [
+          "Utilities for setting the maximum width of an element"
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'max-w-0',
+                  'max-width: 0px;'
+                ],
+                [
+                  'max-w-none',
+                  'max-width: none;'
+                ],
+                [
+                  'max-w-full',
+                  'max-width: 100%;'
+                ],
+                [
+                  'max-w-min',
+                  'max-width: min-content;'
+                ],
+                [
+                  'max-w-max',
+                  'max-width: max-content;'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'Height',
+        title: 'Height',
+        rules: [
+          "Utilities for setting the height of an element"
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'h-0',
+                  'height: 0px;'
+                ],
+                [
+                  'h-full',
+                  'height: 100%;'
+                ],
+                [
+                  'h-screen',
+                  'height: 100vh;'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'Min-Height',
+        title: 'Min-Height',
+        rules: [
+          "Utilities for setting the minimum height of an element"
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'min-h-0',
+                  'min-height: 0px;'
+                ],
+                [
+                  'min-h-full',
+                  'min-height: 100%;'
+                ],
+                [
+                  'min-h-min',
+                  'min-height: 100vh;'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'Max-Height',
+        title: 'Max-Height',
+        rules: [
+          "Utilities for setting the maximum height of an element"
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'max-h-0',
+                  'max-height: 0px;'
+                ],
+                [
+                  'max-h-none',
+                  'max-height: none;'
+                ],
+                [
+                  'max-h-full',
+                  'max-height: 100%;'
+                ],
+                [
+                  'max-h-screen',
+                  'max-height: 100vh;'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+    ]
+  },
+  {
+    id: 'TYPOGRAPHY',
+    title: 'TYPOGRAPHY',
+    items: [
+      {
+        id: 'Font-Size',
+        title: 'Font Size',
+        rules: [
+          "Utilities for controlling the font size of an element.",
+          "所有的字体都会生成@screen相关的类"
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'text-size-base',
+                  'font-size: @font-size;'
+                ],
+                [
+                  'text-xs',
+                  'font-size: @font-size-mini;'
+                ],
+                [
+                  'text-sm',
+                  'font-size: @font-size-small;'
+                ],
+                [
+                  'text-xl',
+                  'font-size: @font-size-larg;'
+                ],
+                [
+                  'text-lg',
+                  'font-size: @font-size-larger;'
+                ],
+                [
+                  'text-h1',
+                  'font-size: @h1;'
+                ],
+                [
+                  '... -> text-h6',
+                  '... -> font-size: @h6;'
+                ],
+                [
+                  'text-12',
+                  'font-size: 12 / @font-size * 1rem;'
+                ],
+                [
+                  '... -> text-32',
+                  '... -> font-size: 32 / @font-size * 1rem;'
+                ],
+                [
+                  '@screen-xx',
+                  '@media (min-width: @screen-xx) { ... }'
+                ],
+                [
+                  'sm|text-12',
+                  '@media (min-width: @screen-sm) { .sm|text-12 { font-size: 12 / @font-size * 1rem; } }'
+                ],
+                [
+                  '...',
+                  '...'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'Font-Style',
+        title: 'Font Style',
+        rules: [
+          "Utilities for controlling the style of text."
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'italic',
+                  'font-style: italic;'
+                ],
+                [
+                  'not-italic',
+                  'font-style: normal;'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'Font-Weight',
+        title: 'Font Weight',
+        rules: [
+          "Utilities for controlling the font weight of an element."
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'font-thin',
+                  'font-weight: 100;'
+                ],
+                [
+                  'font-extralight',
+                  'font-weight: 200;'
+                ],
+                [
+                  'font-light',
+                  'font-weight: 300;'
+                ],
+                [
+                  'font-normal',
+                  'font-weight: 400;'
+                ],
+                [
+                  'font-medium',
+                  'font-weight: 500;'
+                ],
+                [
+                  'font-semibold',
+                  'font-weight: 600;'
+                ],
+                [
+                  'font-bold',
+                  'font-weight: 700;'
+                ],
+                [
+                  'font-extrabold',
+                  'font-weight: 800;'
+                ],
+                [
+                  'font-black',
+                  'font-weight: 900;'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'Letter-Spacing',
+        title: 'Letter Spacing',
+        rules: [
+          "Utilities for controlling the tracking (letter spacing) of an element."
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  '-tracking-999',
+                  'letter-spacing: -999px;'
+                ],
+                [
+                  'tracking-tight',
+                  'letter-spacing: -0.025em;'
+                ],
+                [
+                  'tracking-normal',
+                  'letter-spacing: 0em;'
+                ],
+                [
+                  'tracking-wide',
+                  'letter-spacing: 0.025em;'
+                ],
+                [
+                  'tracking-wider',
+                  'letter-spacing: 0.05em;'
+                ],
+                [
+                  'tracking-widest',
+                  'letter-spacing: 0.1em;'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'Line-Height',
+        title: 'Line Height',
+        rules: [
+          "Utilities for controlling the leading (line height) of an element.",
+          "固定大小行高16px - 32px(step: 2px): 16px、18px、...32px"
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'leading-none',
+                  'line-height: 1;'
+                ],
+                [
+                  'leading-tight',
+                  'line-height: 1.25;'
+                ],
+                [
+                  'leading-snug',
+                  'line-height: 1.375;'
+                ],
+                [
+                  'leading-normal',
+                  'line-height: 1.5;'
+                ],
+                [
+                  'leading-relaxed',
+                  'line-height: 1.625;'
+                ],
+                [
+                  'leading-loose',
+                  'line-height: 2;'
+                ],
+                [
+                  'leading-16',
+                  'line-height: 16px;'
+                ],
+                [
+                  '... -> leading-32',
+                  '... -> line-height: 32px;'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'List-Style-Type',
+        title: 'List Style Type',
+        rules: [
+          "Utilities for controlling the bullet/number style of a list.",
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'list-none',
+                  'list-style-type: none;'
+                ],
+                [
+                  'list-disc',
+                  'list-style-type: disc;'
+                ],
+                [
+                  'list-decimal',
+                  'list-style-type: decimal;'
+                ],
+                [
+                  'list-circle',
+                  'list-style-type: circle;'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'List-Style-Position',
+        title: 'List Style Position',
+        rules: [
+          "Utilities for controlling the position of bullets/numbers in lists.",
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'list-inside',
+                  'list-style-position: inside;'
+                ],
+                [
+                  'list-outside',
+                  'list-style-position: outside;'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'Text-Alignment',
+        title: 'Text Alignment',
+        rules: [
+          "Utilities for controlling the bullet/number style of a list.",
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'text-left',
+                  'text-align: left;'
+                ],
+                [
+                  'text-center',
+                  'text-align: center;'
+                ],
+                [
+                  'text-right',
+                  'text-align: right;'
+                ],
+                [
+                  'text-justify',
+                  'text-align: justify;'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'Text-Color',
+        title: 'Text Color',
+        rules: [
+          "Utilities for controlling the text color of an element.",
+          "所有类都会生成hover相关类",
+          "对应字体颜色的变量参照：docroot/themes/custom/dyniva_ui/assets/less/variables/color.less",
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'text-color-base',
+                  'color: @text-color;'
+                ],
+                [
+                  'text-primary',
+                  'color: @site-base;'
+                ],
+                [
+                  'text-white',
+                  'color: #fff;'
+                ],
+                [
+                  'text-darker',
+                  'color: @text-color-darker;'
+                ],
+                [
+                  'text-dark',
+                  'color: @text-color-dark;'
+                ],
+                [
+                  'text-lighter',
+                  'color: @text-color-lighter;'
+                ],
+                [
+                  'text-light',
+                  'color: @text-color-light;'
+                ],
+                [
+                  'text-success',
+                  'color: @color-success;'
+                ],
+                [
+                  'text-info',
+                  'color: @color-info;'
+                ],
+                [
+                  'text-warning',
+                  'color: @color-warning;'
+                ],
+                [
+                  'text-error',
+                  'color: @color-error;'
+                ],
+                [
+                  'hover|text-primary',
+                  '.hover|text-primary:hover { color: @text-color-light; }'
+                ],
+                [
+                  'hover|xxx',
+                  '.hover|xxx:hover { xxx }'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'Text-Decoration',
+        title: 'Text Decoration',
+        rules: [
+          "Utilities for controlling the decoration of text.",
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'underline',
+                  'text-decoration: underline;'
+                ],
+                [
+                  'hover|underline',
+                  '.hover|underline:hover { text-decoration: underline; }'
+                ],
+                [
+                  'line-through',
+                  'text-decoration: line-through;'
+                ],
+                [
+                  'no-underline',
+                  'text-decoration: none;'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'Text-Transform',
+        title: 'Text Transform',
+        rules: [
+          "Utilities for controlling the transformation of text.",
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'uppercase',
+                  'text-transform: uppercase;'
+                ],
+                [
+                  'lowercase',
+                  'text-transform: lowercase;'
+                ],
+                [
+                  'capitalize',
+                  'text-transform: capitalize;'
+                ],
+                [
+                  'normal-case',
+                  'text-transform: none;'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'Text-Overflow',
+        title: 'Text Overflow',
+        rules: [
+          "Utilities for controlling text overflow in an element.",
+          "会生成多行溢出文本隐藏的类tracking、tracking-2 、... tracking-10，多行文本溢出隐藏还会生成@screen和hover相关类",
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'overflow-ellipsis',
+                  'text-overflow: ellipsis;'
+                ],
+                [
+                  'overflow-clip',
+                  'text-overflow: clip;'
+                ],
+                [
+                  'truncate',
+                  'overflow: hidden; text-overflow: ellipsis; white-space: nowrap;'
+                ],
+                [
+                  'truncate-2',
+                  'overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; height: @fontSize * @lineHeight * @line;'
+                ],
+                [
+                  '... -> truncate-10',
+                  '... -> overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 10; height: @fontSize * @lineHeight * @line;'
+                ],
+                [
+                  'sm|truncate-2',
+                  '@media (min-width: @screen-sm) { .sm|truncate-2 { ... } }'
+                ],
+                [
+                  'hover|truncate-2',
+                  '.hover|truncate-2:hover { ... }'
+                ],
+                [
+                  'sm|hover|truncate-2',
+                  '@media (min-width: @screen-sm) { .sm|hover|truncate-2:hover { ... } }'
+                ],
+                [
+                  '...',
+                  '...'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'Vertical-Alignment',
+        title: 'Vertical Alignment',
+        rules: [
+          "Utilities for controlling the vertical alignment of an inline or table-cell box.",
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'align-baseline',
+                  'vertical-align: baseline;'
+                ],
+                [
+                  'align-top',
+                  'vertical-align: top;'
+                ],
+                [
+                  'align-middle',
+                  'vertical-align: middle;'
+                ],
+                [
+                  'align-bottom',
+                  'vertical-align: bottom;'
+                ],
+                [
+                  'align-text-top',
+                  'vertical-align: text-top;'
+                ],
+                [
+                  'align-text-bottom',
+                  'vertical-align: text-bottom;'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'Whitespace',
+        title: 'Whitespace',
+        rules: [
+          "Utilities for controlling an element's white-space property.",
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'whitespace-normal',
+                  'white-space: normal;'
+                ],
+                [
+                  'whitespace-nowrap',
+                  'white-space: nowrap;'
+                ],
+                [
+                  'whitespace-pre',
+                  'white-space: pre;'
+                ],
+                [
+                  'whitespace-pre-line',
+                  'white-space: pre-line;'
+                ],
+                [
+                  'whitespace-pre-wrap',
+                  'white-space: pre-wrap;'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'Word-Break',
+        title: 'Word Break',
+        rules: [
+          "Utilities for controlling word breaks in an element.",
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'break-normal',
+                  'overflow-wrap: normal; word-break: normal;'
+                ],
+                [
+                  'break-words',
+                  'overflow-wrap: break-word;'
+                ],
+                [
+                  'break-all',
+                  'word-break: break-all;'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+    ]
+  },
+  {
+    id: 'BACKGROUNDS',
+    title: 'BACKGROUNDS',
+    items: [
+      {
+        id: 'Background-Attachment',
+        title: 'Background Attachment',
+        rules: [
+          "Utilities for controlling how a background image behaves when scrolling.",
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'bg-fixed',
+                  'background-attachment: fixed;'
+                ],
+                [
+                  'bg-local',
+                  'background-attachment: local;'
+                ],
+                [
+                  'bg-scroll',
+                  'background-attachment: scroll;'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'Background-Clip',
+        title: 'Background Clip',
+        rules: [
+          "Utilities for controlling the bounding box of an element's background.",
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'bg-clip-border',
+                  'background-clip: border-box;'
+                ],
+                [
+                  'bg-clip-padding',
+                  'background-clip: padding-box;'
+                ],
+                [
+                  'bg-clip-content',
+                  'background-clip: content-box;'
+                ],
+                [
+                  'bg-clip-text',
+                  'background-clip: text;'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'Background-Color',
+        title: 'Background Color',
+        rules: [
+          "Utilities for controlling an element's background color.",
+          "相关的背景变量参照：docroot/themes/custom/dyniva_ui/assets/less/variables/color.less",
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'bg-white',
+                  'background-color: #fff;'
+                ],
+                [
+                  'bg-black',
+                  'background-color: #000;'
+                ],
+                [
+                  'bg-darker',
+                  'background-color: @bg-darker;'
+                ],
+                [
+                  'bg-dark',
+                  'background-color: @bg-dark;'
+                ],
+                [
+                  'bg-primary',
+                  'background-color: @bg-primary;'
+                ],
+                [
+                  'bg-second',
+                  'background-color: @site-second;'
+                ],
+                [
+                  'bg-third',
+                  'background-color: @site-third;'
+                ],
+                [
+                  'bg-light',
+                  'background-color: @bg-light;'
+                ],
+                [
+                  'bg-lighter',
+                  'background-color: @bg-lighter;'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'Background-Position',
+        title: 'Background Position',
+        rules: [
+          "Utilities for controlling the position of an element's background image.",
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'bg-bottom',
+                  'background-position: bottom;'
+                ],
+                [
+                  'bg-center',
+                  'background-position: center;'
+                ],
+                [
+                  'bg-left',
+                  'background-position: left;'
+                ],
+                [
+                  'bg-left-bottom',
+                  'background-position: left bottom;'
+                ],
+                [
+                  'bg-left-top',
+                  'background-position: left top;'
+                ],
+                [
+                  'bg-right',
+                  'background-position: right;'
+                ],
+                [
+                  'bg-right-bottom',
+                  'background-position: right bottom;'
+                ],
+                [
+                  'bg-right-top',
+                  'background-position: right top;'
+                ],
+                [
+                  'bg-top',
+                  'background-position: top;'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'Background-Repeat',
+        title: 'Background Repeat',
+        rules: [
+          "Utilities for controlling the repetition of an element's background image.",
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'bg-repeat',
+                  'background-repeat: repeat;'
+                ],
+                [
+                  'bg-no-repeat',
+                  'background-repeat: no-repeat;'
+                ],
+                [
+                  'bg-repeat-x',
+                  'background-repeat: repeat-x;'
+                ],
+                [
+                  'bg-repeat-y',
+                  'background-repeat: repeat-y;'
+                ],
+                [
+                  'bg-repeat-round',
+                  'background-repeat: round;'
+                ],
+                [
+                  'bg-repeat-space',
+                  'background-repeat: space;'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'Background-Size',
+        title: 'Background Size',
+        rules: [
+          "Utilities for controlling the repetition of an element's background image.",
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'bg-auto',
+                  'background-size: auto;'
+                ],
+                [
+                  'bg-cover',
+                  'background-size: cover;'
+                ],
+                [
+                  'bg-contain',
+                  'background-size: contain;'
+                ],
+                [
+                  'bg-full',
+                  'background-size: 100%;'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+    ]
+  },
+  {
+    id: 'BORDERS',
+    title: 'BORDERS',
+    items: [
+      {
+        id: 'Border-Radius',
+        title: 'Border Radius',
+        rules: [
+          "Utilities for controlling the border radius of an element.",
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'rounded-1',
+                  'border-radius: 1px;'
+                ],
+                [
+                  'rounded-2',
+                  'border-radius: 2px;'
+                ],
+                [
+                  'rounded-3',
+                  'border-radius: 3px;'
+                ],
+                [
+                  'rounded-4',
+                  'border-radius: 4px;'
+                ],
+                [
+                  'rounded-5',
+                  'border-radius: 5px;'
+                ],
+                [
+                  'rounded-full',
+                  'border-radius: 9999px;'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'Border-Width',
+        title: 'Border Width',
+        rules: [
+          "Utilities for controlling the width of an element's borders.",
+          "0px - 6px边框大小",
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'border-l-0',
+                  'border-left-width: 0px;'
+                ],
+                [
+                  'border-r-0',
+                  'border-right-width: 0px;'
+                ],
+                [
+                  'border-t-0',
+                  'border-top-width: 0px;'
+                ],
+                [
+                  'border-b-0',
+                  'border-bottom-width: 0px;'
+                ],
+                [
+                  'border-x-0',
+                  'border-left-width: 0px; border-right-width: 0px;'
+                ],
+                [
+                  'border-y-0',
+                  'border-top-width: 0px; border-bottom-width: 0px;'
+                ],
+                [
+                  'border-0',
+                  'border-width: 0px;'
+                ],
+                
+                [
+                  '... -> border-6',
+                  '... -> border-width: 6px;'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'Border-Color',
+        title: 'Border Color',
+        rules: [
+          "Utilities for controlling the color of an element's borders.",
+          "相关的变量参照：docroot/themes/custom/dyniva_ui/assets/less/variables/color.less",
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'border-transparent',
+                  'border-color: transparent;'
+                ],
+                [
+                  'border-white',
+                  'border-color: #fff;'
+                ],
+                [
+                  'border-black',
+                  'border-color: #000;'
+                ],
+                [
+                  'border-base',
+                  'border-color: @border-color;'
+                ],
+                [
+                  'border-dark',
+                  'border-color: @border-color-dark;'
+                ],
+                [
+                  'border-darker',
+                  'border-color: @border-color-darker;'
+                ],
+                [
+                  'border-primary',
+                  'border-color: @site-base;'
+                ],
+                [
+                  'border-second',
+                  'border-color: @site-second;'
+                ],
+                [
+                  'border-third',
+                  'border-color: @site-third;'
+                ],
+                [
+                  'border-l-base',
+                  'border-left-color: @border-color;'
+                ],
+                [
+                  'border-r-base',
+                  'border-right-color: @border-color;'
+                ],
+                [
+                  'border-t-base',
+                  'border-top-color: @border-color;'
+                ],
+                [
+                  'border-b-base',
+                  'border-bottom-color: @border-color;'
+                ],
+                [
+                  'border-x-base',
+                  'border-left-color: @border-color; border-right-color: @border-color;'
+                ],
+                [
+                  'border-y-base',
+                  'border-top-color: @border-color; border-bottom-color: @border-color;'
+                ],
+                [
+                  '...',
+                  '...'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'Border-Style',
+        title: 'Border Style',
+        rules: [
+          "Utilities for controlling the style of an element's borders.",
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'border-solid',
+                  'border-style: solid;'
+                ],
+                [
+                  'border-dashed',
+                  'border-style: dashed;'
+                ],
+                [
+                  'border-dotted',
+                  'border-style: dotted;'
+                ],
+                [
+                  'border-double',
+                  'border-style: double;'
+                ],
+                [
+                  'border-none',
+                  'border-style: none;'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+    ]
+  },
+  {
+    id: 'EFFECTS',
+    title: 'EFFECTS',
+    items: [
+      {
+        id: 'Box-Shadow',
+        title: 'Box Shadow',
+        rules: [
+          "Utilities for controlling the box shadow of an element.",
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'shadow-sm',
+                  'box-shadow: 0 0px 2px 0 rgba(0, 0, 0, 0.3);'
+                ],
+                [
+                  'shadow',
+                  'box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px 0 rgba(0, 0, 0, 0.2);'
+                ],
+                [
+                  'shadow-md',
+                  'box-shadow: 0 2px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);'
+                ],
+                [
+                  'shadow-lg',
+                  'box-shadow: 0 3px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);'
+                ],
+                [
+                  'shadow-xl',
+                  'box-shadow: 5px 5px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);'
+                ],
+                [
+                  'shadow-2xl',
+                  'box-shadow: 10px 10px 40px -8px rgba(0, 0, 0, 0.4);'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'Opacity',
+        title: 'Opacity',
+        rules: [
+          "Utilities for controlling the opacity of an element.",
+          "生成0-100, 10的透明度：0 10 20...100，同时也会生成hover相关的类",
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'opacity-0',
+                  'opacity: 0;'
+                ],
+                [
+                  '... -> opacity-100',
+                  '... -> opacity: 1;'
+                ],
+                [
+                  'hover|opacity-0',
+                  '.hover|opacity-0:hover { opacity: 0; }'
+                ],
+                [
+                  '... -> hover|opacity-100',
+                  '... -> .hover|opacity-100:hover { opacity: 1; }'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+    ]
+  },
+  {
+    id: 'TABLES',
+    title: 'TABLES',
+    items: [
+      {
+        id: 'Border-Collapse',
+        title: 'Border Collapse',
+        rules: [
+          "Utilities for controlling whether table borders should collapse or be separated.",
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'border-collapse',
+                  'border-collapse: collapse;'
+                ],
+                [
+                  'border-separate',
+                  'border-collapse: separate;'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'Table-Layout',
+        title: 'Table Layout',
+        rules: [
+          "Utilities for controlling the table layout algorithm.",
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'table-auto',
+                  'table-layout: auto;'
+                ],
+                [
+                  'table-fixed',
+                  'table-layout: fixed;'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+    ]
+  },
+  {
+    id: 'TRANSITIONS-AND-ANIMATION',
+    title: 'TRANSITIONS AND ANIMATION',
+    items: [
+      {
+        id: 'Transition-Property',
+        title: 'Transition Property',
+        rules: [
+          "Utilities for controlling which CSS properties transition.",
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'transition-none',
+                  'transition-property: none;'
+                ],
+                [
+                  'transition-all',
+                  'transition-property: all; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 300ms;'
+                ],
+                [
+                  'transition',
+                  'transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter; ...;'
+                ],
+                [
+                  'transition-colors',
+                  'transition-property: background-color, border-color, color, fill, stroke; ...;'
+                ],
+                [
+                  'transition-opacity',
+                  'transition-property: opacity; ...;'
+                ],
+                [
+                  'transition-shadow',
+                  'transition-property: shadow; ...;'
+                ],
+                [
+                  'transition-transform',
+                  'transition-property: ...;'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'Transition-Duration',
+        title: 'Transition Duration',
+        rules: [
+          "Utilities for controlling the duration of CSS transitions.",
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'duration-75',
+                  'transition-duration: 75ms;'
+                ],
+                [
+                  'duration-100',
+                  'transition-duration: 100ms;'
+                ],
+                [
+                  'duration-150',
+                  'transition-duration: 150ms;'
+                ],
+                [
+                  'duration-200',
+                  'transition-duration: 200ms;'
+                ],
+                [
+                  'duration-300',
+                  'transition-duration: 300ms;'
+                ],
+                [
+                  'duration-500',
+                  'transition-duration: 500ms;'
+                ],
+                [
+                  'duration-700',
+                  'transition-duration: 700ms;'
+                ],
+                [
+                  'duration-1000',
+                  'transition-duration: 1000ms;'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'Transition-Timing-Function',
+        title: 'Transition Timing Function',
+        rules: [
+          "Utilities for controlling the easing of CSS transitions.",
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'ease-linear',
+                  'transition-timing-function: linear;'
+                ],
+                [
+                  'ease-in',
+                  'transition-timing-function: cubic-bezier(0.4, 0, 1, 1);'
+                ],
+                [
+                  'ease-out',
+                  'transition-timing-function: cubic-bezier(0, 0, 0.2, 1);'
+                ],
+                [
+                  'ease-in-out',
+                  'transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'Transition-Delay',
+        title: 'Transition Delay',
+        rules: [
+          "Utilities for controlling the Delay of CSS transitions.",
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'delay-75',
+                  'transition-delay: 75ms;'
+                ],
+                [
+                  'delay-100',
+                  'transition-delay: 100ms;'
+                ],
+                [
+                  'delay-150',
+                  'transition-delay: 150ms;'
+                ],
+                [
+                  'delay-200',
+                  'transition-delay: 200ms;'
+                ],
+                [
+                  'delay-300',
+                  'transition-delay: 300ms;'
+                ],
+                [
+                  'delay-500',
+                  'transition-delay: 500ms;'
+                ],
+                [
+                  'delay-700',
+                  'transition-delay: 700ms;'
+                ],
+                [
+                  'delay-1000',
+                  'transition-delay: 1000ms;'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'Animation',
+        title: 'Animation',
+        rules: [
+          "Utilities for animating elements with CSS animations.",
+          "动画参照：docroot/themes/custom/dyniva_ui/assets/less/tailwindless/classes/animate.less",
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'animate-none',
+                  'animation: none;'
+                ],
+                [
+                  'animate-spin',
+                  'animation: spin 1s linear infinite;'
+                ],
+                [
+                  'animate-ping',
+                  'animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;'
+                ],
+                [
+                  'animate-pulse',
+                  'animation: spin 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;'
+                ],
+                [
+                  'animate-bounce',
+                  'animation: bounce 1s infinite;'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+    ]
+  },
+  {
+    id: 'TRANSFORMS',
+    title: 'TRANSFORMS',
+    items: [
+      {
+        id: 'Transform-Origin',
+        title: 'Transform Origin',
+        rules: [
+          "Utilities for specifying the origin for an element's transformations.",
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'origin-center',
+                  'transform-origin: center;'
+                ],
+                [
+                  'origin-top',
+                  'transform-origin: top;'
+                ],
+                [
+                  'origin-top-right',
+                  'transform-origin: top right;'
+                ],
+                [
+                  'origin-right',
+                  'transform-origin: right;'
+                ],
+                [
+                  'origin-bottom-right',
+                  'transform-origin: bottom right;'
+                ],
+                [
+                  'origin-bottom',
+                  'transform-origin: bottom;'
+                ],
+                [
+                  'origin-bottom-left',
+                  'transform-origin: bottom left;'
+                ],
+                [
+                  'origin-left',
+                  'transform-origin: left;'
+                ],
+                [
+                  'origin-top-left',
+                  'transform-origin: top left;'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'Scale',
+        title: 'Scale',
+        rules: [
+          "Utilities for scaling elements with transform.",
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'scale-105',
+                  'transform: scaleX(1.05);'
+                ],
+                [
+                  'hover|scale-105',
+                  '.hover|scale-105:hover { transform: scaleX(1.05); }'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'Rotate',
+        title: 'Rotate',
+        rules: [
+          "Utilities for rotating elements with transform.",
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'rotate-90',
+                  'transform: rotate(90deg)'
+                ],
+                [
+                  '-rotate-90',
+                  'transform: rotate(-90deg)'
+                ],
+                [
+                  'rotate-180',
+                  'transform: rotate(180deg)'
+                ],
+                [
+                  '-rotate-180',
+                  'transform: rotate(-180deg)'
+                ],
+                [
+                  'rotate-360',
+                  'transform: rotate(360deg)'
+                ],
+                [
+                  '-rotate-360',
+                  'transform: rotate(-360deg)'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 'Translate',
+        title: 'Translate',
+        rules: [
+          "Utilities for translating elements with transform.",
+          "1/2、full会生成负的类，所有的都会生成@screen相关的类",
+        ],
+        libraries: [],
+        demoClass: '',
+        hide_markup: true,
+        templates: [
+          {
+            url: 'document/dyniva-classes/dy-classes.html.twig',
+            param: {  
+              thead: [
+                'classes', 
+                'properties',
+              ],
+              tbody: [
+                [
+                  'translate-x-0',
+                  'transform: translateX(0);'
+                ],
+                [
+                  'translate-y-0',
+                  'transform: translateY(0);'
+                ],
+                [
+                  'translate-0',
+                  'transform: translate(0);'
+                ],
+                [
+                  'translate-x-1/2',
+                  'transform: translateX(50%);'
+                ],
+                [
+                  'translate-y-1/2',
+                  'transform: translateY(50%);'
+                ],
+                [
+                  'translate-1/2',
+                  'transform: translate(50%);'
+                ],
+                [
+                  'translate-x-full',
+                  'transform: translateX(100%);'
+                ],
+                [
+                  'translate-y-full',
+                  'transform: translateY(100%);'
+                ],
+                [
+                  'translate-full',
+                  'transform: translate(100%);'
+                ],
+                [
+                  '-translate-x-1/2',
+                  'transform: translateX(-50%);'
+                ],
+                [
+                  '...',
+                  '...'
+                ],
+                [
+                  'sm|translate-x-1/2',
+                  '@media (min-width: @screen-sm) { .sm|translate-x-1/2{ transform: translateX(-50%); } }'
+                ],
+                [
+                  '...',
+                  '...'
+                ],
+              ]
+            }
+          }
+        ]
+      },
+    ]
+  },
+] %}

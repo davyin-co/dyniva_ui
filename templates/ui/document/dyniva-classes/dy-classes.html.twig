@@ -1,0 +1,47 @@
+<table class="w-full text-left border-collapse relative">
+  <thead class="sticky">
+    <tr>
+      {%- for td in thead ~%}
+      <th class="capitalize">{{ td }}</th>
+      {% endfor %}
+    </tr>
+  </thead>
+  <tbody class="align-baseline">
+    {%- for tr in tbody ~%}
+      <tr>
+        {%- for index, td in tr ~%}
+        {%- if index == 0 ~%}
+        <td class="">
+          <input type="text" readonly
+            class="border-0 cursor-pointer text-info"
+            value="{{ td }}" 
+            size="{{ td|length }}"
+            title="复制成功：{{ td }}"
+            data-toggle="bsTooltip"
+            data-placement="{% if loop.last %}left{% else %}right{% endif %}"
+            data-trigger="focus"
+            onclick="this.select();document.execCommand('copy')"
+          />
+        </td>
+        {%- elseif index == 1 ~%}
+        <td>
+          <input type="text" readonly
+            class="border-0 text-error cursor-pointer"
+            value="{{ td }}" 
+            size="{{ td|length }}"
+            title="复制成功：{{ td }}"
+            data-toggle="bsTooltip"
+            data-placement="{% if loop.last %}left{% else %}right{% endif %}"
+            data-trigger="focus"
+            onclick="this.select();document.execCommand('copy')"
+          />
+        </td>
+        {%- else ~%}
+        <td>{{ td }}</td>
+        {%~ endif -%}
+        
+        {%- endfor ~%}
+      </tr>
+    {%- endfor ~%}
+  </tbody>
+</table>
