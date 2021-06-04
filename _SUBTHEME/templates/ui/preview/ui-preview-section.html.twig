@@ -1,1 +1,80 @@
-{% extends "@dyniva_ui/ui/preview/ui-preview-menu.html.twig" %}
+
+<section class="dy-components" id="{{ section.id }}">
+  <h2 class="section-header">{{ section.title }}</h2>
+  {% for item in section.items %}
+    <div class="section-item title-box" id="{{ item.id }}">
+      {% if item.title %}
+        <h4 class="title">{{ item.title }}</h4>
+      {% endif %}
+
+      {% if item.rules %}
+        {% for rule in item.rules %}
+          <p class="rules px-10">{{ rule | raw }}</p>
+        {% endfor %}
+      {% endif %}
+
+      {% if not item.hide_demo %}
+        <div class="dy-components-demo px-10 {{ item.demoClass }}">
+          <div class="{{ item.rowClass }}">
+            {% for template in item.templates %}
+              <div class="{{ template.gridClass }}">
+                {{ include('@SUBTHEME/ui/' ~ template.url, template.param ? template.param : {}) }}
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+
+      {% if not item.hide_markup %}
+      <div class="dy-components-markup">
+        {% if not item.hide_collapse %}
+        <a class="btn btn-primary expand-code collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="collapseCode">
+          <i class="icon">&#xe818;</i>开发说明
+        </a>
+        <div class="collapse">
+        {% endif %}
+        
+        {% if item.descs %}
+          <div class="code-description">
+            <table class="table table-full">
+              <thead>
+                <tr>
+                  <th>Class</th>
+                  <th>说明</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for desc in item.descs %}
+                <tr>
+                  <td><code>{{ desc.code }}</code></td>
+                  <td>{{ desc.text }}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        {% endif %}
+
+        {% if not item.hide_preview %}
+          <div class="code-preview">
+            <pre class="prettyprint lang-html">
+              {%- for library in item.libraries ~%}
+                {{~ "{{ attach_library('"~library~"') }}" ~}}
+              {%- endfor ~%}
+
+              {%- for template in item.templates ~%}
+
+                {{~ include('@SUBTHEME/ui/' ~ template.url, template.param ? template.param : {}) | escape ~}}
+              {%- endfor ~%}
+            </pre>
+          </div>
+        {% endif %}
+
+        {% if not item.hide_collapse %}
+        </div>
+        {% endif %}
+      </div>
+      {% endif %}
+    </div>
+  {% endfor %}
+</section>

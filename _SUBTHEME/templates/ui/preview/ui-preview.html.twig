@@ -4,31 +4,40 @@
  * - custom sub theme header, also can add new components
  */
 #}
+
+{# override base theme header,logo,menu links #}
 {% block header %}
   {% include '@SUBTHEME/ui/preview/ui-preview-header.html.twig' %}
 {% endblock %}
 
-{% block title %}
-  {% include '@SUBTHEME/ui/preview/ui-preview-title.html.twig' with { headers: param_headers } %}
-{% endblock %}
-
-<div class="panel panel-ui panel-ui-classes min-h-0 flex flex-nowrap flex-grow">
-  <aside class="hidden md|display-block md|w-auto max-h-full">
-    {% block aside %}  
-      {% include '@SUBTHEME/ui/preview/ui-preview-aside.html.twig' with { sections: param_sections } %}
-    {% endblock %}
-    {% block extend_aside %}{% endblock %}
-  </aside>
-
-  <section class="md|w-auto max-h-full max-w-full overflow-auto flex-grow px-20">
-    {% block sections %}
-      {% for param_section in param_sections %}
-        {% include '@SUBTHEME/ui/preview/ui-preview-section.html.twig' with { section: param_section } %}
+<div class="ui-preview-info bg-lighter">
+  <div class="flex items-center p-20">
+    <h1 class="px-10">{{ page_title| raw }}</h1>
+    <div class="px-10">
+      {% for page_desc in page_descs %}
+        <h5 class="py-5">{{ page_desc | raw }}</h5>
       {% endfor %}
-    {% endblock %}
+    </div>
+  </div>
+</div>
 
+<div class="panel-ui flex flex-grow flex-nowrap overflow-hidden">
+  <aside class="preview-aside max-h-full overflow-y-auto overflow-x-hidden" style="min-width: 200px">
+
+  {% include "@SUBTHEME/ui/preview/ui-preview-aside.html.twig" with { sections: preview_sections } %}
+  
+  {# sub theme components extend here dont remove section block #}
+  {% block extend_aside %}{% endblock %}
+  </aside>
+  <div class="preview-content flex-grow flex-shrink min-w-0 max-h-full overflow-y-auto overflow-x-hidden">
+    {% for preview_section in preview_sections %}
+      {% include "@SUBTHEME/ui/preview/ui-preview-section.html.twig" with { section: preview_section } %}
+    {% endfor %}
+
+    {# sub theme components extend here dont remove section block #}
     {% block extend_section %}{% endblock %}
-  </section>
+    <div class="spacer-md"></div>
+  </div>
 </div>
 
 {# override base theme footer #}

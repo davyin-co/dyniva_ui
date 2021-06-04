@@ -1,19 +1,15 @@
-{% extends "@dyniva_ui/ui/preview/ui-preview-header.html.twig" %}
+{{ attach_library('dyniva_ui/common.codeprettify') }}
+{{ attach_library('dyniva_ui/plugin.holder') }}
 {% block header %}
 <div id="ui-header" class="ui-preview-header navbar-one bg-color-primary sticky-header">
   <div class="sticky-wrapper">
     <div class="inner">
       <div class="f-l nav-branding outside-min-t inside-min-tb clearfix">
-        <div class="f-l outside-min-r">
-          <a id="site-logo" href="{{ base_path }}ui-preview/pages/index.html.twig" title="Home" class="nav-logo f-l" rel="home">
-            <img src="@SUBTHEME/ui/images/logo.svg" alt="Home">
-          </a>
-        </div>
         <div class="f-r">
           <h2 id="site-name" class="nav-name">
-            <a href="{{ base_path }}ui-preview/pages/index.html.twig" title="Home" class="text-white capitalize" rel="home">SUBTHEME</a>
+            <a href="{{ base_path }}ui-preview/pages/index.html.twig" title="Home" class="text-white capitalize" rel="home">Dyniva Ui</a>
           </h2>
-          <p id="site-slogan" class="nav-slogan text-white size-m capitalize">Version 2.1.0</p>
+          <p id="site-slogan" class="nav-slogan text-white size-m">Version 2.1.0</p>
         </div>
       </div>
       <div class="f-r js-main-menu">

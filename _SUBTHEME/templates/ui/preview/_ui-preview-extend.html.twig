@@ -1,0 +1,25 @@
+{% extends "@SUBTHEME/ui/preview/ui-preview.html.twig" %}
+
+{% set expand_sections = [] %}
+
+{# Header Override Here #}
+{% block header %}
+  {% include '@SUBTHEME/ui/preview/ui-preview-header.html.twig' %}
+{% endblock %}
+
+{# Footer Override Here #}
+{% block footer %}
+  {% include '@SUBTHEME/ui/preview/ui-preview-footer.html.twig' %}
+{% endblock %}
+
+{# Expand Aside Here #}
+{% block extend_aside %}
+  {% include "@SUBTHEME/ui/preview/ui-preview-aside.html.twig" with { sections: expand_sections } %}
+{% endblock %}
+
+{# Expand Section Here #}
+{% block extend_section %}
+  {% for expand_section in expand_sections %}
+    {% include "@SUBTHEME/ui/preview/ui-preview-section.html.twig" with { section: expand_section } %}
+  {% endfor %}
+{% endblock %}
