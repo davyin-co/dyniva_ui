@@ -1,22 +1,22 @@
-.truncate-line(@line, @fontSize: 1rem, @lineHeight: 1.5, @namePrefix: ~'', @hover: false) {
+.truncate-line(@line, @lineHeight: 1.5, @namePrefix: ~'', @hover: false) {
   .truncate-@{line} {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden !important;
     -webkit-line-clamp: @line;
-    height: @fontSize * @lineHeight * @line;
+    height: @lineHeight * @line * 1em;
   }
 
-  .truncate-line-hover(@line, @fontSize, @lineHeight, @namePrefix, @hover);
+  .truncate-line-hover(@line, @lineHeight, @namePrefix, @hover);
 }
-.truncate-line-hover(@line, @fontSize: 1rem, @lineHeight: 1.5, @namePrefix: ~'', @hover) when (@hover) {
+.truncate-line-hover(@line, @lineHeight: 1.5, @namePrefix: ~'', @hover) when (@hover) {
   .hover:hover .@{namePrefix}hover\|truncate-@{line},
   .@{namePrefix}hover\|truncate-@{line}:hover {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden !important;
     -webkit-line-clamp: @line;
-    height: @fontSize * @lineHeight * @line;
+    height: @lineHeight * @line * 1em;
   }
 }
 
