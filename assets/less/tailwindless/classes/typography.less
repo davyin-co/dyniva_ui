@@ -283,7 +283,7 @@ each(#table.responsive(), .(@vResponsive, @kResponsive) {
       white-space: nowrap;
     }
     each(range(2, 10, 1), {
-      .truncate-line(@value, @namePrefix: @namePrefix);
+      .truncate-line(@value, @namePrefix: @namePrefix, @hover: true);
     })
   }
 })
