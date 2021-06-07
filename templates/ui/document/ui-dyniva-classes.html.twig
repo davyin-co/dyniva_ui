@@ -46,7 +46,8 @@
         id: 'Display',
         title: 'Display',
         rules: [
-          "Utilities for controlling the display box type of an element."
+          "Utilities for controlling the display box type of an element.",
+          "同时会生成@screen相关的类",
         ],
         libraries: [],
         demoClass: '',
@@ -88,6 +89,14 @@
                   'inline-table',
                   'display: inline-table;'
                 ],
+                [
+                  'sm|display-block',
+                  '@media (min-width: @screen-sm) { .sm|display-block { display: block; } }'
+                ],
+                [
+                  '... -> sm|inline-table',
+                  '... -> @media (min-width: @screen-sm) { .sm|inline-table { display: inline-table; } }',
+                ]
               ]
             }
           }
