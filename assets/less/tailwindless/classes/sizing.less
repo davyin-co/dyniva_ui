@@ -16,6 +16,11 @@
 }
 .width(11, 12);
 .width(4, 5);
+each(range(0, 100, 5), {
+  .w-@{value} {
+    width: @value * 1px;
+  }
+})
 // width percent with responsive
 each(#table.responsive(), .(@vResponsive, @kResponsive) {
   @screenName: ~'screen-@{kResponsive}';
@@ -39,6 +44,11 @@ each(#table.responsive(), .(@vResponsive, @kResponsive) {
     }
     .width(11, 12, @namePrefix);
     .width(4, 5, @namePrefix);
+    each(range(0, 100, 5), {
+      .@{namePrefix}w-@{value} {
+        width: @value * 1px;
+      }
+    })
   }
 })
 
@@ -83,6 +93,33 @@ each(#table.responsive(), .(@vResponsive, @kResponsive) {
 .h-screen {
   height: 100vh;
 }
+each(range(0, 100, 5), {
+  .w-@{value} {
+    height: @value * 1px;
+  }
+})
+// width percent with responsive
+each(#table.responsive(), .(@vResponsive, @kResponsive) {
+  @screenName: ~'screen-@{kResponsive}';
+  @namePrefix: ~'@{kResponsive}\|';
+
+  @media (min-width: @@screenName) {
+    .@{namePrefix}h-0 {
+      height: 0;
+    }
+    .@{namePrefix}h-full {
+      height: 100%;
+    }
+    .@{namePrefix}h-screen {
+      height: 100vh;
+    }
+    each(range(0, 100, 5), {
+      .@{namePrefix}w-@{value} {
+        height: @value * 1px;
+      }
+    })
+  }
+})
 
 // min-height
 .min-h-0 {
