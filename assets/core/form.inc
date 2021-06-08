@@ -37,15 +37,25 @@ function dyniva_ui_preprocess_textarea(&$variables) {
  */
 
 function dyniva_ui_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  //alter the boostrap_layout_builder container_type w-100 => w-full.
+  if ($form_id == 'layout_builder_configure_section') {
+    /** @var  $form_callback_object \Drupal\layout_builder\Form\ConfigureSectionForm */
+    $form_callback_object = $form_state->getFormObject();
+    /** @var  $section_component */
+    $current_layout = $form_callback_object->getCurrentLayout();
+    if (get_class($current_layout) == 'Drupal\bootstrap_layout_builder\Plugin\Layout\BootstrapLayout') {
+      $label = $form['layout_settings']['ui']['tab_content']['layout']['container_type']['#options']['w-100'];
+      unset($form['layout_settings']['ui']['tab_content']['layout']['container_type']['#options']['w-100']);
+      $form['layout_settings']['ui']['tab_content']['layout']['container_type']['#options']['w-full'] = $label;
+    }
+  }
+  
   $key = 'actions';
   if (isset($form['basic']) && !isset($form['basic'][$key])) {
     $form['basic'][$key]['#type'] = 'actions';
     $form['basic'][$key]['submit'] = $form['basic']['submit'];
     unset($form['basic']['submit']);
   }
-
-  // if($form_id == 'search_block_form'){
-  // }
 
   if (($form_id == 'search_form') && isset($form['help_link'])) {
     if (isset($form['basic']) && isset($form['basic'][$key])) {
