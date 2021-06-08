@@ -94,11 +94,11 @@ each(#table.responsive(), .(@vResponsive, @kResponsive) {
   height: 100vh;
 }
 each(range(0, 100, 5), {
-  .w-@{value} {
+  .h-@{value} {
     height: @value * 1px;
   }
 })
-// width percent with responsive
+// height percent with responsive
 each(#table.responsive(), .(@vResponsive, @kResponsive) {
   @screenName: ~'screen-@{kResponsive}';
   @namePrefix: ~'@{kResponsive}\|';
@@ -114,7 +114,7 @@ each(#table.responsive(), .(@vResponsive, @kResponsive) {
       height: 100vh;
     }
     each(range(0, 100, 5), {
-      .@{namePrefix}w-@{value} {
+      .@{namePrefix}h-@{value} {
         height: @value * 1px;
       }
     })
