@@ -7,59 +7,30 @@
 }
 
 // display
-.display-block {
-  display: block;
+@display: {
+  display-block: block;
+  inline: inline;
+  inline-block: inline-block;
+  flex: flex;
+  inline-flex: inline-flex;
+  table: table;
+  inline-table: inline-table;
 }
-.inline {
-  display: inline;
-}
-.inline-block {
-  display: inline-block;
-}
-.flex {
-  display: flex;
-}
-.inline-flex {
-  display: inline-flex;
-}
-.inline {
-  display: inline;
-}
-.table {
-  display: table;
-}
-.inline-table {
-  display: inline-table;
-}
+each(@display, .(@display-value, @display-name) {
+  .@{display-name} {
+    display: @display-value;
+  }
+})
 each(#table.responsive(), .(@vResponsive, @kResponsive) {
   @screenName: ~'screen-@{kResponsive}';
   @namePrefix: ~'@{kResponsive}\|';
 
   @media (min-width: @@screenName) {
-    .@{namePrefix}display-block {
-      display: block;
-    }
-    .@{namePrefix}inline {
-      display: inline;
-    }
-    .@{namePrefix}inline-block {
-      display: inline-block;
-    }
-    .@{namePrefix}flex {
-      display: flex;
-    }
-    .@{namePrefix}inline-flex {
-      display: inline-flex;
-    }
-    .@{namePrefix}inline {
-      display: inline;
-    }
-    .@{namePrefix}table {
-      display: table;
-    }
-    .@{namePrefix}inline-table {
-      display: inline-table;
-    }
+    each(@display, .(@display-value, @display-name) {
+      .@{namePrefix}@{display-name} {
+        display: @display-value;
+      }
+    })
   }
 })
 
@@ -176,26 +147,40 @@ each(#table.responsive(), .(@vResponsive, @kResponsive) {
 }
 
 // position
-.static {
-  position: static;
-}
-.fixed {
-  position: fixed;
-}
-.absolute {
-  position: absolute;
-}
-.relative {
-  position: relative;
-}
-.sticky {
-  position: sticky;
-}
+@position: static, fixed, absolute, relative, sticky;
+each(@position, .(@position-value){
+  .@{position-value} {
+    position: @position-value;
+  }
+})
+each(#table.responsive(), .(@vResponsive, @kResponsive) {
+  @screenName: ~'screen-@{kResponsive}';
+  @namePrefix: ~'@{kResponsive}\|';
+
+  @media (min-width: @@screenName) {
+    each(@position, .(@position-value){
+      .@{namePrefix}@{position-value} {
+        position: @position-value;
+      }
+    })
+  }
+})
 
 .position(0, 0px);
 .position(auto, auto);
 .position(~"1\/2", 50%);
 .position(full, 100%);
+each(#table.responsive(), .(@vResponsive, @kResponsive) {
+  @screenName: ~'screen-@{kResponsive}';
+  @namePrefix: ~'@{kResponsive}\|';
+
+  @media (min-width: @@screenName) {
+    .position(0, 0px, @namePrefix: @namePrefix);
+    .position(auto, auto, @namePrefix: @namePrefix);
+    .position(~"1\/2", 50%, @namePrefix: @namePrefix);
+    .position(full, 100%, @namePrefix: @namePrefix);
+  }
+})
 
 // visibility
 .visible {
