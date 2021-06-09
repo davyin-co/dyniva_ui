@@ -1,4 +1,4 @@
-.transform-scale(@name, @value){
+.transform-scale(@name, @value, @hover: true){
   .scale-x-@{name} {
     transform: scaleX(@value);
   }
@@ -11,10 +11,10 @@
     transform: scale(@value);
   }
 
-  .transform-scale-hover(@name, @value)
+  .transform-scale-hover(@name, @value, @hover)
 };
 
-.transform-scale-hover(@name, @value){
+.transform-scale-hover(@name, @value, @hover) when (@hover) {
   .hover:hover .hover\|scale-x-@{name},
   .hover\|scale-x-@{name}:hover {
     transform: scaleX(@value);
@@ -31,7 +31,7 @@
   }
 }
 
-.transform-rotate(@name, @angle){
+.transform-rotate(@name, @angle, @hover: true){
   .rotate-@{name} {
     transform: rotate(@angle);
   }
@@ -39,10 +39,10 @@
     transform: rotate(@angle * -1);
   }
 
-  .transform-rotate-hover(@name, @angle)
+  .transform-rotate-hover(@name, @angle, @hover)
 }
 
-.transform-rotate-hover(@name, @angle){
+.transform-rotate-hover(@name, @angle, @hover) when (@hover){
   .hover:hover .hover\|rotate-@{name},
   .hover\|rotate-@{name}:hover {
     transform: rotate(@angle);
@@ -63,6 +63,8 @@
   .@{namePrefix}translate-@{name} {
     transform: translate(@size, @size);
   }
+  
+  .transform-translate-minus(@name, @size, @namePrefix: ~'', @useMinus);
 }
 
 .transform-translate-minus(@name, @size, @namePrefix: ~'', @useMinus) when (@useMinus){
