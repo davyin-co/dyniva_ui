@@ -1,5 +1,9 @@
-.layout-builder__region>.layout-builder-block:hover:not(.ui-state-drop) .layout-builder__actions__block,
-.layout-builder__region>.layout-builder-block:focus:not(.ui-state-drop) .layout-builder__actions__block {
+.layout-builder__region
+  > .layout-builder-block:hover:not(.ui-state-drop)
+  .layout-builder__actions__block,
+.layout-builder__region
+  > .layout-builder-block:focus:not(.ui-state-drop)
+  .layout-builder__actions__block {
   pointer-events: auto;
 }
 
@@ -9,4 +13,9 @@
 
 #bootstrap_layout_builder-container.w-100 {
   width: 100%;
+}
+
+.ui-dialog.ui-layout-builder-modal #layout-builder-modal {
+  position: relative;
+  overflow: hidden;
 }
