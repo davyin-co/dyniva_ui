@@ -16,7 +16,7 @@
 }
 .width(11, 12);
 .width(4, 5);
-each(range(0, 100, 5), {
+each(range(0, 120, 5), {
   .w-@{value} {
     width: @value * 1px;
   }
@@ -44,7 +44,7 @@ each(#table.responsive(), .(@vResponsive, @kResponsive) {
     }
     .width(11, 12, @namePrefix);
     .width(4, 5, @namePrefix);
-    each(range(0, 100, 5), {
+    each(range(0, 120, 5), {
       .@{namePrefix}w-@{value} {
         width: @value * 1px;
       }
@@ -93,7 +93,7 @@ each(#table.responsive(), .(@vResponsive, @kResponsive) {
 .h-screen {
   height: 100vh;
 }
-each(range(0, 100, 5), {
+each(range(0, 120, 5), {
   .h-@{value} {
     height: @value * 1px;
   }
@@ -113,7 +113,7 @@ each(#table.responsive(), .(@vResponsive, @kResponsive) {
     .@{namePrefix}h-screen {
       height: 100vh;
     }
-    each(range(0, 100, 5), {
+    each(range(0, 120, 5), {
       .@{namePrefix}h-@{value} {
         height: @value * 1px;
       }
