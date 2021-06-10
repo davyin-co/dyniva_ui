@@ -1,6 +1,6 @@
-.spacing(@name, @size, @namePrefix: ~'') {
+.spacing(@name, @size, @namePrefix: ~'', @useMinus: true) {
   .padding(@name, @size, @namePrefix);
-  .margin(@name, @size, @namePrefix);
+  .margin(@name, @size, @namePrefix, @useMinus);
 }
 
 .padding(@name, @size, @namePrefix) {  
@@ -33,7 +33,7 @@
   .margin-minus(@name, @size, @namePrefix, @useMinus);
 }
 
-.margin-minus(@name, @size, @namePrefix, @useMinus) when (@useMinus) and (@name > 0) {  
+.margin-minus(@name, @size, @namePrefix, @useMinus) when (@useMinus) {  
   each(#table.direction-abbreviation(), .(@vDirection, @kDirection) {
     .@{namePrefix}-m@{kDirection}-@{name}{
       each(@vDirection, {

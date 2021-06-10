@@ -3,11 +3,11 @@
 each(range(0, 100, 5), {
   .spacing(@value, @value * 1px);
 })
-.margin(~'1\/2', 50%);
 each(range(1, 12, 1), {
   .margin(~'@{value}\/12', (@value / 12) * 100%);
 })
-.margin(full, 100%);
+.spacing(~'1\/2', 50%);
+.spacing(full, 100%);
 
 // with responsive
 each(#table.responsive(), .(@vResponsive, @kResponsive) {
@@ -18,13 +18,13 @@ each(#table.responsive(), .(@vResponsive, @kResponsive) {
     .margin(auto, auto, @namePrefix: @namePrefix, @useMinus: false);
 
     each(range(0, 100, 5), {
-      .spacing(@value, @value * 1px, @namePrefix: @namePrefix);
+      .spacing(@value, @value * 1px, @namePrefix: @namePrefix, @useMinus: if(@value > 0, true, false));
     })
 
     each(range(1, 12, 1), {
       .margin(~'@{value}\/12', (@value / 12) * 100%, @namePrefix: @namePrefix);
     })
-    .margin(~'1\/2', 50%, @namePrefix: @namePrefix);
-    .margin(full, 100%, @namePrefix: @namePrefix);
+    .spacing(~'1\/2', 50%, @namePrefix: @namePrefix);
+    .spacing(full, 100%, @namePrefix: @namePrefix);
   }
 })
