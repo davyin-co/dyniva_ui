@@ -1,9 +1,5 @@
-.layout-builder__region
-  > .layout-builder-block:hover:not(.ui-state-drop)
-  .layout-builder__actions__block,
-.layout-builder__region
-  > .layout-builder-block:focus:not(.ui-state-drop)
-  .layout-builder__actions__block {
+.layout-builder__region>.layout-builder-block:hover:not(.ui-state-drop) .layout-builder__actions__block,
+.layout-builder__region>.layout-builder-block:focus:not(.ui-state-drop) .layout-builder__actions__block {
   pointer-events: auto;
 }
 
@@ -15,6 +11,10 @@
   width: 100%;
 }
 
-.ui-dialog.ui-layout-builder-modal #layout-builder-modal #bs_ui .blb_tab-content{
+.ui-dialog.ui-layout-builder-modal #layout-builder-modal #bs_ui .blb_tab-content {
   position: relative;
+}
+
+.layout-builder__actions {
+  z-index: 9999;
 }
