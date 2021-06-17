@@ -167,6 +167,9 @@ each(#table.responsive(), .(@vResponsive, @kResponsive) {
   }
 })
 
+// each(range(0, 120, 5), {
+  // .position(@value, ~'@{value}px');
+// })
 .position(0, 0px);
 .position(auto, auto);
 .position(~"1\/2", 50%);
@@ -176,6 +179,9 @@ each(#table.responsive(), .(@vResponsive, @kResponsive) {
   @namePrefix: ~'@{kResponsive}\|';
 
   @media (min-width: @@screenName) {
+    // each(range(0, 120, 5), .(@position-value, @position-name){
+    //   .position(@position-value, ~'@{position-value}px', @namePrefix: @namePrefix);
+    // })
     .position(0, 0px, @namePrefix: @namePrefix);
     .position(auto, auto, @namePrefix: @namePrefix);
     .position(~"1\/2", 50%, @namePrefix: @namePrefix);
