@@ -395,9 +395,12 @@
   .mm-page,
   .page {
     height: 100%;
-    overflow: hidden;
     display: flex;
     flex-direction: column;
+    overflow: auto;
+    @media @desktop-all {
+      overflow: hidden;
+    }
   }
 
   .block-system {
@@ -408,8 +411,10 @@
 
   .panel-ui {
     flex-grow: 1;
-    min-height: 0;
-    overflow: auto;
+    @media @desktop-all {
+      min-height: 0;
+      overflow: auto;
+    }
   }
 
   .dy-preview-aside {
