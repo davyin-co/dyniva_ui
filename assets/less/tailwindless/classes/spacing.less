@@ -1,6 +1,6 @@
 // generate spacer 5px ~ 100px and auto
 .margin(auto, auto, @useMinus: false);
-each(range(0, 100, 5), {
+each(range(0, 120, 5), {
   .spacing(@value, @value * 1px);
 })
 each(range(1, 12, 1), {
@@ -17,7 +17,7 @@ each(#table.responsive(), .(@vResponsive, @kResponsive) {
   @media (min-width: @@screenName) {
     .margin(auto, auto, @namePrefix: @namePrefix, @useMinus: false);
 
-    each(range(0, 100, 5), {
+    each(range(0, 120, 5), {
       .spacing(@value, @value * 1px, @namePrefix: @namePrefix, @useMinus: if(@value > 0, true, false));
     })
 
