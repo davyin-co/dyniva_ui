@@ -35,7 +35,6 @@
               var k = CSSStyleRule.style[cIndex];
               css[rewriteKey || k] = CSSStyleRule.style[k];
             }
-            console.log(css);
             $el.css(css);
           }
         }
