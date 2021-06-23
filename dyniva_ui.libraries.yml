@@ -330,3 +330,9 @@ module.masonry:
     - dyniva_ui/plugin.masonry
     - dyniva_ui/plugin.imagesloaded
 
+layout_builder:
+    js:
+      js/layout_builder/color.js: {}
+    dependencies:
+      - core/jquery
+

@@ -28,6 +28,8 @@ libraries:
   - dyniva_ui/module.dropdown
   - dyniva_ui/module.slick
   - dyniva_ui/module.slider
+  # layout builder
+  - dyniva_ui/layout_builder
 
 regions:
   topbar         : Topbar
