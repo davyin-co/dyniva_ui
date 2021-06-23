@@ -13,7 +13,7 @@
         onclick="this.select();document.execCommand('copy')"
       />
       <input type="text" readonly 
-        value=".{{ icon.class }}" 
+        value="{{ icon.class }}" 
         size="{{ icon.class|length }}"
         title="复制成功：{{ icon.class }}" 
         data-toggle="bsTooltip"
