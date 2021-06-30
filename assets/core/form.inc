@@ -124,7 +124,9 @@ function dyniva_ui_preprocess_form_element(&$variables) {
 function dyniva_ui_form_node_form_alter(&$form, FormStateInterface $form_state) {
   /** @var \Drupal\node\NodeInterface $node */
   $node = $form_state->getFormObject()->getEntity();
-
+  if ($node->isNew()) {
+    return;
+  }
   $form['#theme'] = ['node_edit_form'];
 
   $form['advanced']['#type'] = 'container';
@@ -149,8 +151,7 @@ function dyniva_ui_form_node_form_alter(&$form, FormStateInterface $form_state) 
     'author' => [
       '#type' => 'item',
       '#wrapper_attributes' => ['class' => ['author', 'container-inline']],
-      '#markup' => '<h4 class="label inline">' . t('Author') . '</h4> ' . $node->getOwner()
-          ->getUsername(),
+      '#markup' => '<h4 class="label inline">' . t('Author') . '</h4> ' . $node->getOwner()->getUsername(),
     ],
   ];
   $form['revision_information']['#type'] = 'container';
