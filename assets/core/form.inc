@@ -49,7 +49,7 @@ function dyniva_ui_form_alter(&$form, FormStateInterface $form_state, $form_id) 
       $form['layout_settings']['ui']['tab_content']['layout']['container_type']['#options']['w-full'] = $label;
     }
   }
-  
+
   $key = 'actions';
   if (isset($form['basic']) && !isset($form['basic'][$key])) {
     $form['basic'][$key]['#type'] = 'actions';
@@ -130,7 +130,7 @@ function dyniva_ui_form_node_form_alter(&$form, FormStateInterface $form_state) 
   $form['#theme'] = ['node_edit_form'];
 
   $form['advanced']['#type'] = 'container';
-  $is_new = !$node->isNew() ? format_date($node->getChangedTime(), 'short') : t('Not saved yet');
+  $is_new = !$node->isNew() ? \Drupal::service('date.formatter')->format($node->getChangedTime(), 'short') : t('Not saved yet');
   $form['meta'] = [
     '#attributes' => ['class' => ['entity-meta__header']],
     '#type' => 'details',
@@ -151,7 +151,7 @@ function dyniva_ui_form_node_form_alter(&$form, FormStateInterface $form_state) 
     'author' => [
       '#type' => 'item',
       '#wrapper_attributes' => ['class' => ['author', 'container-inline']],
-      '#markup' => '<h4 class="label inline">' . t('Author') . '</h4> ' . $node->getOwner()->getUsername(),
+      '#markup' => '<h4 class="label inline">' . t('Author') . '</h4> ' . $node->getOwner()->getDisplayName(),
     ],
   ];
   $form['revision_information']['#type'] = 'container';
