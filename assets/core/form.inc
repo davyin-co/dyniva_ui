@@ -17,7 +17,10 @@ function dyniva_ui_preprocess_form(array &$variables) {
 function dyniva_ui_preprocess_input(array &$variables) {
   $element = $variables['element'];
   if (($element['#type'] == 'textfield' || $element['#type'] == 'email') && !empty($element['#title'])) {
-    $variables['attributes']['placeholder'] = $element['#title'];
+    if (!isset($variables['attributes']['placeholder']) || empty($variables['attributes']['placeholder'])) {
+      isset($variables['attributes']['required']) ? $required = ' *' : $required = '';
+      $variables['attributes']['placeholder'] = $element['#title'] . $required;
+    }
   }
 }
 
